@@ -1,11 +1,6 @@
 'use client';
 
-import { type Metadata } from 'next';
 import { useState, useEffect } from 'react';
-
-export const metadata: Metadata = {
-    title: 'Terms and Conditions - Yoloo!',
-};
 
 export default function TermsPage() {
     const [date, setDate] = useState('');
