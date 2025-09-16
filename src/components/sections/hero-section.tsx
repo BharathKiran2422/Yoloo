@@ -14,12 +14,12 @@ export function HeroSection() {
         <div className="bg-card dark:bg-card-foreground/5 rounded-2xl shadow-sm p-8 md:p-12 border">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="text-center md:text-left">
-                    <p className="text-primary font-semibold mb-2">WELCOME TO YOLOO!</p>
+                    <p className="text-primary font-semibold mb-2">YOLOO! — FASHION MADE EASY</p>
                     <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
-                        India's only <span className="text-primary">quality-first</span> quick fashion app.
+                        Discover Your Style. Premium, Fast, and Delivered.
                     </h1>
                     <p className="text-muted-foreground mb-8 text-lg">
-                        Styles that are tested, trusted, and transparently sourced.
+                        Explore curated collections from top Indian and international brands. Quality fashion, delivered in minutes.
                     </p>
                     <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
                         <Button size="lg">Download the app</Button>

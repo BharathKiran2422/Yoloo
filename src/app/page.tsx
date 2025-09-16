@@ -3,12 +3,14 @@ import { BeliefsSection } from '@/components/sections/beliefs-section';
 import { GallerySection } from '@/components/sections/gallery-section';
 import { AppCtaSection } from '@/components/sections/app-cta-section';
 import { StorySection } from '@/components/sections/story-section';
+import { FeaturedProducts } from '@/components/sections/featured-products';
 
 export default function Home() {
   return (
     <>
       <HeroSection />
       <div className="container mx-auto px-4">
+        <FeaturedProducts />
         <BeliefsSection />
         <GallerySection />
         <AppCtaSection />

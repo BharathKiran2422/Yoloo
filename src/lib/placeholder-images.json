@@ -2,93 +2,135 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "A stylish woman in a blue dress posing in a modern setting.",
-      "imageUrl": "https://picsum.photos/seed/hero/800/600",
-      "imageHint": "fashion model"
+      "description": "A stylish person in a midnight blue jacket in a chic urban setting.",
+      "imageUrl": "https://picsum.photos/seed/hero/1200/800",
+      "imageHint": "fashion editorial"
     },
     {
       "id": "gallery1",
-      "description": "A person wearing a stylish outfit with a focus on details.",
+      "description": "Model in a black Batman graphic tee.",
       "imageUrl": "https://picsum.photos/seed/gallery1/400/500",
-      "imageHint": "model posing"
+      "imageHint": "Batman t-shirt"
     },
     {
       "id": "gallery2",
-      "description": "Close-up of a denim jacket with intricate stitching.",
-      "imageUrl": "https://picsum.photos/seed/gallery2/300/200",
-      "imageHint": "denim jacket"
+      "description": "Woman wearing a stylish Harry Potter themed scarf.",
+      "imageUrl": "https://picsum.photos/seed/gallery2/300/400",
+      "imageHint": "Harry Potter scarf"
     },
     {
       "id": "gallery3",
-      "description": "A flatlay of fashion accessories including sunglasses and a watch.",
-      "imageUrl": "https://picsum.photos/seed/gallery3/300/200",
-      "imageHint": "accessories flatlay"
+      "description": "Man in a Spiderman hoodie.",
+      "imageUrl": "https://picsum.photos/seed/gallery3/300/400",
+      "imageHint": "Spiderman hoodie"
     },
     {
       "id": "gallery4",
-      "description": "A model wearing a bright, colorful sweater.",
+      "description": "A collection of trendy sneakers on display.",
       "imageUrl": "https://picsum.photos/seed/gallery4/600/400",
-      "imageHint": "bright sweater"
+      "imageHint": "sneaker collection"
     },
     {
       "id": "gallery5",
-      "description": "A pair of stylish leather boots on a textured surface.",
+      "description": "Woman wearing an elegant dress from an Indian designer.",
       "imageUrl": "https://picsum.photos/seed/gallery5/250/400",
-      "imageHint": "leather boots"
+      "imageHint": "Indian fashion"
     },
     {
       "id": "gallery6",
-      "description": "A person wearing a cool graphic t-shirt.",
+      "description": "Close up on a pair of high-top sneakers.",
       "imageUrl": "https://picsum.photos/seed/gallery6/250/400",
-      "imageHint": "graphic tee"
+      "imageHint": "hightop sneakers"
     },
     {
       "id": "gallery7",
-      "description": "A woman in a flowing summer dress in a sunny field.",
+      "description": "A man wearing a modern ethnic jacket.",
       "imageUrl": "https://picsum.photos/seed/gallery7/250/400",
-      "imageHint": "summer dress"
+      "imageHint": "modern ethnic"
     },
     {
       "id": "gallery8",
-      "description": "A pair of colorful sneakers on a city street.",
+      "description": "A display of colorful running shoes.",
       "imageUrl": "https://picsum.photos/seed/gallery8/500/400",
-      "imageHint": "colorful sneakers"
+      "imageHint": "running shoes"
     },
     {
       "id": "gallery9",
-      "description": "Close-up of a luxurious silk scarf with a vibrant pattern.",
+      "description": "Woman in a vibrant, modern sari.",
       "imageUrl": "https://picsum.photos/seed/gallery9/300/200",
-      "imageHint": "silk scarf"
+      "imageHint": "modern sari"
     },
     {
       "id": "gallery10",
-      "description": "Stylish sunglasses reflecting a beach scene.",
+      "description": "A stylish leather handbag.",
       "imageUrl": "https://picsum.photos/seed/gallery10/300/200",
-      "imageHint": "sunglasses detail"
+      "imageHint": "leather handbag"
     },
     {
       "id": "app-cta-phone",
-      "description": "A smartphone displaying the Yoloo! fashion app interface.",
+      "description": "A smartphone displaying the Yoloo! fashion app, showcasing a collection of jackets.",
       "imageUrl": "https://picsum.photos/seed/appcta/350/700",
-      "imageHint": "fashion app"
+      "imageHint": "fashion app jackets"
     },
     {
       "id": "story",
-      "description": "A collage of fashion design elements, including fabric swatches, sketches, and runway photos.",
+      "description": "A moodboard showing fashion sketches, fabric swatches, and runway photos.",
       "imageUrl": "https://picsum.photos/seed/story/1200/400",
-      "imageHint": "fashion collage"
+      "imageHint": "fashion moodboard"
     },
     {
-        "id": "contact-image",
-        "description": "A person holding a phone with the Yoloo app open, with shopping bags in the background.",
-        "imageUrl": "https://picsum.photos/seed/contact/600/800",
-        "imageHint": "fashion shopping"
+      "id": "contact-image",
+      "description": "A friendly customer service representative in a modern office, wearing a headset.",
+      "imageUrl": "https://picsum.photos/seed/contact/600/800",
+      "imageHint": "customer service"
     },
     {
       "id": "about-image",
-      "description": "The interior of a modern, stylish fashion boutique.",
+      "description": "The interior of a bright, modern Yoloo! fashion studio.",
       "imageUrl": "https://picsum.photos/seed/about/600/800",
-      "imageHint": "fashion boutique"
-    }
+      "imageHint": "fashion studio"
+    },
+    {
+      "id": "product1",
+      "description": "A stylish blue denim jacket.",
+      "imageUrl": "https://picsum.photos/seed/product1/500/600",
+      "imageHint": "denim jacket"
+    },
+    {
+      "id": "product2",
+      "description": "A minimalist white t-shirt with a subtle graphic.",
+      "imageUrl": "https://picsum.photos/seed/product2/500/600",
+      "imageHint": "graphic tee"
+    },
+    {
+      "id": "product3",
+      "description": "Comfortable and stylish black joggers.",
+      "imageUrl": "https://picsum.photos/seed/product3/500/600",
+      "imageHint": "black joggers"
+    },
+    {
+      "id": "product4",
+      "description": "A classic beige trench coat.",
+      "imageUrl": "https://picsum.photos/seed/product4/500/600",
+      "imageHint": "trench coat"
+    },
+    { "id": "men-1", "description": "A man in a casual shirt.", "imageUrl": "https://picsum.photos/seed/men1/400/500", "imageHint": "casual shirt" },
+    { "id": "men-2", "description": "Man wearing a Spiderman themed jacket.", "imageUrl": "https://picsum.photos/seed/men2/400/600", "imageHint": "Spiderman jacket" },
+    { "id": "men-3", "description": "Men's formal wear.", "imageUrl": "https://picsum.photos/seed/men3/400/550", "imageHint": "formal wear" },
+    { "id": "men-4", "description": "Man in a Batman logo sweatshirt.", "imageUrl": "https://picsum.photos/seed/men4/400/500", "imageHint": "Batman sweatshirt" },
+    { "id": "men-5", "description": "Men's athletic wear.", "imageUrl": "https://picsum.photos/seed/men5/400/600", "imageHint": "athletic wear" },
+    { "id": "men-6", "description": "Man wearing traditional Indian attire.", "imageUrl": "https://picsum.photos/seed/men6/400/550", "imageHint": "Indian attire" },
+    { "id": "women-1", "description": "A woman in a stylish dress.", "imageUrl": "https://picsum.photos/seed/women1/400/600", "imageHint": "stylish dress" },
+    { "id": "women-2", "description": "Woman wearing a Harry Potter themed sweater.", "imageUrl": "https://picsum.photos/seed/women2/400/500", "imageHint": "Harry Potter sweater" },
+    { "id": "women-3", "description": "Women's business casual outfit.", "imageUrl": "https://picsum.photos/seed/women3/400/550", "imageHint": "business casual" },
+    { "id": "women-4", "description": "Woman in a Wonder Woman graphic tee.", "imageUrl": "https://picsum.photos/seed/women4/400/600", "imageHint": "Wonder Woman tee" },
+    { "id": "women-5", "description": "Women's yoga and activewear.", "imageUrl": "https://picsum.photos/seed/women5/400/500", "imageHint": "yoga activewear" },
+    { "id": "women-6", "description": "Woman in an elegant Indian designer saree.", "imageUrl": "https://picsum.photos/seed/women6/400/550", "imageHint": "designer saree" },
+    { "id": "sneakers-1", "description": "A pair of classic white sneakers.", "imageUrl": "https://picsum.photos/seed/sneakers1/400/400", "imageHint": "white sneakers" },
+    { "id": "sneakers-2", "description": "Colorful, trendy basketball sneakers.", "imageUrl": "https://picsum.photos/seed/sneakers2/400/350", "imageHint": "basketball sneakers" },
+    { "id": "sneakers-3", "description": "Running shoes with advanced cushioning.", "imageUrl": "https://picsum.photos/seed/sneakers3/400/300", "imageHint": "running shoes" },
+    { "id": "sneakers-4", "description": "High-top canvas sneakers.", "imageUrl": "https://picsum.photos/seed/sneakers4/400/450", "imageHint": "canvas sneakers" },
+    { "id": "sneakers-5", "description": "Skate shoes with a unique design.", "imageUrl": "https://picsum.photos/seed/sneakers5/400/350", "imageHint": "skate shoes" },
+    { "id": "sneakers-6", "description": "Formal leather shoes for men.", "imageUrl": "https://picsum.photos/seed/sneakers6/400/300", "imageHint": "leather shoes" }
   ]
 }
