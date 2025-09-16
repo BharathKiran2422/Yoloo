@@ -13,12 +13,12 @@ export function InstagramFeed() {
         <div className="text-center mb-12">
           <h2 className="font-headline text-3xl md:text-4xl font-bold">Follow Us On Instagram</h2>
           <p className="text-lg text-muted-foreground mt-2">
-            <Link href="#" className="text-primary dark:text-primary-foreground hover:underline">@yoloo_fashion</Link>
+            <Link href="https://www.instagram.com/yoloo_lifestyle" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-primary-foreground hover:underline">@yoloo_lifestyle</Link>
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {instaImages.map(image => (
-            <Link href="#" key={image.id} className="group block overflow-hidden rounded-lg aspect-square relative">
+            <Link href="https://www.instagram.com/yoloo_lifestyle" target="_blank" rel="noopener noreferrer" key={image.id} className="group block overflow-hidden rounded-lg aspect-square relative">
               <Image
                 src={image.imageUrl}
                 alt={image.description}
@@ -35,7 +35,7 @@ export function InstagramFeed() {
         </div>
         <div className="text-center mt-12">
           <Button asChild size="lg" variant="outline">
-            <Link href="#">
+            <Link href="https://www.instagram.com/yoloo_lifestyle" target="_blank" rel="noopener noreferrer">
               <Instagram className="mr-2 h-5 w-5" />
               Follow on Instagram
             </Link>
