@@ -1,7 +1,16 @@
+'use client';
+
 import { Twitter, Instagram, Facebook } from 'lucide-react';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export function Footer() {
+  const [currentYear, setCurrentYear] = useState('');
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear().toString());
+  }, []);
+
   return (
     <footer className="bg-secondary/50 dark:bg-card">
       <div className="container py-8">
@@ -38,7 +47,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-4 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Yoloo! Inc. All rights reserved.</p>
+          <p>&copy; {currentYear} Yoloo! Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>
