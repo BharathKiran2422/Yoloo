@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "product1",
+      "description": "A model wearing a stylish blue denim jacket.",
+      "imageUrl": "https://picsum.photos/seed/product1/600/800",
+      "imageHint": "denim jacket"
+    },
+    {
+      "id": "product2",
+      "description": "A white t-shirt with a minimalist graphic print.",
+      "imageUrl": "https://picsum.photos/seed/product2/600/800",
+      "imageHint": "white t-shirt"
+    },
+    {
+      "id": "product3",
+      "description": "Comfortable and stylish black joggers.",
+      "imageUrl": "https://picsum.photos/seed/product3/600/800",
+      "imageHint": "black joggers"
+    },
+    {
+      "id": "product4",
+      "description": "A classic beige trench coat for all seasons.",
+      "imageUrl": "https://picsum.photos/seed/product4/600/800",
+      "imageHint": "trench coat"
+    },
+    {
+      "id": "insta1",
+      "description": "Instagram post showing a street style look.",
+      "imageUrl": "https://picsum.photos/seed/insta1/500/500",
+      "imageHint": "street style"
+    },
+    {
+      "id": "insta2",
+      "description": "Instagram post with a flat lay of an outfit.",
+      "imageUrl": "https://picsum.photos/seed/insta2/500/500",
+      "imageHint": "outfit flatlay"
+    },
+    {
+      "id": "insta3",
+      "description": "Instagram post featuring a new arrival.",
+      "imageUrl": "https://picsum.photos/seed/insta3/500/500",
+      "imageHint": "fashion model"
+    },
+    {
+      "id": "insta4",
+      "description": "Instagram post with a customer feature.",
+      "imageUrl": "https://picsum.photos/seed/insta4/500/500",
+      "imageHint": "happy customer"
+    },
+    {
+      "id": "insta5",
+      "description": "Behind the scenes at a Yoloo! photoshoot.",
+      "imageUrl": "https://picsum.photos/seed/insta5/500/500",
+      "imageHint": "photo shoot"
+    },
+    {
+      "id": "insta6",
+      "description": "A colorful summer collection preview.",
+      "imageUrl": "https://picsum.photos/seed/insta6/500/500",
+      "imageHint": "summer fashion"
+    }
+  ]
 }
