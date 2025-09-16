@@ -18,24 +18,31 @@ export function GallerySection() {
     const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
     return (
-        <section className="py-16 md:py-24 bg-background">
-            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-4">
-                {images.map(({ id, colSpan, rowSpan }) => {
-                    const image = getImageData(id);
-                    if (!image) return null;
-                    return (
-                        <div key={id} className={`${colSpan} ${rowSpan} relative rounded-2xl overflow-hidden group`}>
-                            <Image
-                                src={image.imageUrl}
-                                alt={image.description}
-                                fill
-                                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                data-ai-hint={image.imageHint}
-                            />
-                            <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
-                        </div>
-                    );
-                })}
+        <section className="py-16 md:py-24 bg-card/50 dark:bg-card">
+            <div className="container mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">Explore Our World</h2>
+                    <p className="text-muted-foreground mt-2">A glimpse into the style and essence of Yoloo!</p>
+                    <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-4">
+                    {images.map(({ id, colSpan, rowSpan }) => {
+                        const image = getImageData(id);
+                        if (!image) return null;
+                        return (
+                            <div key={id} className={`${colSpan} ${rowSpan} relative rounded-2xl overflow-hidden group`}>
+                                <Image
+                                    src={image.imageUrl}
+                                    alt={image.description}
+                                    fill
+                                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                    data-ai-hint={image.imageHint}
+                                />
+                                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );
