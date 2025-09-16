@@ -1,64 +1,82 @@
 {
   "placeholderImages": [
     {
-      "id": "product1",
-      "description": "A model wearing a stylish blue denim jacket.",
-      "imageUrl": "https://picsum.photos/seed/product1/600/800",
+      "id": "hero",
+      "description": "A stylish collection of fashion items including a handbag, sunglasses, and clothing in a shopping bag.",
+      "imageUrl": "https://picsum.photos/seed/hero/800/600",
+      "imageHint": "fashion flatlay"
+    },
+    {
+      "id": "gallery1",
+      "description": "Close-up of a papaya sliced open on a wooden board.",
+      "imageUrl": "https://picsum.photos/seed/gallery1/400/500",
+      "imageHint": "model posing"
+    },
+    {
+      "id": "gallery2",
+      "description": "A bottle of milk and some bread on a kitchen counter.",
+      "imageUrl": "https://picsum.photos/seed/gallery2/300/200",
       "imageHint": "denim jacket"
     },
     {
-      "id": "product2",
-      "description": "A white t-shirt with a minimalist graphic print.",
-      "imageUrl": "https://picsum.photos/seed/product2/600/800",
-      "imageHint": "white t-shirt"
+      "id": "gallery3",
+      "description": "A beauty product setup with creams and lotions.",
+      "imageUrl": "https://picsum.photos/seed/gallery3/300/200",
+      "imageHint": "accessories flatlay"
     },
     {
-      "id": "product3",
-      "description": "Comfortable and stylish black joggers.",
-      "imageUrl": "https://picsum.photos/seed/product3/600/800",
-      "imageHint": "black joggers"
+      "id": "gallery4",
+      "description": "Fresh oranges, one of which is sliced.",
+      "imageUrl": "https://picsum.photos/seed/gallery4/600/400",
+      "imageHint": "bright sweater"
     },
     {
-      "id": "product4",
-      "description": "A classic beige trench coat for all seasons.",
-      "imageUrl": "https://picsum.photos/seed/product4/600/800",
-      "imageHint": "trench coat"
+      "id": "gallery5",
+      "description": "A salt or pepper grinder next to some spices.",
+      "imageUrl": "https://picsum.photos/seed/gallery5/250/400",
+      "imageHint": "leather boots"
     },
     {
-      "id": "insta1",
-      "description": "Instagram post showing a street style look.",
-      "imageUrl": "https://picsum.photos/seed/insta1/500/500",
-      "imageHint": "street style"
+      "id": "gallery6",
+      "description": "Packaged coffee beans.",
+      "imageUrl": "https://picsum.photos/seed/gallery6/250/400",
+      "imageHint": "graphic tee"
     },
     {
-      "id": "insta2",
-      "description": "Instagram post with a flat lay of an outfit.",
-      "imageUrl": "https://picsum.photos/seed/insta2/500/500",
-      "imageHint": "outfit flatlay"
+      "id": "gallery7",
+      "description": "A bowl of cereal with milk.",
+      "imageUrl": "https://picsum.photos/seed/gallery7/250/400",
+      "imageHint": "summer dress"
     },
     {
-      "id": "insta3",
-      "description": "Instagram post featuring a new arrival.",
-      "imageUrl": "https://picsum.photos/seed/insta3/500/500",
-      "imageHint": "fashion model"
+      "id": "gallery8",
+      "description": "Sliced watermelon on a plate.",
+      "imageUrl": "https://picsum.photos/seed/gallery8/500/400",
+      "imageHint": "colorful sneakers"
     },
     {
-      "id": "insta4",
-      "description": "Instagram post with a customer feature.",
-      "imageUrl": "https://picsum.photos/seed/insta4/500/500",
-      "imageHint": "happy customer"
+      "id": "gallery9",
+      "description": "Pomegranate seeds in a bowl.",
+      "imageUrl": "https://picsum.photos/seed/gallery9/300/200",
+      "imageHint": "silk scarf"
     },
     {
-      "id": "insta5",
-      "description": "Behind the scenes at a Yoloo! photoshoot.",
-      "imageUrl": "https://picsum.photos/seed/insta5/500/500",
-      "imageHint": "photo shoot"
+      "id": "gallery10",
+      "description": "A glass of juice or smoothie.",
+      "imageUrl": "https://picsum.photos/seed/gallery10/300/200",
+      "imageHint": "sunglasses detail"
     },
     {
-      "id": "insta6",
-      "description": "A colorful summer collection preview.",
-      "imageUrl": "https://picsum.photos/seed/insta6/500/500",
-      "imageHint": "summer fashion"
+        "id": "app-cta-phone",
+        "description": "A smartphone displaying a fashion app interface.",
+        "imageUrl": "https://picsum.photos/seed/appcta/350/700",
+        "imageHint": "fashion app"
+    },
+    {
+        "id": "story",
+        "description": "A collage of fashion-related images, including fabrics, sketches, and models.",
+        "imageUrl": "https://picsum.photos/seed/story/1200/400",
+        "imageHint": "fashion collage"
     }
   ]
 }

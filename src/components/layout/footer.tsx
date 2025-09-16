@@ -3,23 +3,17 @@
 import { Instagram, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { LogoIcon } from './logo';
+import { Logo } from './logo';
 
 const PlayStoreIcon = (props: React.ComponentProps<'svg'>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M2.33139 2.36873C2.12839 2.58073 2.00018 2.86873 2.00018 3.16873V20.8317C2.00018 21.1317 2.12839 21.4197 2.33139 21.6317L12.0002 12.0002L2.33139 2.36873Z" />
-        <path d="M12.0002 12.0002L15.0932 15.0932L21.4112 11.0252C21.7842 10.7982 22.0002 10.3582 22.0002 9.87823V9.58923C22.0002 9.17123 21.8462 8.77523 21.5792 8.48923L12.0002 12.0002Z" />
-        <path d="M12.0002 12.0002L21.5782 15.5112C21.8452 15.2252 22.0002 14.8292 22.0002 14.4112V14.1222C22.0002 13.6422 21.7842 13.2022 21.4112 12.9752L15.0932 8.90723L12.0002 12.0002Z" />
-        <path d="M2.33139 21.6317C2.54439 21.8617 2.83139 22.0002 3.13139 22.0002H3.41439C3.80539 22.0002 4.18039 21.8797 4.48439 21.6687L12.0002 12.0002L2.33139 21.6317Z" />
-        <path d="M12.0002 12.0002L4.48439 2.33173C4.18039 2.12073 3.80539 2.00024 3.41439 2.00024H3.13139C2.83139 2.00024 2.54439 2.13873 2.33139 2.36873L12.0002 12.0002Z" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M1.015 1.742c-.22.36-.285.795-.17 1.21l.015.05L4.5 12 .86 19.048c-.11.415-.05.85.17 1.21l.06.095 9.203-5.322-9.28-9.289zM5.494 12l-3.2-6.953L12.443 12 2.29 18.953 5.494 12zm7.492 0l-3.2 6.953L19.935 12 9.782 5.047 12.986 12zM22.985 8.742c.22-.36.285-.795.17-1.21l-.015-.05-3.64-6.315c-.22-.36-.585-.585-.975-.585H12l3.2 6.953L22.985 8.742zM12 20.718l3.2-6.953L22.985 15.26c.11.415.05.85-.17 1.21l-.06.095-8.122 4.703c-.36.22-.795.285-1.21.17l-.05-.015-3.64-6.315L12 20.718z"/>
     </svg>
 );
 
 const AppStoreIcon = (props: React.ComponentProps<'svg'>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M10.15 4.88a2.5 2.5 0 0 0-3.14 2.12 2.49 2.49 0 0 0 2.24 2.88 2.5 2.5 0 0 0 3.14-2.12 2.5 2.5 0 0 0-2.24-2.88Z" />
-        <path d="M16.34 11.23a2.5 2.5 0 0 0-3.14 2.12 2.5 2.5 0 0 0 2.24 2.88 2.5 2.5 0 0 0 3.14-2.12 2.5 2.5 0 0 0-2.24-2.88Z" />
-        <path d="M4 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8-8-3.58-8-8Z" />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" {...props}>
+        <path d="M16.293 2.293a1 1 0 0 1 1.414 1.414l-11 11a1 1 0 0 1-1.414-1.414l11-11zM11 1.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM15 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM15 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM18 7.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM3 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM15 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM18 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM21 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM3 13.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6 13.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 13.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 13.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM15 13.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM18 13.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM21 13.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM3 16.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6 16.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 16.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 16.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM15 16.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM18 16.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM21 16.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM6 19.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 19.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 19.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM15 19.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM9 22.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 22.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
     </svg>
 );
 
@@ -32,12 +26,12 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-secondary/50 dark:bg-card">
-      <div className="container py-8">
+    <footer className="bg-card w-full">
+      <div className="container py-8 mx-auto">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row md:items-start">
           <div className="text-center md:text-left">
              <div className="flex justify-center md:justify-start">
-                <LogoIcon className="h-8" />
+                <Logo className="h-12" />
              </div>
             <p className="text-sm text-muted-foreground mt-2">Fashion Made Easy</p>
             <div className="flex items-center space-x-4 mt-4 justify-center md:justify-start">
@@ -53,7 +47,7 @@ export function Footer() {
             <h3 className="font-semibold">Company</h3>
             <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground md:items-start">
                 <Link href="/about" className="hover:text-primary">About Us</Link>
-                <Link href="#contact" className="hover:text-primary">Contact</Link>
+                <Link href="/#contact" className="hover:text-primary">Contact</Link>
             </div>
           </div>
            <div className="flex flex-col items-center gap-4 md:items-start">
@@ -67,12 +61,12 @@ export function Footer() {
           <div className="flex flex-col items-center gap-4 md:items-start">
             <h3 className="font-semibold">Get our app</h3>
             <div className="flex items-center space-x-3">
-                <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                  <PlayStoreIcon className="h-6 w-6" />
-                </Link>
-                <Link href="/" className="text-muted-foreground hover:text-primary" title="Will be updated soon">
-                  <AppStoreIcon className="h-6 w-6" />
-                </Link>
+                <a href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="inline-block">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-12"/>
+                </a>
+                <a href="/" target="_blank" rel="noopener noreferrer" className="inline-block" title="Will be updated soon">
+                    <img src="/images/app-store-badge.svg" alt="Download on the App Store" className="h-12"/>
+                </a>
             </div>
           </div>
         </div>

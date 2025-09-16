@@ -1,33 +1,42 @@
 'use client';
 
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { Logo } from '@/components/layout/logo';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function HeroSection() {
-
-  const handleScrollToProducts = () => {
-    const productsSection = document.querySelector('#products');
-    if (productsSection) {
-      productsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+    const heroImage = PlaceHolderImages.find(img => img.id === 'hero');
 
   return (
-    <section className="relative w-full py-24 md:py-32 lg:py-48 bg-background overflow-hidden">
-      <div className="absolute inset-0 bg-accent/10 dark:bg-accent/5 -z-10"></div>
-      <div className="container mx-auto text-center">
-        <div className="flex justify-center items-center mb-4 animate-fade-in-bounce">
-          <Logo className="w-auto h-24 md:h-32" />
+    <section className="w-full bg-card py-12 md:py-20">
+      <div className="container mx-auto">
+        <div className="bg-white dark:bg-card-foreground/5 rounded-2xl shadow-sm p-8 md:p-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="text-center md:text-left">
+                    <p className="text-primary font-semibold mb-2">WELCOME TO YOLOO!</p>
+                    <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+                        India's only <span className="text-primary underline">quality-first</span> quick fashion app.
+                    </h1>
+                    <p className="text-muted-foreground mb-8 text-lg">
+                        Styles that are tested, trusted, and transparently sourced.
+                    </p>
+                    <Button size="lg">Download the app</Button>
+                </div>
+                <div className="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                    {heroImage && (
+                        <Image
+                            src={heroImage.imageUrl}
+                            alt={heroImage.description}
+                            fill
+                            className="object-cover"
+                            data-ai-hint={heroImage.imageHint}
+                        />
+                    )}
+                </div>
+            </div>
         </div>
-        <div 
-          className="mt-8 animate-slide-in-bottom"
-          style={{ animationDelay: `500ms` }}
-        >
-          <Button size="lg" onClick={handleScrollToProducts}>
-            Shop The Collection
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+        <div className="bg-primary/90 text-primary-foreground text-center p-3 mt-8 rounded-lg text-sm">
+            Now Serving in Whitefield | Sarjapur | HSR Layout • Coming Soon in Koramangala | JP Nagar | Domlur
         </div>
       </div>
     </section>
