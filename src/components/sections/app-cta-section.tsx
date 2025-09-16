@@ -19,7 +19,7 @@ export function AppCtaSection() {
                         <div className="flex items-center gap-4 justify-center md:justify-start">
                              <Image src="https://picsum.photos/seed/qr/100/100" alt="QR Code" width={100} height={100} className="rounded-lg" />
                              <div>
-                                <div className="flex gap-2">
+                                <div className="flex items-center gap-2">
                                      <a href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="inline-block">
                                         <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-12"/>
                                     </a>
