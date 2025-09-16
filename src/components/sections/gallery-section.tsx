@@ -25,7 +25,7 @@ export function GallerySection() {
                     <p className="text-muted-foreground mt-2">A glimpse into the style and essence of Yoloo!</p>
                     <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-fr gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[200px] gap-4">
                     {images.map(({ id, colSpan, rowSpan }) => {
                         const image = getImageData(id);
                         if (!image) return null;
