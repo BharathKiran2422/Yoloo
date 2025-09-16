@@ -1,13 +1,12 @@
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Button } from "@/components/ui/button";
 
 export function AppCtaSection() {
     const phoneImage = PlaceHolderImages.find(img => img.id === 'app-cta-phone');
 
     return (
         <section className="py-16 md:py-24">
-            <div className="bg-orange-50 dark:bg-orange-900/20 rounded-2xl p-8 md:p-12">
+            <div className="bg-card border rounded-2xl p-8 md:p-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="text-center md:text-left">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground">4,000+</h2>
@@ -15,7 +14,7 @@ export function AppCtaSection() {
                             products across fresh styles, staples, and trends - each tested before it earns a place on the app.
                         </p>
                         <p className="text-lg text-foreground mb-2">Get high-quality fashion delivered at your doorstep in</p>
-                        <p className="text-5xl md:text-6xl font-bold text-primary mb-6">20 minutes.</p>
+                        <p className="text-5xl md:text-6xl font-bold text-primary mb-6">90 minutes.</p>
                         
                         <div className="flex items-center gap-4 justify-center md:justify-start">
                              <Image src="https://picsum.photos/seed/qr/100/100" alt="QR Code" width={100} height={100} className="rounded-lg" />
@@ -33,7 +32,7 @@ export function AppCtaSection() {
                         </div>
                     </div>
                     <div className="flex justify-center">
-                         <div className="relative w-[300px] h-[600px] bg-neutral-800 rounded-[40px] border-[14px] border-neutral-800 shadow-2xl">
+                         <div className="relative w-[300px] h-[600px] bg-neutral-800 rounded-[40px] border-[14px] border-neutral-900 shadow-2xl">
                              {phoneImage && (
                                 <Image
                                     src={phoneImage.imageUrl}

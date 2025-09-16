@@ -2,81 +2,93 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "A stylish collection of fashion items including a handbag, sunglasses, and clothing in a shopping bag.",
+      "description": "A stylish woman in a blue dress posing in a modern setting.",
       "imageUrl": "https://picsum.photos/seed/hero/800/600",
-      "imageHint": "fashion flatlay"
+      "imageHint": "fashion model"
     },
     {
       "id": "gallery1",
-      "description": "Close-up of a papaya sliced open on a wooden board.",
+      "description": "A person wearing a stylish outfit with a focus on details.",
       "imageUrl": "https://picsum.photos/seed/gallery1/400/500",
       "imageHint": "model posing"
     },
     {
       "id": "gallery2",
-      "description": "A bottle of milk and some bread on a kitchen counter.",
+      "description": "Close-up of a denim jacket with intricate stitching.",
       "imageUrl": "https://picsum.photos/seed/gallery2/300/200",
       "imageHint": "denim jacket"
     },
     {
       "id": "gallery3",
-      "description": "A beauty product setup with creams and lotions.",
+      "description": "A flatlay of fashion accessories including sunglasses and a watch.",
       "imageUrl": "https://picsum.photos/seed/gallery3/300/200",
       "imageHint": "accessories flatlay"
     },
     {
       "id": "gallery4",
-      "description": "Fresh oranges, one of which is sliced.",
+      "description": "A model wearing a bright, colorful sweater.",
       "imageUrl": "https://picsum.photos/seed/gallery4/600/400",
       "imageHint": "bright sweater"
     },
     {
       "id": "gallery5",
-      "description": "A salt or pepper grinder next to some spices.",
+      "description": "A pair of stylish leather boots on a textured surface.",
       "imageUrl": "https://picsum.photos/seed/gallery5/250/400",
       "imageHint": "leather boots"
     },
     {
       "id": "gallery6",
-      "description": "Packaged coffee beans.",
+      "description": "A person wearing a cool graphic t-shirt.",
       "imageUrl": "https://picsum.photos/seed/gallery6/250/400",
       "imageHint": "graphic tee"
     },
     {
       "id": "gallery7",
-      "description": "A bowl of cereal with milk.",
+      "description": "A woman in a flowing summer dress in a sunny field.",
       "imageUrl": "https://picsum.photos/seed/gallery7/250/400",
       "imageHint": "summer dress"
     },
     {
       "id": "gallery8",
-      "description": "Sliced watermelon on a plate.",
+      "description": "A pair of colorful sneakers on a city street.",
       "imageUrl": "https://picsum.photos/seed/gallery8/500/400",
       "imageHint": "colorful sneakers"
     },
     {
       "id": "gallery9",
-      "description": "Pomegranate seeds in a bowl.",
+      "description": "Close-up of a luxurious silk scarf with a vibrant pattern.",
       "imageUrl": "https://picsum.photos/seed/gallery9/300/200",
       "imageHint": "silk scarf"
     },
     {
       "id": "gallery10",
-      "description": "A glass of juice or smoothie.",
+      "description": "Stylish sunglasses reflecting a beach scene.",
       "imageUrl": "https://picsum.photos/seed/gallery10/300/200",
       "imageHint": "sunglasses detail"
     },
     {
-        "id": "app-cta-phone",
-        "description": "A smartphone displaying a fashion app interface.",
-        "imageUrl": "https://picsum.photos/seed/appcta/350/700",
-        "imageHint": "fashion app"
+      "id": "app-cta-phone",
+      "description": "A smartphone displaying the Yoloo! fashion app interface.",
+      "imageUrl": "https://picsum.photos/seed/appcta/350/700",
+      "imageHint": "fashion app"
     },
     {
-        "id": "story",
-        "description": "A collage of fashion-related images, including fabrics, sketches, and models.",
-        "imageUrl": "https://picsum.photos/seed/story/1200/400",
-        "imageHint": "fashion collage"
+      "id": "story",
+      "description": "A collage of fashion design elements, including fabric swatches, sketches, and runway photos.",
+      "imageUrl": "https://picsum.photos/seed/story/1200/400",
+      "imageHint": "fashion collage"
+    },
+    {
+        "id": "contact-image",
+        "description": "A person holding a phone with the Yoloo app open, with shopping bags in the background.",
+        "imageUrl": "https://picsum.photos/seed/contact/600/800",
+        "imageHint": "fashion shopping"
+    },
+    {
+      "id": "about-image",
+      "description": "The interior of a modern, stylish fashion boutique.",
+      "imageUrl": "https://picsum.photos/seed/about/600/800",
+      "imageHint": "fashion boutique"
     }
   ]
 }

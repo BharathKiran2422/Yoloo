@@ -7,12 +7,12 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-    const aboutImage = PlaceHolderImages.find(img => img.id === 'product2');
+    const aboutImage = PlaceHolderImages.find(img => img.id === 'about-image');
 
     return (
         <div className="bg-background">
             <div className="container mx-auto px-4 py-16">
-                <h1 className="font-headline text-4xl font-bold mb-8 text-center">About Yoloo!</h1>
+                <h1 className="font-headline text-4xl font-bold mb-8 text-center text-primary">About Yoloo!</h1>
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="md:w-1/2">
                         {aboutImage && (

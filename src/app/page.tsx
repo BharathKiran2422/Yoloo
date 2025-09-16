@@ -6,14 +6,14 @@ import { StorySection } from '@/components/sections/story-section';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center overflow-x-hidden">
+    <>
       <HeroSection />
-      <div className="w-full max-w-6xl mx-auto px-4">
+      <div className="container mx-auto px-4">
         <BeliefsSection />
         <GallerySection />
         <AppCtaSection />
       </div>
       <StorySection />
-    </div>
+    </>
   );
 }
