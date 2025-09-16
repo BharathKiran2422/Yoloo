@@ -1,3 +1,4 @@
+
 {
   "placeholderImages": [
     {
@@ -69,7 +70,7 @@
     {
       "id": "app-cta-phone",
       "description": "A smartphone displaying the Yoloo! fashion app, showcasing a collection of jackets.",
-      "imageUrl": "https://picsum.photos/seed/appcta/350/700",
+      "imageUrl": "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzaG9wcGluZyUyMGFwcHxlbnwwfHx8fDE3NTgwNTc1Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "fashion app jackets"
     },
     {
