@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -20,7 +21,9 @@ export function HeroSection() {
                     <p className="text-muted-foreground mb-8 text-lg">
                         Styles that are tested, trusted, and transparently sourced.
                     </p>
-                    <Button size="lg">Download the app</Button>
+                    <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                        <Button size="lg">Download the app</Button>
+                    </Link>
                 </div>
                 <div className="relative h-64 md:h-96 rounded-xl overflow-hidden">
                     {heroImage && (
