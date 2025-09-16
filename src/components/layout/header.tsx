@@ -6,6 +6,7 @@ import { Menu, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { LogoIcon } from './logo';
 
 export function Header() {
   const navLinks = [
@@ -27,7 +28,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold font-headline text-xl">Yoloo!</span>
+            <LogoIcon className="h-8" />
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navLinks.map(({ href, label }) => (
@@ -55,7 +56,7 @@ export function Header() {
               <SheetContent side="left">
                 <div className="flex flex-col space-y-4 p-4">
                   <Link href="/" className="flex items-center space-x-2">
-                    <span className="font-bold font-headline text-lg">Yoloo!</span>
+                    <LogoIcon className="h-8" />
                   </Link>
                   <nav className="flex flex-col space-y-2">
                     {navLinks.map(({ href, label }) => (
@@ -75,7 +76,7 @@ export function Header() {
           </div>
           
           <Link href="/" className="flex items-center space-x-2 md:hidden">
-            <span className="font-bold font-headline text-xl">Yoloo!</span>
+            <LogoIcon className="h-8" />
           </Link>
 
           <div className="flex items-center">

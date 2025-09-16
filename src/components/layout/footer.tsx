@@ -3,6 +3,7 @@
 import { Instagram, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { LogoIcon } from './logo';
 
 const PlayStoreIcon = (props: React.ComponentProps<'svg'>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -35,8 +36,10 @@ export function Footer() {
       <div className="container py-8">
         <div className="flex flex-col items-center justify-between gap-8 md:flex-row md:items-start">
           <div className="text-center md:text-left">
-            <p className="font-headline text-lg font-semibold">Yoloo!</p>
-            <p className="text-sm text-muted-foreground">Fashion Made Easy</p>
+             <div className="flex justify-center md:justify-start">
+                <LogoIcon className="h-8" />
+             </div>
+            <p className="text-sm text-muted-foreground mt-2">Fashion Made Easy</p>
             <div className="flex items-center space-x-4 mt-4 justify-center md:justify-start">
                 <Link href="https://www.linkedin.com/company/yoloo-lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                   <Linkedin className="h-5 w-5" />
@@ -67,7 +70,7 @@ export function Footer() {
                 <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                   <PlayStoreIcon className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary" title="Coming soon">
+                <Link href="#" className="text-muted-foreground hover:text-primary" title="Will be updated soon">
                   <AppStoreIcon className="h-6 w-6" />
                 </Link>
             </div>
