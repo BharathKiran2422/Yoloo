@@ -111,7 +111,7 @@
     {
       "id": "product4",
       "description": "A classic beige trench coat.",
-      "imageUrl": "https://picsum.photos/seed/product4/500/600",
+      "imageUrl": "https://images.unsplash.com/photo-1544246108-14b45872b02d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8dHJlbmNofGVufDB8fHx8MTc1ODA1Njc5MXww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "trench coat"
     },
     { "id": "men-1", "description": "A man in a casual shirt.", "imageUrl": "https://picsum.photos/seed/men1/400/500", "imageHint": "casual shirt" },
@@ -134,3 +134,5 @@
     { "id": "sneakers-6", "description": "Formal leather shoes for men.", "imageUrl": "https://picsum.photos/seed/sneakers6/400/300", "imageHint": "leather shoes" }
   ]
 }
+
+    
