@@ -40,11 +40,11 @@ export function Logo({ className }: { className?: string }) {
         <text
           x="100"
           y="72"
-          font-family="sans-serif"
-          font-size="8"
-          font-weight="bold"
-          letter-spacing="0.1em"
-          text-anchor="middle"
+          fontFamily="sans-serif"
+          fontSize="8"
+          fontWeight="bold"
+          letterSpacing="0.1em"
+          textAnchor="middle"
         >
           FASHION MADE EASY
         </text>
