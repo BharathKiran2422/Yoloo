@@ -4,7 +4,7 @@
     {
       "id": "hero",
       "description": "A stylish person in a midnight blue jacket in a chic urban setting.",
-      "imageUrl": "https://picsum.photos/seed/hero/1200/800",
+      "imageUrl": "https://images.unsplash.com/photo-1608748010899-18f300247112?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8ZmFzaGlvbnxlbnwwfHx8fDE3NTgwNTgzMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "fashion editorial"
     },
     {
@@ -70,7 +70,7 @@
     {
       "id": "app-cta-phone",
       "description": "A smartphone displaying the Yoloo! fashion app, showcasing a collection of jackets.",
-      "imageUrl": "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzaG9wcGluZyUyMGFwcHxlbnwwfHx8fDE3NTgwNTc1Njh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1544441893-675973e31985?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8ZmFzaGlvbiUyMHdlYXJ8ZW58MHx8fHwxNzU4MDU3NzcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "fashion app jackets"
     },
     {
@@ -135,5 +135,3 @@
     { "id": "sneakers-6", "description": "Formal leather shoes for men.", "imageUrl": "https://picsum.photos/seed/sneakers6/400/300", "imageHint": "leather shoes" }
   ]
 }
-
-    
