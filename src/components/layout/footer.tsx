@@ -53,7 +53,7 @@ export function Footer() {
             <h3 className="font-semibold">Company</h3>
             <div className="flex flex-col items-center gap-2 text-sm text-muted-foreground md:items-start">
                 <Link href="/about" className="hover:text-primary">About Us</Link>
-                <Link href="/contact" className="hover:text-primary">Contact</Link>
+                <Link href="#contact" className="hover:text-primary">Contact</Link>
             </div>
           </div>
            <div className="flex flex-col items-center gap-4 md:items-start">
@@ -70,7 +70,7 @@ export function Footer() {
                 <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                   <PlayStoreIcon className="h-6 w-6" />
                 </Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary" title="Will be updated soon">
+                <Link href="/" className="text-muted-foreground hover:text-primary" title="Will be updated soon">
                   <AppStoreIcon className="h-6 w-6" />
                 </Link>
             </div>
