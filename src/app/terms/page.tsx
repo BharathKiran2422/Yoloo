@@ -1,16 +1,25 @@
+'use client';
+
 import { type Metadata } from 'next';
+import { useState, useEffect } from 'react';
 
 export const metadata: Metadata = {
     title: 'Terms and Conditions - Yoloo!',
 };
 
 export default function TermsPage() {
+    const [date, setDate] = useState('');
+
+    useEffect(() => {
+        setDate(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    }, []);
+
     return (
         <div className="bg-background">
             <div className="container mx-auto px-4 py-16">
                 <h1 className="font-headline text-4xl font-bold mb-8 text-center">YOLOO - Terms and Conditions</h1>
                 <div className="prose prose-lg mx-auto max-w-4xl text-foreground dark:prose-invert">
-                    <p className="text-muted-foreground text-center">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                    <p className="text-muted-foreground text-center">Last updated: {date}</p>
 
                     <p>Welcome to YOLOO (“we”, “our”, “us”), your fastest route to standout fashion. These Terms and Conditions (“Terms”) govern your access and use of the YOLOO mobile application, website, and services (collectively, the “Platform”). By accessing or using YOLOO, you agree to be bound by these Terms. If you do not agree, please do not use the Platform.</p>
 
