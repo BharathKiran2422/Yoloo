@@ -10,19 +10,19 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 238 64% 27%; /* Midnight Blue */
+    --primary: 262 84% 58%; /* Vibrant Purple */
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 200 89% 80%; /* Soft Blue */
+    --accent: 262 84% 90%; /* Soft Purple */
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 238 64% 27%;
+    --ring: 262 84% 58%;
     --radius: 0.5rem;
 
     --grid-color: hsl(240 5.9% 90%);
@@ -31,29 +31,29 @@
   }
 
   .dark {
-    --background: 238 28% 10%; /* Darker Blue */
+    --background: 240 10% 3.9%; /* Dark Slate */
     --foreground: 0 0% 98%;
-    --card: 238 28% 12%;
+    --card: 240 4% 10%;
     --card-foreground: 0 0% 98%;
-    --popover: 238 28% 10%;
+    --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 238 64% 60%; /* Lighter Midnight Blue */
-    --primary-foreground: 238 64% 15%;
+    --primary: 262 84% 68%; /* Lighter Vibrant Purple */
+    --primary-foreground: 262 84% 15%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 238 64% 27%; /* Midnight Blue */
+    --accent: 262 84% 20%; /* Dark Purple */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 238 64% 60%;
+    --ring: 262 84% 68%;
 
     --grid-color: hsl(240 3.7% 15.9% / 0.9);
-    --gradient-color-1: hsl(238 64% 27% / 0.3);
-    --gradient-color-2: hsl(238 28% 10% / 0.3);
+    --gradient-color-1: hsl(262 84% 20% / 0.3);
+    --gradient-color-2: hsl(240 10% 3.9% / 0.3);
   }
 }
 
