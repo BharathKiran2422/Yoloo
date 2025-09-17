@@ -3,6 +3,8 @@
 import { z } from 'zod';
 import { aiSizeRecommendation } from '@/ai/flows/ai-size-recommendation';
 import type { AiSizeRecommendationInput } from '@/ai/flows/ai-size-recommendation';
+import { dispatch } from '@/lib/events';
+
 
 export async function handleSizeRecommendation(input: AiSizeRecommendationInput) {
   const result = await aiSizeRecommendation(input);
@@ -23,6 +25,9 @@ export async function handleContactFormSubmission(values: z.infer<typeof contact
     console.log(`- Name: ${values.name}`);
     console.log(`- Email: ${values.email}`);
     console.log(`- Message: ${values.message}`);
+
+    // Dispatch event for real-time update on admin page
+    dispatch('newMessage', values);
     
     // Simulate network delay
     await new Promise(resolve => setTimeout(resolve, 1000));
