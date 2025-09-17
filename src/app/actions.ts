@@ -10,27 +10,26 @@ export async function handleSizeRecommendation(input: AiSizeRecommendationInput)
 }
 
 const contactFormSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  message: z.string(),
+  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  email: z.string().email({ message: 'Please enter a valid email.' }),
+  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
 export async function handleContactFormSubmission(values: z.infer<typeof contactFormSchema>) {
   try {
-    // Here you would typically send an email, e.g., using a service like Resend or Nodemailer.
+    // Here you would typically send an email or save to a database.
     // For this example, we'll just log it to the console and simulate a success response.
     console.log('New contact form submission:');
     console.log(`- Name: ${values.name}`);
     console.log(`- Email: ${values.email}`);
     console.log(`- Message: ${values.message}`);
-    console.log('Simulating email to hello@brandsyoloo.co.in');
     
     // Simulate network delay
     await new Promise(resolve => setTimeout(resolve, 1000));
 
-    return { success: true };
+    return { success: true, message: 'Message Sent!' };
   } catch (error) {
     console.error('Contact form submission error:', error);
-    return { success: false };
+    return { success: false, message: 'Something went wrong.' };
   }
 }
