@@ -33,7 +33,7 @@ export function AppCtaSection() {
                     </div>
                     <div className="flex justify-center mt-8 md:mt-0">
                          <Image
-                            src="https://storage.googleapis.com/aai-web-samples/app-download-phones.png"
+                            src="/app_download.png"
                             alt="Yoloo App on two iPhones"
                             width={500}
                             height={500}

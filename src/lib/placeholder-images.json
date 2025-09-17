@@ -80,12 +80,6 @@
       "imageHint": "leather handbag"
     },
     {
-      "id": "app-cta-phone",
-      "description": "A smartphone displaying the Yoloo! fashion app, showcasing a collection of jackets.",
-      "imageUrl": "https://images.unsplash.com/photo-1544441893-675973e31985?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8ZmFzaGlvbiUyMHdlYXJ8ZW58MHx8fHwxNzU4MDU3NzcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "fashion app jackets"
-    },
-    {
       "id": "story",
       "description": "A moodboard showing fashion sketches, fabric swatches, and runway photos.",
       "imageUrl": "https://picsum.photos/seed/story/1200/400",
