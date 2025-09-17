@@ -7,6 +7,7 @@ import { FeaturedProducts } from '@/components/sections/featured-products';
 import { ShopByCategory } from '@/components/sections/shop-by-category';
 import { ProductCarousel } from '@/components/product-carousel';
 import { trendingProducts, brandSpotlightProducts } from '@/lib/products';
+import { InstagramSection } from '@/components/sections/instagram-section';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <ProductCarousel title="Brand Spotlight" products={brandSpotlightProducts} />
         <BeliefsSection />
         <GallerySection />
+        <InstagramSection />
         <AppCtaSection />
       </div>
       <StorySection />
