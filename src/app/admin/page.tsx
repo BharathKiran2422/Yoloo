@@ -1,68 +1,55 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useTransition } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { AdminLogin } from '@/components/sections/admin-login';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Trash2, MailOpen, Mail, LogOut } from 'lucide-react';
+import { Trash2, MailOpen, Mail, LogOut, RefreshCw } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { on } from '@/lib/events';
-
-type Message = {
-  id: number;
-  name: string;
-  email: string;
-  message: string;
-  status: 'read' | 'unread';
-};
-
-// This is a placeholder for messages. In a real application, you would fetch these from a database.
-const initialMessages: Message[] = [
-  { id: 1, name: 'Jane Doe', email: 'jane@example.com', message: 'I love your new collection! When will the winter jackets be back in stock?', status: 'unread' },
-  { id: 2, name: 'John Smith', email: 'john@example.com', message: 'I have a question about my recent order #12345.', status: 'unread' },
-  { id: 3, name: 'Alice Johnson', email: 'alice@example.com', message: 'Just wanted to say hi! Your website is beautiful.', status: 'read' },
-];
+import { getMessages, toggleMessageStatus, deleteMessage as deleteMessageAction } from '@/lib/message-store';
+import type { Message } from '@/lib/message-store';
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [messages, setMessages] = useState<Message[]>(initialMessages);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [isPending, startTransition] = useTransition();
   const { toast } = useToast();
 
+  const loadMessages = () => {
+    startTransition(async () => {
+      const fetchedMessages = await getMessages();
+      setMessages(fetchedMessages);
+    });
+  };
+
   useEffect(() => {
-    const handleNewMessage = (newMessage: Omit<Message, 'id' | 'status'>) => {
-        setMessages(prevMessages => [
-            { 
-                ...newMessage, 
-                id: prevMessages.length > 0 ? Math.max(...prevMessages.map(m => m.id)) + 1 : 1, 
-                status: 'unread' 
-            },
-            ...prevMessages
-        ]);
-        toast({
-            title: "New Message Received!",
-            description: `From: ${newMessage.name}`,
-        });
-    };
-
-    on('newMessage', handleNewMessage);
-
-    return () => {
-        // In a real app you might need a way to turn this off, but for this demo it's fine.
-    };
-  }, [toast]);
+    if (isAuthenticated) {
+      loadMessages();
+    }
+  }, [isAuthenticated]);
 
   if (!isAuthenticated) {
     return <AdminLogin onLoginSuccess={() => setIsAuthenticated(true)} />;
   }
 
-  const toggleStatus = (id: number) => {
-    setMessages(messages.map(msg => msg.id === id ? { ...msg, status: msg.status === 'read' ? 'unread' : 'read' } : msg));
+  const handleToggleStatus = (id: number) => {
+    startTransition(async () => {
+      await toggleMessageStatus(id);
+      loadMessages();
+    });
   };
 
-  const deleteMessage = (id: number) => {
-    setMessages(messages.filter(msg => msg.id !== id));
+  const handleDeleteMessage = (id: number) => {
+    startTransition(async () => {
+      await deleteMessageAction(id);
+      loadMessages();
+       toast({
+        title: "Message Deleted",
+        description: "The message has been successfully deleted.",
+      });
+    });
   };
 
   const filteredMessages = (filter: 'all' | 'read' | 'unread') => {
@@ -82,11 +69,11 @@ export default function AdminPage() {
           <TableCell>{msg.email}</TableCell>
           <TableCell>{msg.message}</TableCell>
           <TableCell className="text-right space-x-2">
-            <Button variant="ghost" size="icon" onClick={() => toggleStatus(msg.id)}>
+            <Button variant="ghost" size="icon" onClick={() => handleToggleStatus(msg.id)}>
               {msg.status === 'read' ? <MailOpen className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
                <span className="sr-only">Mark as {msg.status === 'read' ? 'Unread' : 'Read'}</span>
             </Button>
-            <Button variant="ghost" size="icon" onClick={() => deleteMessage(msg.id)}>
+            <Button variant="ghost" size="icon" onClick={() => handleDeleteMessage(msg.id)}>
               <Trash2 className="h-4 w-4 text-destructive" />
               <span className="sr-only">Delete</span>
             </Button>
@@ -108,17 +95,23 @@ export default function AdminPage() {
                     <CardTitle>Contact Messages</CardTitle>
                     <CardDescription>Messages submitted through the contact form.</CardDescription>
                 </div>
-                <Button variant="outline" onClick={handleLogout}>
-                    <LogOut className="mr-2 h-4 w-4" />
-                    Logout
-                </Button>
+                 <div className="flex items-center gap-2">
+                    <Button variant="outline" size="icon" onClick={loadMessages} disabled={isPending}>
+                        <RefreshCw className={`h-4 w-4 ${isPending ? 'animate-spin' : ''}`} />
+                        <span className="sr-only">Refresh Messages</span>
+                    </Button>
+                    <Button variant="outline" onClick={handleLogout}>
+                        <LogOut className="mr-2 h-4 w-4" />
+                        Logout
+                    </Button>
+                 </div>
             </CardHeader>
             <CardContent>
                 <Tabs defaultValue="all">
                     <TabsList>
-                        <TabsTrigger value="all">All</TabsTrigger>
+                        <TabsTrigger value="all">All ({messages.length})</TabsTrigger>
                         <TabsTrigger value="unread">Unread ({messages.filter(m => m.status === 'unread').length})</TabsTrigger>
-                        <TabsTrigger value="read">Read</TabsTrigger>
+                        <TabsTrigger value="read">Read ({messages.filter(m => m.status === 'read').length})</TabsTrigger>
                     </TabsList>
                     <div className="mt-4">
                         <TabsContent value="all">

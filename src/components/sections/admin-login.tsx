@@ -14,7 +14,7 @@ type AdminLoginProps = {
 
 // IMPORTANT: This is a temporary, insecure password.
 // In a real application, move this to an environment variable.
-const ADMIN_PASSWORD = 'admin';
+const ADMIN_PASSWORD = 'Y0l00-Sup3r-S3cr3t';
 
 export function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
   const [password, setPassword] = useState('');

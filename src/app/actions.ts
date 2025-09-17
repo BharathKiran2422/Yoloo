@@ -3,8 +3,7 @@
 import { z } from 'zod';
 import { aiSizeRecommendation } from '@/ai/flows/ai-size-recommendation';
 import type { AiSizeRecommendationInput } from '@/ai/flows/ai-size-recommendation';
-import { dispatch } from '@/lib/events';
-
+import { addMessage } from '@/lib/message-store';
 
 export async function handleSizeRecommendation(input: AiSizeRecommendationInput) {
   const result = await aiSizeRecommendation(input);
@@ -20,14 +19,8 @@ const contactFormSchema = z.object({
 export async function handleContactFormSubmission(values: z.infer<typeof contactFormSchema>) {
   try {
     // Here you would typically send an email or save to a database.
-    // For this example, we'll just log it to the console and simulate a success response.
-    console.log('New contact form submission:');
-    console.log(`- Name: ${values.name}`);
-    console.log(`- Email: ${values.email}`);
-    console.log(`- Message: ${values.message}`);
-
-    // Dispatch event for real-time update on admin page
-    dispatch('newMessage', values);
+    // For this example, we'll add it to our in-memory store.
+    addMessage(values);
     
     // Simulate network delay
     await new Promise(resolve => setTimeout(resolve, 1000));
