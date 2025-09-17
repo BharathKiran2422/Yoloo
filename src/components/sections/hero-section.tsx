@@ -9,7 +9,7 @@ export function HeroSection() {
     const heroImage = PlaceHolderImages.find(img => img.id === 'hero');
 
   return (
-    <section className="w-full bg-background py-12 md:py-20">
+    <section className="w-full bg-background pt-12 md:pt-20">
       <div className="container mx-auto">
         <div className="bg-card dark:bg-card-foreground/5 rounded-2xl shadow-sm p-8 md:p-12 border">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
