@@ -24,6 +24,10 @@
     --input: 240 5.9% 90%;
     --ring: 238 64% 27%;
     --radius: 0.5rem;
+
+    --grid-color: hsl(240 5.9% 90% / 0.5);
+    --gradient-color-1: hsl(200 89% 80% / 0.1);
+    --gradient-color-2: hsl(240 20% 98% / 0.1);
   }
 
   .dark {
@@ -46,6 +50,10 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 238 64% 60%;
+
+    --grid-color: hsl(240 3.7% 15.9% / 0.8);
+    --gradient-color-1: hsl(238 64% 27% / 0.3);
+    --gradient-color-2: hsl(238 28% 10% / 0.3);
   }
 }
 
@@ -55,5 +63,23 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .pattern-background {
+    background-image: radial-gradient(circle at 25% 25%, var(--gradient-color-1), var(--gradient-color-2) 50%);
+    animation: gradient-move 20s ease-in-out infinite alternate;
+  }
+  .pattern-background::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image:
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1;
+    opacity: 0.5;
   }
 }
