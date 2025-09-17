@@ -132,6 +132,18 @@
     { "id": "sneakers-3", "description": "Running shoes with advanced cushioning.", "imageUrl": "https://picsum.photos/seed/sneakers3/400/300", "imageHint": "running shoes" },
     { "id": "sneakers-4", "description": "High-top canvas sneakers.", "imageUrl": "https://picsum.photos/seed/sneakers4/400/450", "imageHint": "canvas sneakers" },
     { "id": "sneakers-5", "description": "Skate shoes with a unique design.", "imageUrl": "https://picsum.photos/seed/sneakers5/400/350", "imageHint": "skate shoes" },
-    { "id": "sneakers-6", "description": "Formal leather shoes for men.", "imageUrl": "https://picsum.photos/seed/sneakers6/400/300", "imageHint": "leather shoes" }
+    { "id": "sneakers-6", "description": "Formal leather shoes for men.", "imageUrl": "https://picsum.photos/seed/sneakers6/400/300", "imageHint": "leather shoes" },
+    { "id": "category-men", "description": "Men's Fashion", "imageUrl": "https://picsum.photos/seed/catmen/600/800", "imageHint": "male model" },
+    { "id": "category-women", "description": "Women's Fashion", "imageUrl": "https://picsum.photos/seed/catwomen/600/800", "imageHint": "female model" },
+    { "id": "category-footwear", "description": "Footwear", "imageUrl": "https://picsum.photos/seed/catfootwear/600/800", "imageHint": "trendy sneakers" },
+    { "id": "category-accessories", "description": "Accessories", "imageUrl": "https://picsum.photos/seed/catacc/600/800", "imageHint": "fashion accessories" },
+    { "id": "trending1", "description": "Stylish ethnic wear", "imageUrl": "https://picsum.photos/seed/trend1/600/800", "imageHint": "Indian ethnic" },
+    { "id": "trending2", "description": "Modern casual shirt", "imageUrl": "https://picsum.photos/seed/trend2/600/800", "imageHint": "casual shirt" },
+    { "id": "trending3", "description": "Premium winter jacket", "imageUrl": "https://picsum.photos/seed/trend3/600/800", "imageHint": "winter jacket" },
+    { "id": "trending4", "description": "Elegant party dress", "imageUrl": "https://picsum.photos/seed/trend4/600/800", "imageHint": "party dress" },
+    { "id": "brand1", "description": "Spiderman Graphic Tee", "imageUrl": "https://picsum.photos/seed/brand1/600/800", "imageHint": "Spiderman t-shirt" },
+    { "id": "brand2", "description": "Batman Hoodie", "imageUrl": "https://picsum.photos/seed/brand2/600/800", "imageHint": "Batman hoodie" },
+    { "id": "brand3", "description": "Harry Potter Scarf", "imageUrl": "https://picsum.photos/seed/brand3/600/800", "imageHint": "Harry Potter scarf" },
+    { "id": "brand4", "description": "Classic White Sneakers", "imageUrl": "https://picsum.photos/seed/brand4/600/800", "imageHint": "white sneakers" }
   ]
 }
