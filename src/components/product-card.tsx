@@ -4,6 +4,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from './ui/button';
 import { Eye } from 'lucide-react';
+import Link from 'next/link';
 
 type ProductCardProps = {
   product: Product;
@@ -28,14 +29,18 @@ export function ProductCard({ product }: ProductCardProps) {
                     <h3 className="text-white font-bold text-lg truncate">{product.name}</h3>
                     <p className="text-white/80 font-medium">{product.price}</p>
                  </div>
-                 <Button size="icon" className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity" variant="secondary">
-                    <Eye size={20} />
-                    <span className="sr-only">Quick View</span>
-                 </Button>
+                 <Link href="#purchase-on-app">
+                    <Button size="icon" className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity" variant="secondary">
+                        <Eye size={20} />
+                        <span className="sr-only">Quick View</span>
+                    </Button>
+                 </Link>
             </div>
         )}
       <CardContent className="p-4">
-        <Button className="w-full" variant="outline">View Product</Button>
+        <Link href="#purchase-on-app" className="w-full">
+            <Button className="w-full" variant="outline">View Product</Button>
+        </Link>
       </CardContent>
     </Card>
   );

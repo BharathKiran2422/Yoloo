@@ -21,7 +21,7 @@ export function HeroSection() {
                     <p className="text-muted-foreground mb-8 text-lg">
                         Explore curated collections from top Indian and international brands. Quality fashion, delivered in minutes.
                     </p>
-                    <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                    <Link href="#purchase-on-app">
                         <Button size="lg">Download the app</Button>
                     </Link>
                 </div>
