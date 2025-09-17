@@ -8,6 +8,18 @@
       "imageHint": "fashion editorial"
     },
     {
+        "id": "hero-slide-2",
+        "description": "A person wearing a licensed Spiderman jacket in a cool, urban environment.",
+        "imageUrl": "https://images.unsplash.com/photo-1635805737890-7253b24b9a6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "imageHint": "Spiderman jacket"
+    },
+    {
+        "id": "hero-slide-3",
+        "description": "A fashion delivery person quickly moving through a city, representing fast delivery.",
+        "imageUrl": "https://images.unsplash.com/photo-1615474994288-63d1cb7f566c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYXNoaW9uJTIwZGVsaXZlcnl8ZW58MHx8fHwxNzU4MTM3NjIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "imageHint": "fashion delivery"
+    },
+    {
       "id": "gallery1",
       "description": "Model in a black Batman graphic tee.",
       "imageUrl": "https://picsum.photos/seed/gallery1/400/500",
@@ -118,8 +130,8 @@
     { "id": "men-1", "description": "Stylish man in a modern ethnic kurta.", "imageUrl": "https://images.unsplash.com/photo-1621288825828-877bab1131a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBtYWxlJTIwbW9kZWx8ZW58MHx8fHwxNzU4MTMwNzM4fDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "ethnic kurta" },
     { "id": "men-2", "description": "Man in a cool streetwear hoodie.", "imageUrl": "https://images.unsplash.com/photo-1559645514-50f991e457f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8bWFsZSUyMHN0cmVldHdlYXJ8ZW58MHx8fHwxNzU4MTMwNzk1fDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "streetwear hoodie" },
     { "id": "men-3", "description": "Sharp men's formal suit.", "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZW4lMjBzdWl0fGVufDB8fHx8MTc1ODEzMDgzM3ww&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "formal suit" },
-    { "id": "men-4", "description": "Man in a relaxed casual shirt.", "imageUrl": "https://images.unsplash.com/photo-1594938384914-234388965727?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8bWVuJTIwY2FzdWFsJTIwc2hpcnR8ZW58MHx8fHwxNzU4MTMwODg3fDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "casual shirt" },
-    { "id": "men-5", "description": "Man wearing a Spiderman themed jacket.", "imageUrl": "https://images.unsplash.com/photo-1635805737890-7253b24b9a6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", "imageHint": "Spiderman jacket" },
+    { "id": "men-4", "description": "Man wearing a Spiderman themed jacket.", "imageUrl": "https://images.unsplash.com/photo-1635805737890-7253b24b9a6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80", "imageHint": "Spiderman jacket" },
+    { "id": "men-5", "description": "Man in a relaxed casual shirt.", "imageUrl": "https://images.unsplash.com/photo-1594938384914-234388965727?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8bWVuJTIwY2FzdWFsJTIwc2hpcnR8ZW58MHx8fHwxNzU4MTMwODg3fDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "casual shirt" },
     { "id": "men-6", "description": "Urban men's fashion.", "imageUrl": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZW4lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODEzMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "urban fashion" },
     { "id": "women-1", "description": "Woman in an elegant Indian designer saree.", "imageUrl": "https://images.unsplash.com/photo-1610189018413-a55b38f85de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBmYXNoaW9uJTIwd29tYW58ZW58MHx8fHwxNzU4MTMxNTYwfDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "designer saree" },
     { "id": "women-2", "description": "Woman wearing a stylish Harry Potter themed sweater.", "imageUrl": "https://images.unsplash.com/photo-1578350123423-99ec37a1e04a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXJyeSUyMHBvdHRlciUyMGZhc2hpb258ZW58MHx8fHwxNzU4MTMxNjM3fDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "Harry Potter fashion" },
@@ -140,7 +152,7 @@
     { "id": "accessories-5", "description": "A collection of stylish belts.", "imageUrl": "https://images.unsplash.com/photo-1628795243884-a356a42a454d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiZWx0c3xlbnwwfHx8fDE3NTgxMzI0MzR8MA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "stylish belts" },
     { "id": "accessories-6", "description": "A stylish backpack.", "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb68c6a62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHlsaXNoJTIwYmFja3BhY2t8ZW58MHx8fHwxNzU4MTMyNDc2fDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "stylish backpack" },
     { "id": "category-men", "description": "Men's Fashion", "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTgxMzI1ODl8MA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "male model" },
-    { "id": "category-women", "description": "Women's Fashion", "imageUrl": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODEzMjYzNHww&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "female model" },
+    { "id": "category-women", "description": "Women's Fashion", "imageUrl": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHBvcnRyYWl0fGVufDB8fHx8fDE3NTgxMzI2MzR8MA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "female model" },
     { "id": "category-footwear", "description": "Footwear", "imageUrl": "https://images.unsplash.com/photo-1595950654145-fe2e1b9b4d36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0cmVuZHklMjBzbmVha2Vyc3xlbnwwfHx8fDE3NTgxMzI2NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "trendy sneakers" },
     { "id": "category-accessories", "description": "Accessories", "imageUrl": "https://images.unsplash.com/photo-1584486188544-6ae1e6121478?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwYWNjZXNzb3JpZXN8ZW58MHx8fHwxNzU4MTMyNzE4fDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "fashion accessories" },
     { "id": "trending1", "description": "Stylish ethnic wear", "imageUrl": "https://images.unsplash.com/photo-1617634667233-20723a353381?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBldGhuaWMlMjB3ZWFyfGVufDB8fHx8MTc1ODEzMjc5NHww&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "Indian ethnic" },
