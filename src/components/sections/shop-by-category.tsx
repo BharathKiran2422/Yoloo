@@ -4,7 +4,7 @@ const categories = [
     { imageId: 'category-men', title: 'Men', href: '/men' },
     { imageId: 'category-women', title: 'Women', href: '/women' },
     { imageId: 'category-footwear', title: 'Footwear', href: '/sneakers' },
-    { imageId: 'category-accessories', title: 'Accessories', href: '#' },
+    { imageId: 'category-accessories', title: 'Accessories', href: '/accessories' },
 ]
 
 export function ShopByCategory() {
