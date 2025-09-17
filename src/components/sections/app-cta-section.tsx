@@ -6,16 +6,16 @@ export function AppCtaSection() {
             <div className="bg-card rounded-2xl p-8 md:p-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="text-center md:text-left">
-                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Download the Yoloo App</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">10,000+ Styles & Collections</h2>
                         <div className="space-y-4 text-muted-foreground">
                             <p>
-                                Experience fashion on demand delivered to your doorstep in just 120 minutes. With the Yoloo App, you&apos;ll get instant access to the latest styles, curated collections, and exclusive deals, all in one sleek and intuitive platform.
+                                From bold streetwear to ethnic elegance, sneakers to premium accessories – discover the best of Indian fashion, all in one app.
                             </p>
                             <p>
-                                Whether you&apos;re browsing bold streetwear, daily essentials, or premium accessories, Yoloo lets you shop by mood, trend, or moment. With real-time updates and smart recommendations, your next outfit is just a tap away.
+                                Get your favorite looks delivered to your doorstep in 120 minutes with Yoloo’s on-demand fashion delivery.
                             </p>
                             <p>
-                                Join thousands of style-savvy users and elevate your wardrobe. Download the Yoloo App now and redefine your fashion experience fast, flexible, and made for you.
+                                Enjoy curated collections, exclusive deals, and smart recommendations that make shopping faster, easier, and more stylish than ever.
                             </p>
                         </div>
                         
