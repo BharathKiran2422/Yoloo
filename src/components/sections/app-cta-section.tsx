@@ -3,16 +3,19 @@ import Image from "next/image";
 export function AppCtaSection() {
     return (
         <section id="purchase-on-app" className="py-16 md:py-24">
-            <div className="bg-card rounded-2xl p-8 md:p-12">
+            <div className="bg-card rounded-2xl p-8 md:p-12 border">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="text-center md:text-left">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">10,000+ Styles & Collections</h2>
-                        <div className="space-y-4 text-muted-foreground">
+                        <div className="space-y-6 text-muted-foreground text-lg">
                             <p>
                                 From bold streetwear to ethnic elegance, sneakers to premium accessories – discover the best of Indian fashion, all in one app.
                             </p>
                             <p>
-                                Get your favorite looks delivered to your doorstep in 120 minutes with Yoloo’s on-demand fashion delivery.
+                                Get your favorite looks delivered to your doorstep in just
+                                <span className="inline-block bg-muted rounded-lg px-3 py-1 mx-2">
+                                   <span className="font-bold text-primary text-xl">🚚 30–120 minutes.</span>
+                                </span>
                             </p>
                             <p>
                                 Enjoy curated collections, exclusive deals, and smart recommendations that make shopping faster, easier, and more stylish than ever.
