@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function AppCtaSection() {
     return (
-        <section id="purchase-on-app" className="py-16 md:py-24">
+        <section id="purchase-on-app" className="py-12 md:py-16">
             <div className="bg-card rounded-2xl p-8 md:p-12 border">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="text-center md:text-left">

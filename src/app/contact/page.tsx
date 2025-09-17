@@ -14,9 +14,9 @@ export default function ContactPage() {
     const contactImage = PlaceHolderImages.find(img => img.id === 'contact-image');
 
     return (
-        <div className="bg-background text-foreground min-h-screen p-4 sm:p-8 flex flex-col items-center">
+        <div className="bg-background text-foreground min-h-screen p-4 sm:p-6 flex flex-col items-center">
             <div className="w-full max-w-5xl">
-                <Link href="/" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8">
+                <Link href="/" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6">
                     <ArrowLeft size={16} />
                     <span>Back to Home</span>
                 </Link>

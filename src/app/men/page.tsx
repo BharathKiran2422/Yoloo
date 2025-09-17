@@ -20,7 +20,7 @@ export default function MenPage() {
 
     return (
         <div className="bg-background">
-            <div className="container mx-auto px-4 py-16">
+            <div className="container mx-auto px-4 py-12">
                 <h1 className="font-headline text-4xl font-bold mb-2 text-center text-primary">Men's Collection</h1>
                 <p className="text-muted-foreground mb-8 text-center">From casual wear to licensed collections, find your perfect style.</p>
 

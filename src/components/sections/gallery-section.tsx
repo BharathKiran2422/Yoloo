@@ -18,7 +18,7 @@ export function GallerySection() {
     const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
     return (
-        <section className="py-16 md:py-24 bg-card/50 dark:bg-card">
+        <section className="py-12 md:py-16 bg-card/50 dark:bg-card">
             <div className="container mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Explore Our World</h2>

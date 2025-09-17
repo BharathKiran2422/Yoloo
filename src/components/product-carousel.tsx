@@ -15,7 +15,7 @@ type ProductCarouselProps = {
 
 export function ProductCarousel({ title, products }: ProductCarouselProps) {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-16">
       <div className="flex justify-between items-center mb-12">
         <div className="text-center md:text-left">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground">{title}</h2>

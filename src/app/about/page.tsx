@@ -11,7 +11,7 @@ export default function AboutPage() {
 
     return (
         <div className="bg-background">
-            <div className="container mx-auto px-4 py-16">
+            <div className="container mx-auto px-4 py-12">
                 <h1 className="font-headline text-4xl font-bold mb-8 text-center text-primary">About Yoloo!</h1>
                 <div className="flex flex-col md:flex-row gap-12 items-center">
                     <div className="md:w-1/2">

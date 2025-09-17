@@ -40,7 +40,7 @@ export function HeroSection() {
   const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
   return (
-    <section className="w-full bg-background pt-12 md:pt-20">
+    <section className="w-full bg-background pt-8 md:pt-12">
       <div className="container mx-auto">
         <Carousel
             opts={{

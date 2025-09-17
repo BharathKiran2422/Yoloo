@@ -5,7 +5,7 @@ export function StorySection() {
     const storyImage = PlaceHolderImages.find(img => img.id === 'story');
 
     return (
-        <section className="w-full py-16 md:py-24 relative">
+        <section className="w-full py-12 md:py-16 relative">
             {storyImage && (
                 <Image
                     src={storyImage.imageUrl}
