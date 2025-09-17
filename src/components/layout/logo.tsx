@@ -14,7 +14,7 @@ export function Logo({ className }: { className?: string }) {
   }, []);
 
   if (!mounted) {
-    // Render a placeholder to prevent layout shift
+    // Render a placeholder to prevent layout shift while waiting for theme
     return <div className={cn("h-10 w-10", className)} />;
   }
 
