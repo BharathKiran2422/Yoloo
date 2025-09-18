@@ -36,19 +36,25 @@ export default function AdminPage() {
 
   const handleToggleStatus = (id: number) => {
     startTransition(async () => {
-      await toggleMessageStatus(id);
-      loadMessages();
+      const updatedMessage = await toggleMessageStatus(id);
+      if (updatedMessage) {
+        setMessages(prevMessages => 
+          prevMessages.map(msg => msg.id === id ? updatedMessage : msg)
+        );
+      }
     });
   };
 
   const handleDeleteMessage = (id: number) => {
     startTransition(async () => {
-      await deleteMessageAction(id);
-      loadMessages();
-       toast({
-        title: "Message Deleted",
-        description: "The message has been successfully deleted.",
-      });
+      const success = await deleteMessageAction(id);
+      if (success) {
+        setMessages(prevMessages => prevMessages.filter(msg => msg.id !== id));
+        toast({
+          title: "Message Deleted",
+          description: "The message has been successfully deleted.",
+        });
+      }
     });
   };
 
