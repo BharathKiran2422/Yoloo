@@ -22,7 +22,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium flex-1">
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center">
+            <Logo className="h-12" />
+          </Link>
+        </div>
+
+        <nav className="hidden md:flex items-center justify-center space-x-6 text-sm font-medium flex-1">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className={cn("text-foreground/80 hover:text-foreground transition-colors relative", pathname === link.href && "text-foreground")}>
               {link.label}
@@ -30,7 +36,8 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex-1 md:hidden">
+        
+        <div className="md:hidden flex-1">
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -39,7 +46,9 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left">
                <div className="flex justify-center mb-8">
-                <Logo className="h-10" />
+                <Link href="/">
+                    <Logo className="h-12" />
+                </Link>
               </div>
               <nav className="flex flex-col space-y-4">
                 {navLinks.map((link) => (
@@ -54,12 +63,8 @@ export function Header() {
             </SheetContent>
           </Sheet>
         </div>
-        <div className="flex items-center justify-center">
-          <Link href="/" className="flex items-center">
-            <Logo className="h-10" />
-          </Link>
-        </div>
-        <div className="flex items-center justify-end gap-2 flex-1">
+
+        <div className="flex items-center justify-end gap-2">
           <ThemeToggle />
         </div>
       </div>
