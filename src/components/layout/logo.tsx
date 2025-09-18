@@ -15,11 +15,11 @@ export function Logo({ className }: { className?: string }) {
 
   if (!mounted) {
     // Render a placeholder to prevent layout shift while waiting for theme
-    return <div className={cn("h-10 w-10", className)} />;
+    return <div className={cn("relative", className)} />;
   }
 
   return (
-    <div className={cn("relative h-10 w-10", className)}>
+    <div className={cn("relative", className)}>
         {resolvedTheme === 'light' ? (
             <Image src="/logo2.png" alt="Yoloo! Logo" fill priority className="object-contain" />
         ) : (
