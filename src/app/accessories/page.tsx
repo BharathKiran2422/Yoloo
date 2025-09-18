@@ -14,6 +14,20 @@ export default function AccessoriesPage() {
         { id: "accessories-4" },
         { id: "accessories-5" },
         { id: "accessories-6", className: "col-span-2" },
+        { id: "accessories-7" },
+        { id: "accessories-8", className: "row-span-2"},
+        { id: "accessories-9" },
+        { id: "accessories-10", className: "col-span-2"},
+        { id: "accessories-11" },
+        { id: "accessories-12" },
+        { id: "accessories-13", className: "row-span-2"},
+        { id: "accessories-14" },
+        { id: "accessories-15" },
+        { id: "accessories-16", className: "col-span-2"},
+        { id: "accessories-17" },
+        { id: "accessories-18" },
+        { id: "accessories-19", className: "row-span-2"},
+        { id: "accessories-20" }
     ];
     
     const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);

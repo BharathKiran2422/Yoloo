@@ -14,6 +14,20 @@ export default function MenPage() {
         { id: "men-4", className: "col-span-2 row-span-2" },
         { id: "men-5" },
         { id: "men-6" },
+        { id: "men-7" },
+        { id: "men-8", className: "col-span-2"},
+        { id: "men-9" },
+        { id: "men-10", className: "row-span-2"},
+        { id: "men-11" },
+        { id: "men-12" },
+        { id: "men-13", className: "col-span-2"},
+        { id: "men-14" },
+        { id: "men-15" },
+        { id: "men-16", className: "row-span-2"},
+        { id: "men-17" },
+        { id: "men-18" },
+        { id: "men-19", className: "col-span-2 row-span-2"},
+        { id: "men-20" }
     ];
 
     const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);

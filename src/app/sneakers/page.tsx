@@ -14,6 +14,20 @@ export default function SneakersPage() {
         { id: "sneakers-4", className: "col-span-2" },
         { id: "sneakers-5" },
         { id: "sneakers-6" },
+        { id: "sneakers-7" },
+        { id: "sneakers-8", className: "row-span-2"},
+        { id: "sneakers-9" },
+        { id: "sneakers-10", className: "col-span-2"},
+        { id: "sneakers-11" },
+        { id: "sneakers-12" },
+        { id: "sneakers-13", className: "row-span-2"},
+        { id: "sneakers-14" },
+        { id: "sneakers-15" },
+        { id: "sneakers-16", className: "col-span-2"},
+        { id: "sneakers-17" },
+        { id: "sneakers-18" },
+        { id: "sneakers-19", className: "row-span-2"},
+        { id: "sneakers-20" }
     ];
     
     const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
