@@ -1,13 +1,15 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export function GallerySection() {
     const images = [
-        { id: "gallery-men", category: "Men", href: "/men", colSpan: "col-span-2", rowSpan: "row-span-2" },
-        { id: "gallery-women", category: "Women", href: "/women", colSpan: "col-span-1", rowSpan: "row-span-1" },
-        { id: "gallery-sneakers", category: "Sneakers", href: "/sneakers", colSpan: "col-span-1", rowSpan: "row-span-2" },
-        { id: "gallery-accessories", category: "Accessories", href: "/accessories", colSpan: "col-span-1", rowSpan: "row-span-1" },
+        { id: "gallery-men", category: "Men", href: "/men", colSpan: "md:col-span-2", rowSpan: "md:row-span-2" },
+        { id: "gallery-women", category: "Women", href: "/women" },
+        { id: "gallery-sneakers", category: "Sneakers", href: "/sneakers", rowSpan: "md:row-span-2" },
+        { id: "gallery-accessories", category: "Accessories", href: "/accessories" },
+        { id: "product1", category: "New Arrivals", href: "/men" },
     ];
 
     const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
@@ -25,7 +27,7 @@ export function GallerySection() {
                         const image = getImageData(id);
                         if (!image) return null;
                         return (
-                            <Link href={href} key={id} className={`${colSpan} ${rowSpan} relative rounded-2xl overflow-hidden group`}>
+                            <Link href={href} key={id} className={` ${colSpan || ''} ${rowSpan || ''} relative rounded-2xl overflow-hidden group`}>
                                 <Image
                                     src={image.imageUrl}
                                     alt={image.description}
