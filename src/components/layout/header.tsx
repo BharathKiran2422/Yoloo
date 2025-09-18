@@ -9,21 +9,28 @@ import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescri
 import { ThemeToggle } from '../theme-toggle';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { useState } from 'react';
 
 export function Header() {
   const pathname = usePathname();
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+  
   const navLinks = [
     { href: '/men', label: 'Men' },
     { href: '/women', label: 'Women' },
     { href: '/sneakers', label: 'Sneakers' },
     { href: '/accessories', label: 'Accessories' },
   ];
+
+  const handleLinkClick = () => {
+    setIsSheetOpen(false);
+  };
   
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
+          <Link href="/">
             <Logo className="h-40 w-40" />
           </Link>
         </div>
@@ -50,7 +57,7 @@ export function Header() {
           {/* Mobile Menu */}
           <div className="md:hidden flex items-center">
             <ThemeToggle />
-            <Sheet>
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Menu />
@@ -62,19 +69,19 @@ export function Header() {
                   <SheetDescription className="sr-only">Main navigation menu</SheetDescription>
                 </SheetHeader>
                 <div className="flex justify-center mb-8">
-                  <Link href="/">
+                  <Link href="/" onClick={handleLinkClick}>
                       <Logo className="h-12" />
                   </Link>
                 </div>
                 <nav className="flex flex-col space-y-4">
                   {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href} className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">
+                    <Link key={link.href} href={link.href} onClick={handleLinkClick} className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   ))}
                   <hr />
-                  <Link href="/about" className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">About</Link>
-                  <Link href="/contact" className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">Contact</Link>
+                  <Link href="/about" onClick={handleLinkClick} className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">About</Link>
+                  <Link href="/contact" onClick={handleLinkClick} className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">Contact</Link>
                 </nav>
               </SheetContent>
             </Sheet>
