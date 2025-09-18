@@ -1,6 +1,7 @@
 import { type Metadata } from 'next';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: "Men's Collection - Yoloo!",
@@ -43,7 +44,7 @@ export default function MenPage() {
                         const image = getImageData(id);
                         if (!image) return null;
                         return (
-                            <div key={id} className={`relative rounded-2xl overflow-hidden group ${className || ''}`}>
+                            <Link href="/#purchase-on-app" key={id} className={`relative rounded-2xl overflow-hidden group ${className || ''}`}>
                                 <Image
                                     src={image.imageUrl}
                                     alt={image.description}
@@ -54,7 +55,7 @@ export default function MenPage() {
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-end p-4">
                                     <p className="text-white font-semibold text-lg">{image.description}</p>
                                 </div>
-                            </div>
+                            </Link>
                         );
                     })}
                 </div>
