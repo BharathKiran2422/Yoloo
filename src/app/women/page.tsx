@@ -1,7 +1,9 @@
+
 import { type Metadata } from 'next';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
+import { Eye } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: "Women's Collection - Yoloo!",
@@ -49,11 +51,15 @@ export default function WomenPage() {
                                     src={image.imageUrl}
                                     alt={image.description}
                                     fill
-                                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                    className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
                                     data-ai-hint={image.imageHint}
                                 />
-                                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-end p-4">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent transition-colors" />
+                                <div className="absolute inset-x-0 bottom-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
                                     <p className="text-white font-semibold text-lg">{image.description}</p>
+                                </div>
+                                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <Eye className="w-6 h-6 text-white" />
                                 </div>
                             </Link>
                         );
