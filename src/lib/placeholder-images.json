@@ -20,64 +20,28 @@
         "imageHint": "fashion delivery"
     },
     {
-      "id": "gallery1",
-      "description": "Model in a black Batman graphic tee.",
-      "imageUrl": "https://picsum.photos/seed/gallery1/400/500",
-      "imageHint": "Batman t-shirt"
+        "id": "gallery-men",
+        "description": "Stylish man in a modern outfit.",
+        "imageUrl": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZW4lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODEzMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+        "imageHint": "men fashion"
     },
     {
-      "id": "gallery2",
-      "description": "Woman wearing a stylish Harry Potter themed scarf.",
-      "imageUrl": "https://picsum.photos/seed/gallery2/300/400",
-      "imageHint": "Harry Potter scarf"
+        "id": "gallery-women",
+        "description": "Woman in an elegant saree.",
+        "imageUrl": "https://images.unsplash.com/photo-1610189018413-a55b38f85de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBmYXNoaW9uJTIwd29tYW58ZW58MHx8fHwxNzU4MTMxNTYwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "imageHint": "indian fashion"
     },
     {
-      "id": "gallery3",
-      "description": "Man in a Spiderman hoodie.",
-      "imageUrl": "https://picsum.photos/seed/gallery3/300/400",
-      "imageHint": "Spiderman hoodie"
+        "id": "gallery-sneakers",
+        "description": "A collection of trendy sneakers on display.",
+        "imageUrl": "https://images.unsplash.com/photo-1516478177764-9fe567e96b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsaW1pdGVkJTIwZWRpdGlvbiUyMHNuZWFrZXJzfGVufDB8fHx8MTc1ODEzMjE5NHww&ixlib-rb-4.1.0&q=80&w=1080",
+        "imageHint": "sneaker collection"
     },
     {
-      "id": "gallery4",
-      "description": "A collection of trendy sneakers on display.",
-      "imageUrl": "https://picsum.photos/seed/gallery4/600/400",
-      "imageHint": "sneaker collection"
-    },
-    {
-      "id": "gallery5",
-      "description": "Woman wearing an elegant dress from an Indian designer.",
-      "imageUrl": "https://picsum.photos/seed/gallery5/250/400",
-      "imageHint": "Indian fashion"
-    },
-    {
-      "id": "gallery6",
-      "description": "Close up on a pair of high-top sneakers.",
-      "imageUrl": "https://picsum.photos/seed/gallery6/250/400",
-      "imageHint": "hightop sneakers"
-    },
-    {
-      "id": "gallery7",
-      "description": "A man wearing a modern ethnic jacket.",
-      "imageUrl": "https://picsum.photos/seed/gallery7/250/400",
-      "imageHint": "modern ethnic"
-    },
-    {
-      "id": "gallery8",
-      "description": "A display of colorful running shoes.",
-      "imageUrl": "https://picsum.photos/seed/gallery8/500/400",
-      "imageHint": "running shoes"
-    },
-    {
-      "id": "gallery9",
-      "description": "Woman in a vibrant, modern sari.",
-      "imageUrl": "https://picsum.photos/seed/gallery9/300/200",
-      "imageHint": "modern sari"
-    },
-    {
-      "id": "gallery10",
-      "description": "A stylish leather handbag.",
-      "imageUrl": "https://picsum.photos/seed/gallery10/300/200",
-      "imageHint": "leather handbag"
+        "id": "gallery-accessories",
+        "description": "A stylish leather handbag.",
+        "imageUrl": "https://images.unsplash.com/photo-1590737142072-3f36d65b1d4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZXNpZ25lciUyMGhhbmRiYWd8ZW58MHx8fHwxNzU4MTMyMzkxfDA&ixlib-rb-4.1.0&q=80&w=1080",
+        "imageHint": "leather handbag"
     },
     {
         "id": "story-grid-1",
@@ -146,11 +110,11 @@
     { "id": "men-5", "description": "Man in a relaxed casual shirt.", "imageUrl": "https://images.unsplash.com/photo-1594938384914-234388965727?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8bWVuJTIwY2FzdWFsJTIwc2hpcnR8ZW58MHx8fHwxNzU4MTMwODg3fDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "casual shirt" },
     { "id": "men-6", "description": "Urban men's fashion.", "imageUrl": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZW4lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODEzMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "urban fashion" },
     { "id": "women-1", "description": "Woman in an elegant Indian designer saree.", "imageUrl": "https://images.unsplash.com/photo-1610189018413-a55b38f85de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBmYXNoaW9uJTIwd29tYW58ZW58MHx8fHwxNzU4MTMxNTYwfDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "designer saree" },
-    { "id": "women-2", "description": "Woman wearing a stylish Harry Potter themed sweater.", "imageUrl": "https://images.unsplash.com/photo-1578350123423-99ec37a1e04a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXJyeSUyMHBvdHRlciUyMGZhc2hpb258ZW58MHx8fHwxNzU4MTMxNjM3fDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "Harry Potter fashion" },
-    { "id": "women-3", "description": "Women's western wear.", "imageUrl": "https://images.unsplash.com/photo-1495385794356-15371f348c31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21lbiUyMHdlc3Rlcm4lMjB3ZWFyfGVufDB8fHx8MTc1ODEzMTY4Nnww&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "western wear" },
-    { "id": "women-4", "description": "Woman in premium casual wear.", "imageUrl": "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21lbiUyMGZhc2hpb258ZW58MHx8fHwxNzU4MTMxNzMwfDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "casual wear" },
-    { "id": "women-5", "description": "Women's business casual outfit.", "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21lbiUyMHByZW1pdW0lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODEzMTc4NHww&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "business casual" },
-    { "id": "women-6", "description": "A woman in a stylish dress.", "imageUrl": "https://images.unsplash.com/photo-1581044777550-4cfa6ce24692?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b21lbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8fHwxNzU4MTMxODI2fDA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "stylish dress" },
+    { "id": "women-2", "description": "Woman wearing a stylish Harry Potter themed sweater.", "imageUrl": "https://images.unsplash.com/photo-1578350123423-99ec37a1e04a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXJyeSUyMHBvdHRlciUyMGZhc2hpb258ZW58MHx8fHwxNzU4MTMxNjM3fDA&ixlib-rb-4.1.0&q=80&w=1080", "imageHint": "Harry Potter fashion" },
+    { "id": "women-3", "description": "Women's western wear.", "imageUrl": "https://images.unsplash.com/photo-1495385794356-15371f348c31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21lbiUyMHdlc3Rlcm4lMjB3ZWFyfGVufDB8fHx8MTc1ODEzMTY4Nnww&ixlib-rb-4.1.0&q=80&w=1080", "imageHint": "western wear" },
+    { "id": "women-4", "description": "Woman in premium casual wear.", "imageUrl": "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21lbiUyMGZhc2hpb258ZW58MHx8fHwxNzU4MTMxNzMwfDA&ixlib-rb-4.1.0&q=80&w=1080", "imageHint": "casual wear" },
+    { "id": "women-5", "description": "Women's business casual outfit.", "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21lbiUyMHByZW1pdW0lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODEzMTc4NHww&ixlib-rb-4.1.0&q=80&w=1080", "imageHint": "business casual" },
+    { "id": "women-6", "description": "A woman in a stylish dress.", "imageUrl": "https://images.unsplash.com/photo-1581044777550-4cfa6ce24692?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b21lbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8fHwxNzU4MTMxODI2fDA&ixlib-rb-4.1.0&q=80&w=1080", "imageHint": "stylish dress" },
     { "id": "sneakers-1", "description": "A pair of classic white sneakers.", "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbmVha2Vyc3xlbnwwfHx8fDE3NTgxMzE5MjJ8MA&ixlib=rb-4.1.0&q=80&w=1080", "imageHint": "white sneakers" },
     { "id": "sneakers-2", "description": "Colorful, trendy basketball sneakers.", "imageUrl": "https://images.unsplash.com/photo-1511886921339-952a2a79a458?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxiYXNrZXRiYWxsJTIwc25lYWtlcnN8ZW58MHx8fHwxNzU4MTMyMDAzfDA&ixlib-rb-4.1.0&q=80&w=1080", "imageHint": "basketball sneakers" },
     { "id": "sneakers-3", "description": "Running shoes with advanced cushioning.", "imageUrl": "https://images.unsplash.com/photo-1543508282-6319a3e2621f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxydW5uaW5nJTIwc2hvZXN8ZW58MHx8fHwxNzU4MTMyMDQyfDA&ixlib-rb-4.1.0&q=80&w=1080", "imageHint": "running shoes" },
