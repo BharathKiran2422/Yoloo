@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay";
+import { Instagram, Linkedin } from 'lucide-react';
 
 
 const heroSlides = [
@@ -69,9 +70,19 @@ export function HeroSection() {
                         <p className="text-muted-foreground mb-8 text-lg">
                           {slide.subtitle}
                         </p>
-                        <Link href="#purchase-on-app">
-                          <Button size="lg">{slide.buttonText}</Button>
-                        </Link>
+                        <div className="flex items-center gap-4 justify-center md:justify-start">
+                          <Link href="#purchase-on-app">
+                            <Button size="lg">{slide.buttonText}</Button>
+                          </Link>
+                          <div className="flex items-center space-x-3">
+                              <Link href="https://www.linkedin.com/company/yoloo-lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                                <Linkedin className="h-6 w-6" />
+                              </Link>
+                              <Link href="https://www.instagram.com/yoloo_lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                                <Instagram className="h-6 w-6" />
+                              </Link>
+                          </div>
+                        </div>
                       </div>
                       <div className="relative h-64 md:h-96 rounded-xl overflow-hidden">
                         {heroImage && (
