@@ -4,13 +4,22 @@ import { Instagram, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Logo } from './logo';
+import { useTheme } from 'next-themes';
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState('');
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear().toString());
+    setMounted(true);
   }, []);
+
+  const appStoreBadge = resolvedTheme === 'dark' 
+    ? '/images/app-store-badge-dark.svg' 
+    : '/images/app-store-badge-light.svg';
+
 
   return (
     <footer className="bg-card w-full border-t">
@@ -51,9 +60,11 @@ export function Footer() {
                 <a href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="inline-block">
                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-12"/>
                 </a>
-                <a href="/" target="_blank" rel="noopener noreferrer" className="inline-block text-foreground dark:text-background" title="Will be updated soon">
-                    <img src="/images/app-store-badge.svg" alt="Download on the App Store" className="h-12"/>
-                </a>
+                {mounted && (
+                  <a href="/" target="_blank" rel="noopener noreferrer" className="inline-block" title="Will be updated soon">
+                      <img src={appStoreBadge} alt="Download on the App Store" className="h-12"/>
+                  </a>
+                )}
             </div>
           </div>
         </div>

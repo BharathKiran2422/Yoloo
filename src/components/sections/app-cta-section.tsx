@@ -1,6 +1,21 @@
+'use client';
+
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function AppCtaSection() {
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const appStoreBadge = resolvedTheme === 'dark'
+        ? '/images/app-store-badge-dark.svg'
+        : '/images/app-store-badge-light.svg';
+
     return (
         <section id="purchase-on-app" className="py-12 md:py-16">
             <div className="bg-card rounded-2xl p-8 md:p-12 border">
@@ -26,9 +41,11 @@ export function AppCtaSection() {
                              <a href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="inline-block">
                                 <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-12"/>
                             </a>
-                            <a href="/" target="_blank" rel="noopener noreferrer" className="inline-block text-foreground dark:text-background" title="Will be updated soon">
-                                <img src="/images/app-store-badge.svg" alt="Download on the App Store" className="h-12"/>
-                            </a>
+                            {mounted && (
+                               <a href="/" target="_blank" rel="noopener noreferrer" className="inline-block" title="Will be updated soon">
+                                  <img src={appStoreBadge} alt="Download on the App Store" className="h-12"/>
+                              </a>
+                            )}
                         </div>
                     </div>
                     <div className="flex justify-center mt-8 md:mt-0">
