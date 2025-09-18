@@ -1,6 +1,7 @@
 
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Zap, Sparkles, Store, Rocket } from "lucide-react";
 
 export function StorySection() {
     const storyImages = [
@@ -10,24 +11,52 @@ export function StorySection() {
         PlaceHolderImages.find(img => img.id === 'story-grid-4'),
     ].filter(Boolean);
 
+    const storyPoints = [
+        {
+            icon: Rocket,
+            title: "Hyderabad's First",
+            description: "We are the city’s first quick commerce fashion platform, transforming how you shop."
+        },
+        {
+            icon: Zap,
+            title: "30-120 Min Delivery",
+            description: "Get trendy apparel and accessories delivered to your doorstep at lightning speed."
+        },
+        {
+            icon: Sparkles,
+            title: "Curated Collections",
+            description: "Explore modern styles, ethnic wear, and everyday essentials from premium Indian brands."
+        },
+        {
+            icon: Store,
+            title: "Empowering Brands",
+            description: "We partner with brands to handle everything from storage to last-mile delivery, celebrating Indian talent."
+        }
+    ];
+
     return (
         <section className="w-full py-16 md:py-24 bg-card/50 dark:bg-card">
             <div className="container mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Yoloo! Story</h2>
+                    <p className="text-muted-foreground mt-2">Faster, easier, and trendier than ever before.</p>
+                    <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
+                </div>
                 <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="prose prose-lg dark:prose-invert max-w-none">
-                        <h2 className="text-3xl md:text-4xl font-bold text-foreground !mb-6">The Yoloo! Story</h2>
-                        <p className="lead">
-                           At Yoloo Lifestyle, we’re <strong className="text-primary">transforming the way Hyderabad shops for fashion.</strong>
-                        </p>
-                        <p>
-                            As the city’s first quick commerce fashion platform, we deliver trendy apparel and accessories from premium Indian brands to your doorstep in just <strong className="text-primary">30–120 minutes.</strong>
-                        </p>
-                        <p>
-                            Our curated collections bring together modern styles, ethnic wear, and everyday essentials — all backed by fast delivery, climate-controlled storage, and a seamless app experience. Whether you’re shopping for a last-minute party outfit, a festive look, or everyday fashion, Yoloo makes it possible at <strong className="text-primary">lightning speed.</strong>
-                        </p>
-                        <p>
-                            With zero upfront costs for brands, full-service warehousing, and last-mile delivery, Yoloo empowers both fashion labels and customers. We celebrate Indian talent while making shopping faster, easier, and trendier than ever before.
-                        </p>
+                    <div className="space-y-8">
+                        {storyPoints.map((point, index) => (
+                            <div key={index} className="flex items-start gap-4">
+                                <div className="flex-shrink-0">
+                                    <div className="bg-primary/10 text-primary p-3 rounded-full">
+                                        <point.icon className="w-6 h-6" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 className="text-xl font-bold text-foreground">{point.title}</h3>
+                                    <p className="text-muted-foreground mt-1">{point.description}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                      <div className="grid grid-cols-2 gap-4">
                         {storyImages.map((image, index) => image && (
