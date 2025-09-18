@@ -5,10 +5,12 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Logo } from './logo';
 import { useTheme } from 'next-themes';
+import { GooglePlayIcon } from '../icons/google-play';
+import { AppStoreIcon } from '../icons/app-store';
+import { Button } from '../ui/button';
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState('');
-  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -16,10 +18,9 @@ export function Footer() {
     setMounted(true);
   }, []);
 
-  const appStoreBadge = resolvedTheme === 'dark' 
-    ? '/images/app-store-badge-dark.svg' 
-    : '/images/app-store-badge-light.svg';
-
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <footer className="bg-card w-full border-t">
@@ -56,15 +57,25 @@ export function Footer() {
           </div>
           <div className="col-span-2 flex flex-col gap-4">
             <h3 className="font-semibold">Get our app</h3>
-            <div className="flex items-center space-x-3">
-                <a href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="inline-block">
-                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-12"/>
-                </a>
-                {mounted && (
-                  <a href="/" target="_blank" rel="noopener noreferrer" className="inline-block" title="Will be updated soon">
-                      <img src={appStoreBadge} alt="Download on the App Store" className="h-12"/>
-                  </a>
-                )}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-3">
+                 <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                    <Button variant="outline" className="w-full h-12 text-left px-3 flex items-center justify-center sm:justify-start gap-2 rounded-lg shadow-sm">
+                        <GooglePlayIcon className="w-6 h-6" />
+                        <div>
+                            <p className="text-xs text-muted-foreground">GET IT ON</p>
+                            <p className="text-sm font-semibold leading-tight">Google Play</p>
+                        </div>
+                    </Button>
+                </Link>
+                <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
+                    <Button variant="outline" className="w-full h-12 text-left px-3 flex items-center justify-center sm:justify-start gap-2 rounded-lg shadow-sm">
+                        <AppStoreIcon className="w-6 h-6" />
+                        <div>
+                            <p className="text-xs text-muted-foreground">Download on the</p>
+                            <p className="text-sm font-semibold leading-tight">App Store</p>
+                        </div>
+                    </Button>
+                </Link>
             </div>
           </div>
         </div>

@@ -1,22 +1,12 @@
 'use client';
 
 import Image from "next/image";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
+import { AppStoreIcon } from "../icons/app-store";
+import { GooglePlayIcon } from "../icons/google-play";
+import Link from "next/link";
 
 export function AppCtaSection() {
-    const { resolvedTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    const appStoreBadge = resolvedTheme === 'dark'
-        ? '/images/app-store-badge-dark.svg'
-        : '/images/app-store-badge-light.svg';
-
     return (
         <section id="purchase-on-app" className="py-12 md:py-16">
             <div className="rounded-2xl p-8 md:p-12 border bg-gradient-to-br from-background to-card pattern-background">
@@ -27,19 +17,26 @@ export function AppCtaSection() {
                             Shop the latest trends and get your order delivered in <span className="font-bold text-foreground">30-120 minutes</span>. Instant fashion gratification is just a tap away.
                         </p>
                         
-                        <div className="flex items-center gap-4 justify-center md:justify-start mt-8">
-                             <a href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="inline-block transform hover:scale-105 transition-transform">
-                                <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" className="h-14"/>
-                            </a>
-                            {mounted && (
-                               <a href="/" target="_blank" rel="noopener noreferrer" className="inline-block transform hover:scale-105 transition-transform" title="Will be updated soon">
-                                  <img src={appStoreBadge} alt="Download on the App Store" className="h-14"/>
-                              </a>
-                            )}
+                        <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start mt-8">
+                           <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                                <Button className="w-full bg-[#34A853] hover:bg-[#2c8e45] text-white h-14 text-left px-5 flex items-center justify-center sm:justify-start gap-3 rounded-xl shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
+                                    <GooglePlayIcon className="w-8 h-8" />
+                                    <div>
+                                        <p className="text-xs">GET IT ON</p>
+                                        <p className="text-lg font-semibold leading-tight">Google Play</p>
+                                    </div>
+                                </Button>
+                            </Link>
+                           <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
+                               <Button className="w-full bg-[#007AFF] hover:bg-[#005fcc] text-white h-14 text-left px-5 flex items-center justify-center sm:justify-start gap-3 rounded-xl shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
+                                    <AppStoreIcon className="w-8 h-8" />
+                                    <div>
+                                        <p className="text-xs">Download on the</p>
+                                        <p className="text-lg font-semibold leading-tight">App Store</p>
+                                    </div>
+                                </Button>
+                            </Link>
                         </div>
-                         <a href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
-                            <Button size="lg" className="mt-8 w-full md:w-auto">Download Now</Button>
-                        </a>
                     </div>
                     <div className="flex justify-center mt-8 md:mt-0">
                          <Image
