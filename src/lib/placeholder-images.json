@@ -236,6 +236,10 @@
     { "id": "accessories-17", "description": "A pair of gloves.", "imageUrl": "https://picsum.photos/seed/accessories17/400/400", "imageHint": "gloves" },
     { "id": "accessories-18", "description": "A tie.", "imageUrl": "https://picsum.photos/seed/accessories18/400/400", "imageHint": "tie" },
     { "id": "accessories-19", "description": "A pair of socks.", "imageUrl": "https://picsum.photos/seed/accessories19/400/400", "imageHint": "socks" },
-    { "id": "accessories-20", "description": "A sports watch.", "imageUrl": "https://picsum.photos/seed/accessories20/400/400", "imageHint": "sports watch" }
+    { "id": "accessories-20", "description": "A sports watch.", "imageUrl": "https://picsum.photos/seed/accessories20/400/400", "imageHint": "sports watch" },
+    { "id": "avatar-1", "description": "Avatar of Priya", "imageUrl": "https://picsum.photos/seed/avatar1/100/100", "imageHint": "woman portrait" },
+    { "id": "avatar-2", "description": "Avatar of Rohan", "imageUrl": "https://picsum.photos/seed/avatar2/100/100", "imageHint": "man portrait" },
+    { "id": "avatar-3", "description": "Avatar of Anjali", "imageUrl": "https://picsum.photos/seed/avatar3/100/100", "imageHint": "woman smiling" },
+    { "id": "avatar-4", "description": "Avatar of Vikram", "imageUrl": "https://picsum.photos/seed/avatar4/100/100", "imageHint": "man smiling" }
   ]
 }
