@@ -8,6 +8,7 @@ import { useTheme } from 'next-themes';
 import { GooglePlayIcon } from '../icons/google-play';
 import { AppStoreIcon } from '../icons/app-store';
 import { Button } from '../ui/button';
+import { VisitorCounter } from '../visitor-counter';
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState('');
@@ -81,9 +82,12 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>&copy; {currentYear} Yoloo Fashion Network Private Limited. All rights reserved.</p>
-           <div className="flex gap-4 mt-4 md:mt-0">
-               <Link href="/terms" className="hover:text-primary">Privacy Policy</Link>
-               <Link href="/terms" className="hover:text-primary">Account Deletion</Link>
+           <div className="flex flex-col-reverse md:flex-row items-center gap-4 mt-4 md:mt-0">
+               <div className="flex gap-4">
+                    <Link href="/terms" className="hover:text-primary">Privacy Policy</Link>
+                    <Link href="/terms" className="hover:text-primary">Account Deletion</Link>
+                </div>
+                <VisitorCounter />
            </div>
         </div>
       </div>
