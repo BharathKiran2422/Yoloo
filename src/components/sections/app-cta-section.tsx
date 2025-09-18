@@ -14,7 +14,13 @@ export function AppCtaSection() {
                     <div className="text-center md:text-left">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Download the Yoloo! App</h2>
                         <p className="text-lg text-muted-foreground mb-6">
-                            Shop the latest trends and get your order delivered in <span className="font-bold text-foreground">30-120 minutes</span>. Instant fashion gratification is just a tap away.
+                            From bold streetwear to ethnic elegance, sneakers to premium accessories – discover the best of Indian fashion, all in one app.
+                        </p>
+                        <p className="text-xl font-bold text-foreground mb-6">
+                            Get your favorite looks delivered to your doorstep in just <span className="text-primary">30–120 minutes.</span>
+                        </p>
+                         <p className="text-muted-foreground mb-8">
+                           Enjoy curated collections, exclusive deals, and smart recommendations that make shopping faster, easier, and more stylish than ever.
                         </p>
                         
                         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start mt-8">
