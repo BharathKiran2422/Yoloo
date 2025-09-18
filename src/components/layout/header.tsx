@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from './logo';
 import { Menu } from 'lucide-react';
-import { Sheet, SheetTrigger, SheetContent } from '../ui/sheet';
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '../ui/sheet';
 import { ThemeToggle } from '../theme-toggle';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -57,6 +57,10 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
+                <SheetHeader>
+                  <SheetTitle className="sr-only">Menu</SheetTitle>
+                  <SheetDescription className="sr-only">Main navigation menu</SheetDescription>
+                </SheetHeader>
                 <div className="flex justify-center mb-8">
                   <Link href="/">
                       <Logo className="h-12" />
