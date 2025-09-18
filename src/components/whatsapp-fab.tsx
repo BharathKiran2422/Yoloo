@@ -16,7 +16,7 @@ export function WhatsAppFab({ phoneNumber }: WhatsAppFabProps) {
             href={whatsappUrl} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="fixed bottom-8 right-8 z-50 group"
+            className="fixed bottom-32 right-8 z-50 group"
         >
             <div className="flex items-center flex-row-reverse gap-3">
                 <div className="bg-background rounded-full p-4 shadow-lg hover:shadow-xl transition-shadow border">
