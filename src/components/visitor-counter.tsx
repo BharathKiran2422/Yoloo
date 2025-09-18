@@ -3,15 +3,30 @@
 import { useEffect, useState } from 'react';
 
 export function VisitorCounter() {
-  const [count, setCount] = useState(1453);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     // This is a simulation and does not represent real visitor data.
     // In a real application, this would be connected to a backend service.
     const hasVisited = localStorage.getItem('yoloo-visitor');
+    let initialCount = 0;
+    
+    try {
+        const storedCount = localStorage.getItem('yoloo-visitor-count');
+        if (storedCount) {
+            initialCount = parseInt(storedCount, 10);
+        }
+    } catch (error) {
+        console.error("Could not parse visitor count from localStorage", error);
+    }
+    
     if (!hasVisited) {
-      setCount(c => c + 1);
+      const newCount = initialCount + 1;
+      setCount(newCount);
       localStorage.setItem('yoloo-visitor', 'true');
+      localStorage.setItem('yoloo-visitor-count', newCount.toString());
+    } else {
+      setCount(initialCount);
     }
   }, []);
 
