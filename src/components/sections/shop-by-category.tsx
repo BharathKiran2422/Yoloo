@@ -3,7 +3,7 @@ import { CategoryCard } from "../category-card";
 const categories = [
     { imageId: 'category-men', title: 'Men', href: '/men' },
     { imageId: 'category-women', title: 'Women', href: '/women' },
-    { imageId: 'category-footwear', title: 'Footwear', href: '/sneakers' },
+    { imageId: 'category-footwear', title: 'Sneakers', href: '/sneakers' },
     { imageId: 'category-accessories', title: 'Accessories', href: '/accessories' },
 ]
 
