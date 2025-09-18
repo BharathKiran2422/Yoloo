@@ -56,7 +56,7 @@ export function Header() {
                   <Menu />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left">
+              <SheetContent side="right">
                 <div className="flex justify-center mb-8">
                   <Link href="/">
                       <Logo className="h-12" />
