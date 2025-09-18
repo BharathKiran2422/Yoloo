@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
-import { ScrollToTop } from '@/components/scroll-to-top';
 import { WhatsAppFab } from '@/components/whatsapp-fab';
 
 export const metadata: Metadata = {
@@ -38,7 +37,6 @@ export default function RootLayout({
           </div>
           <Toaster />
           <WhatsAppFab phoneNumber="8297297197" />
-          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>
