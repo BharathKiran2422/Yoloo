@@ -28,19 +28,19 @@
     {
         "id": "gallery-women",
         "description": "Woman in an elegant saree.",
-        "imageUrl": "https://images.unsplash.com/photo-1610189018413-a55b38f85de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBmYXNoaW9uJTIwd29tYW58ZW58MHx8fHwxNzU4MTMxNTYwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "imageUrl": "https://images.unsplash.com/photo-1610189018413-a55b38f85de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBmYXNoaW9uJTIwd29tYW58ZW58MHx8fHwxNzU4MTMxNTYwfDA&ixlib.rb-4.1.0&q=80&w=1080",
         "imageHint": "indian fashion"
     },
     {
         "id": "gallery-sneakers",
         "description": "A collection of trendy sneakers on display.",
-        "imageUrl": "https://images.unsplash.com/photo-1516478177764-9fe567e96b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsaW1pdGVkJTIwZWRpdGlvbiUyMHNuZWFrZXJzfGVufDB8fHx8MTc1ODEzMjE5NHww&ixlib-rb-4.1.0&q=80&w=1080",
+        "imageUrl": "https://images.unsplash.com/photo-1516478177764-9fe567e96b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsaW1pdGVkJTIwZWRpdGlvbiUyMHNuZWFrZXJzfGVufDB8fHx8MTc1ODEzMjE5NHww&ixlib.rb-4.1.0&q=80&w=1080",
         "imageHint": "sneaker collection"
     },
     {
         "id": "gallery-accessories",
         "description": "A stylish leather handbag.",
-        "imageUrl": "https://images.unsplash.com/photo-1590737142072-3f36d65b1d4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZXNpZ25lciUyMGhhbmRiYWd8ZW58MHx8fHwxNzU4MTMyMzkxfDA&ixlib-rb-4.1.0&q=80&w=1080",
+        "imageUrl": "https://images.unsplash.com/photo-1590737142072-3f36d65b1d4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZXNpZ25lciUyMGhhbmRiYWd8ZW58MHx8fHwxNzU4MTMyMzkxfDA&ixlib.rb-4.1.0&q=80&w=1080",
         "imageHint": "leather handbag"
     },
     {
@@ -88,7 +88,7 @@
     {
       "id": "product2",
       "description": "A minimalist white t-shirt with a subtle graphic.",
-      "imageUrl": "https://images.unsplash.com/photo-1745179294283-f9d069f4d38d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxNaW5pbWFsaXN0JTIwR3JhcGhpYyUyMFQlMjBTaGlydHxlbnwwfHx8fDE3NTgwNTYyNDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1745179294283-f9d069f4d38d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxNaW5pbWFsaXN0JTIwR3JhcGhpYyUyMFQlMjBTaGlydHxlbnwwfHx8fDE3NTgwNTYyNDR8MA&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "graphic tee"
     },
     {
@@ -204,6 +204,13 @@
     { "id": "avatar-1", "description": "Avatar of Priya", "imageUrl": "https://picsum.photos/seed/avatar1/100/100", "imageHint": "woman portrait" },
     { "id": "avatar-2", "description": "Avatar of Rohan", "imageUrl": "https://picsum.photos/seed/avatar2/100/100", "imageHint": "man portrait" },
     { "id": "avatar-3", "description": "Avatar of Anjali", "imageUrl": "https://picsum.photos/seed/avatar3/100/100", "imageHint": "woman smiling" },
-    { "id": "avatar-4", "description": "Avatar of Vikram", "imageUrl": "https://picsum.photos/seed/avatar4/100/100", "imageHint": "man smiling" }
+    { "id": "avatar-4", "description": "Avatar of Vikram", "imageUrl": "https://picsum.photos/seed/avatar4/100/100", "imageHint": "man smiling" },
+    { "id": "brand-logo-marvel", "description": "Marvel Logo", "imageUrl": "https://picsum.photos/seed/marvel/200/100", "imageHint": "marvel logo" },
+    { "id": "brand-logo-dc", "description": "DC Comics Logo", "imageUrl": "https://picsum.photos/seed/dc/200/100", "imageHint": "dc comics logo" },
+    { "id": "brand-logo-hp", "description": "Harry Potter Logo", "imageUrl": "https://picsum.photos/seed/hp/200/100", "imageHint": "harry potter logo" },
+    { "id": "brand-logo-puma", "description": "Puma Logo", "imageUrl": "https://picsum.photos/seed/puma/200/100", "imageHint": "puma logo" },
+    { "id": "brand-logo-adidas", "description": "Adidas Logo", "imageUrl": "https://picsum.photos/seed/adidas/200/100", "imageHint": "adidas logo" },
+    { "id": "brand-logo-nike", "description": "Nike Logo", "imageUrl": "https://picsum.photos/seed/nike/200/100", "imageHint": "nike logo" },
+    { "id": "brand-logo-levis", "description": "Levi's Logo", "imageUrl": "https://picsum.photos/seed/levis/200/100", "imageHint": "levis logo" }
   ]
 }

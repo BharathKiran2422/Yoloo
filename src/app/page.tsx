@@ -11,11 +11,13 @@ import { trendingProducts, brandSpotlightProducts } from '@/lib/products';
 import { InstagramSection } from '@/components/sections/instagram-section';
 import { ContactSection } from '@/components/sections/contact-section';
 import { TestimonialsSection } from '@/components/sections/testimonials-section';
+import { BrandCarousel } from '@/components/brand-carousel';
 
 export default function Home() {
   return (
     <>
       <HeroSection />
+      <BrandCarousel />
       <JustDoItSection />
       <div className="container mx-auto px-4">
         <ShopByCategory />

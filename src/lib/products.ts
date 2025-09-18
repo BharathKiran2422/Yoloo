@@ -6,6 +6,12 @@ export type Product = {
   imageId: string;
 };
 
+export type Brand = {
+  id: string;
+  name: string;
+  imageId: string;
+}
+
 export const featuredProducts: Product[] = [
   {
     id: "1",
@@ -47,4 +53,14 @@ export const brandSpotlightProducts: Product[] = [
   { id: "b3", name: "Harry Potter Scarf", price: "₹1,499", imageId: "brand3" },
   { id: "b4", name: "Classic White Sneakers", price: "₹4,999", imageId: "brand4" },
   { id: "b5", name: "Minimalist Graphic Tee", price: "₹1,299", imageId: "product2" },
+];
+
+export const brands: Brand[] = [
+  { id: "brand-logo-1", name: "Marvel", imageId: "brand-logo-marvel" },
+  { id: "brand-logo-2", name: "DC Comics", imageId: "brand-logo-dc" },
+  { id: "brand-logo-3", name: "Harry Potter", imageId: "brand-logo-hp" },
+  { id: "brand-logo-4", name: "Puma", imageId: "brand-logo-puma" },
+  { id: "brand-logo-5", name: "Adidas", imageId: "brand-logo-adidas" },
+  { id: "brand-logo-6", name: "Nike", imageId: "brand-logo-nike" },
+  { id: "brand-logo-7", name: "Levi's", imageId: "brand-logo-levis" },
 ];

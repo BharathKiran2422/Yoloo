@@ -72,12 +72,17 @@ export default {
         'gradient-move': {
           '0%': { 'background-position': '0% 0%' },
           '100%': { 'background-position': '100% 100%' },
+        },
+        'marquee': {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'gradient-move': 'gradient-move 20s ease-in-out infinite alternate',
+        'marquee': 'marquee 30s linear infinite',
       },
     },
   },
