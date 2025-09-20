@@ -1,59 +1,55 @@
+
 'use server';
 
-// This is a simple in-memory store for messages.
-// It's not suitable for production use as it will be reset on every server restart.
-// For a real application, you would use a database like Firestore.
+import { db } from './firebase';
+import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp, orderBy, query } from 'firebase/firestore';
 
 export type Message = {
-  id: number;
+  id: string; // Firestore document ID
   name: string;
   email: string;
   message: string;
   status: 'read' | 'unread';
-  createdAt: Date;
+  createdAt: any; // Firestore Timestamp
 };
 
-let messages: Message[] = [
-  { id: 1, name: 'Jane Doe', email: 'jane@example.com', message: 'I love your new collection! When will the winter jackets be back in stock?', status: 'unread', createdAt: new Date() },
-  { id: 2, name: 'John Smith', email: 'john@example.com', message: 'I have a question about my recent order #12345.', status: 'unread', createdAt: new Date() },
-  { id: 3, name: 'Alice Johnson', email: 'alice@example.com', message: 'Just wanted to say hi! Your website is beautiful.', status: 'read', createdAt: new Date() },
-];
-
-let nextId = messages.length + 1;
-
-// We wrap these operations in functions that return Promises to better simulate
-// a real database interaction, which would be asynchronous.
+const messagesCollection = collection(db, 'contactMessages');
 
 export async function getMessages(): Promise<Message[]> {
-  // Return messages sorted by newest first
-  return Promise.resolve([...messages].sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime()));
+  const q = query(messagesCollection, orderBy('createdAt', 'desc'));
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Message));
 }
 
 export async function addMessage(data: { name: string; email: string; message: string }): Promise<Message> {
-  const newMessage: Message = {
-    id: nextId++,
+  const newMessage = {
     ...data,
-    status: 'unread',
-    createdAt: new Date(),
+    status: 'unread' as const,
+    createdAt: serverTimestamp(),
   };
-  messages.push(newMessage);
-  return Promise.resolve(newMessage);
+  const docRef = await addDoc(messagesCollection, newMessage);
+  return { id: docRef.id, ...newMessage };
 }
 
-export async function toggleMessageStatus(id: number): Promise<Message | undefined> {
+export async function toggleMessageStatus(id: string): Promise<Message | undefined> {
+   const docRef = doc(db, 'contactMessages', id);
+   const messages = await getMessages();
    const message = messages.find(m => m.id === id);
    if (message) {
-     message.status = message.status === 'read' ? 'unread' : 'read';
-     return Promise.resolve(message);
+     const newStatus = message.status === 'read' ? 'unread' : 'read';
+     await updateDoc(docRef, { status: newStatus });
+     return { ...message, status: newStatus };
    }
-   return Promise.resolve(undefined);
+   return undefined;
 }
 
-export async function deleteMessage(id: number): Promise<boolean> {
-  const index = messages.findIndex(m => m.id === id);
-  if (index !== -1) {
-    messages.splice(index, 1);
-    return Promise.resolve(true);
+export async function deleteMessage(id: string): Promise<boolean> {
+  try {
+    const docRef = doc(db, 'contactMessages', id);
+    await deleteDoc(docRef);
+    return true;
+  } catch (error) {
+    console.error("Error deleting message: ", error);
+    return false;
   }
-  return Promise.resolve(false);
 }

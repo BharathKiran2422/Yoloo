@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect, useTransition } from 'react';
@@ -34,18 +35,18 @@ export default function AdminPage() {
     return <AdminLogin onLoginSuccess={() => setIsAuthenticated(true)} />;
   }
 
-  const handleToggleStatus = (id: number) => {
+  const handleToggleStatus = (id: string) => {
     startTransition(async () => {
       const updatedMessage = await toggleMessageStatus(id);
       if (updatedMessage) {
         setMessages(prevMessages => 
-          prevMessages.map(msg => msg.id === id ? updatedMessage : msg)
+          prevMessages.map(msg => msg.id === id ? { ...msg, status: updatedMessage.status } : msg)
         );
       }
     });
   };
 
-  const handleDeleteMessage = (id: number) => {
+  const handleDeleteMessage = (id: string) => {
     startTransition(async () => {
       const success = await deleteMessageAction(id);
       if (success) {
@@ -125,7 +126,7 @@ export default function AdminPage() {
                                 <TableHeader>
                                     <TableRow>
                                         <TableHead>Name</TableHead>
-                                        <TableHead>Email</TableHead>
+                                        <TableHead>Email</TabelHead>
                                         <TableHead>Message</TableHead>
                                         <TableHead className="text-right">Actions</TableHead>
                                     </TableRow>
