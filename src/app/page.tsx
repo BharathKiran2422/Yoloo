@@ -4,7 +4,7 @@ import { BeliefsSection } from '@/components/sections/beliefs-section';
 import { GallerySection } from '@/components/sections/gallery-section';
 import { AppCtaSection } from '@/components/sections/app-cta-section';
 import { StorySection } from '@/components/sections/story-section';
-import { FeaturedProducts } from '@/components/sections/featured-products';
+import { FeaturedProductsInteractive } from '@/components/sections/featured-products-interactive';
 import { ShopByCategory } from '@/components/sections/shop-by-category';
 import { InstagramSection } from '@/components/sections/instagram-section';
 import { ContactSection } from '@/components/sections/contact-section';
@@ -21,7 +21,7 @@ export default function Home() {
       <JustDoItSection />
       <div className="container mx-auto px-4">
         <ShopByCategory />
-        <FeaturedProducts />
+        <FeaturedProductsInteractive />
         <ProductMarquee title="Trending Now" products={trendingProducts} direction="left" />
         <ProductMarquee title="Brand Spotlight" products={brandSpotlightProducts} direction="right" />
         <BeliefsSection />
