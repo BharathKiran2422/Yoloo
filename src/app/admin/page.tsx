@@ -20,8 +20,17 @@ export default function AdminPage() {
 
   const loadMessages = () => {
     startTransition(async () => {
-      const fetchedMessages = await getMessages();
-      setMessages(fetchedMessages);
+      try {
+        const fetchedMessages = await getMessages();
+        setMessages(fetchedMessages);
+      } catch (error) {
+        console.error("Failed to fetch messages:", error);
+        toast({
+          variant: 'destructive',
+          title: "Error",
+          description: "Could not fetch messages. Make sure Firestore rules are set up correctly.",
+        });
+      }
     });
   };
 
@@ -68,30 +77,40 @@ export default function AdminPage() {
       setIsAuthenticated(false);
   }
 
-  const renderMessageRows = (msgs: Message[]) => (
-    <TableBody>
-      {msgs.length > 0 ? msgs.map((msg) => (
-        <TableRow key={msg.id} className={msg.status === 'unread' ? 'bg-muted/50' : ''}>
-          <TableCell className="font-medium">{msg.name}</TableCell>
-          <TableCell>{msg.email}</TableCell>
-          <TableCell>{msg.message}</TableCell>
-          <TableCell className="text-right space-x-2">
-            <Button variant="ghost" size="icon" onClick={() => handleToggleStatus(msg.id)}>
-              {msg.status === 'read' ? <MailOpen className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
-               <span className="sr-only">Mark as {msg.status === 'read' ? 'Unread' : 'Read'}</span>
-            </Button>
-            <Button variant="ghost" size="icon" onClick={() => handleDeleteMessage(msg.id)}>
-              <Trash2 className="h-4 w-4 text-destructive" />
-              <span className="sr-only">Delete</span>
-            </Button>
-          </TableCell>
-        </TableRow>
-      )) : (
-        <TableRow>
-            <TableCell colSpan={4} className="h-24 text-center">No messages in this category.</TableCell>
-        </TableRow>
-      )}
-    </TableBody>
+  const renderMessageTable = (msgs: Message[]) => (
+    <Table>
+        <TableHeader>
+            <TableRow>
+                <TableHead>Name</TableHead>
+                <TableHead>Email</TableHead>
+                <TableHead>Message</TableHead>
+                <TableHead className="text-right">Actions</TableHead>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+          {msgs.length > 0 ? msgs.map((msg) => (
+            <TableRow key={msg.id} className={msg.status === 'unread' ? 'bg-muted/50' : ''}>
+              <TableCell className="font-medium">{msg.name}</TableCell>
+              <TableCell>{msg.email}</TableCell>
+              <TableCell>{msg.message}</TableCell>
+              <TableCell className="text-right space-x-2">
+                <Button variant="ghost" size="icon" onClick={() => handleToggleStatus(msg.id)} disabled={isPending}>
+                  {msg.status === 'read' ? <MailOpen className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
+                   <span className="sr-only">Mark as {msg.status === 'read' ? 'Unread' : 'Read'}</span>
+                </Button>
+                <Button variant="ghost" size="icon" onClick={() => handleDeleteMessage(msg.id)} disabled={isPending}>
+                  <Trash2 className="h-4 w-4 text-destructive" />
+                  <span className="sr-only">Delete</span>
+                </Button>
+              </TableCell>
+            </TableRow>
+          )) : (
+            <TableRow>
+                <TableCell colSpan={4} className="h-24 text-center">No messages in this category.</TableCell>
+            </TableRow>
+          )}
+        </TableBody>
+    </Table>
   );
 
   return (
@@ -122,43 +141,13 @@ export default function AdminPage() {
                     </TabsList>
                     <div className="mt-4">
                         <TabsContent value="all">
-                            <Table>
-                                <TableHeader>
-                                    <TableRow>
-                                        <TableHead>Name</TableHead>
-                                        <TableHead>Email</TableHead>
-                                        <TableHead>Message</TableHead>
-                                        <TableHead className="text-right">Actions</TableHead>
-                                    </TableRow>
-                                </TableHeader>
-                                {renderMessageRows(filteredMessages('all'))}
-                            </Table>
+                            {renderMessageTable(filteredMessages('all'))}
                         </TabsContent>
                         <TabsContent value="unread">
-                             <Table>
-                                <TableHeader>
-                                    <TableRow>
-                                        <TableHead>Name</TableHead>
-                                        <TableHead>Email</TableHead>
-                                        <TableHead>Message</TableHead>
-                                        <TableHead className="text-right">Actions</TableHead>
-                                    </TableRow>
-                                </TableHeader>
-                                {renderMessageRows(filteredMessages('unread'))}
-                            </Table>
+                             {renderMessageTable(filteredMessages('unread'))}
                         </TabsContent>
                         <TabsContent value="read">
-                             <Table>
-                                <TableHeader>
-                                    <TableRow>
-                                        <TableHead>Name</TableHead>
-                                        <TableHead>Email</TableHead>
-                                        <TableHead>Message</TableHead>
-                                        <TableHead className="text-right">Actions</TableHead>
-                                    </TableRow>
-                                </TableHeader>
-                                {renderMessageRows(filteredMessages('read'))}
-                            </Table>
+                             {renderMessageTable(filteredMessages('read'))}
                         </TabsContent>
                     </div>
                 </Tabs>

@@ -2,7 +2,7 @@
 'use server';
 
 import { db } from './firebase';
-import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp, orderBy, query } from 'firebase/firestore';
+import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp, orderBy, query, getDoc } from 'firebase/firestore';
 
 export type Message = {
   id: string; // Firestore document ID
@@ -13,7 +13,7 @@ export type Message = {
   createdAt: any; // Firestore Timestamp
 };
 
-const messagesCollection = collection(db, 'contactMessages');
+const messagesCollection = collection(db, 'messages');
 
 export async function getMessages(): Promise<Message[]> {
   const q = query(messagesCollection, orderBy('createdAt', 'desc'));
@@ -28,14 +28,15 @@ export async function addMessage(data: { name: string; email: string; message: s
     createdAt: serverTimestamp(),
   };
   const docRef = await addDoc(messagesCollection, newMessage);
-  return { id: docRef.id, ...newMessage };
+  return { id: docRef.id, ...newMessage, createdAt: new Date() };
 }
 
 export async function toggleMessageStatus(id: string): Promise<Message | undefined> {
-   const docRef = doc(db, 'contactMessages', id);
-   const messages = await getMessages();
-   const message = messages.find(m => m.id === id);
-   if (message) {
+   const docRef = doc(db, 'messages', id);
+   const docSnap = await getDoc(docRef);
+   
+   if (docSnap.exists()) {
+     const message = { id: docSnap.id, ...docSnap.data() } as Message;
      const newStatus = message.status === 'read' ? 'unread' : 'read';
      await updateDoc(docRef, { status: newStatus });
      return { ...message, status: newStatus };
@@ -45,7 +46,7 @@ export async function toggleMessageStatus(id: string): Promise<Message | undefin
 
 export async function deleteMessage(id: string): Promise<boolean> {
   try {
-    const docRef = doc(db, 'contactMessages', id);
+    const docRef = doc(db, 'messages', id);
     await deleteDoc(docRef);
     return true;
   } catch (error) {
