@@ -126,7 +126,7 @@ export default function AdminPage() {
                                 <TableHeader>
                                     <TableRow>
                                         <TableHead>Name</TableHead>
-                                        <TableHead>Email</TabelHead>
+                                        <TableHead>Email</TableHead>
                                         <TableHead>Message</TableHead>
                                         <TableHead className="text-right">Actions</TableHead>
                                     </TableRow>
