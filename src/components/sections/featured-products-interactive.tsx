@@ -7,8 +7,6 @@ import { featuredProducts } from '@/lib/products';
 import { ProductCard } from '@/components/product-card';
 import { useWindowSize } from '@/hooks/use-window-size';
 
-const MotionProductCard = motion(ProductCard);
-
 export function FeaturedProductsInteractive() {
     const targetRef = useRef<HTMLDivElement | null>(null);
     const { scrollYProgress } = useScroll({
@@ -19,6 +17,33 @@ export function FeaturedProductsInteractive() {
     const { width } = useWindowSize();
     const isMobile = width !== undefined && width < 768;
 
+    // --- Hooks for Mobile Animation ---
+    // These are now called unconditionally.
+    const mobileAnimations = featuredProducts.map((product, i) => {
+        const rangeStart = i / featuredProducts.length;
+        const rangeEnd = (i + 1) / featuredProducts.length;
+        
+        const opacity = useTransform(scrollYProgress, [rangeStart, rangeEnd], [1, 0]);
+        const translateY = useTransform(scrollYProgress, [rangeStart, rangeEnd], [0, -20]);
+
+        const prevRangeStart = (i - 1) / featuredProducts.length;
+        const opacityIn = useTransform(scrollYProgress, [prevRangeStart, rangeStart], [0, 1]);
+        const translateYIn = useTransform(scrollYProgress, [prevRangeStart, rangeStart], [20, 0]);
+
+        return { opacity, translateY, opacityIn, translateYIn };
+    });
+
+    // --- Hooks for Desktop Animation ---
+    // These are also called unconditionally.
+    const productsFirstRow = featuredProducts.slice(0, 4);
+    const productsSecondRow = featuredProducts.slice(4, 8);
+    const opacityFirstRow = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+    const translateYFirstRow = useTransform(scrollYProgress, [0, 0.5], [0, -40]);
+    const opacitySecondRow = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
+    const translateYSecondRow = useTransform(scrollYProgress, [0.5, 1], [40, 0]);
+
+
+    // Conditional rendering based on isMobile, but hooks are not inside the condition.
     if (isMobile) {
         return (
             <section ref={targetRef} className="relative h-[400vh] py-16">
@@ -30,18 +55,13 @@ export function FeaturedProductsInteractive() {
                     </div>
                     <div className="relative w-full max-w-sm h-[450px]">
                         {featuredProducts.map((product, i) => {
-                            const rangeStart = i / featuredProducts.length;
-                            const rangeEnd = (i + 1) / featuredProducts.length;
-
-                            const opacity = useTransform(scrollYProgress, [rangeStart, rangeEnd], [1, 0]);
-                            const translateY = useTransform(scrollYProgress, [rangeStart, rangeEnd], [0, -20]);
-
+                            const { opacity, translateY, opacityIn, translateYIn } = mobileAnimations[i];
                             return (
                                 <motion.div
                                     key={product.id}
                                     style={{
-                                        opacity: i === 0 ? 1 : useTransform(scrollYProgress, [(i - 1) / featuredProducts.length, rangeStart], [0, 1]),
-                                        translateY: i === 0 ? 0 : useTransform(scrollYProgress, [(i - 1) / featuredProducts.length, rangeStart], [20, 0]),
+                                        opacity: i === 0 ? 1 : opacityIn,
+                                        translateY: i === 0 ? 0 : translateYIn,
                                         position: 'absolute',
                                         width: '100%',
                                         top: 0,
@@ -60,16 +80,6 @@ export function FeaturedProductsInteractive() {
         );
     }
     
-    const productsFirstRow = featuredProducts.slice(0, 4);
-    const productsSecondRow = featuredProducts.slice(4, 8);
-
-    const opacityFirstRow = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-    const translateYFirstRow = useTransform(scrollYProgress, [0, 0.5], [0, -40]);
-
-    const opacitySecondRow = useTransform(scrollYProgress, [0.5, 1], [0, 1]);
-    const translateYSecondRow = useTransform(scrollYProgress, [0.5, 1], [40, 0]);
-
-
     return (
         <section ref={targetRef} className="relative h-[200vh] py-16">
             <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
@@ -108,4 +118,3 @@ export function FeaturedProductsInteractive() {
         </section>
     );
 }
-
