@@ -25,7 +25,6 @@ export function ProductCarousel({ title, products }: ProductCarouselProps) {
       <Carousel
         opts={{
           align: "start",
-          loop: true,
         }}
         className="w-full"
       >
