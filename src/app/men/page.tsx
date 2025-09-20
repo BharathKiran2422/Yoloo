@@ -10,25 +10,25 @@ import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 
 export default function MenPage() {
     const menImages = [
-        { id: "men-1", className: "col-span-2" },
+        { id: "men-1", className: "col-span-2 row-span-2" },
         { id: "men-2" },
-        { id: "men-3", className: "row-span-2" },
+        { id: "men-3" },
         { id: "men-4" },
-        { id: "men-5" },
-        { id: "men-6" },
-        { id: "men-7", className: "col-span-2 row-span-2" },
+        { id: "men-5", className: "row-span-2" },
+        { id: "men-6", className: "col-span-2" },
+        { id: "men-7", },
         { id: "men-8" },
         { id: "men-9" },
         { id: "men-10" },
-        { id: "men-11", className: "row-span-2" },
-        { id: "men-12", className: "col-span-2" },
-        { id: "men-13" },
+        { id: "men-11", className: "col-span-2 row-span-2" },
+        { id: "men-12" },
+        { id: "men-13", className: "row-span-2" },
         { id: "men-14" },
         { id: "men-15" },
-        { id: "men-16" },
-        { id: "men-17", className: "col-span-2" },
+        { id: "men-16", className: "col-span-2" },
+        { id: "men-17" },
         { id: "men-18" },
-        { id: "men-19", className: "row-span-2" },
+        { id: "men-19" },
         { id: "men-20" }
     ];
 
@@ -57,7 +57,7 @@ export default function MenPage() {
                     <p className="text-muted-foreground mb-8 text-center">From casual wear to licensed collections, find your perfect style.</p>
 
                     <motion.div 
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[250px]"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[300px]"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
@@ -66,8 +66,8 @@ export default function MenPage() {
                             const image = getImageData(id);
                             if (!image) return null;
                             return (
-                                <motion.div key={id} variants={itemVariants}>
-                                    <Link href="/#purchase-on-app" className={`relative rounded-2xl overflow-hidden group h-full w-full block ${className || ''}`}>
+                                <motion.div key={id} variants={itemVariants} className={className || ''}>
+                                    <Link href="/#purchase-on-app" className="relative rounded-2xl overflow-hidden group h-full w-full block">
                                         <Image
                                             src={image.imageUrl}
                                             alt={image.description}

@@ -10,26 +10,26 @@ import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 
 export default function WomenPage() {
     const womenImages = [
-        { id: "women-1", className: "row-span-2" },
-        { id: "women-2" },
-        { id: "women-3" },
-        { id: "women-4", className: "col-span-2" },
+        { id: "women-1" },
+        { id: "women-2", className: "row-span-2" },
+        { id: "women-3", className: "col-span-2" },
+        { id: "women-4" },
         { id: "women-5" },
         { id: "women-6" },
-        { id: "women-7", className: "row-span-2" },
-        { id: "women-8" },
+        { id: "women-7" },
+        { id: "women-8", className: "col-span-2 row-span-2" },
         { id: "women-9" },
         { id: "women-10" },
-        { id: "women-11", className: "col-span-2 row-span-2" },
+        { id: "women-11", className: "row-span-2" },
         { id: "women-12" },
         { id: "women-13" },
         { id: "women-14", className: "col-span-2" },
         { id: "women-15" },
         { id: "women-16" },
         { id: "women-17" },
-        { id: "women-18", className: "row-span-2" },
+        { id: "women-18" },
         { id: "women-19" },
-        { id: "women-20" }
+        { id: "women-20", className: "col-span-2" }
     ];
 
     const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
@@ -57,7 +57,7 @@ export default function WomenPage() {
                     <p className="text-muted-foreground mb-8 text-center">Explore elegant dresses, casual wear, and special collections.</p>
 
                     <motion.div 
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[250px]"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[300px]"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
@@ -66,8 +66,8 @@ export default function WomenPage() {
                             const image = getImageData(id);
                             if (!image) return null;
                             return (
-                                <motion.div key={id} variants={itemVariants}>
-                                    <Link href="/#purchase-on-app" className={`relative rounded-2xl overflow-hidden group h-full w-full block ${className || ''}`}>
+                                <motion.div key={id} variants={itemVariants} className={className || ''}>
+                                    <Link href="/#purchase-on-app" className="relative rounded-2xl overflow-hidden group h-full w-full block">
                                         <Image
                                             src={image.imageUrl}
                                             alt={image.description}
