@@ -1,7 +1,10 @@
+'use client';
+
 import type { Product } from '@/lib/products';
 import { ProductCard } from './product-card';
 import { cn } from '@/lib/utils';
 import './product-marquee.css';
+import { useRef, useState, MouseEvent, TouchEvent } from 'react';
 
 type ProductMarqueeProps = {
     title: string;
@@ -10,8 +13,62 @@ type ProductMarqueeProps = {
 }
 
 export function ProductMarquee({ title, products, direction = 'left' }: ProductMarqueeProps) {
-  // We need to duplicate the products to create a seamless loop effect
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  const [isDown, setIsDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  // Duplicate products for a seamless loop
   const extendedProducts = [...products, ...products];
+
+  const handleMouseDown = (e: MouseEvent) => {
+    if (!marqueeRef.current) return;
+    setIsDown(true);
+    marqueeRef.current.classList.add('grabbing');
+    setStartX(e.pageX - marqueeRef.current.offsetLeft);
+    setScrollLeft(marqueeRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    if (!marqueeRef.current) return;
+    setIsDown(false);
+    marqueeRef.current.classList.remove('grabbing');
+  };
+
+  const handleMouseUp = () => {
+    if (!marqueeRef.current) return;
+    setIsDown(false);
+    marqueeRef.current.classList.remove('grabbing');
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!isDown || !marqueeRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - marqueeRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Scroll-fast
+    marqueeRef.current.scrollLeft = scrollLeft - walk;
+  };
+  
+  // Touch events for mobile
+  const handleTouchStart = (e: TouchEvent) => {
+    if (!marqueeRef.current) return;
+    setIsDown(true);
+    setStartX(e.touches[0].pageX - marqueeRef.current.offsetLeft);
+    setScrollLeft(marqueeRef.current.scrollLeft);
+  };
+  
+  const handleTouchEnd = () => {
+    if (!marqueeRef.current) return;
+    setIsDown(false);
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    if (!isDown || !marqueeRef.current) return;
+    const x = e.touches[0].pageX - marqueeRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    marqueeRef.current.scrollLeft = scrollLeft - walk;
+  };
+
 
   return (
     <section className="py-12 md:py-16 overflow-hidden">
@@ -23,10 +80,20 @@ export function ProductMarquee({ title, products, direction = 'left' }: ProductM
             </div>
         </div>
       </div>
-      <div className="marquee-container group">
+      <div 
+        className="marquee-container group"
+        ref={marqueeRef}
+        onMouseDown={handleMouseDown}
+        onMouseLeave={handleMouseLeave}
+        onMouseUp={handleMouseUp}
+        onMouseMove={handleMouseMove}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        onTouchMove={handleTouchMove}
+      >
         <div className={cn(
             "marquee-content flex gap-8",
-            direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
+            !isDown && (direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right')
         )}>
           {extendedProducts.map((product, index) => (
             <div key={`${product.id}-${index}`} className="marquee-item shrink-0 w-[280px] sm:w-[320px] md:w-[350px]">

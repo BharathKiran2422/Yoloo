@@ -4,6 +4,11 @@
     overflow: hidden;
     user-select: none;
     gap: var(--gap);
+    cursor: grab;
+}
+
+.marquee-container.grabbing {
+    cursor: grabbing;
 }
 
 .marquee-content {
@@ -14,9 +19,11 @@
     gap: var(--gap);
 }
 
-.marquee-container:hover .marquee-content {
+.marquee-container:hover .marquee-content.animate-marquee-left,
+.marquee-container:hover .marquee-content.animate-marquee-right {
     animation-play-state: paused;
 }
+
 
 @keyframes marquee-left {
     from {
