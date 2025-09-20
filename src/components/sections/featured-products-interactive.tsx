@@ -20,17 +20,14 @@ export function FeaturedProductsInteractive() {
 
     // --- Hooks for Mobile Animation ---
     const mobileAnimations = featuredProducts.map((_, i) => {
-        // Each item gets a segment of the scroll progress to animate in and out.
-        // We add a gap between segments to create a pause.
-        const segment = 1 / (featuredProducts.length + 1); 
-        const startTime = (i * segment);
+        const segment = 1 / featuredProducts.length;
+        const startTime = i * segment;
         const endTime = startTime + segment;
-
+        
         const opacity = useTransform(scrollYProgress, [startTime, endTime], [1, 0]);
         const translateY = useTransform(scrollYProgress, [startTime, endTime], [0, -20]);
-        
-        // Stagger the "in" animation to start after the previous one is mostly out.
-        const prevEndTime = i > 0 ? ((i-1) * segment) : -0.1;
+
+        const prevEndTime = i > 0 ? (i - 0.5) * segment : -0.1;
         const opacityIn = useTransform(scrollYProgress, [prevEndTime, startTime], [0, 1]);
         const translateYIn = useTransform(scrollYProgress, [prevEndTime, startTime], [20, 0]);
 
@@ -43,13 +40,11 @@ export function FeaturedProductsInteractive() {
     const opacityFirstRow = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const translateYFirstRow = useTransform(scrollYProgress, [0, 0.5], [0, -40]);
     
-    // Animate the second row in and out
     const opacitySecondRow = useTransform(scrollYProgress, [0.4, 0.7, 1], [0, 1, 0]);
     const translateYSecondRow = useTransform(scrollYProgress, [0.4, 0.7], [40, 0]);
 
     if (isMobile) {
-        // Calculate dynamic height for mobile to ensure enough scroll room
-        const mobileHeight = `${(featuredProducts.length + 1) * 100}vh`;
+        const mobileHeight = `${featuredProducts.length * 150}vh`;
         return (
             <section ref={targetRef} className="relative py-16" style={{ height: mobileHeight }}>
                 <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
@@ -60,14 +55,13 @@ export function FeaturedProductsInteractive() {
                     </div>
                     <div className="relative w-full max-w-sm h-[450px]">
                         {featuredProducts.map((product, i) => {
-                             const { opacity, translateY, opacityIn, translateYIn } = mobileAnimations[i];
+                             const { opacityIn, translateYIn } = mobileAnimations[i];
                             return (
                                 <motion.div
                                     key={product.id}
                                     style={{
-                                        // Apply "in" animation for all but the first item
-                                        opacity: i === 0 ? opacity : opacityIn,
-                                        translateY: i === 0 ? translateY : translateYIn,
+                                        opacity: opacityIn,
+                                        translateY: translateYIn,
                                         position: 'absolute',
                                         width: '100%',
                                         top: 0,
@@ -85,7 +79,7 @@ export function FeaturedProductsInteractive() {
     }
     
     return (
-        <section ref={targetRef} className="relative h-[150vh] py-16">
+        <section ref={targetRef} className="relative h-[120vh] py-16">
             <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
@@ -113,8 +107,7 @@ export function FeaturedProductsInteractive() {
                         }}
                         className={cn(
                             "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 absolute w-full left-0 px-4 sm:px-8",
-                            // Disable pointer events when the row is not visible
-                            scrollYProgress.get() < 0.5 && "pointer-events-none"
+                            "pointer-events-none"
                         )}
                     >
                         {productsSecondRow.map((product) => (
