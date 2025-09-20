@@ -37,10 +37,30 @@ export const featuredProducts: Product[] = [
     price: "₹7,999",
     imageId: "product4",
   },
-  { id: "t1", name: "Stylish Ethnic Kurta", price: "₹3,499", imageId: "trending1" },
-  { id: "t2", name: "Modern Casual Shirt", price: "₹2,199", imageId: "trending2" },
-  { id: "t3", name: "Premium Winter Jacket", price: "₹8,999", imageId: "trending3" },
-  { id: "t4", name: "Elegant Party Dress", price: "₹6,499", imageId: "trending4" },
+  {
+    id: "5",
+    name: "Stylish Leather Boots",
+    price: "₹5,999",
+    imageId: "product5",
+  },
+  {
+    id: "6",
+    name: "Cozy Wool Sweater",
+    price: "₹3,499",
+    imageId: "product6",
+  },
+  {
+    id: "7",
+    name: "Sleek Silver Watch",
+    price: "₹12,999",
+    imageId: "product7",
+  },
+  {
+    id: "8",
+    name: "Floral Summer Dress",
+    price: "₹4,299",
+    imageId: "product8",
+  },
 ];
 
 export const trendingProducts: Product[] = [
@@ -74,3 +94,5 @@ export const brands: Brand[] = [
   { id: "brand-logo-6", name: "Nike", imageId: "brand-logo-nike" },
   { id: "brand-logo-7", name: "Levi's", imageId: "brand-logo-levis" },
 ];
+
+    

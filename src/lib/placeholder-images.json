@@ -16,13 +16,13 @@
     {
         "id": "hero-slide-3",
         "description": "A fashion delivery person quickly moving through a city, representing fast delivery.",
-        "imageUrl": "https://images.unsplash.com/photo-1615474994288-63d1cb7f566c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYXNoaW9uJTIwZGVsaXZlcnl8ZW58MHx8fHwxNzU4MTM3NjIwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+        "imageUrl": "https://images.unsplash.com/photo-1615474994288-63d1cb7f566c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYXNoaW9uJTIwZGVsaXZlcnl8ZW58MHx8fHwxNzU4MTM3NjIwfDA&ixlib.rb-4.1.0&q=80&w=1080",
         "imageHint": "fashion delivery"
     },
     {
         "id": "gallery-men",
         "description": "Stylish man in a modern outfit.",
-        "imageUrl": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZW4lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODEzMDk4OHww&ixlib=rb-4.1.0&q=80&w=1080",
+        "imageUrl": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZW4lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODEzMDk4OHww&ixlib.rb-4.1.0&q=80&w=1080",
         "imageHint": "men fashion"
     },
     {
@@ -82,7 +82,7 @@
     {
       "id": "product1",
       "description": "A stylish blue denim jacket.",
-      "imageUrl": "https://images.unsplash.com/photo-1527016021513-b09758b777bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxBenVyZSUyMERlbmltJTIwSmFja2V0fGVufDB8fHx8MTc1ODA1NjE0OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1527016021513-b09758b777bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxBenVyZSUyMERlbmltJTIwSmFja2V0fGVufDB8fHx8MTc1ODA1NjE0OHww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "denim jacket"
     },
     {
@@ -102,6 +102,30 @@
       "description": "A classic beige trench coat.",
       "imageUrl": "https://images.unsplash.com/photo-1544246108-14b45872b02d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8dHJlbmNofGVufDB8fHx8MTc1ODA1Njc5MXww&ixlib.rb-4.1.0&q=80&w=1080",
       "imageHint": "trench coat"
+    },
+    {
+      "id": "product5",
+      "description": "Stylish leather boots.",
+      "imageUrl": "https://images.unsplash.com/photo-1608256247969-a339a4897f84?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",
+      "imageHint": "leather boots"
+    },
+    {
+      "id": "product6",
+      "description": "A cozy wool sweater.",
+      "imageUrl": "https://images.unsplash.com/photo-1620799140408-edc6d5f94208?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",
+      "imageHint": "wool sweater"
+    },
+    {
+      "id": "product7",
+      "description": "A sleek silver watch.",
+      "imageUrl": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",
+      "imageHint": "silver watch"
+    },
+    {
+      "id": "product8",
+      "description": "A floral summer dress.",
+      "imageUrl": "https://images.unsplash.com/photo-1594744806549-83a81794c043?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",
+      "imageHint": "summer dress"
     },
     { "id": "men-1", "description": "Stylish man in a modern ethnic kurta.", "imageUrl": "https://images.unsplash.com/photo-1621288825828-877bab1131a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBtYWxlJTIwbW9kZWx8ZW58MHx8fHwxNzU4MTMwNzM4fDA&ixlib.rb-4.1.0&q=80&w=1080", "imageHint": "ethnic kurta" },
     { "id": "men-2", "description": "Man in a cool streetwear hoodie.", "imageUrl": "https://images.unsplash.com/photo-1559645514-50f991e457f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8bWFsZSUyMHN0cmVldHdlYXJ8ZW58MHx8fHwxNzU4MTMwNzk1fDA&ixlib.rb-4.1.0&q=80&w=1080", "imageHint": "streetwear hoodie" },
@@ -214,3 +238,5 @@
     { "id": "brand-logo-levis", "description": "Levi's Logo", "imageUrl": "https://picsum.photos/seed/levis/200/100", "imageHint": "levis logo" }
   ]
 }
+
+    
