@@ -1,3 +1,4 @@
+
 import { HeroSection } from '@/components/sections/hero-section';
 import { JustDoItSection } from '@/components/sections/just-do-it-section';
 import { BeliefsSection } from '@/components/sections/beliefs-section';
@@ -12,10 +13,11 @@ import { TestimonialsSection } from '@/components/sections/testimonials-section'
 import { BrandCarousel } from '@/components/brand-carousel';
 import { ProductMarquee } from '@/components/product-marquee';
 import { trendingProducts, brandSpotlightProducts } from '@/lib/products';
+import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 
 export default function Home() {
   return (
-    <>
+    <PageTransitionWrapper>
       <HeroSection />
       <BrandCarousel />
       <JustDoItSection />
@@ -32,6 +34,6 @@ export default function Home() {
       </div>
       <StorySection />
       <ContactSection />
-    </>
+    </PageTransitionWrapper>
   );
 }
