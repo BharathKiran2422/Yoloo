@@ -10,25 +10,25 @@ import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 
 export default function MenPage() {
     const menImages = [
-        { id: "men-1", className: "row-span-2" },
+        { id: "men-1", className: "col-span-2" },
         { id: "men-2" },
-        { id: "men-3" },
-        { id: "men-4", className: "col-span-2 row-span-2" },
+        { id: "men-3", className: "row-span-2" },
+        { id: "men-4" },
         { id: "men-5" },
         { id: "men-6" },
-        { id: "men-7" },
-        { id: "men-8", className: "col-span-2"},
+        { id: "men-7", className: "col-span-2 row-span-2" },
+        { id: "men-8" },
         { id: "men-9" },
-        { id: "men-10", className: "row-span-2"},
-        { id: "men-11" },
-        { id: "men-12" },
-        { id: "men-13", className: "col-span-2"},
+        { id: "men-10" },
+        { id: "men-11", className: "row-span-2" },
+        { id: "men-12", className: "col-span-2" },
+        { id: "men-13" },
         { id: "men-14" },
         { id: "men-15" },
-        { id: "men-16", className: "row-span-2"},
-        { id: "men-17" },
+        { id: "men-16" },
+        { id: "men-17", className: "col-span-2" },
         { id: "men-18" },
-        { id: "men-19", className: "col-span-2 row-span-2"},
+        { id: "men-19", className: "row-span-2" },
         { id: "men-20" }
     ];
 

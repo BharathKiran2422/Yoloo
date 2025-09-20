@@ -10,25 +10,25 @@ import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 
 export default function WomenPage() {
     const womenImages = [
-        { id: "women-1", className: "col-span-2 row-span-2" },
+        { id: "women-1", className: "row-span-2" },
         { id: "women-2" },
         { id: "women-3" },
-        { id: "women-4", className: "row-span-2" },
+        { id: "women-4", className: "col-span-2" },
         { id: "women-5" },
         { id: "women-6" },
-        { id: "women-7" },
-        { id: "women-8", className: "col-span-2"},
+        { id: "women-7", className: "row-span-2" },
+        { id: "women-8" },
         { id: "women-9" },
-        { id: "women-10", className: "row-span-2"},
-        { id: "women-11" },
+        { id: "women-10" },
+        { id: "women-11", className: "col-span-2 row-span-2" },
         { id: "women-12" },
-        { id: "women-13", className: "col-span-2"},
-        { id: "women-14" },
+        { id: "women-13" },
+        { id: "women-14", className: "col-span-2" },
         { id: "women-15" },
-        { id: "women-16", className: "row-span-2"},
+        { id: "women-16" },
         { id: "women-17" },
-        { id: "women-18" },
-        { id: "women-19", className: "col-span-2 row-span-2"},
+        { id: "women-18", className: "row-span-2" },
+        { id: "women-19" },
         { id: "women-20" }
     ];
 

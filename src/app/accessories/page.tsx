@@ -10,8 +10,8 @@ import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 
 export default function AccessoriesPage() {
     const accessoriesImages = [
-        { id: "accessories-1", className: "row-span-2" },
-        { id: "accessories-2" },
+        { id: "accessories-1" },
+        { id: "accessories-2", className: "row-span-2" },
         { id: "accessories-3" },
         { id: "accessories-4" },
         { id: "accessories-5" },
@@ -19,16 +19,16 @@ export default function AccessoriesPage() {
         { id: "accessories-7" },
         { id: "accessories-8", className: "row-span-2"},
         { id: "accessories-9" },
-        { id: "accessories-10", className: "col-span-2"},
-        { id: "accessories-11" },
+        { id: "accessories-10"},
+        { id: "accessories-11", className: "col-span-2" },
         { id: "accessories-12" },
-        { id: "accessories-13", className: "row-span-2"},
+        { id: "accessories-13"},
         { id: "accessories-14" },
-        { id: "accessories-15" },
-        { id: "accessories-16", className: "col-span-2"},
+        { id: "accessories-15", className: "col-span-2 row-span-2" },
+        { id: "accessories-16" },
         { id: "accessories-17" },
         { id: "accessories-18" },
-        { id: "accessories-19", className: "row-span-2"},
+        { id: "accessories-19" },
         { id: "accessories-20" }
     ];
     
