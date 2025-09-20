@@ -18,33 +18,35 @@ export function FeaturedProductsInteractive() {
     const { width } = useWindowSize();
     const isMobile = width !== undefined && width < 768;
 
-    // --- Hooks for Mobile Animation ---
-    const mobileAnimations = featuredProducts.map((_, i) => {
-        const segment = 1 / featuredProducts.length;
-        const startTime = i * segment;
-        const endTime = startTime + segment;
-        
-        const opacity = useTransform(scrollYProgress, [startTime, endTime], [1, 0]);
-        const translateY = useTransform(scrollYProgress, [startTime, endTime], [0, -20]);
-
-        const prevEndTime = i > 0 ? (i - 0.5) * segment : -0.1;
-        const opacityIn = useTransform(scrollYProgress, [prevEndTime, startTime], [0, 1]);
-        const translateYIn = useTransform(scrollYProgress, [prevEndTime, startTime], [20, 0]);
-
-        return { opacity, translateY, opacityIn, translateYIn };
-    });
-
-    // --- Hooks for Desktop Animation ---
+    // --- Hooks for All Views (Called Unconditionally) ---
     const productsFirstRow = featuredProducts.slice(0, 4);
     const productsSecondRow = featuredProducts.slice(4, 8);
+    
+    // Desktop animations
     const opacityFirstRow = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
     const translateYFirstRow = useTransform(scrollYProgress, [0, 0.5], [0, -40]);
     
     const opacitySecondRow = useTransform(scrollYProgress, [0.4, 0.7, 1], [0, 1, 0]);
     const translateYSecondRow = useTransform(scrollYProgress, [0.4, 0.7], [40, 0]);
+    
+    // Mobile animations
+    const mobileAnimations = featuredProducts.map((_, i) => {
+        const segment = 1 / featuredProducts.length;
+        const startTime = i * segment * 0.8; // Slow down the animation
+        const endTime = startTime + segment * 1.5;
+        
+        const opacityIn = useTransform(scrollYProgress, [startTime, endTime], [1, 0]);
+        const translateYIn = useTransform(scrollYProgress, [startTime, endTime], [0, -20]);
+
+        const prevEndTime = i > 0 ? (i - 0.5) * segment * 0.8 : -0.1;
+        const opacityOut = useTransform(scrollYProgress, [prevEndTime, startTime], [0, 1]);
+        const translateYOut = useTransform(scrollYProgress, [prevEndTime, startTime], [20, 0]);
+
+        return { opacity: opacityOut, translateY: translateYOut };
+    });
 
     if (isMobile) {
-        const mobileHeight = `${featuredProducts.length * 150}vh`;
+        const mobileHeight = `${featuredProducts.length * 100}vh`;
         return (
             <section ref={targetRef} className="relative py-16" style={{ height: mobileHeight }}>
                 <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
@@ -55,13 +57,13 @@ export function FeaturedProductsInteractive() {
                     </div>
                     <div className="relative w-full max-w-sm h-[450px]">
                         {featuredProducts.map((product, i) => {
-                             const { opacityIn, translateYIn } = mobileAnimations[i];
+                             const { opacity, translateY } = mobileAnimations[i];
                             return (
                                 <motion.div
                                     key={product.id}
                                     style={{
-                                        opacity: opacityIn,
-                                        translateY: translateYIn,
+                                        opacity: opacity,
+                                        translateY: translateY,
                                         position: 'absolute',
                                         width: '100%',
                                         top: 0,
@@ -79,7 +81,7 @@ export function FeaturedProductsInteractive() {
     }
     
     return (
-        <section ref={targetRef} className="relative h-[120vh] py-16">
+        <section ref={targetRef} className="relative h-[100vh] py-16">
             <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
