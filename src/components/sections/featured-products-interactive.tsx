@@ -2,11 +2,12 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, Variants } from 'framer-motion';
+import { motion, useScroll, useTransform, Variants, MotionValue } from 'framer-motion';
 import { featuredProducts } from '@/lib/products';
 import { ProductCard } from '@/components/product-card';
 import { useWindowSize } from '@/hooks/use-window-size';
 import { cn } from '@/lib/utils';
+import type { Product } from '@/lib/products';
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -30,6 +31,35 @@ const itemVariants: Variants = {
         },
     },
 };
+
+
+// New component to safely encapsulate hooks for the mobile view
+function MobileProductCard({ product, index, scrollYProgress, totalProducts }: { product: Product, index: number, scrollYProgress: MotionValue<number>, totalProducts: number }) {
+    const segment = 1 / totalProducts;
+    const start = index * segment;
+    const end = start + segment;
+    
+    const opacity = useTransform(scrollYProgress, [start, start + segment / 3, end - segment / 3, end], [0, 1, 1, 0]);
+    const scale = useTransform(scrollYProgress, [start, end], [0.9, 1.05]);
+    const y = useTransform(scrollYProgress, [start, end], ['10%', '-10%']);
+
+    return (
+        <motion.div
+            style={{
+                opacity,
+                scale,
+                y,
+                position: 'absolute',
+                width: '100%',
+                top: 0,
+                zIndex: index,
+            }}
+            className="px-4"
+        >
+            <ProductCard product={product} />
+        </motion.div>
+    );
+}
 
 
 export function FeaturedProductsInteractive() {
@@ -68,34 +98,15 @@ export function FeaturedProductsInteractive() {
                         <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
                     </div>
                     <div className="relative w-full max-w-sm h-[480px]">
-                        {featuredProducts.map((product, i) => {
-                             const segment = 1 / featuredProducts.length;
-                             const start = i * segment;
-                             const end = start + segment;
-                             
-                             const opacity = useTransform(scrollYProgress, [start, start + segment / 3, end - segment / 3, end], [0, 1, 1, 0]);
-                             const scale = useTransform(scrollYProgress, [start, end], [0.9, 1.05]);
-                             const y = useTransform(scrollYProgress, [start, end], ['10%', '-10%']);
-
-
-                            return (
-                                <motion.div
-                                    key={product.id}
-                                    style={{
-                                        opacity,
-                                        scale,
-                                        y,
-                                        position: 'absolute',
-                                        width: '100%',
-                                        top: 0,
-                                        zIndex: i,
-                                    }}
-                                    className="px-4"
-                                >
-                                    <ProductCard product={product} />
-                                </motion.div>
-                            );
-                        })}
+                        {featuredProducts.map((product, i) => (
+                            <MobileProductCard 
+                                key={product.id}
+                                product={product}
+                                index={i}
+                                scrollYProgress={scrollYProgress}
+                                totalProducts={featuredProducts.length}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>
