@@ -22,10 +22,10 @@ export default function Home() {
       <HeroSection />
       <BrandCarousel />
       <JustDoItSection />
-      <HighlightBanner />
       <div className="container mx-auto px-4">
         <ShopByCategory />
         <FeaturedProductsInteractive />
+        <HighlightBanner />
         <ProductMarquee title="Trending Now" products={trendingProducts} direction="left" />
         <ProductMarquee title="Brand Spotlight" products={brandSpotlightProducts} direction="right" />
         <BeliefsSection />
