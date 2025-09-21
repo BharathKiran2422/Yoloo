@@ -14,10 +14,31 @@ import { testimonials } from "@/lib/testimonials";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Star } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useEffect, useState } from "react";
 
 export function TestimonialsSection() {
     
     const getAvatarImage = (id: string) => PlaceHolderImages.find(img => img.id === id);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return (
+             <section className="py-12 md:py-16 bg-card/50 dark:bg-card">
+                <div className="container mx-auto">
+                     <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground">What Our Customers Say</h2>
+                        <p className="text-muted-foreground mt-2">Real stories from our amazing users.</p>
+                        <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
+                    </div>
+                </div>
+            </section>
+        );
+    }
+
 
     return (
         <section className="py-12 md:py-16 bg-card/50 dark:bg-card">

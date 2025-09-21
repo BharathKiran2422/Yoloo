@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -7,6 +8,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay";
 import { Instagram, Linkedin } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 
 const heroSlides = [
@@ -39,6 +41,60 @@ const heroSlides = [
 
 export function HeroSection() {
   const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+
+  if (!mounted) {
+      const heroImage = getImageData(heroSlides[0].imageId);
+      return (
+        <section className="w-full bg-background pt-8 md:pt-12">
+          <div className="container mx-auto">
+            <div className="bg-card dark:bg-card-foreground/5 rounded-2xl shadow-sm p-8 md:p-12 border">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="text-center md:text-left">
+                  <p className="text-primary font-semibold mb-2">{heroSlides[0].pretitle}</p>
+                  <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
+                    {heroSlides[0].title}
+                  </h1>
+                  <p className="text-muted-foreground mb-8 text-lg">
+                    {heroSlides[0].subtitle}
+                  </p>
+                  <div className="flex items-center gap-4 justify-center md:justify-start">
+                    <Link href="#purchase-on-app">
+                      <Button size="lg">{heroSlides[0].buttonText}</Button>
+                    </Link>
+                     <div className="flex items-center space-x-3">
+                        <Link href="https://www.linkedin.com/company/yoloo-lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                          <Linkedin className="h-6 w-6" />
+                        </Link>
+                        <Link href="https://www.instagram.com/yoloo_lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                          <Instagram className="h-6 w-6" />
+                        </Link>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative h-64 md:h-96 rounded-xl overflow-hidden">
+                  {heroImage && (
+                    <Image
+                      src={heroImage.imageUrl}
+                      alt={heroImage.description}
+                      fill
+                      className="object-cover"
+                      data-ai-hint={heroImage.imageHint}
+                      priority={true}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )
+  }
 
   return (
     <section className="w-full bg-background pt-8 md:pt-12">

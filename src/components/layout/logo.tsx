@@ -1,3 +1,4 @@
+
 'use client';
 
 import { cn } from "@/lib/utils";
@@ -13,18 +14,16 @@ export function Logo({ className }: { className?: string }) {
     setMounted(true);
   }, []);
 
+  const src = resolvedTheme === 'light' ? "/logo2.png" : "/logo1.png";
+
   if (!mounted) {
-    // Render a placeholder to prevent layout shift while waiting for theme
+    // Render a placeholder or nothing to prevent mismatch
     return <div className={cn("relative", className)} />;
   }
 
   return (
     <div className={cn("relative", className)}>
-        {resolvedTheme === 'light' ? (
-            <Image src="/logo2.png" alt="Yoloo! Logo" fill priority className="object-contain" />
-        ) : (
-            <Image src="/logo1.png" alt="Yoloo! Logo" fill priority className="object-contain" />
-        )}
+       <Image src={src} alt="Yoloo! Logo" fill priority className="object-contain" />
     </div>
   );
 }
