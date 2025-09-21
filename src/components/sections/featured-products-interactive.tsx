@@ -85,14 +85,14 @@ export function FeaturedProductsInteractive() {
     return (
         <motion.section 
             ref={targetRef} 
-            className="relative py-16"
+            className="relative"
             style={{ 
                 height: dynamicHeight,
             }}
         >
             {/* Mobile View - Rendered but hidden on desktop */}
-             <div className="md:hidden sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
-                <div className="text-center mb-12 px-4 z-10">
+             <div className="md:hidden sticky top-0 h-screen flex flex-col items-center justify-start pt-8">
+                <div className="text-center px-4 z-10 mb-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
                     <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
                     <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
@@ -112,8 +112,8 @@ export function FeaturedProductsInteractive() {
 
             {/* Desktop View - Rendered but hidden on mobile */}
             <motion.div className="hidden md:block sticky top-0 h-screen" style={{ opacity: opacityContainer }}>
-                <div className="flex flex-col items-center justify-start pt-16 h-full">
-                    <div className="text-center mb-12 z-10">
+                <div className="flex flex-col items-center justify-start h-full pt-8">
+                    <div className="text-center z-10 mb-8">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
                         <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
                         <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
