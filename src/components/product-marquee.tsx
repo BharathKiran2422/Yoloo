@@ -1,10 +1,11 @@
+
 'use client';
 
 import type { Product } from '@/lib/products';
 import { ProductCard } from './product-card';
 import { cn } from '@/lib/utils';
 import './product-marquee.css';
-import { useRef, useState, MouseEvent, TouchEvent } from 'react';
+import { useRef, useState, MouseEvent, TouchEvent, useEffect } from 'react';
 
 type ProductMarqueeProps = {
     title: string;
@@ -17,6 +18,11 @@ export function ProductMarquee({ title, products, direction = 'left' }: ProductM
   const [isDown, setIsDown] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Duplicate products for a seamless loop
   const extendedProducts = [...products, ...products];
@@ -83,17 +89,17 @@ export function ProductMarquee({ title, products, direction = 'left' }: ProductM
       <div 
         className="marquee-container group"
         ref={marqueeRef}
-        onMouseDown={handleMouseDown}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        onTouchMove={handleTouchMove}
+        onMouseDown={isClient ? handleMouseDown : undefined}
+        onMouseLeave={isClient ? handleMouseLeave : undefined}
+        onMouseUp={isClient ? handleMouseUp : undefined}
+        onMouseMove={isClient ? handleMouseMove : undefined}
+        onTouchStart={isClient ? handleTouchStart : undefined}
+        onTouchEnd={isClient ? handleTouchEnd : undefined}
+        onTouchMove={isClient ? handleTouchMove : undefined}
       >
         <div className={cn(
             "marquee-content flex gap-8",
-            !isDown && (direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right')
+            isClient && !isDown && (direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right')
         )}>
           {extendedProducts.map((product, index) => (
             <div key={`${product.id}-${index}`} className="marquee-item shrink-0 w-[280px] sm:w-[320px] md:w-[350px]">
