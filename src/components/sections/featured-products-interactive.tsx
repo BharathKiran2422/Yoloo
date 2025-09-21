@@ -85,7 +85,7 @@ export function FeaturedProductsInteractive() {
     return (
         <motion.section 
             ref={targetRef} 
-            className="relative py-16 interactive-section-bg"
+            className="relative py-16"
             style={{ 
                 height: dynamicHeight,
             }}
