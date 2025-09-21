@@ -10,25 +10,25 @@ import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 
 export default function SneakersPage() {
     const sneakerImages = [
-        { id: "sneakers-1", className: "row-span-2" },
+        { id: "sneakers-1", className: "sm:row-span-2" },
         { id: "sneakers-2" },
         { id: "sneakers-3" },
         { id: "sneakers-4" },
-        { id: "sneakers-5", className: "col-span-2" },
+        { id: "sneakers-5", className: "sm:col-span-2" },
         { id: "sneakers-6" },
-        { id: "sneakers-7", className: "col-span-2" },
+        { id: "sneakers-7", className: "sm:col-span-2" },
         { id: "sneakers-8" },
         { id: "sneakers-9" },
-        { id: "sneakers-10", className: "row-span-2" },
+        { id: "sneakers-10", className: "sm:row-span-2" },
         { id: "sneakers-11" },
         { id: "sneakers-12" },
-        { id: "sneakers-13", className: "col-span-2 row-span-2" },
+        { id: "sneakers-13", className: "sm:col-span-2 sm:row-span-2" },
         { id: "sneakers-14" },
         { id: "sneakers-15" },
         { id: "sneakers-16" },
         { id: "sneakers-17" },
         { id: "sneakers-18" },
-        { id: "sneakers-19", className: "col-span-2" },
+        { id: "sneakers-19", className: "sm:col-span-2" },
         { id: "sneakers-20" }
     ];
     
@@ -57,7 +57,7 @@ export default function SneakersPage() {
                     <p className="text-muted-foreground mb-8 text-center">Step up your game with our collection of trendy and classic footwear.</p>
 
                     <motion.div 
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[300px]"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-4 auto-rows-[300px]"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"

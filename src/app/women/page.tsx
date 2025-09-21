@@ -11,25 +11,25 @@ import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 export default function WomenPage() {
     const womenImages = [
         { id: "women-1" },
-        { id: "women-2", className: "row-span-2" },
-        { id: "women-3", className: "col-span-2" },
+        { id: "women-2", className: "sm:row-span-2" },
+        { id: "women-3", className: "sm:col-span-2" },
         { id: "women-4" },
         { id: "women-5" },
         { id: "women-6" },
         { id: "women-7" },
-        { id: "women-8", className: "col-span-2 row-span-2" },
+        { id: "women-8", className: "sm:col-span-2 sm:row-span-2" },
         { id: "women-9" },
         { id: "women-10" },
-        { id: "women-11", className: "row-span-2" },
+        { id: "women-11", className: "sm:row-span-2" },
         { id: "women-12" },
         { id: "women-13" },
-        { id: "women-14", className: "col-span-2" },
+        { id: "women-14", className: "sm:col-span-2" },
         { id: "women-15" },
         { id: "women-16" },
         { id: "women-17" },
         { id: "women-18" },
         { id: "women-19" },
-        { id: "women-20", className: "col-span-2" }
+        { id: "women-20", className: "sm:col-span-2" }
     ];
 
     const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
@@ -57,7 +57,7 @@ export default function WomenPage() {
                     <p className="text-muted-foreground mb-8 text-center">Explore elegant dresses, casual wear, and special collections.</p>
 
                     <motion.div 
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[300px]"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-4 auto-rows-[300px]"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
