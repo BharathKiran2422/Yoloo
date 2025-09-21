@@ -1,13 +1,16 @@
+
 'use client';
 
 import { useEffect, useState } from 'react';
 
 export function VisitorCounter() {
   const [count, setCount] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     // This is a simulation and does not represent real visitor data.
     // In a real application, this would be connected to a backend service.
+    setMounted(true);
     const hasVisited = localStorage.getItem('yoloo-visitor');
     let initialCount = 0;
     
@@ -29,6 +32,24 @@ export function VisitorCounter() {
       setCount(initialCount);
     }
   }, []);
+
+  if (!mounted) {
+    return (
+      <div className="bg-primary/10 dark:bg-primary/20 p-2 rounded-lg text-center">
+        <h4 className="text-sm font-semibold text-primary mb-1">Visitor Counter</h4>
+        <div className="flex space-x-1">
+          {'000000'.split('').map((digit, index) => (
+            <div
+              key={index}
+              className="w-6 h-8 flex items-center justify-center bg-card dark:bg-primary/10 rounded-md text-xl font-mono text-foreground"
+            >
+              -
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   const formattedCount = count.toString().padStart(6, '0');
 
