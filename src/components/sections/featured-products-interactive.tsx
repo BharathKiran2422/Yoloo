@@ -69,7 +69,7 @@ export function FeaturedProductsInteractive() {
     const { width } = useWindowSize();
     const isMobile = width !== undefined && width < 768;
 
-    // Desktop animations - called unconditionally
+    // Desktop animations
     const productsFirstRow = featuredProducts.slice(0, 4);
     const productsSecondRow = featuredProducts.slice(4, 8);
     const opacityFirstRow = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
@@ -79,40 +79,40 @@ export function FeaturedProductsInteractive() {
     const scaleSecondRow = useTransform(scrollYProgress, [0.35, 0.65], [0.95, 1]);
     const opacityContainer = useTransform(scrollYProgress, [0.85, 1], [1, 0]);
 
-    // Mobile-specific calculations
-    const mobileHeight = `${featuredProducts.length * 80}vh`;
-    const desktopHeight = '200vh';
+    // This ensures consistent height calculation regardless of render environment
+    const dynamicHeight = isMobile ? `${featuredProducts.length * 80}vh` : '200vh';
 
     return (
         <motion.section 
             ref={targetRef} 
             className="relative py-16 interactive-section-bg"
             style={{ 
-                height: isMobile ? mobileHeight : desktopHeight,
-                opacity: isMobile ? 1 : opacityContainer 
+                height: dynamicHeight,
             }}
         >
-            {isMobile ? (
-                 <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
-                    <div className="text-center mb-12 px-4 z-10">
-                        <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
-                        <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
-                        <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
-                    </div>
-                    <div className="relative w-full max-w-sm h-[480px]">
-                        {featuredProducts.map((product, i) => (
-                            <MobileProductCard 
-                                key={product.id}
-                                product={product}
-                                index={i}
-                                scrollYProgress={scrollYProgress}
-                                totalProducts={featuredProducts.length}
-                            />
-                        ))}
-                    </div>
+            {/* Mobile View - Rendered but hidden on desktop */}
+             <div className="md:hidden sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
+                <div className="text-center mb-12 px-4 z-10">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
+                    <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
+                    <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
                 </div>
-            ) : (
-                <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
+                <div className="relative w-full max-w-sm h-[480px]">
+                    {featuredProducts.map((product, i) => (
+                        <MobileProductCard 
+                            key={product.id}
+                            product={product}
+                            index={i}
+                            scrollYProgress={scrollYProgress}
+                            totalProducts={featuredProducts.length}
+                        />
+                    ))}
+                </div>
+            </div>
+
+            {/* Desktop View - Rendered but hidden on mobile */}
+            <motion.div className="hidden md:block sticky top-0 h-screen" style={{ opacity: opacityContainer }}>
+                <div className="flex flex-col items-center justify-start pt-16 h-full">
                     <div className="text-center mb-12 z-10">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
                         <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
@@ -158,7 +158,7 @@ export function FeaturedProductsInteractive() {
                         </motion.div>
                     </div>
                 </div>
-            )}
+            </motion.div>
         </motion.section>
     );
 }
