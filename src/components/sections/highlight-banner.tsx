@@ -16,7 +16,7 @@ export function HighlightBanner() {
                 <div
                     className="bg-card border-y p-8 text-center"
                 >
-                    <p className="text-2xl sm:text-3xl md:text-4xl font-headline font-bold text-foreground tracking-tight">
+                    <p className="text-xl sm:text-2xl md:text-3xl font-headline font-bold text-foreground tracking-tight">
                         Fresh Fashion in <span className="font-extrabold">30–120 Mins</span> – Your Style, Your Time, Delivered Fast ⚡
                     </p>
                 </div>
