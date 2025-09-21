@@ -57,7 +57,7 @@ export default function MenPage() {
                     <p className="text-muted-foreground mb-8 text-center">From casual wear to licensed collections, find your perfect style.</p>
 
                     <motion.div 
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-4 auto-rows-[300px]"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[300px]"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"

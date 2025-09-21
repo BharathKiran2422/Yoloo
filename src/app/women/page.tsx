@@ -57,7 +57,7 @@ export default function WomenPage() {
                     <p className="text-muted-foreground mb-8 text-center">Explore elegant dresses, casual wear, and special collections.</p>
 
                     <motion.div 
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-4 auto-rows-[300px]"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[300px]"
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
