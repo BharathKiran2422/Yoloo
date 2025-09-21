@@ -32,8 +32,6 @@ const itemVariants: Variants = {
     },
 };
 
-
-// New component to safely encapsulate hooks for the mobile view
 function MobileProductCard({ product, index, scrollYProgress, totalProducts }: { product: Product, index: number, scrollYProgress: MotionValue<number>, totalProducts: number }) {
     const segment = 1 / totalProducts;
     const start = index * segment;
@@ -61,7 +59,6 @@ function MobileProductCard({ product, index, scrollYProgress, totalProducts }: {
     );
 }
 
-
 export function FeaturedProductsInteractive() {
     const targetRef = useRef<HTMLDivElement | null>(null);
     const { scrollYProgress } = useScroll({
@@ -72,26 +69,31 @@ export function FeaturedProductsInteractive() {
     const { width } = useWindowSize();
     const isMobile = width !== undefined && width < 768;
 
+    // Desktop animations - called unconditionally
     const productsFirstRow = featuredProducts.slice(0, 4);
     const productsSecondRow = featuredProducts.slice(4, 8);
-    
-    // Desktop animations
     const opacityFirstRow = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
     const scaleFirstRow = useTransform(scrollYProgress, [0, 0.3], [1, 0.9]);
     const blurFirstRow = useTransform(scrollYProgress, [0, 0.3], [0, 10]);
-
     const opacitySecondRow = useTransform(scrollYProgress, [0.35, 0.65], [0, 1]);
     const scaleSecondRow = useTransform(scrollYProgress, [0.35, 0.65], [0.95, 1]);
-
     const opacityContainer = useTransform(scrollYProgress, [0.85, 1], [1, 0]);
 
+    // Mobile-specific calculations
+    const mobileHeight = `${featuredProducts.length * 80}vh`;
+    const desktopHeight = '200vh';
 
-    if (isMobile) {
-        // More products require more scroll height
-        const mobileHeight = `${featuredProducts.length * 80}vh`;
-        return (
-            <section ref={targetRef} className="relative py-16" style={{ height: mobileHeight }}>
-                <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16 interactive-section-bg">
+    return (
+        <motion.section 
+            ref={targetRef} 
+            className="relative py-16 interactive-section-bg"
+            style={{ 
+                height: isMobile ? mobileHeight : desktopHeight,
+                opacity: isMobile ? 1 : opacityContainer 
+            }}
+        >
+            {isMobile ? (
+                 <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
                     <div className="text-center mb-12 px-4 z-10">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
                         <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
@@ -109,62 +111,54 @@ export function FeaturedProductsInteractive() {
                         ))}
                     </div>
                 </div>
-            </section>
-        );
-    }
-    
-    return (
-        <motion.section 
-            ref={targetRef} 
-            className="relative h-[200vh] py-16 interactive-section-bg"
-            style={{ opacity: opacityContainer }}
-        >
-            <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
-                <div className="text-center mb-12 z-10">
-                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
-                    <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
-                    <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
-                </div>
-                
-                <div className="relative w-full container h-full flex items-center justify-center">
-                    <motion.div
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate="visible"
-                        style={{
-                            opacity: opacityFirstRow,
-                            scale: scaleFirstRow,
-                            filter: useTransform(blurFirstRow, v => `blur(${v}px)`),
-                        }}
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 absolute w-full left-0 px-4 sm:px-8"
-                    >
-                        {productsFirstRow.map((product) => (
-                            <motion.div key={product.id} variants={itemVariants}>
-                                <ProductCard product={product} />
-                            </motion.div>
-                        ))}
-                    </motion.div>
+            ) : (
+                <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
+                    <div className="text-center mb-12 z-10">
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
+                        <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
+                        <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
+                    </div>
+                    
+                    <div className="relative w-full container h-full flex items-center justify-center">
+                        <motion.div
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="visible"
+                            style={{
+                                opacity: opacityFirstRow,
+                                scale: scaleFirstRow,
+                                filter: useTransform(blurFirstRow, v => `blur(${v}px)`),
+                            }}
+                            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 absolute w-full left-0 px-4 sm:px-8"
+                        >
+                            {productsFirstRow.map((product) => (
+                                <motion.div key={product.id} variants={itemVariants}>
+                                    <ProductCard product={product} />
+                                </motion.div>
+                            ))}
+                        </motion.div>
 
-                    <motion.div
-                         variants={containerVariants}
-                         initial="hidden"
-                         animate="visible"
-                         style={{
-                            opacity: opacitySecondRow,
-                            scale: scaleSecondRow,
-                        }}
-                        className={cn(
-                            "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 absolute w-full left-0 px-4 sm:px-8"
-                        )}
-                    >
-                        {productsSecondRow.map((product) => (
-                           <motion.div key={product.id} variants={itemVariants}>
-                                <ProductCard product={product} />
-                            </motion.div>
-                        ))}
-                    </motion.div>
+                        <motion.div
+                             variants={containerVariants}
+                             initial="hidden"
+                             animate="visible"
+                             style={{
+                                opacity: opacitySecondRow,
+                                scale: scaleSecondRow,
+                            }}
+                            className={cn(
+                                "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 absolute w-full left-0 px-4 sm:px-8"
+                            )}
+                        >
+                            {productsSecondRow.map((product) => (
+                               <motion.div key={product.id} variants={itemVariants}>
+                                    <ProductCard product={product} />
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
                 </div>
-            </div>
+            )}
         </motion.section>
     );
 }
