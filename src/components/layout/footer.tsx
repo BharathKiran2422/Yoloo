@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Instagram, Linkedin } from 'lucide-react';
@@ -28,10 +29,7 @@ export function Footer() {
       <div className="container py-12 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-1">
-             <div className="flex">
-                <Logo className="h-10" />
-             </div>
-            <p className="text-sm text-muted-foreground mt-2">Fashion Made Easy</p>
+             <Logo className="h-10" />
             <div className="flex items-center space-x-4 mt-4">
                 <Link href="https://www.linkedin.com/company/yoloo-lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                   <Linkedin className="h-5 w-5" />
