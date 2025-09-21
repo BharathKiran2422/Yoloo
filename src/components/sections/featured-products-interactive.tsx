@@ -2,11 +2,35 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 import { featuredProducts } from '@/lib/products';
 import { ProductCard } from '@/components/product-card';
 import { useWindowSize } from '@/hooks/use-window-size';
 import { cn } from '@/lib/utils';
+
+const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2,
+        },
+    },
+};
+
+const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            ease: 'easeOut',
+        },
+    },
+};
+
 
 export function FeaturedProductsInteractive() {
     const targetRef = useRef<HTMLDivElement | null>(null);
@@ -18,57 +42,55 @@ export function FeaturedProductsInteractive() {
     const { width } = useWindowSize();
     const isMobile = width !== undefined && width < 768;
 
-    // --- Hooks for All Views (Called Unconditionally) ---
     const productsFirstRow = featuredProducts.slice(0, 4);
     const productsSecondRow = featuredProducts.slice(4, 8);
     
     // Desktop animations
-    const opacityFirstRow = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-    const translateYFirstRow = useTransform(scrollYProgress, [0, 0.5], [0, -40]);
-    
-    const opacitySecondRow = useTransform(scrollYProgress, [0.4, 0.7, 1], [0, 1, 0]);
-    const translateYSecondRow = useTransform(scrollYProgress, [0.4, 0.7], [40, 0]);
-    
-    // Mobile animations
-    const mobileAnimations = featuredProducts.map((_, i) => {
-        const segment = 1 / featuredProducts.length;
-        const startTime = i * segment * 0.8; // Slow down the animation
-        const endTime = startTime + segment * 1.5;
-        
-        const opacityIn = useTransform(scrollYProgress, [startTime, endTime], [1, 0]);
-        const translateYIn = useTransform(scrollYProgress, [startTime, endTime], [0, -20]);
+    const opacityFirstRow = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+    const scaleFirstRow = useTransform(scrollYProgress, [0, 0.3], [1, 0.9]);
+    const blurFirstRow = useTransform(scrollYProgress, [0, 0.3], [0, 10]);
 
-        const prevEndTime = i > 0 ? (i - 0.5) * segment * 0.8 : -0.1;
-        const opacityOut = useTransform(scrollYProgress, [prevEndTime, startTime], [0, 1]);
-        const translateYOut = useTransform(scrollYProgress, [prevEndTime, startTime], [20, 0]);
+    const opacitySecondRow = useTransform(scrollYProgress, [0.35, 0.65], [0, 1]);
+    const scaleSecondRow = useTransform(scrollYProgress, [0.35, 0.65], [0.95, 1]);
 
-        return { opacity: opacityOut, translateY: translateYOut };
-    });
+    const opacityContainer = useTransform(scrollYProgress, [0.85, 1], [1, 0]);
+
 
     if (isMobile) {
-        const mobileHeight = `${featuredProducts.length * 100}vh`;
+        // More products require more scroll height
+        const mobileHeight = `${featuredProducts.length * 80}vh`;
         return (
             <section ref={targetRef} className="relative py-16" style={{ height: mobileHeight }}>
-                <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
-                    <div className="text-center mb-12 px-4">
+                <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16 interactive-section-bg">
+                    <div className="text-center mb-12 px-4 z-10">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
                         <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
                         <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
                     </div>
-                    <div className="relative w-full max-w-sm h-[450px]">
+                    <div className="relative w-full max-w-sm h-[480px]">
                         {featuredProducts.map((product, i) => {
-                             const { opacity, translateY } = mobileAnimations[i];
+                             const segment = 1 / featuredProducts.length;
+                             const start = i * segment;
+                             const end = start + segment;
+                             
+                             const opacity = useTransform(scrollYProgress, [start, start + segment / 3, end - segment / 3, end], [0, 1, 1, 0]);
+                             const scale = useTransform(scrollYProgress, [start, end], [0.9, 1.05]);
+                             const y = useTransform(scrollYProgress, [start, end], ['10%', '-10%']);
+
+
                             return (
                                 <motion.div
                                     key={product.id}
                                     style={{
-                                        opacity: opacity,
-                                        translateY: translateY,
+                                        opacity,
+                                        scale,
+                                        y,
                                         position: 'absolute',
                                         width: '100%',
                                         top: 0,
+                                        zIndex: i,
                                     }}
-                                    className="z-10"
+                                    className="px-4"
                                 >
                                     <ProductCard product={product} />
                                 </motion.div>
@@ -81,43 +103,57 @@ export function FeaturedProductsInteractive() {
     }
     
     return (
-        <section ref={targetRef} className="relative h-[100vh] py-16">
+        <motion.section 
+            ref={targetRef} 
+            className="relative h-[200vh] py-16 interactive-section-bg"
+            style={{ opacity: opacityContainer }}
+        >
             <div className="sticky top-0 h-screen flex flex-col items-center justify-start pt-16">
-                <div className="text-center mb-12">
+                <div className="text-center mb-12 z-10">
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
                     <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
                     <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
                 </div>
                 
-                <div className="relative w-full container">
+                <div className="relative w-full container h-full flex items-center justify-center">
                     <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
                         style={{
                             opacity: opacityFirstRow,
-                            translateY: translateYFirstRow,
+                            scale: scaleFirstRow,
+                            filter: useTransform(blurFirstRow, v => `blur(${v}px)`),
                         }}
                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 absolute w-full left-0 px-4 sm:px-8"
                     >
                         {productsFirstRow.map((product) => (
-                            <ProductCard key={product.id} product={product} />
+                            <motion.div key={product.id} variants={itemVariants}>
+                                <ProductCard product={product} />
+                            </motion.div>
                         ))}
                     </motion.div>
 
                     <motion.div
+                         variants={containerVariants}
+                         initial="hidden"
+                         animate="visible"
                          style={{
                             opacity: opacitySecondRow,
-                            translateY: translateYSecondRow,
+                            scale: scaleSecondRow,
                         }}
                         className={cn(
-                            "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 absolute w-full left-0 px-4 sm:px-8",
-                            "pointer-events-none"
+                            "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 absolute w-full left-0 px-4 sm:px-8"
                         )}
                     >
                         {productsSecondRow.map((product) => (
-                           <ProductCard key={product.id} product={product} />
+                           <motion.div key={product.id} variants={itemVariants}>
+                                <ProductCard product={product} />
+                            </motion.div>
                         ))}
                     </motion.div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
