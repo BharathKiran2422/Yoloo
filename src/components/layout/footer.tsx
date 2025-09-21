@@ -29,7 +29,7 @@ export function Footer() {
       <div className="container py-12 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2 md:col-span-1">
-             <Logo className="h-10" />
+             <Logo className="h-40 w-40" />
             <div className="flex items-center space-x-4 mt-4">
                 <Link href="https://www.linkedin.com/company/yoloo-lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                   <Linkedin className="h-5 w-5" />
