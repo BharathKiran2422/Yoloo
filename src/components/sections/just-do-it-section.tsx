@@ -1,27 +1,25 @@
 import { Button } from '@/components/ui/button';
-import { Instagram, Linkedin } from 'lucide-react';
+import { ArrowRight, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 
 export function JustDoItSection() {
     return (
-        <section className="py-12 bg-background">
+        <section className="py-16 md:py-24 bg-background">
             <div className="container mx-auto text-center">
-                <p className="text-lg text-muted-foreground">Only one way to find out.</p>
-                <h2 className="text-6xl md:text-8xl font-black my-4 text-foreground tracking-tighter">JUST DO IT.</h2>
+                <p className="text-lg font-semibold text-primary uppercase tracking-wider">Your Style, Your Way</p>
+                <h2 className="text-4xl md:text-6xl font-headline font-extrabold my-4 text-foreground tracking-tight max-w-4xl mx-auto leading-tight">
+                    Don't Just Follow Trends. <span className="block">Define Them.</span>
+                </h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto text-lg mb-8">
+                   Ready to elevate your wardrobe? Explore our curated collections and discover pieces that truly represent you. The only way to find out is to dive in.
+                </p>
                 <div className="flex items-center justify-center gap-4">
                   <Link href="#purchase-on-app">
-                      <Button size="lg" className="rounded-full bg-foreground text-background hover:bg-foreground/80 px-10">
-                          Shop
+                      <Button size="lg" className="rounded-full px-10 text-lg h-12 shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+                          <ShoppingBag className="mr-3" />
+                          Start Shopping
                       </Button>
                   </Link>
-                  <div className="flex items-center space-x-3">
-                        <Link href="https://www.linkedin.com/company/yoloo-lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                          <Linkedin className="h-6 w-6" />
-                        </Link>
-                        <Link href="https://www.instagram.com/yoloo_lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
-                          <Instagram className="h-6 w-6" />
-                        </Link>
-                    </div>
                 </div>
             </div>
         </section>
