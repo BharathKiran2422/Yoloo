@@ -9,11 +9,12 @@ import { useTheme } from 'next-themes';
 import { GooglePlayIcon } from '../icons/google-play';
 import { Button } from '../ui/button';
 import { VisitorCounter } from '../visitor-counter';
-import Image from 'next/image';
+import AppStoreButton from '../icons/app-store-button';
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState('');
   const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setCurrentYear(new Date().getFullYear().toString());
@@ -67,7 +68,7 @@ export function Footer() {
                     </Button>
                 </Link>
                 <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                    <Image src="/app-store-download.svg" alt="Download on the App Store" width={144} height={48} className="h-12 w-auto" />
+                    <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-12 w-auto border rounded-lg" />
                 </Link>
             </div>
           </div>

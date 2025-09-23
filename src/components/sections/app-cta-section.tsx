@@ -3,11 +3,13 @@
 
 import Image from "next/image";
 import { Button } from "../ui/button";
-import { AppStoreIcon } from "../icons/app-store";
 import { GooglePlayIcon } from "../icons/google-play";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import AppStoreButton from "../icons/app-store-button";
 
 export function AppCtaSection() {
+    const { resolvedTheme } = useTheme();
     return (
         <section id="purchase-on-app" className="py-12 md:py-16">
             <div className="rounded-2xl p-8 md:p-12 border bg-gradient-to-br from-background to-card pattern-background">
@@ -35,7 +37,7 @@ export function AppCtaSection() {
                                 </Button>
                             </Link>
                            <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                                <Image src="/app-store-download.svg" alt="Download on the App Store" width={170} height={56} className="h-14 w-auto transform hover:-translate-y-1 transition-transform duration-300" />
+                                <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto transform hover:-translate-y-1 transition-transform duration-300" />
                             </Link>
                         </div>
                     </div>
