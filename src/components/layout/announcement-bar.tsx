@@ -11,8 +11,8 @@ export function AnnouncementBar() {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className="bg-primary text-primary-foreground overflow-hidden"
     >
-      <div className="py-2 text-center text-sm font-medium">
-        <p>Fashion made easy - fast delivery service</p>
+      <div className="py-1.5 text-center text-sm">
+        <p className="font-bold">Fashion Made Easy - Fast Delivery Service</p>
       </div>
     </motion.div>
   );
