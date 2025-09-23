@@ -1,3 +1,4 @@
+
 'use server';
 
 import { z } from 'zod';
@@ -18,17 +19,16 @@ const contactFormSchema = z.object({
 
 export async function handleContactFormSubmission(values: z.infer<typeof contactFormSchema>) {
   try {
-    // Here you would typically send an email or save to a database.
-    // For this example, we'll add it to our in-memory store.
-    addMessage(values);
+    // Save the message to Firestore
+    await addMessage(values);
     
-    // Simulate network delay
+    // Simulate network delay for better user experience
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     return { success: true, message: 'Message Sent!' };
   } catch (error) {
     console.error('Contact form submission error:', error);
-    return { success: false, message: 'Something went wrong.' };
+    return { success: false, message: 'Something went wrong. Please try again.' };
   }
 }
 
