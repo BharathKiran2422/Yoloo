@@ -9,7 +9,7 @@ const beliefs = [
     {
         title: "What drives us",
         description: "Every decision starts with you, our members. Quality is never compromised. Only what we'd choose for our own families reaches you. We stay bold, frugal, and curious to keep raising the standards you deserve.",
-        color: "bg-accent/20 dark:bg-accent/10 border-accent/20",
+        color: "border-accent/20",
     },
     {
         title: "How we show up",
