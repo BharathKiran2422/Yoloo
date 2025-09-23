@@ -11,13 +11,27 @@ const announcements = [
 
 export function AnnouncementBar() {
   const [index, setIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % announcements.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
+
+  if (!mounted) {
+    return (
+      <div className="bg-primary text-primary-foreground">
+        <div className="py-1.5 text-center text-sm h-7 flex items-center justify-center">
+            <p className="font-bold absolute opacity-0">
+                {announcements[0]}
+            </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div 

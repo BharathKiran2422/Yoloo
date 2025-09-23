@@ -14,12 +14,12 @@ export function Logo({ className }: { className?: string }) {
     setMounted(true);
   }, []);
 
-  const src = resolvedTheme === 'light' ? "/logo2.png" : "/logo1.png";
-
   if (!mounted) {
     // Render a placeholder or nothing to prevent mismatch
     return <div className={cn("relative", className)} />;
   }
+
+  const src = resolvedTheme === 'light' ? "/logo2.png" : "/logo1.png";
 
   return (
     <div className={cn("relative", className)}>

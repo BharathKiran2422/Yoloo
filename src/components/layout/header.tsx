@@ -9,11 +9,16 @@ import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescri
 import { ThemeToggle } from '../theme-toggle';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export function Header() {
   const pathname = usePathname();
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   
   const navLinks = [
     { href: '/men', label: 'Men' },
@@ -51,12 +56,12 @@ export function Header() {
         {/* Right side icons */}
         <div className="flex items-center justify-end gap-2">
            <div className="hidden md:block">
-             <ThemeToggle />
+            {mounted && <ThemeToggle />}
            </div>
 
           {/* Mobile Menu */}
           <div className="md:hidden flex items-center">
-            <ThemeToggle />
+            {mounted && <ThemeToggle />}
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">

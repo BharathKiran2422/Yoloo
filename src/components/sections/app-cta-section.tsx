@@ -6,9 +6,16 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import AppStoreButton from "../icons/app-store-button";
 import GooglePlayButton from "../icons/google-play-button";
+import { useEffect, useState } from "react";
 
 export function AppCtaSection() {
     const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     return (
         <section id="purchase-on-app" className="py-12 md:py-16">
             <div className="rounded-2xl p-8 md:p-12 border bg-gradient-to-br from-background to-card pattern-background">
@@ -27,10 +34,10 @@ export function AppCtaSection() {
                         
                         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start mt-8">
                            <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                                <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg transform hover:-translate-y-1 transition-transform duration-300" />
+                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg transform hover:-translate-y-1 transition-transform duration-300" />}
                             </Link>
                            <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                                <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg transform hover:-translate-y-1 transition-transform duration-300" />
+                                {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg transform hover:-translate-y-1 transition-transform duration-300" />}
                             </Link>
                         </div>
                     </div>
