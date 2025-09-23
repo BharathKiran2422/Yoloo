@@ -22,9 +22,6 @@ export async function handleContactFormSubmission(values: z.infer<typeof contact
     // Save the message to Firestore
     await addMessage(values);
     
-    // Simulate network delay for better user experience
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
     return { success: true, message: 'Message Sent!' };
   } catch (error) {
     console.error('Contact form submission error:', error);
