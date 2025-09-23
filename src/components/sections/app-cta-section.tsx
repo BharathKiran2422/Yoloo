@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from "next/image";
@@ -34,13 +35,13 @@ export function AppCtaSection() {
                                 </Button>
                             </Link>
                            <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                               <Button className="w-full bg-[#007AFF] hover:bg-[#005fcc] text-white h-14 text-left px-5 flex items-center justify-center sm:justify-start gap-3 rounded-xl shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
-                                    <AppStoreIcon className="w-8 h-8" />
-                                    <div>
-                                        <p className="text-xs">Download on the</p>
-                                        <p className="text-lg font-semibold leading-tight">App Store</p>
-                                    </div>
-                                </Button>
+                                <Image 
+                                    src="/app-store-download.svg" 
+                                    alt="Download on the App Store" 
+                                    width={160} 
+                                    height={56} 
+                                    className="h-14 w-auto transform hover:-translate-y-1 transition-transform duration-300" 
+                                />
                             </Link>
                         </div>
                     </div>
