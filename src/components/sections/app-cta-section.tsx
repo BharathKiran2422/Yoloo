@@ -27,10 +27,10 @@ export function AppCtaSection() {
                         
                         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start mt-8">
                            <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                                <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto transform hover:-translate-y-1 transition-transform duration-300" />
+                                <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg transform hover:-translate-y-1 transition-transform duration-300" />
                             </Link>
                            <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                                <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto transform hover:-translate-y-1 transition-transform duration-300" />
+                                <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg transform hover:-translate-y-1 transition-transform duration-300" />
                             </Link>
                         </div>
                     </div>
