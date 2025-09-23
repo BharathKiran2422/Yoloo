@@ -31,3 +31,9 @@ export async function handleContactFormSubmission(values: z.infer<typeof contact
     return { success: false, message: 'Something went wrong.' };
   }
 }
+
+export async function verifyAdminPassword(password: string): Promise<boolean> {
+  // This is a more secure way to check the password.
+  // The environment variable is only accessed on the server.
+  return password === process.env.ADMIN_PASSWORD;
+}

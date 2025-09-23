@@ -7,27 +7,24 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { KeyRound } from 'lucide-react';
+import { verifyAdminPassword } from '@/app/actions';
 
 type AdminLoginProps = {
   onLoginSuccess: () => void;
 };
-
-// IMPORTANT: This is a temporary, insecure password.
-// In a real application, move this to an environment variable.
-const ADMIN_PASSWORD = 'Y0l00';
 
 export function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate network delay
-    setTimeout(() => {
-      if (password === ADMIN_PASSWORD) {
+    try {
+      const isValid = await verifyAdminPassword(password);
+      if (isValid) {
         onLoginSuccess();
       } else {
         toast({
@@ -36,9 +33,17 @@ export function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
           description: 'The password you entered is incorrect.',
         });
       }
-      setIsLoading(false);
-      setPassword('');
-    }, 500);
+    } catch (error) {
+        toast({
+            variant: 'destructive',
+            title: 'Error',
+            description: 'An error occurred during login. Please try again.',
+        });
+        console.error('Admin login error:', error);
+    } finally {
+        setIsLoading(false);
+        setPassword('');
+    }
   };
 
   return (
