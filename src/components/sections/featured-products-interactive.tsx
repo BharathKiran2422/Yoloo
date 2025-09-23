@@ -11,7 +11,7 @@ const containerVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.15,
+            staggerChildren: 0.1,
             delayChildren: 0.2,
         },
     },
@@ -30,7 +30,7 @@ const itemVariants = {
 };
 
 export function FeaturedProductsInteractive() {
-    const productsToShow = featuredProducts.slice(0, 4);
+    const productsToShow = featuredProducts.slice(0, 8);
 
     return (
         <section className="py-12 md:py-16">
@@ -45,7 +45,7 @@ export function FeaturedProductsInteractive() {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: true, amount: 0.1 }}
                     className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8"
                 >
                     {productsToShow.map((product) => (

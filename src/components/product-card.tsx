@@ -13,18 +13,18 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <Link href="#purchase-on-app">
-      <Card className="group/card overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 w-full h-full">
+      <Card className="group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 w-full h-full">
         {image && (
           <div className="relative aspect-[3/4] w-full overflow-hidden">
             <Image
               src={image.imageUrl}
               alt={product.name}
               fill
-              className="object-cover transition-transform duration-500 ease-in-out group-hover/card:scale-110"
+              className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
               data-ai-hint={image.imageHint}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-             <div className="absolute bottom-4 left-4">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute bottom-0 left-0 p-4 w-full translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                 <h3 className="text-white font-bold text-lg drop-shadow-md">{product.name}</h3>
                 <p className="text-white/90 text-sm drop-shadow-sm">{product.price}</p>
             </div>
