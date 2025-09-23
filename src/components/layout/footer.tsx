@@ -68,13 +68,13 @@ export function Footer() {
                     </Button>
                 </Link>
                 <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                    <Image 
-                        src="/app-store-download.svg" 
-                        alt="Download on the App Store" 
-                        width={135} 
-                        height={40} 
-                        className="h-12 w-auto"
-                    />
+                     <Button variant="outline" className="w-full h-12 text-left px-3 flex items-center justify-center sm:justify-start gap-2 rounded-lg shadow-sm">
+                        <AppStoreIcon className="w-6 h-6" />
+                        <div>
+                            <p className="text-xs text-muted-foreground">Download on the</p>
+                            <p className="text-sm font-semibold leading-tight">App Store</p>
+                        </div>
+                    </Button>
                 </Link>
             </div>
           </div>

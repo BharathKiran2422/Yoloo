@@ -35,13 +35,13 @@ export function AppCtaSection() {
                                 </Button>
                             </Link>
                            <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                                <Image 
-                                    src="/app-store-download.svg" 
-                                    alt="Download on the App Store" 
-                                    width={160} 
-                                    height={56} 
-                                    className="h-14 w-auto transform hover:-translate-y-1 transition-transform duration-300" 
-                                />
+                                <Button className="w-full bg-black hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black h-14 text-left px-5 flex items-center justify-center sm:justify-start gap-3 rounded-xl shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
+                                    <AppStoreIcon className="w-8 h-8" />
+                                    <div>
+                                        <p className="text-xs">Download on the</p>
+                                        <p className="text-lg font-semibold leading-tight">App Store</p>
+                                    </div>
+                                </Button>
                             </Link>
                         </div>
                     </div>
