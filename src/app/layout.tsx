@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
@@ -5,6 +6,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 import { WhatsAppFab } from '@/components/whatsapp-fab';
+import { AnnouncementBar } from '@/components/layout/announcement-bar';
 
 export const metadata: Metadata = {
   title: 'Yoloo! : Fashion Made Easy',
@@ -31,6 +33,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex min-h-screen flex-col">
+            <AnnouncementBar />
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
