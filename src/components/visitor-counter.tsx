@@ -8,28 +8,30 @@ export function VisitorCounter() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     // This is a simulation and does not represent real visitor data.
     // In a real application, this would be connected to a backend service.
-    setMounted(true);
-    const hasVisited = localStorage.getItem('yoloo-visitor');
-    let initialCount = 0;
-    
-    try {
-        const storedCount = localStorage.getItem('yoloo-visitor-count');
-        if (storedCount) {
-            initialCount = parseInt(storedCount, 10);
+    if (typeof window !== 'undefined') {
+        const hasVisited = localStorage.getItem('yoloo-visitor');
+        let initialCount = 0;
+        
+        try {
+            const storedCount = localStorage.getItem('yoloo-visitor-count');
+            if (storedCount) {
+                initialCount = parseInt(storedCount, 10);
+            }
+        } catch (error) {
+            console.error("Could not parse visitor count from localStorage", error);
         }
-    } catch (error) {
-        console.error("Could not parse visitor count from localStorage", error);
-    }
-    
-    if (!hasVisited) {
-      const newCount = initialCount + 1;
-      setCount(newCount);
-      localStorage.setItem('yoloo-visitor', 'true');
-      localStorage.setItem('yoloo-visitor-count', newCount.toString());
-    } else {
-      setCount(initialCount);
+        
+        if (!hasVisited) {
+          const newCount = initialCount + 1;
+          setCount(newCount);
+          localStorage.setItem('yoloo-visitor', 'true');
+          localStorage.setItem('yoloo-visitor-count', newCount.toString());
+        } else {
+          setCount(initialCount);
+        }
     }
   }, []);
 

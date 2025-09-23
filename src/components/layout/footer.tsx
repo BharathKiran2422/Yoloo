@@ -20,10 +20,6 @@ export function Footer() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <footer className="bg-card w-full border-t">
       <div className="container py-12 mx-auto">
@@ -58,10 +54,10 @@ export function Footer() {
             <h3 className="font-semibold">Get our app</h3>
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-3">
                  <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                    <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-12 w-auto border rounded-lg" />
+                    {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-12 w-auto border rounded-lg" />}
                 </Link>
                 <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                    <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-12 w-auto border rounded-lg" />
+                    {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-12 w-auto border rounded-lg" />}
                 </Link>
             </div>
           </div>
