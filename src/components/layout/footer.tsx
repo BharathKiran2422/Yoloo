@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import { Logo } from './logo';
 import { useTheme } from 'next-themes';
 import { GooglePlayIcon } from '../icons/google-play';
-import { AppStoreIcon } from '../icons/app-store';
 import { Button } from '../ui/button';
 import { VisitorCounter } from '../visitor-counter';
 import Image from 'next/image';
@@ -68,13 +67,7 @@ export function Footer() {
                     </Button>
                 </Link>
                 <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                     <Button variant="outline" className="w-full h-12 text-left px-3 flex items-center justify-center sm:justify-start gap-2 rounded-lg shadow-sm">
-                        <AppStoreIcon className="w-6 h-6" />
-                        <div>
-                            <p className="text-xs text-muted-foreground">Download on the</p>
-                            <p className="text-sm font-semibold leading-tight">App Store</p>
-                        </div>
-                    </Button>
+                    <Image src="/app-store-download.svg" alt="Download on the App Store" width={144} height={48} className="h-12 w-auto" />
                 </Link>
             </div>
           </div>
