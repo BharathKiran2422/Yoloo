@@ -14,6 +14,7 @@ import { ProductMarquee } from '@/components/product-marquee';
 import { trendingProducts, brandSpotlightProducts } from '@/lib/products';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { HighlightBanner } from '@/components/sections/highlight-banner';
+import { ContactSection } from '@/components/sections/contact-section';
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
         <AppCtaSection />
       </div>
       <StorySection />
+      <ContactSection />
     </PageTransitionWrapper>
   );
 }

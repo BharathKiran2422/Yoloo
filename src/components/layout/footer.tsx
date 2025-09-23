@@ -27,9 +27,9 @@ export function Footer() {
   return (
     <footer className="bg-card w-full border-t">
       <div className="container py-12 mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="col-span-2 md:col-span-1 flex flex-col items-center">
-             <Logo className="h-40 w-40" />
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="col-span-2 md:col-span-2 flex flex-col">
+             <Logo className="h-40 w-40 -ml-8 -mt-8" />
             <div className="flex items-center space-x-4">
                 <Link href="https://www.linkedin.com/company/yoloo-lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
                   <Linkedin className="h-5 w-5" />
@@ -43,6 +43,7 @@ export function Footer() {
             <h3 className="font-semibold">Company</h3>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
                 <Link href="/about" className="hover:text-primary">About Us</Link>
+                <Link href="/#contact-us" className="hover:text-primary">Contact Us</Link>
             </div>
           </div>
            <div className="flex flex-col gap-4">
