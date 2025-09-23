@@ -19,9 +19,7 @@ const contactFormSchema = z.object({
 
 export async function handleContactFormSubmission(values: z.infer<typeof contactFormSchema>) {
   try {
-    // Save the message to Firestore
     await addMessage(values);
-    
     return { success: true, message: 'Message Sent!' };
   } catch (error) {
     console.error('Contact form submission error:', error);
