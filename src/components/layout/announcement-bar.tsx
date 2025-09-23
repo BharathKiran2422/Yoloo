@@ -12,7 +12,7 @@ export function AnnouncementBar() {
       className="bg-primary text-primary-foreground overflow-hidden"
     >
       <div className="py-2 text-center text-sm font-medium">
-        <p>⚡️ 30-120 Minute Delivery Across Hyderabad ⚡️</p>
+        <p>Fashion made easy - fast delivery service</p>
       </div>
     </motion.div>
   );
