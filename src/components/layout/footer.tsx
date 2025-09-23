@@ -43,7 +43,6 @@ export function Footer() {
             <h3 className="font-semibold">Company</h3>
             <div className="flex flex-col gap-2 text-sm text-muted-foreground">
                 <Link href="/about" className="hover:text-primary">About Us</Link>
-                <Link href="/contact" className="hover:text-primary">Contact</Link>
             </div>
           </div>
            <div className="flex flex-col gap-4">

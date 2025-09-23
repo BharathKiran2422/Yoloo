@@ -8,7 +8,6 @@ import { StorySection } from '@/components/sections/story-section';
 import { FeaturedProductsInteractive } from '@/components/sections/featured-products-interactive';
 import { ShopByCategory } from '@/components/sections/shop-by-category';
 import { InstagramSection } from '@/components/sections/instagram-section';
-import { ContactSection } from '@/components/sections/contact-section';
 import { TestimonialsSection } from '@/components/sections/testimonials-section';
 import { BrandCarousel } from '@/components/brand-carousel';
 import { ProductMarquee } from '@/components/product-marquee';
@@ -35,7 +34,6 @@ export default function Home() {
         <AppCtaSection />
       </div>
       <StorySection />
-      <ContactSection />
     </PageTransitionWrapper>
   );
 }

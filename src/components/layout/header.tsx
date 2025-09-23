@@ -86,7 +86,6 @@ export function Header() {
                   ))}
                   <hr />
                   <Link href="/about" onClick={handleLinkClick} className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">About</Link>
-                  <Link href="/contact" onClick={handleLinkClick} className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">Contact</Link>
                 </nav>
               </SheetContent>
             </Sheet>
