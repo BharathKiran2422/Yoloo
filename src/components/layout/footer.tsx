@@ -6,10 +6,9 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Logo } from './logo';
 import { useTheme } from 'next-themes';
-import { GooglePlayIcon } from '../icons/google-play';
-import { Button } from '../ui/button';
 import { VisitorCounter } from '../visitor-counter';
 import AppStoreButton from '../icons/app-store-button';
+import GooglePlayButton from '../icons/google-play-button';
 
 export function Footer() {
   const [currentYear, setCurrentYear] = useState('');
@@ -59,13 +58,7 @@ export function Footer() {
             <h3 className="font-semibold">Get our app</h3>
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-3">
                  <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                    <Button variant="outline" className="w-full h-12 text-left px-3 flex items-center justify-center sm:justify-start gap-2 rounded-lg shadow-sm">
-                        <GooglePlayIcon className="w-6 h-6" />
-                        <div>
-                            <p className="text-xs text-muted-foreground">GET IT ON</p>
-                            <p className="text-sm font-semibold leading-tight">Google Play</p>
-                        </div>
-                    </Button>
+                    <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-12 w-auto border rounded-lg" />
                 </Link>
                 <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
                     <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-12 w-auto border rounded-lg" />

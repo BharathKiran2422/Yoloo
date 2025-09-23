@@ -2,11 +2,10 @@
 'use client';
 
 import Image from "next/image";
-import { Button } from "../ui/button";
-import { GooglePlayIcon } from "../icons/google-play";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import AppStoreButton from "../icons/app-store-button";
+import GooglePlayButton from "../icons/google-play-button";
 
 export function AppCtaSection() {
     const { resolvedTheme } = useTheme();
@@ -28,13 +27,7 @@ export function AppCtaSection() {
                         
                         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start mt-8">
                            <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                                <Button className="w-full bg-[#34A853] hover:bg-[#2c8e45] text-white h-14 text-left px-5 flex items-center justify-center sm:justify-start gap-3 rounded-xl shadow-lg transform hover:-translate-y-1 transition-transform duration-300">
-                                    <GooglePlayIcon className="w-8 h-8" />
-                                    <div>
-                                        <p className="text-xs">GET IT ON</p>
-                                        <p className="text-lg font-semibold leading-tight">Google Play</p>
-                                    </div>
-                                </Button>
+                                <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto transform hover:-translate-y-1 transition-transform duration-300" />
                             </Link>
                            <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
                                 <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto transform hover:-translate-y-1 transition-transform duration-300" />
