@@ -27,8 +27,8 @@ export function Footer() {
   return (
     <footer className="bg-card w-full border-t">
       <div className="container py-12 mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-          <div className="col-span-2 md:col-span-1">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="col-span-2 md:col-span-1 flex flex-col">
              <Logo className="h-40 w-40" />
             <div className="flex items-center space-x-4 mt-4">
                 <Link href="https://www.linkedin.com/company/yoloo-lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
@@ -54,7 +54,7 @@ export function Footer() {
                 <Link href="/returns" className="hover:text-primary">Return Policy</Link>
             </div>
           </div>
-          <div className="col-span-2 flex flex-col gap-4">
+          <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
             <h3 className="font-semibold">Get our app</h3>
             <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-3">
                  <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
