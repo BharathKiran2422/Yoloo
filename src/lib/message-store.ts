@@ -21,7 +21,7 @@ export type Message = {
   email: string;
   message: string;
   status: 'read' | 'unread';
-  createdAt: Timestamp | Date; // More specific typing
+  createdAt: Timestamp | Date;
 };
 
 const messagesCollection = collection(db, 'messages');
@@ -36,7 +36,7 @@ export async function getMessages(): Promise<Message[]> {
     } as Message));
   } catch (error) {
     console.error('Error fetching messages:', error);
-    throw new Error('Failed to fetch messages');
+    throw new Error('Failed to fetch messages. Ensure Firestore security rules are configured correctly.');
   }
 }
 
@@ -45,17 +45,14 @@ export async function addMessage(
 ): Promise<void> {
   try {
     const newMessage = {
-      name: data.name,
-      email: data.email,
-      message: data.message,
+      ...data,
       status: 'unread' as const,
       createdAt: serverTimestamp(),
     };
-    
     await addDoc(messagesCollection, newMessage);
   } catch (error) {
     console.error('Error adding message:', error);
-    throw new Error('Failed to save message');
+    throw new Error('Failed to save message.');
   }
 }
 
@@ -73,16 +70,17 @@ export async function toggleMessageStatus(id: string): Promise<Message | null> {
     return null;
   } catch (error) {
     console.error('Error toggling message status:', error);
-    throw new Error('Failed to update message status');
+    throw new Error('Failed to update message status.');
   }
 }
 
-export async function deleteMessage(id: string): Promise<void> {
+export async function deleteMessage(id: string): Promise<boolean> {
   try {
     const docRef = doc(db, 'messages', id);
     await deleteDoc(docRef);
+    return true;
   } catch (error) {
     console.error('Error deleting message:', error);
-    throw new Error('Failed to delete message');
+    return false;
   }
 }

@@ -11,6 +11,7 @@ import { Trash2, MailOpen, Mail, LogOut, RefreshCw } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { getMessages, toggleMessageStatus, deleteMessage as deleteMessageAction } from '@/lib/message-store';
 import type { Message } from '@/lib/message-store';
+import { formatDistanceToNow } from 'date-fns';
 
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -28,7 +29,7 @@ export default function AdminPage() {
         toast({
           variant: 'destructive',
           title: "Error",
-          description: "Could not fetch messages. Make sure Firestore rules are set up correctly.",
+          description: error instanceof Error ? error.message : "Could not fetch messages.",
         });
       }
     });
@@ -64,6 +65,12 @@ export default function AdminPage() {
           title: "Message Deleted",
           description: "The message has been successfully deleted.",
         });
+      } else {
+        toast({
+          variant: 'destructive',
+          title: 'Deletion Failed',
+          description: 'Could not delete the message. Please try again.',
+        });
       }
     });
   };
@@ -77,10 +84,22 @@ export default function AdminPage() {
       setIsAuthenticated(false);
   }
 
+  const formatDate = (date: any) => {
+    if (!date) return 'N/A';
+    try {
+      // The `createdAt` field can be a Firestore Timestamp object.
+      const jsDate = date.toDate ? date.toDate() : new Date(date);
+      return formatDistanceToNow(jsDate, { addSuffix: true });
+    } catch (e) {
+      return 'Invalid date';
+    }
+  }
+
   const renderMessageTable = (msgs: Message[]) => (
     <Table>
         <TableHeader>
             <TableRow>
+                <TableHead>Received</TableHead>
                 <TableHead>Name</TableHead>
                 <TableHead>Email</TableHead>
                 <TableHead>Message</TableHead>
@@ -90,6 +109,7 @@ export default function AdminPage() {
         <TableBody>
           {msgs.length > 0 ? msgs.map((msg) => (
             <TableRow key={msg.id} className={msg.status === 'unread' ? 'bg-muted/50' : ''}>
+              <TableCell className="text-muted-foreground whitespace-nowrap">{formatDate(msg.createdAt)}</TableCell>
               <TableCell className="font-medium">{msg.name}</TableCell>
               <TableCell>{msg.email}</TableCell>
               <TableCell>{msg.message}</TableCell>
@@ -106,7 +126,7 @@ export default function AdminPage() {
             </TableRow>
           )) : (
             <TableRow>
-                <TableCell colSpan={4} className="h-24 text-center">No messages in this category.</TableCell>
+                <TableCell colSpan={5} className="h-24 text-center">No messages in this category.</TableCell>
             </TableRow>
           )}
         </TableBody>

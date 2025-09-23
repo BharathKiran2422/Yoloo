@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { handleContactFormSubmission } from '@/app/actions';
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../ui/card';
 import { Send } from 'lucide-react';
 import React from 'react';
 
@@ -55,7 +55,8 @@ export function ContactForm() {
   return (
     <Card className="border-2">
       <CardHeader>
-        <CardTitle>Send me a message</CardTitle>
+        <CardTitle>Send Us a Message</CardTitle>
+        <CardDescription>We'll get back to you as soon as possible.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -68,7 +69,7 @@ export function ContactForm() {
                   <FormItem>
                     <FormLabel>Your Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your name" {...field} />
+                      <Input placeholder="Enter your name" {...field} disabled={isSubmitting} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -81,7 +82,7 @@ export function ContactForm() {
                   <FormItem>
                     <FormLabel>Your Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Enter your email" {...field} />
+                      <Input placeholder="Enter your email" {...field} disabled={isSubmitting} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -95,7 +96,7 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Your Message</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Type your message here..." {...field} rows={5} />
+                    <Textarea placeholder="Type your message here..." {...field} rows={5} disabled={isSubmitting} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
