@@ -12,6 +12,7 @@ import { formatDistanceToNow } from 'date-fns';
 import { Trash2, CheckCircle, Mail, RefreshCw } from 'lucide-react';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { cn } from '@/lib/utils';
+import { Logo } from '@/components/layout/logo';
 
 function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
   const [password, setPassword] = useState('');
@@ -43,7 +44,8 @@ function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
     <div className="flex items-center justify-center min-h-screen bg-background">
       <PageTransitionWrapper>
         <Card className="w-full max-w-md mx-auto shadow-2xl border-primary/20">
-          <CardHeader className="text-center">
+           <CardHeader className="text-center items-center">
+            <Logo className="h-24 w-24 mb-4" />
             <CardTitle className="text-3xl font-bold text-primary">Admin Access</CardTitle>
             <CardDescription>Enter the password to view messages.</CardDescription>
           </CardHeader>
