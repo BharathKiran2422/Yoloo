@@ -102,7 +102,7 @@ export function ProductMarquee({ title, products, direction = 'left' }: ProductM
             isClient && !isDown && (direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right')
         )}>
           {extendedProducts.map((product, index) => (
-            <div key={`${product.id}-${index}`} className="marquee-item shrink-0 w-[280px] sm:w-[320px] md:w-[350px]">
+            <div key={`${product.id}-${index}`} className="marquee-item shrink-0 w-[240px] sm:w-[280px] md:w-[300px]">
                 <ProductCard product={product} />
             </div>
           ))}
@@ -111,5 +111,3 @@ export function ProductMarquee({ title, products, direction = 'left' }: ProductM
     </section>
   );
 }
-
-    
