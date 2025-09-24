@@ -30,7 +30,7 @@ export function Logo({ className }: { className?: string }) {
           priority 
           className={cn(
             "object-contain",
-            isLight ? "p-3" : "p-4" // Apply less padding to light logo to make it appear larger
+            isLight ? "p-2" : "p-4" // light logo slightly bigger by using less padding
           )}
         />
     </div>

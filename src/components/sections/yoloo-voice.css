@@ -51,3 +51,7 @@
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
 }
+
+.animate-marquee {
+  animation: marquee-yoloo 30s linear infinite;
+}

@@ -34,16 +34,16 @@ const YolooVoice = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           className="mt-12"
         >
-          <div className="yoloo-voice-carousel-container group">
-            <div className="yoloo-voice-carousel-fade-left" />
-            <div className="yoloo-voice-carousel-content">
-              {logos.map((_, index) => (
-                <div key={index} className="yoloo-voice-carousel-item">
-                  <Logo className="h-12 w-24" />
-                </div>
-              ))}
-            </div>
-            <div className="yoloo-voice-carousel-fade-right" />
+           <div className="py-8 bg-background overflow-hidden relative">
+             <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10"></div>
+              <div className="flex items-center space-x-16 yoloo-voice-carousel-content group">
+                {logos.map((_, index) => (
+                  <div key={index} className="flex-shrink-0 w-32 h-16 relative grayscale hover:grayscale-0 transition-all duration-300">
+                     <Logo className="h-12 w-24" />
+                  </div>
+                ))}
+              </div>
+             <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10"></div>
           </div>
         </motion.div>
       </div>
