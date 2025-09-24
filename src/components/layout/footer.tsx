@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Instagram, Linkedin } from 'lucide-react';
@@ -21,22 +20,18 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-card border-t w-full">
-      <div className="container mx-auto py-12 px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+    <footer className="bg-card w-full border-t">
+      <div className="container py-8 mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
           {/* Logo & Social */}
-          <div className="lg:col-span-2 flex flex-col space-y-4 items-center md:items-start">
-            <Logo className="h-16 w-auto" />
-            <p className="text-muted-foreground text-sm max-w-xs text-center md:text-left">
-              Premium fashion delivered fast. Your style, your time.
-            </p>
-            <div className="flex space-x-4">
+          <div className="col-span-2 md:col-span-2 flex flex-col space-y-3">
+            <Logo className="h-14 w-16 -ml-4 -mt-4" />
+            <div className="flex items-center space-x-3">
               <Link
                 href="https://www.linkedin.com/company/yoloo-lifestyle"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </Link>
@@ -45,61 +40,69 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="text-center md:text-left">
-            <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
-            <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <Link href="/about" className="hover:text-primary transition-colors">About Us</Link>
-              <Link href="/#contact-us" className="hover:text-primary transition-colors">Contact</Link>
-              <Link href="/admin" className="hover:text-primary transition-colors">Admin</Link>
+          {/* Company Links */}
+          <div className="flex flex-col gap-2">
+            <h3 className="font-semibold text-sm">Company</h3>
+            <div className="flex flex-col gap-1 text-xs text-muted-foreground">
+              <Link href="/about" className="hover:text-primary transition-colors">
+                About Us
+              </Link>
+              <Link href="/#contact-us" className="hover:text-primary transition-colors">
+                Contact Us
+              </Link>
             </div>
           </div>
 
           {/* Legal Links */}
-          <div className="text-center md:text-left">
-            <h3 className="font-semibold text-foreground mb-4">Legal</h3>
-            <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-              <Link href="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
-              <Link href="/shipping" className="hover:text-primary transition-colors">Shipping Policy</Link>
-              <Link href="/returns" className="hover:text-primary transition-colors">Return Policy</Link>
+          <div className="flex flex-col gap-2">
+            <h3 className="font-semibold text-sm">Legal</h3>
+            <div className="flex flex-col gap-1 text-xs text-muted-foreground">
+              <Link href="/terms" className="hover:text-primary transition-colors">
+                Terms & Conditions
+              </Link>
+              <Link href="/shipping" className="hover:text-primary transition-colors">
+                Shipping Policy
+              </Link>
+              <Link href="/returns" className="hover:text-primary transition-colors">
+                Return Policy
+              </Link>
             </div>
           </div>
 
           {/* App Download */}
-          <div className="lg:col-span-1 flex flex-col gap-4 items-center md:items-start">
-            <h3 className="font-semibold text-foreground">Get our app</h3>
-            <div className="flex flex-col gap-3 w-full max-w-[150px]">
+          <div className="col-span-2 md:col-span-1 flex flex-col gap-2">
+            <h3 className="font-semibold text-sm">Get our app</h3>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
               <Link
                 href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Get it on Google Play"
+                className="w-full sm:w-auto"
               >
                 {mounted && (
                   <GooglePlayButton
                     darkMode={resolvedTheme === 'dark'}
-                    className="w-full h-auto border rounded-lg transition-transform hover:scale-105"
+                    className="h-10 w-auto border rounded-lg"
                   />
                 )}
               </Link>
               <Link
                 href="/"
-                aria-label="Download on the App Store"
-                className="cursor-not-allowed"
-                 onClick={(e) => e.preventDefault()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
                 title="Coming soon"
               >
                 {mounted && (
                   <AppStoreButton
                     darkMode={resolvedTheme === 'dark'}
-                    className="w-full h-auto border rounded-lg opacity-50 cursor-not-allowed"
+                    className="h-10 w-auto border rounded-lg"
                   />
                 )}
               </Link>
@@ -108,12 +111,16 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t pt-6 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground gap-4">
-          <p className="text-center sm:text-left">&copy; {currentYear} Yoloo Fashion Network. All rights reserved.</p>
-          <div className="flex items-center gap-4">
-             <div className="flex gap-4">
-              <Link href="/terms" className="hover:text-primary transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-primary transition-colors">Account Deletion</Link>
+        <div className="mt-6 border-t pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground">
+          <p>&copy; {currentYear} Yoloo Fashion Network Private Limited. All rights reserved.</p>
+          <div className="flex flex-col-reverse md:flex-row items-center gap-3 mt-3 md:mt-0">
+            <div className="flex gap-3">
+              <Link href="/terms" className="hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="hover:text-primary transition-colors">
+                Account Deletion
+              </Link>
             </div>
             <VisitorCounter />
           </div>
