@@ -15,14 +15,24 @@ export function Logo({ className }: { className?: string }) {
 
   if (!mounted) {
     // Render a placeholder or nothing to prevent mismatch
-    return <div className={cn("relative -m-4", className)} />;
+    return <div className={cn("relative", className)} />;
   }
 
-  const src = resolvedTheme === 'light' ? "/logo2.png" : "/logo1.png";
+  const isLight = resolvedTheme === 'light';
+  const src = isLight ? "/logo2.png" : "/logo1.png";
 
   return (
-    <div className={cn("relative -m-4", className)}>
-       <Image src={src} alt="Yoloo! Logo" fill priority className="object-contain p-4" />
+    <div className={cn("relative", className)}>
+       <Image 
+          src={src} 
+          alt="Yoloo! Logo" 
+          fill 
+          priority 
+          className={cn(
+            "object-contain",
+            isLight ? "p-3" : "p-4" // Apply less padding to light logo to make it appear larger
+          )}
+        />
     </div>
   );
 }
