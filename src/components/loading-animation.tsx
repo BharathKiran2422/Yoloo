@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -26,7 +25,7 @@ export function LoadingAnimation({ children }: { children: React.ReactNode }) {
       setThemeSwitching(true);
       const themeSwitchTimer = setTimeout(() => {
         setThemeSwitching(false);
-      }, 1000); // Show loading for 1 second on theme change
+      }, 5000); // Show loading for 5 seconds on theme change
 
       return () => clearTimeout(themeSwitchTimer);
     }
