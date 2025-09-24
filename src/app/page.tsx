@@ -33,9 +33,9 @@ export default function Home() {
         <InstagramSection />
         <TestimonialsSection />
         <AppCtaSection />
+        <ContactSection />
       </div>
       <StorySection />
-      <ContactSection />
     </PageTransitionWrapper>
   );
 }

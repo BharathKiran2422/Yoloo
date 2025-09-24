@@ -1,23 +1,9 @@
 
-// src/app/actions.ts
-
 'use server';
 
-import { aiSizeRecommendation } from '@/ai/flows/ai-size-recommendation';
-import type { AiSizeRecommendationInput } from '@/ai/flows/ai-size-recommendation';
 import { addMessage, getMessages, deleteMessage, toggleMessageStatus } from '@/lib/message-store';
 import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
-
-export async function handleSizeRecommendation(input: AiSizeRecommendationInput) {
-  try {
-    const result = await aiSizeRecommendation(input);
-    return result;
-  } catch (error) {
-    console.error('Size recommendation error:', error);
-    throw new Error('Failed to get size recommendation');
-  }
-}
 
 const ContactFormSchema = z.object({
   name: z.string().min(1, 'Name is required'),
@@ -41,7 +27,8 @@ export async function handleContactFormSubmission(prevState: any, formData: Form
 
   try {
     await addMessage(validatedFields.data);
-    revalidatePath('/');
+    revalidatePath('/'); // Revalidate the homepage if the contact form is there
+    revalidatePath('/admin'); // Revalidate admin page to show new message
     return {
       success: true,
       message: "Thank you for your message! We'll get back to you soon.",
@@ -55,8 +42,10 @@ export async function handleContactFormSubmission(prevState: any, formData: Form
 }
 
 export async function verifyAdminPassword(password: string): Promise<boolean> {
+  // Directly compare the provided password with the one from environment variables
   return password === process.env.ADMIN_PASSWORD;
 }
+
 
 export async function getAdminMessages() {
   return await getMessages();
@@ -73,4 +62,3 @@ export async function toggleAdminMessageStatus(id: string) {
   revalidatePath('/admin');
   return success;
 }
-

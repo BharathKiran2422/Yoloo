@@ -21,15 +21,21 @@ function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
     e.preventDefault();
     setLoading(true);
     setError('');
-    const success = await verifyAdminPassword(password);
-    if (success) {
-      sessionStorage.setItem('isAdminAuthenticated', 'true');
-      onLogin(true);
-    } else {
-      setError('Incorrect password. Please try again.');
+    try {
+      const success = await verifyAdminPassword(password);
+      if (success) {
+        sessionStorage.setItem('isAdminAuthenticated', 'true');
+        onLogin(true);
+      } else {
+        setError('Incorrect password. Please try again.');
+        onLogin(false);
+      }
+    } catch (err) {
+      setError('An error occurred during verification.');
       onLogin(false);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -89,7 +95,7 @@ export default function AdminPage() {
         } catch (error) {
           toast({
             title: 'Error',
-            description: 'Failed to fetch messages.',
+            description: 'Failed to fetch messages. Ensure Firestore rules allow reads.',
             variant: 'destructive',
           });
         } finally {
@@ -169,7 +175,7 @@ export default function AdminPage() {
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{msg.message}</p>
                   <p className="text-xs text-muted-foreground/80 border-t pt-2">
-                    Received {msg.timestamp ? formatDistanceToNow(new Date(msg.timestamp.seconds * 1000), { addSuffix: true }) : 'just now'}
+                    Received {msg.createdAt ? formatDistanceToNow(msg.createdAt.toDate(), { addSuffix: true }) : 'just now'}
                   </p>
                   <div className="flex justify-end space-x-2 mt-4">
                     <Button variant="ghost" size="icon" onClick={() => handleToggleStatus(msg.id)} title={msg.isRead ? 'Mark as Unread' : 'Mark as Read'}>

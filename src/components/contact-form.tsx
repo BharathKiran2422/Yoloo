@@ -1,10 +1,9 @@
 
 'use client';
 
-import { useActionState } from 'react';
+import { useActionState, useEffect, useRef } from 'react';
 import { useFormStatus } from 'react-dom';
 import { handleContactFormSubmission } from '@/app/actions';
-import { useEffect, useRef } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -46,17 +45,15 @@ export function ContactForm() {
 
   return (
     <form ref={formRef} action={dispatch} className="space-y-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="name">Your Name</Label>
-          <Input id="name" name="name" placeholder="Enter your name" required />
-          {state.errors?.name && <p className="text-destructive text-sm">{state.errors.name[0]}</p>}
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="email">Your Email</Label>
-          <Input id="email" name="email" type="email" placeholder="Enter your email" required />
-          {state.errors?.email && <p className="text-destructive text-sm">{state.errors.email[0]}</p>}
-        </div>
+      <div className="space-y-2">
+        <Label htmlFor="name">Your Name</Label>
+        <Input id="name" name="name" placeholder="Enter your name" required />
+        {state.errors?.name && <p className="text-destructive text-sm">{state.errors.name[0]}</p>}
+      </div>
+      <div className="space-y-2">
+        <Label htmlFor="email">Your Email</Label>
+        <Input id="email" name="email" type="email" placeholder="Enter your email" required />
+        {state.errors?.email && <p className="text-destructive text-sm">{state.errors.email[0]}</p>}
       </div>
       <div className="space-y-2">
         <Label htmlFor="message">Your Message</Label>
