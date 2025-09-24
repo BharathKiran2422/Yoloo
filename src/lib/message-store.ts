@@ -13,6 +13,7 @@ import {
   orderBy,
   getDoc,
   Timestamp,
+  query,
 } from 'firebase/firestore';
 
 export interface Message {
