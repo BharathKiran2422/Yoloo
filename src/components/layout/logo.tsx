@@ -1,4 +1,3 @@
-
 'use client';
 
 import { cn } from "@/lib/utils";
@@ -16,16 +15,14 @@ export function Logo({ className }: { className?: string }) {
 
   if (!mounted) {
     // Render a placeholder or nothing to prevent mismatch
-    return <div className={cn("relative", className)} />;
+    return <div className={cn("relative -m-4", className)} />;
   }
 
   const src = resolvedTheme === 'light' ? "/logo2.png" : "/logo1.png";
 
   return (
-    <div className={cn("relative", className)}>
-       <Image src={src} alt="Yoloo! Logo" fill priority className="object-contain" />
+    <div className={cn("relative -m-4", className)}>
+       <Image src={src} alt="Yoloo! Logo" fill priority className="object-contain p-4" />
     </div>
   );
 }
-
-    
