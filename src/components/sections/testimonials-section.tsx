@@ -1,103 +1,68 @@
 
 'use client';
 
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { testimonials } from "@/lib/testimonials";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Star } from "lucide-react";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect, useState } from "react";
+import { motion } from 'framer-motion';
+import { BrandCarousel } from '../brand-carousel';
 
 export function TestimonialsSection() {
-    
-    const getAvatarImage = (id: string) => PlaceHolderImages.find(img => img.id === id);
-    const [mounted, setMounted] = useState(false);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: 'easeOut',
+      },
+    },
+  };
 
-    if (!mounted) {
-        return (
-             <section className="py-8 md:py-12 bg-card/50 dark:bg-card">
-                <div className="container mx-auto">
-                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-foreground">What Our Customers Say</h2>
-                        <p className="text-muted-foreground mt-2">Real stories from our amazing users.</p>
-                        <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
-                    </div>
-                </div>
-            </section>
-        );
-    }
-
-
-    return (
-        <section className="py-8 md:py-12 bg-card/50 dark:bg-card">
-            <div className="container mx-auto">
-                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">What Our Customers Say</h2>
-                    <p className="text-muted-foreground mt-2">Real stories from our amazing users.</p>
-                    <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
-                </div>
-                
-                <Carousel
-                    opts={{
-                        align: "start",
-                        loop: true,
-                    }}
-                    plugins={[
-                        Autoplay({
-                            delay: 5000,
-                        }),
-                    ]}
-                    className="w-full max-w-4xl mx-auto"
+  return (
+    <section className="py-8 md:py-12 bg-card/50 dark:bg-card relative overflow-hidden">
+        <div className="absolute inset-0 pattern-background opacity-50"></div>
+        <div className="container mx-auto relative">
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="text-center max-w-4xl mx-auto border bg-background/70 backdrop-blur-sm rounded-2xl p-8 md:p-12 relative group/card sheen-effect"
+            >
+                <motion.h2 
+                    variants={itemVariants} 
+                    className="text-3xl md:text-4xl font-bold text-primary mb-4"
                 >
-                    <CarouselContent>
-                        {testimonials.map((testimonial) => {
-                            const avatar = getAvatarImage(testimonial.avatarImageId);
-                            return (
-                                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
-                                    <div className="p-4">
-                                        <Card className="h-full rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
-                                            <CardContent className="p-6 flex flex-col items-center text-center h-full">
-                                                {avatar && (
-                                                    <Avatar className="w-16 h-16 mb-4 border-2 border-primary/50">
-                                                        <AvatarImage src={avatar.imageUrl} alt={avatar.description} />
-                                                        <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                                                    </Avatar>
-                                                )}
-                                                <p className="text-base font-medium text-foreground flex-grow">"{testimonial.quote}"</p>
-                                                <div className="mt-6">
-                                                     <div className="flex justify-center mb-2">
-                                                        {Array.from({ length: 5 }).map((_, i) => (
-                                                            <Star 
-                                                                key={i} 
-                                                                className={`w-4 h-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground/50'}`}
-                                                            />
-                                                        ))}
-                                                    </div>
-                                                    <p className="font-semibold text-foreground/90">{testimonial.name}</p>
-                                                </div>
-                                            </CardContent>
-                                        </Card>
-                                    </div>
-                                </CarouselItem>
-                            );
-                        })}
-                    </CarouselContent>
-                    <CarouselPrevious className="hidden md:flex left-[-1.5rem]" />
-                    <CarouselNext className="hidden md:flex right-[-1.5rem]" />
-                </Carousel>
-            </div>
-        </section>
-    )
+                    The Yoloo Voice
+                </motion.h2>
+                <motion.p 
+                    variants={itemVariants} 
+                    className="text-lg md:text-xl text-foreground/80 leading-relaxed"
+                >
+                    At Yoloo, we bring together speed, style, and trust. Our vision is to deliver fresh fashion with premium quality — designed for your lifestyle and delivered at your doorstep.
+                </motion.p>
+            </motion.div>
+            
+            <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="mt-12"
+            >
+              <BrandCarousel />
+            </motion.div>
+        </div>
+    </section>
+  );
 }
