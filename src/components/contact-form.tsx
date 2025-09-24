@@ -15,7 +15,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
 
   return (
-    <Button type="submit" disabled={pending} className="w-full h-12 text-lg sheen-effect">
+    <Button type="submit" disabled={pending} className="w-full h-12 text-lg sheen-effect bg-gradient-to-r from-primary to-blue-400 hover:from-primary/90 hover:to-blue-400/90">
       {pending ? 'Sending...' : <>Send Message <Send /></>}
     </Button>
   );
@@ -45,19 +45,18 @@ export function ContactForm() {
 
   return (
     <form ref={formRef} action={dispatch} className="space-y-8">
-      <div className="space-y-2">
-        <Label htmlFor="name">Your Name</Label>
-        <Input id="name" name="name" placeholder="Enter your name" required />
-        {state.errors?.name && <p className="text-destructive text-sm">{state.errors.name[0]}</p>}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-2">
+          <Input id="name" name="name" placeholder="Your Name" required />
+          {state.errors?.name && <p className="text-destructive text-sm">{state.errors.name[0]}</p>}
+        </div>
+        <div className="space-y-2">
+          <Input id="email" name="email" type="email" placeholder="Your Email" required />
+          {state.errors?.email && <p className="text-destructive text-sm">{state.errors.email[0]}</p>}
+        </div>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="email">Your Email</Label>
-        <Input id="email" name="email" type="email" placeholder="Enter your email" required />
-        {state.errors?.email && <p className="text-destructive text-sm">{state.errors.email[0]}</p>}
-      </div>
-      <div className="space-y-2">
-        <Label htmlFor="message">Your Message</Label>
-        <Textarea id="message" name="message" placeholder="How can we help you?" rows={5} required />
+        <Textarea id="message" name="message" placeholder="Your Message" rows={5} required />
         {state.errors?.message && <p className="text-destructive text-sm">{state.errors.message[0]}</p>}
       </div>
       <SubmitButton />
