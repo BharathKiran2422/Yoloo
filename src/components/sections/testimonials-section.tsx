@@ -1,54 +1,61 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { Logo } from '../layout/logo';
-import './yoloo-voice.css';
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Card, CardContent } from "@/components/ui/card";
+import { Star } from "lucide-react";
+import { testimonials } from "@/lib/testimonials";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { BrandCarousel } from "../brand-carousel";
 
-const YolooVoice = () => {
-  // We'll use the Logo component which is theme-aware
-  const logos = Array(20).fill(0); // Create an array to map over for the carousel
+function TestimonialCard({ testimonial }: { testimonial: (typeof testimonials)[0] }) {
+    const avatar = PlaceHolderImages.find(img => img.id === testimonial.avatarImageId);
+    return (
+        <Card className="rounded-2xl shadow-sm border h-full bg-background/50 flex flex-col">
+            <CardContent className="p-6 flex flex-col flex-grow">
+                <div className="flex mb-4">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className={`w-5 h-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} />
+                    ))}
+                </div>
+                <p className="text-muted-foreground flex-grow">"{testimonial.quote}"</p>
+                <div className="flex items-center mt-6">
+                    {avatar && (
+                        <Avatar className="h-12 w-12 mr-4 border-2 border-primary/10">
+                            <AvatarImage src={avatar.imageUrl} alt={testimonial.name} />
+                            <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                        </Avatar>
+                    )}
+                    <div>
+                        <p className="font-semibold text-foreground">{testimonial.name}</p>
+                    </div>
+                </div>
+            </CardContent>
+        </Card>
+    );
+}
 
-  return (
-    <section className="py-8 md:py-12 bg-background">
-      <div className="container mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: 'easeOut' }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            The Yoloo Voice
-          </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
-          <p className="mt-6 max-w-3xl mx-auto text-muted-foreground text-lg">
-            At Yoloo, we bring together speed, style, and trust. Our vision is to deliver fresh fashion with premium quality — designed for your lifestyle and delivered at your doorstep.
-          </p>
-        </motion.div>
+export function TestimonialsSection() {
+    return (
+        <section className="py-8 md:py-12 bg-card/20 dark:bg-card/30">
+            <div className="container mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">What Our Customers Are Saying</h2>
+                    <p className="text-muted-foreground mt-2">Real stories from our stylish community.</p>
+                    <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {testimonials.map(testimonial => (
+                        <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+                    ))}
+                </div>
+            </div>
+            
+            <div className="container mx-auto text-center mt-16">
+                 <h2 className="text-2xl font-bold text-foreground">The Yoloo Voice</h2>
+                 <p className="text-muted-foreground mt-1">Trusted by the best brands in fashion.</p>
+            </div>
+            <BrandCarousel />
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-          className="mt-12"
-        >
-           <div className="py-8 bg-background overflow-hidden relative">
-             <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10"></div>
-              <div className="flex items-center space-x-16 yoloo-voice-carousel-content group">
-                {logos.map((_, index) => (
-                  <div key={index} className="flex-shrink-0 w-32 h-16 relative grayscale hover:grayscale-0 transition-all duration-300">
-                     <Logo className="h-12 w-24" />
-                  </div>
-                ))}
-              </div>
-             <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10"></div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-export { YolooVoice as TestimonialsSection };
+        </section>
+    );
+}

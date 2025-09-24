@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { brands } from '@/lib/products';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
