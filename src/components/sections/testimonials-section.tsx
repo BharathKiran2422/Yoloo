@@ -39,7 +39,7 @@ const YolooVoice = () => {
             <div className="yoloo-voice-carousel-content">
               {logos.map((_, index) => (
                 <div key={index} className="yoloo-voice-carousel-item">
-                  <Logo className="h-16 w-32" />
+                  <Logo className="h-12 w-24" />
                 </div>
               ))}
             </div>
