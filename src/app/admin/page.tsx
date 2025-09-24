@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { getAdminMessages, deleteAdminMessage, toggleAdminMessageStatus, verifyAdminPassword } from '@/app/actions';
 import type { Message } from '@/lib/message-store';
 import { Button } from '@/components/ui/button';
@@ -9,8 +9,9 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { formatDistanceToNow } from 'date-fns';
-import { Trash2, CheckCircle, Mail } from 'lucide-react';
+import { Trash2, CheckCircle, Mail, RefreshCw } from 'lucide-react';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
+import { cn } from '@/lib/utils';
 
 function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
   const [password, setPassword] = useState('');
@@ -74,7 +75,21 @@ export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isRefreshing, setIsRefreshing] = useState(false);
   const { toast } = useToast();
+
+  const fetchMessages = useCallback(async () => {
+    try {
+      const fetchedMessages = await getAdminMessages();
+      setMessages(fetchedMessages);
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to fetch messages. Ensure Firestore rules allow reads.',
+        variant: 'destructive',
+      });
+    }
+  }, [toast]);
 
   useEffect(() => {
     const authStatus = sessionStorage.getItem('isAdminAuthenticated');
@@ -87,24 +102,20 @@ export default function AdminPage() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      const fetchMessages = async () => {
-        setLoading(true);
-        try {
-          const fetchedMessages = await getAdminMessages();
-          setMessages(fetchedMessages);
-        } catch (error) {
-          toast({
-            title: 'Error',
-            description: 'Failed to fetch messages. Ensure Firestore rules allow reads.',
-            variant: 'destructive',
-          });
-        } finally {
-          setLoading(false);
-        }
-      };
-      fetchMessages();
+      setLoading(true);
+      fetchMessages().finally(() => setLoading(false));
     }
-  }, [isAuthenticated, toast]);
+  }, [isAuthenticated, fetchMessages]);
+
+  const handleRefresh = async () => {
+    setIsRefreshing(true);
+    await fetchMessages();
+    setIsRefreshing(false);
+    toast({
+        title: 'Refreshed',
+        description: 'Message list updated.',
+    });
+  };
 
   const handleDelete = async (id: string) => {
     try {
@@ -144,6 +155,10 @@ export default function AdminPage() {
     if (typeof timestamp === 'string') {
       return new Date(timestamp);
     }
+    // Fallback for Firestore Timestamp-like objects that might not have the toDate method
+    if (timestamp && typeof timestamp.seconds === 'number' && typeof timestamp.nanoseconds === 'number') {
+      return new Date(timestamp.seconds * 1000 + timestamp.nanoseconds / 1000000);
+    }
     return new Date();
   };
 
@@ -156,10 +171,15 @@ export default function AdminPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold text-foreground">Customer Messages</h1>
-           <Button variant="outline" onClick={() => {
-             sessionStorage.removeItem('isAdminAuthenticated');
-             setIsAuthenticated(false);
-           }}>Logout</Button>
+          <div className="flex items-center gap-2">
+            <Button variant="outline" size="icon" onClick={handleRefresh} disabled={isRefreshing} title="Refresh Messages">
+              <RefreshCw className={cn("h-5 w-5", isRefreshing && "animate-spin")} />
+            </Button>
+            <Button variant="outline" onClick={() => {
+              sessionStorage.removeItem('isAdminAuthenticated');
+              setIsAuthenticated(false);
+            }}>Logout</Button>
+          </div>
         </div>
         
         {loading ? (
