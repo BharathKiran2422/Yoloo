@@ -11,6 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import { formatDistanceToNow } from 'date-fns';
 import { Trash2, CheckCircle, Mail } from 'lucide-react';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
+import { Timestamp } from 'firebase/firestore';
 
 function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
   const [password, setPassword] = useState('');
@@ -136,6 +137,20 @@ export default function AdminPage() {
     }
   };
 
+  const toDate = (timestamp: Timestamp | Date): Date => {
+    if (timestamp instanceof Date) {
+      return timestamp;
+    }
+    if (timestamp && typeof timestamp.toDate === 'function') {
+      return timestamp.toDate();
+    }
+    // Handle serialized timestamps
+    if (timestamp && typeof (timestamp as any).seconds === 'number') {
+      return new Timestamp((timestamp as any).seconds, (timestamp as any).nanoseconds).toDate();
+    }
+    return new Date();
+  };
+
   if (!isAuthenticated) {
     return <AdminLogin onLogin={setIsAuthenticated} />;
   }
@@ -175,7 +190,7 @@ export default function AdminPage() {
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{msg.message}</p>
                   <p className="text-xs text-muted-foreground/80 border-t pt-2">
-                    Received {msg.createdAt ? formatDistanceToNow(msg.createdAt.toDate(), { addSuffix: true }) : 'just now'}
+                    Received {msg.createdAt ? formatDistanceToNow(toDate(msg.createdAt), { addSuffix: true }) : 'just now'}
                   </p>
                   <div className="flex justify-end space-x-2 mt-4">
                     <Button variant="ghost" size="icon" onClick={() => handleToggleStatus(msg.id)} title={msg.isRead ? 'Mark as Unread' : 'Mark as Read'}>
@@ -194,3 +209,5 @@ export default function AdminPage() {
     </PageTransitionWrapper>
   );
 }
+
+    
