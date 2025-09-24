@@ -26,7 +26,7 @@ export function ContactSection() {
     ];
 
     return (
-        <section id="contact-us" className="py-16 md:py-24 bg-background">
+        <section id="contact-us" className="py-8 md:py-12 bg-background">
             <div className="container mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Connect With Us</h2>
