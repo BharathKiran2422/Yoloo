@@ -36,10 +36,15 @@ export function ContactSection() {
                     <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
                 </div>
                 <div className="bg-card p-6 md:p-8 rounded-2xl border">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {/* Left Column: Info */}
-                        <div className="flex flex-col justify-center">
-                            <div className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+                        {/* Left Column: Form */}
+                        <div className="md:col-span-3">
+                            <ContactForm />
+                        </div>
+
+                        {/* Right Column: Info */}
+                        <div className="md:col-span-2 flex flex-col justify-center">
+                            <div className="space-y-6">
                                 {contactDetails.map((detail, index) => (
                                     <div key={index} className="flex items-start gap-4">
                                         <div className="flex-shrink-0 bg-primary/10 text-primary p-3 rounded-full">
@@ -58,11 +63,6 @@ export function ContactSection() {
                                     </div>
                                 ))}
                             </div>
-                        </div>
-
-                        {/* Right Column: Form */}
-                        <div>
-                            <ContactForm />
                         </div>
                     </div>
                 </div>
