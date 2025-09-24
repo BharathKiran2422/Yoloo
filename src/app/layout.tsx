@@ -7,6 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 import { WhatsAppFab } from '@/components/whatsapp-fab';
 import { AnnouncementBar } from '@/components/layout/announcement-bar';
+import { LoadingAnimation } from '@/components/loading-animation';
 
 export const metadata: Metadata = {
   title: 'Yoloo! : Fashion Made Easy',
@@ -25,25 +26,25 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased pattern-background">
+      <body className="font-body antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col">
-            <AnnouncementBar />
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-          <Toaster />
-          <WhatsAppFab phoneNumber="8297297197" />
+          <LoadingAnimation>
+            <div className="flex min-h-screen flex-col pattern-background">
+              <AnnouncementBar />
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+            <Toaster />
+            <WhatsAppFab phoneNumber="8297297197" />
+          </LoadingAnimation>
         </ThemeProvider>
       </body>
     </html>
   );
 }
-
-    
