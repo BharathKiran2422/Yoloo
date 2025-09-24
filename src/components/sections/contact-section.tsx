@@ -28,14 +28,16 @@ export function ContactSection() {
     return (
         <section id="contact-us" className="py-16 md:py-24 bg-background">
             <div className="container mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">Connect With Us</h2>
+                    <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+                        Have a style query, collaboration idea, or just want to share your thoughts? We’re here to listen and respond with care.
+                    </p>
+                </div>
                 <div className="bg-card p-8 md:p-12 rounded-2xl border">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         {/* Left Column: Info */}
                         <div className="flex flex-col justify-center">
-                            <h2 className="text-3xl md:text-4xl font-bold text-foreground">Connect With Us</h2>
-                            <p className="text-muted-foreground mt-4 mb-8">
-                                Have a style query, collaboration idea, or just want to share your thoughts? We’re here to listen and respond with care.
-                            </p>
                             <div className="space-y-6">
                                 {contactDetails.map((detail, index) => (
                                     <div key={index} className="flex items-start gap-4">
