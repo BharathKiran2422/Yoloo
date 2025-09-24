@@ -90,13 +90,8 @@ export const brandSpotlightProducts: Product[] = [
 ];
 
 export const brands: Brand[] = [
-  { id: "brand-logo-1", name: "Marvel", imageId: "brand-logo-marvel" },
-  { id: "brand-logo-2", name: "DC Comics", imageId: "brand-logo-dc" },
-  { id: "brand-logo-3", name: "Harry Potter", imageId: "brand-logo-hp" },
-  { id: "brand-logo-4", name: "Puma", imageId: "brand-logo-puma" },
-  { id: "brand-logo-5", name: "Adidas", imageId: "brand-logo-adidas" },
-  { id: "brand-logo-6", name: "Nike", imageId: "brand-logo-nike" },
-  { id: "brand-logo-7", name: "Levi's", imageId: "brand-logo-levis" },
+  { id: "brand-logo-1", name: "Brand Logo 1", imageId: "brand-logo-new-1" },
+  { id: "brand-logo-2", name: "Brand Logo 2", imageId: "brand-logo-new-2" },
 ];
 
     
