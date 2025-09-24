@@ -19,7 +19,7 @@ export default function AboutPage() {
     return (
         <PageTransitionWrapper>
             <div className="bg-background">
-                <div className="container mx-auto px-4 py-16 sm:py-24">
+                <div className="container mx-auto px-4 py-8 sm:py-12">
                     <div className="text-center max-w-3xl mx-auto">
                          <p className="text-base font-semibold text-primary uppercase tracking-wider">Our Story</p>
                         <h1 className="font-headline text-4xl sm:text-5xl font-extrabold mt-2 text-foreground">

@@ -35,7 +35,7 @@ export function StorySection() {
     ];
 
     return (
-        <section className="w-full py-16 md:py-24 bg-card/50 dark:bg-card">
+        <section className="w-full py-8 md:py-12 bg-card/50 dark:bg-card">
             <div className="container mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Yoloo! Story</h2>

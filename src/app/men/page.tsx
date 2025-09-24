@@ -52,7 +52,7 @@ export default function MenPage() {
     return (
         <PageTransitionWrapper>
             <div className="bg-background">
-                <div className="container mx-auto px-4 py-12">
+                <div className="container mx-auto px-4 py-8">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl md:text-5xl font-bold text-foreground bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-400">
                            Latest Trends in Men’s Fashion

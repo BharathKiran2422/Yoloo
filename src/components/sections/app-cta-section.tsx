@@ -17,7 +17,7 @@ export function AppCtaSection() {
     }, []);
 
     return (
-        <section id="purchase-on-app" className="py-12 md:py-16">
+        <section id="purchase-on-app" className="py-8 md:py-12">
             <div className="rounded-2xl p-8 md:p-12 border bg-gradient-to-br from-background to-card pattern-background">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="text-center md:text-left">

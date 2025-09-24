@@ -1,10 +1,11 @@
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
 
 export function JustDoItSection() {
     return (
-        <section className="py-16 md:py-24 bg-background">
+        <section className="py-8 md:py-12 bg-background">
             <div className="container mx-auto text-center">
                 <p className="text-lg font-semibold text-primary uppercase tracking-wider">Your Style, Your Way</p>
                 <h2 className="text-4xl md:text-6xl font-headline font-extrabold my-4 text-foreground tracking-tight max-w-4xl mx-auto leading-tight">

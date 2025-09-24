@@ -77,7 +77,7 @@ export function ProductMarquee({ title, products, direction = 'left' }: ProductM
 
 
   return (
-    <section className="py-12 md:py-16 overflow-hidden">
+    <section className="py-8 md:py-12 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-12">
             <div className="text-center md:text-left">

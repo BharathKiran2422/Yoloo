@@ -9,7 +9,7 @@ import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 export default function ReturnsPage() {
     return (
         <PageTransitionWrapper>
-            <div className="bg-background text-foreground min-h-screen p-4 sm:p-8 flex flex-col items-center">
+            <div className="bg-background text-foreground min-h-screen p-4 sm:p-6 flex flex-col items-center">
                 <div className="w-full max-w-4xl">
                     <Link href="/" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8">
                         <ArrowLeft size={16} />

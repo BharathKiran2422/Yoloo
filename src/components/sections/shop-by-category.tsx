@@ -1,3 +1,4 @@
+
 import { CategoryCard } from "../category-card";
 
 const categories = [
@@ -9,7 +10,7 @@ const categories = [
 
 export function ShopByCategory() {
     return (
-        <section className="py-12 md:py-16">
+        <section className="py-8 md:py-12">
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">Shop By Category</h2>
                 <div className="w-24 h-1 bg-primary mx-auto mt-2 rounded-full" />

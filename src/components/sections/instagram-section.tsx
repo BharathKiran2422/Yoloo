@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -12,7 +13,7 @@ export function InstagramSection() {
     const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
     return (
-        <section className="py-12 md:py-16">
+        <section className="py-8 md:py-12">
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">Follow us on Instagram</h2>
                 <p className="text-muted-foreground mt-2">@yoloo_lifestyle</p>
