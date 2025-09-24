@@ -1,20 +1,10 @@
 
 'use server';
 
-import { db } from './firebase';
+import { adminDb } from './firebase-admin';
 import {
-  collection,
-  addDoc,
-  getDocs,
-  deleteDoc,
-  doc,
-  updateDoc,
-  serverTimestamp,
-  orderBy,
-  getDoc,
   Timestamp,
-  query,
-} from 'firebase/firestore';
+} from 'firebase-admin/firestore';
 
 export interface Message {
   id: string;
@@ -31,13 +21,13 @@ export interface NewMessage {
   message: string;
 }
 
-const messagesCollection = collection(db, 'messages');
+const messagesCollection = adminDb.collection('messages');
 
 // Create
 export async function addMessage(message: NewMessage): Promise<string> {
-  const docRef = await addDoc(messagesCollection, {
+  const docRef = await messagesCollection.add({
     ...message,
-    timestamp: serverTimestamp(),
+    timestamp: Timestamp.now(),
     isRead: false,
   });
   return docRef.id;
@@ -45,9 +35,7 @@ export async function addMessage(message: NewMessage): Promise<string> {
 
 // Read
 export async function getMessages(): Promise<Message[]> {
-  const querySnapshot = await getDocs(
-    query(messagesCollection, orderBy('timestamp', 'desc'))
-  );
+  const querySnapshot = await messagesCollection.orderBy('timestamp', 'desc').get();
   return querySnapshot.docs.map(
     (doc) =>
       ({
@@ -60,7 +48,7 @@ export async function getMessages(): Promise<Message[]> {
 // Delete
 export async function deleteMessage(id: string): Promise<boolean> {
   try {
-    await deleteDoc(doc(db, 'messages', id));
+    await messagesCollection.doc(id).delete();
     return true;
   } catch (error) {
     console.error("Error deleting document: ", error);
@@ -71,16 +59,16 @@ export async function deleteMessage(id: string): Promise<boolean> {
 // Update
 export async function toggleMessageStatus(id: string): Promise<boolean> {
    try {
-    const messageRef = doc(db, 'messages', id);
-    const messageSnap = await getDoc(messageRef);
+    const messageRef = messagesCollection.doc(id);
+    const messageSnap = await messageRef.get();
 
-    if (!messageSnap.exists()) {
+    if (!messageSnap.exists) {
       console.log('No such document!');
       return false;
     }
     
-    const currentStatus = messageSnap.data().isRead;
-    await updateDoc(messageRef, {
+    const currentStatus = messageSnap.data()!.isRead;
+    await messageRef.update({
       isRead: !currentStatus,
     });
      return true;

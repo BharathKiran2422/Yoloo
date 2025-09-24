@@ -169,7 +169,7 @@ export default function AdminPage() {
                 <CardContent>
                   <p className="text-muted-foreground mb-4">{msg.message}</p>
                   <p className="text-xs text-muted-foreground/80 border-t pt-2">
-                    Received {msg.timestamp ? formatDistanceToNow(msg.timestamp.toDate(), { addSuffix: true }) : 'just now'}
+                    Received {msg.timestamp ? formatDistanceToNow(new Date(msg.timestamp.seconds * 1000), { addSuffix: true }) : 'just now'}
                   </p>
                   <div className="flex justify-end space-x-2 mt-4">
                     <Button variant="ghost" size="icon" onClick={() => handleToggleStatus(msg.id)} title={msg.isRead ? 'Mark as Unread' : 'Mark as Read'}>
