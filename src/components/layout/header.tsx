@@ -36,7 +36,7 @@ export function Header() {
       <div className="container flex h-16 items-center">
         <div className="mr-4 flex items-center">
           <Link href="/">
-            <Logo className="h-12 w-12" />
+            <Logo className="h-32 w-32" />
           </Link>
         </div>
 
