@@ -19,7 +19,7 @@ export interface Message {
   name: string;
   email: string;
   message: string;
-  createdAt: Timestamp;
+  createdAt: Timestamp | string;
   isRead: boolean;
 }
 
@@ -45,13 +45,16 @@ export async function addMessage(message: NewMessage): Promise<string> {
 export async function getMessages(): Promise<Message[]> {
   const q = query(messagesCollection, orderBy('createdAt', 'desc'));
   const querySnapshot = await getDocs(q);
-  return querySnapshot.docs.map(
-    (doc) =>
-      ({
-        id: doc.id,
-        ...doc.data(),
-      } as Message)
-  );
+  return querySnapshot.docs.map((doc) => {
+    const data = doc.data();
+    // Convert Firestore Timestamp to a serializable format (ISO string)
+    const createdAt = data.createdAt;
+    return {
+      id: doc.id,
+      ...data,
+      createdAt: createdAt instanceof Timestamp ? createdAt.toDate().toISOString() : new Date().toISOString(),
+    } as Message;
+  });
 }
 
 // Delete

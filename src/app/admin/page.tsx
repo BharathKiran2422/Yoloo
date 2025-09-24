@@ -11,7 +11,6 @@ import { useToast } from '@/hooks/use-toast';
 import { formatDistanceToNow } from 'date-fns';
 import { Trash2, CheckCircle, Mail } from 'lucide-react';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
-import { Timestamp } from 'firebase/firestore';
 
 function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
   const [password, setPassword] = useState('');
@@ -137,16 +136,13 @@ export default function AdminPage() {
     }
   };
 
-  const toDate = (timestamp: Timestamp | Date): Date => {
+  const toDate = (timestamp: any): Date => {
     if (timestamp instanceof Date) {
       return timestamp;
     }
-    if (timestamp && typeof timestamp.toDate === 'function') {
-      return timestamp.toDate();
-    }
-    // Handle serialized timestamps
-    if (timestamp && typeof (timestamp as any).seconds === 'number') {
-      return new Timestamp((timestamp as any).seconds, (timestamp as any).nanoseconds).toDate();
+    // Handle serialized timestamps (ISO string)
+    if (typeof timestamp === 'string') {
+      return new Date(timestamp);
     }
     return new Date();
   };
@@ -209,5 +205,3 @@ export default function AdminPage() {
     </PageTransitionWrapper>
   );
 }
-
-    
