@@ -68,7 +68,7 @@ export function Header() {
                   <Menu />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right">
+              <SheetContent side="right" className="w-[80vw] sm:max-w-sm">
                 <SheetHeader>
                   <SheetTitle className="sr-only">Menu</SheetTitle>
                   <SheetDescription className="sr-only">Main navigation menu</SheetDescription>
@@ -78,15 +78,15 @@ export function Header() {
                       <Logo className="h-24 w-24" />
                   </Link>
                 </div>
-                <nav className="flex flex-col space-y-4">
+                <nav className="flex flex-col space-y-4 text-center">
                   {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href} onClick={handleLinkClick} className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">
+                    <Link key={link.href} href={link.href} onClick={handleLinkClick} className="text-lg font-bold text-foreground/80 hover:text-foreground transition-colors">
                       {link.label}
                     </Link>
                   ))}
                   <hr />
-                  <Link href="/about" onClick={handleLinkClick} className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">About</Link>
-                  <Link href="/#contact-us" onClick={handleLinkClick} className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors">Contact</Link>
+                  <Link href="/about" onClick={handleLinkClick} className="text-lg font-bold text-foreground/80 hover:text-foreground transition-colors">About</Link>
+                  <Link href="/#contact-us" onClick={handleLinkClick} className="text-lg font-bold text-foreground/80 hover:text-foreground transition-colors">Contact</Link>
                 </nav>
               </SheetContent>
             </Sheet>
@@ -96,5 +96,3 @@ export function Header() {
     </header>
   );
 }
-
-    
