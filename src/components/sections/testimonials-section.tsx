@@ -1,68 +1,73 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
-import { BrandCarousel } from '../brand-carousel';
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { testimonials } from "@/lib/testimonials";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import Image from "next/image";
+import { Star } from "lucide-react";
 
 export function TestimonialsSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-      },
-    },
-  };
+    const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: 'easeOut',
-      },
-    },
-  };
-
-  return (
-    <section className="py-8 md:py-12 bg-card/50 dark:bg-card relative overflow-hidden">
-        <div className="absolute inset-0 pattern-background opacity-50"></div>
-        <div className="container mx-auto relative">
-            <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                className="text-center max-w-4xl mx-auto border bg-background/70 backdrop-blur-sm rounded-2xl p-8 md:p-12 relative group/card sheen-effect"
-            >
-                <motion.h2 
-                    variants={itemVariants} 
-                    className="text-3xl md:text-4xl font-bold text-primary mb-4"
+    return (
+        <section className="py-8 md:py-12 bg-background">
+            <div className="container mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-bold text-foreground">What Our Customers Say</h2>
+                    <p className="text-muted-foreground mt-2">Real stories from our amazing users.</p>
+                    <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
+                </div>
+                <Carousel
+                    opts={{ align: "start", loop: true }}
+                    className="w-full max-w-4xl mx-auto"
                 >
-                    The Yoloo Voice
-                </motion.h2>
-                <motion.p 
-                    variants={itemVariants} 
-                    className="text-lg md:text-xl text-foreground/80 leading-relaxed"
-                >
-                    At Yoloo, we bring together speed, style, and trust. Our vision is to deliver fresh fashion with premium quality — designed for your lifestyle and delivered at your doorstep.
-                </motion.p>
-            </motion.div>
-            
-            <motion.div 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="mt-12"
-            >
-              <BrandCarousel />
-            </motion.div>
-        </div>
-    </section>
-  );
+                    <CarouselContent>
+                        {testimonials.map((testimonial) => {
+                            const avatar = getImageData(testimonial.avatarImageId);
+                            return (
+                                <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3">
+                                    <div className="p-4 h-full">
+                                        <Card className="flex flex-col h-full rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                                            <CardContent className="flex-grow p-6">
+                                                <div className="flex items-center mb-4">
+                                                    {avatar && (
+                                                        <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                                                            <Image
+                                                                src={avatar.imageUrl}
+                                                                alt={testimonial.name}
+                                                                fill
+                                                                className="object-cover"
+                                                                data-ai-hint={avatar.imageHint}
+                                                            />
+                                                        </div>
+                                                    )}
+                                                    <div>
+                                                        <h3 className="font-bold text-foreground">{testimonial.name}</h3>
+                                                         <div className="flex items-center mt-1">
+                                                            {Array.from({ length: 5 }).map((_, i) => (
+                                                                <Star key={i} className={`h-4 w-4 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-muted-foreground/50'}`} />
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <blockquote className="text-sm text-muted-foreground italic border-l-2 pl-4">
+                                                    "{testimonial.quote}"
+                                                </blockquote>
+                                            </CardContent>
+                                        </Card>
+                                    </div>
+                                </CarouselItem>
+                            );
+                        })}
+                    </CarouselContent>
+                    <CarouselPrevious className="hidden md:flex" />
+                    <CarouselNext className="hidden md:flex" />
+                </Carousel>
+            </div>
+        </section>
+    );
 }
+
+    

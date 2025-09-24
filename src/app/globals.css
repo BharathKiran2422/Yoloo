@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -113,3 +114,5 @@
      animation: gradient-move 15s ease-in-out infinite alternate;
   }
 }
+
+    

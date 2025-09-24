@@ -1,3 +1,4 @@
+
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,3 +33,5 @@ export function CategoryCard({ imageId, title, href }: CategoryCardProps) {
         </Link>
     );
 }
+
+    

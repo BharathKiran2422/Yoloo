@@ -111,3 +111,5 @@ export function ProductMarquee({ title, products, direction = 'left' }: ProductM
     </section>
   );
 }
+
+    

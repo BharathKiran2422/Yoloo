@@ -50,3 +50,5 @@ export function InstagramSection() {
         </section>
     );
 }
+
+    

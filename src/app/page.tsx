@@ -32,10 +32,12 @@ export default function Home() {
         <GallerySection />
         <InstagramSection />
         <TestimonialsSection />
-        <AppCtaSection />
       </div>
       <StorySection />
+      <AppCtaSection />
       <ContactSection />
     </PageTransitionWrapper>
   );
 }
+
+    

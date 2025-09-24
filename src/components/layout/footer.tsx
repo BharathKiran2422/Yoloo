@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Instagram, Linkedin } from 'lucide-react';
@@ -25,7 +26,7 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
           {/* Logo & Social */}
           <div className="col-span-2 md:col-span-2 flex flex-col space-y-3">
-            <Logo className="h-14 w-16 -ml-4 -mt-4" />
+            <Logo className="h-24 w-24 -ml-4 -mt-4" />
             <div className="flex items-center space-x-3">
               <Link
                 href="https://www.linkedin.com/company/yoloo-lifestyle"
@@ -129,3 +130,5 @@ export function Footer() {
     </footer>
   );
 }
+
+    

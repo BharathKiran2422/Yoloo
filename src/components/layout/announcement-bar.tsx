@@ -57,3 +57,5 @@ export function AnnouncementBar() {
     </motion.div>
   );
 }
+
+    

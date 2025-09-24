@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import type { Product } from '@/lib/products';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -34,3 +35,5 @@ export function ProductCard({ product }: ProductCardProps) {
     </Link>
   );
 }
+
+    

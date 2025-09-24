@@ -1,3 +1,4 @@
+
 import {
   Carousel,
   CarouselContent,
@@ -43,3 +44,5 @@ export function ProductCarousel({ title, products }: ProductCarouselProps) {
     </section>
   );
 }
+
+    

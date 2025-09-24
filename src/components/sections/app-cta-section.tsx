@@ -22,6 +22,7 @@ export function AppCtaSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div className="text-center md:text-left">
                         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Download the Yoloo! App</h2>
+                        <div className="w-24 h-1 bg-primary mt-2 rounded-full mb-4" />
                         <p className="text-lg text-muted-foreground mb-6">
                             From bold streetwear to ethnic elegance, sneakers to premium accessories – discover the best of Indian fashion, all in one app.
                         </p>
@@ -55,3 +56,5 @@ export function AppCtaSection() {
         </section>
     );
 }
+
+    
