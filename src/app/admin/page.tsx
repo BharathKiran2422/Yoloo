@@ -228,7 +228,7 @@ export default function AdminPage() {
   
   return (
     <PageTransitionWrapper>
-      <div className="container mx-auto px-4 py-8 h-full md:h-[calc(100vh-8rem)]">
+      <div className="container mx-auto px-4 py-8 mb-16">
         <div className="flex justify-between items-center mb-6">
           <div>
             <h1 className="text-3xl font-bold text-foreground">Inbox</h1>
@@ -245,7 +245,7 @@ export default function AdminPage() {
           </div>
         </div>
         
-        <div className="flex h-full border rounded-lg bg-card overflow-hidden shadow-sm">
+        <div className="flex h-[60vh] border rounded-lg bg-card overflow-hidden shadow-sm">
           {/* Message List Pane */}
           <div className={cn(
             "w-full md:w-[400px] border-r overflow-y-auto flex-shrink-0",
