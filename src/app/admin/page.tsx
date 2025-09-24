@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { formatDistanceToNow } from 'date-fns';
-import { Trash2, CheckCircle, Mail, RefreshCw } from 'lucide-react';
+import { Trash2, CheckCircle, Mail, RefreshCw, ArrowLeft, Inbox } from 'lucide-react';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/layout/logo';
@@ -78,6 +78,7 @@ export default function AdminPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
+  const [selectedMessage, setSelectedMessage] = useState<Message | null>(null);
   const { toast } = useToast();
 
   const fetchMessages = useCallback(async () => {
@@ -124,6 +125,7 @@ export default function AdminPage() {
       const success = await deleteAdminMessage(id);
       if (success) {
         setMessages((prev) => prev.filter((msg) => msg.id !== id));
+        setSelectedMessage(null);
         toast({ title: 'Success', description: 'Message deleted.' });
       } else {
         throw new Error();
@@ -137,9 +139,11 @@ export default function AdminPage() {
     try {
       const success = await toggleAdminMessageStatus(id);
       if (success) {
-        setMessages((prev) =>
-          prev.map((msg) => (msg.id === id ? { ...msg, isRead: !msg.isRead } : msg))
+        const updatedMessages = messages.map((msg) => 
+            msg.id === id ? { ...msg, isRead: !msg.isRead } : msg
         );
+        setMessages(updatedMessages);
+        setSelectedMessage(prev => prev && prev.id === id ? { ...prev, isRead: !prev.isRead } : prev);
         toast({ title: 'Success', description: 'Message status updated.' });
       } else {
         throw new Error();
@@ -153,12 +157,10 @@ export default function AdminPage() {
     if (timestamp instanceof Date) {
       return timestamp;
     }
-    // Handle serialized timestamps (ISO string)
     if (typeof timestamp === 'string') {
       return new Date(timestamp);
     }
-    // Fallback for Firestore Timestamp-like objects that might not have the toDate method
-    if (timestamp && typeof timestamp.seconds === 'number' && typeof timestamp.nanoseconds === 'number') {
+    if (timestamp && typeof timestamp.seconds === 'number') {
       return new Date(timestamp.seconds * 1000 + timestamp.nanoseconds / 1000000);
     }
     return new Date();
@@ -170,9 +172,9 @@ export default function AdminPage() {
 
   return (
     <PageTransitionWrapper>
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold text-foreground">Customer Messages</h1>
+      <div className="container mx-auto px-4 py-8 h-[calc(100vh-10rem)]">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-bold text-foreground">Inbox</h1>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="icon" onClick={handleRefresh} disabled={isRefreshing} title="Refresh Messages">
               <RefreshCw className={cn("h-5 w-5", isRefreshing && "animate-spin")} />
@@ -184,45 +186,88 @@ export default function AdminPage() {
           </div>
         </div>
         
-        {loading ? (
-          <p>Loading messages...</p>
-        ) : messages.length === 0 ? (
-          <div className="text-center py-20 bg-card rounded-lg border">
-            <p className="text-muted-foreground text-lg">No messages found.</p>
+        <div className="flex h-full border rounded-lg bg-card overflow-hidden">
+          {/* Message List Pane */}
+          <div className={cn(
+            "w-full md:w-1/3 border-r overflow-y-auto",
+            selectedMessage && "hidden md:block"
+          )}>
+            {loading ? (
+              <p className="p-4">Loading messages...</p>
+            ) : messages.length === 0 ? (
+              <div className="text-center py-20">
+                <p className="text-muted-foreground text-lg">No messages found.</p>
+              </div>
+            ) : (
+              <ul className="divide-y">
+                {messages.map((msg) => (
+                  <li key={msg.id}>
+                    <button 
+                      onClick={() => setSelectedMessage(msg)}
+                      className={cn(
+                        "w-full text-left p-4 hover:bg-accent transition-colors",
+                        selectedMessage?.id === msg.id && "bg-accent",
+                        !msg.isRead && "bg-primary/5 hover:bg-primary/10"
+                      )}
+                    >
+                      <div className="flex justify-between items-start">
+                        <div className="flex-1 truncate">
+                          <p className={cn("font-semibold", !msg.isRead && "font-bold text-primary")}>{msg.name}</p>
+                          <p className="text-sm text-muted-foreground truncate">{msg.email}</p>
+                        </div>
+                        <span className="text-xs text-muted-foreground whitespace-nowrap pl-2">
+                          {msg.createdAt ? formatDistanceToNow(toDate(msg.createdAt), { addSuffix: true }) : 'just now'}
+                        </span>
+                      </div>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {messages.map((msg) => (
-              <Card key={msg.id} className={`shadow-md hover:shadow-xl transition-shadow ${msg.isRead ? 'bg-card/60' : 'bg-card'}`}>
-                <CardHeader>
-                  <div className="flex justify-between items-start">
+
+          {/* Message Detail Pane */}
+          <div className={cn("w-full md:w-2/3 overflow-y-auto", !selectedMessage && "hidden md:flex items-center justify-center")}>
+            {selectedMessage ? (
+              <div className="p-6 h-full flex flex-col">
+                <div className="flex items-center gap-4 mb-6">
+                    <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setSelectedMessage(null)}>
+                        <ArrowLeft className="h-5 w-5" />
+                    </Button>
                     <div>
-                      <CardTitle className="text-lg">{msg.name}</CardTitle>
-                      <CardDescription className="text-sm text-primary">{msg.email}</CardDescription>
+                        <h2 className="text-xl font-bold">{selectedMessage.name}</h2>
+                        <p className="text-sm text-muted-foreground">{selectedMessage.email}</p>
                     </div>
-                     <span className={`text-xs ${msg.isRead ? 'text-green-500' : 'text-amber-500'}`}>
-                        {msg.isRead ? 'Read' : 'Unread'}
-                     </span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">{msg.message}</p>
-                  <p className="text-xs text-muted-foreground/80 border-t pt-2">
-                    Received {msg.createdAt ? formatDistanceToNow(toDate(msg.createdAt), { addSuffix: true }) : 'just now'}
-                  </p>
-                  <div className="flex justify-end space-x-2 mt-4">
-                    <Button variant="ghost" size="icon" onClick={() => handleToggleStatus(msg.id)} title={msg.isRead ? 'Mark as Unread' : 'Mark as Read'}>
-                      {msg.isRead ? <Mail className="h-5 w-5" /> : <CheckCircle className="h-5 w-5 text-green-500" />}
-                    </Button>
-                    <Button variant="ghost" size="icon" onClick={() => handleDelete(msg.id)} title="Delete Message">
-                      <Trash2 className="h-5 w-5 text-destructive" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+
+                <div className="flex-grow prose prose-sm dark:prose-invert max-w-none text-muted-foreground bg-background/50 border rounded-lg p-4 mb-4">
+                  {selectedMessage.message}
+                </div>
+                
+                <div className="border-t pt-4 mt-auto">
+                    <p className="text-xs text-muted-foreground mb-4">
+                        Received {formatDistanceToNow(toDate(selectedMessage.createdAt), { addSuffix: true })}
+                    </p>
+                    <div className="flex justify-end space-x-2">
+                        <Button variant="ghost" onClick={() => handleToggleStatus(selectedMessage.id)} title={selectedMessage.isRead ? 'Mark as Unread' : 'Mark as Read'}>
+                            {selectedMessage.isRead ? <Mail className="h-5 w-5" /> : <CheckCircle className="h-5 w-5 text-green-500" />}
+                            {selectedMessage.isRead ? 'Mark as Unread' : 'Mark as Read'}
+                        </Button>
+                        <Button variant="destructive" onClick={() => handleDelete(selectedMessage.id)} title="Delete Message">
+                            <Trash2 className="h-5 w-5" /> Delete
+                        </Button>
+                    </div>
+                </div>
+              </div>
+            ) : (
+              <div className="text-center text-muted-foreground">
+                <Inbox className="h-16 w-16 mx-auto mb-4" />
+                <p className="text-lg">Select a message to read</p>
+                <p className="text-sm">No message selected</p>
+              </div>
+            )}
           </div>
-        )}
+        </div>
       </div>
     </PageTransitionWrapper>
   );
