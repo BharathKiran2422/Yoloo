@@ -15,6 +15,7 @@ import { trendingProducts, brandSpotlightProducts } from '@/lib/products';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { HighlightBanner } from '@/components/sections/highlight-banner';
 import { ContactSection } from '@/components/sections/contact-section';
+import { ThemeBanner } from '@/components/sections/theme-banner';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <BrandCarousel />
       <JustDoItSection />
       <div className="container mx-auto px-4">
+        <ThemeBanner />
         <ShopByCategory />
         <FeaturedProductsInteractive />
         <HighlightBanner />
@@ -39,5 +41,3 @@ export default function Home() {
     </PageTransitionWrapper>
   );
 }
-
-    
