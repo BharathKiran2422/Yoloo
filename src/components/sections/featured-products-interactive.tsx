@@ -33,11 +33,11 @@ export function FeaturedProductsInteractive() {
     const productsToShow = featuredProducts.slice(0, 8);
 
     return (
-        <section className="py-8 md:py-12">
-            <div className="container mx-auto">
-                <div className="text-center mb-12">
+        <section className="py-8 md:py-16">
+            <div className="container mx-auto px-4">
+                <div className="text-center mb-8 md:mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">Featured Products</h2>
-                    <p className="text-muted-foreground mt-2">Discover our handpicked selection of premium fashion.</p>
+                    <p className="text-muted-foreground mt-2 text-base md:text-lg">Discover our handpicked selection of premium fashion.</p>
                     <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
                 </div>
                 
@@ -46,7 +46,7 @@ export function FeaturedProductsInteractive() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, amount: 0.1 }}
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8"
+                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8"
                 >
                     {productsToShow.map((product) => (
                         <motion.div key={product.id} variants={itemVariants}>

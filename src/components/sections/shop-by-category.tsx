@@ -10,12 +10,12 @@ const categories = [
 
 export function ShopByCategory() {
     return (
-        <section className="py-8 md:py-12">
-            <div className="text-center mb-12">
+        <section className="py-8 md:py-16">
+            <div className="text-center mb-8 md:mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">Shop By Category</h2>
                 <div className="w-24 h-1 bg-primary mx-auto mt-2 rounded-full" />
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 {categories.map(cat => (
                     <CategoryCard key={cat.imageId} {...cat} />
                 ))}
@@ -23,5 +23,3 @@ export function ShopByCategory() {
         </section>
     );
 }
-
-    

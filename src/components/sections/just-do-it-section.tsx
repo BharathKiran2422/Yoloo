@@ -5,19 +5,19 @@ import Link from 'next/link';
 
 export function JustDoItSection() {
     return (
-        <section className="py-8 md:py-12 bg-background">
-            <div className="container mx-auto text-center">
-                <p className="text-lg font-semibold text-primary uppercase tracking-wider">Your Style, Your Way</p>
-                <h2 className="text-4xl md:text-6xl font-headline font-extrabold my-4 text-foreground tracking-tight max-w-4xl mx-auto leading-tight">
+        <section className="py-12 md:py-16 bg-background">
+            <div className="container mx-auto px-4 text-center">
+                <p className="text-base md:text-lg font-semibold text-primary uppercase tracking-wider">Your Style, Your Way</p>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-headline font-extrabold my-4 text-foreground tracking-tight max-w-4xl mx-auto leading-tight">
                     Don't Just Follow Trends. <span className="block">Define Them.</span>
                 </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto text-lg mb-8">
+                <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg mb-8">
                    Ready to elevate your wardrobe? Explore our curated collections and discover pieces that truly represent you. The only way to find out is to dive in.
                 </p>
                 <div className="flex items-center justify-center gap-4">
                   <Link href="#purchase-on-app">
-                      <Button size="lg" className="rounded-full px-10 text-lg h-12 shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
-                          <ShoppingBag className="mr-3" />
+                      <Button size="lg" className="rounded-full px-8 md:px-10 text-base md:text-lg h-12 shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
+                          <ShoppingBag className="mr-2 md:mr-3" />
                           Start Shopping
                       </Button>
                   </Link>
@@ -26,5 +26,3 @@ export function JustDoItSection() {
         </section>
     );
 }
-
-    

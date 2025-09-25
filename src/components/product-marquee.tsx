@@ -77,9 +77,9 @@ export function ProductMarquee({ title, products, direction = 'left' }: ProductM
 
 
   return (
-    <section className="py-8 md:py-12 overflow-hidden">
+    <section className="py-8 md:py-16 overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center mb-12">
+        <div className="flex justify-between items-center mb-8 md:mb-12">
             <div className="text-center md:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground">{title}</h2>
                 <div className="w-24 h-1 bg-primary mt-2 rounded-full" />
@@ -98,11 +98,11 @@ export function ProductMarquee({ title, products, direction = 'left' }: ProductM
         onTouchMove={isClient ? handleTouchMove : undefined}
       >
         <div className={cn(
-            "marquee-content flex gap-8",
+            "marquee-content flex gap-4 md:gap-8",
             isClient && !isDown && (direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right')
         )}>
           {extendedProducts.map((product, index) => (
-            <div key={`${product.id}-${index}`} className="marquee-item shrink-0 w-[240px] sm:w-[280px] md:w-[300px]">
+            <div key={`${product.id}-${index}`} className="marquee-item shrink-0 w-[200px] sm:w-[240px] md:w-[280px]">
                 <ProductCard product={product} />
             </div>
           ))}

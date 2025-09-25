@@ -35,32 +35,32 @@ export function StorySection() {
     ];
 
     return (
-        <section className="w-full py-8 md:py-12 bg-card/50 dark:bg-card">
-            <div className="container mx-auto">
-                <div className="text-center mb-12">
+        <section className="w-full py-8 md:py-16 bg-card/50 dark:bg-card">
+            <div className="container mx-auto px-4">
+                <div className="text-center mb-8 md:mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">The Yoloo! Story</h2>
-                    <p className="text-muted-foreground mt-2">Faster, easier, and trendier than ever before.</p>
+                    <p className="text-muted-foreground mt-2 text-base md:text-lg">Faster, easier, and trendier than ever before.</p>
                     <div className="w-24 h-1 bg-primary mx-auto mt-4 rounded-full" />
                 </div>
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div className="space-y-6 md:space-y-8">
                         {storyPoints.map((point, index) => (
                             <div key={index} className="flex items-start gap-4">
                                 <div className="flex-shrink-0">
                                     <div className="bg-primary/10 text-primary p-3 rounded-full">
-                                        <point.icon className="w-6 h-6" />
+                                        <point.icon className="w-5 h-5 md:w-6 md:h-6" />
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-foreground">{point.title}</h3>
-                                    <p className="text-muted-foreground mt-1">{point.description}</p>
+                                    <h3 className="text-lg md:text-xl font-bold text-foreground">{point.title}</h3>
+                                    <p className="text-muted-foreground mt-1 text-sm md:text-base">{point.description}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
-                     <div className="grid grid-cols-2 gap-4">
+                     <div className="grid grid-cols-2 gap-2 md:gap-4">
                         {storyImages.map((image, index) => image && (
-                            <div key={image.id} className={`rounded-xl overflow-hidden shadow-lg ${index === 0 || index === 3 ? 'aspect-[4/5]' : 'aspect-square'}`}>
+                            <div key={image.id} className={`rounded-lg md:rounded-xl overflow-hidden shadow-lg ${index === 0 || index === 3 ? 'aspect-[4/5]' : 'aspect-square'}`}>
                                 <Image
                                     src={image.imageUrl}
                                     alt={image.description}
@@ -77,5 +77,3 @@ export function StorySection() {
         </section>
     );
 }
-
-    
