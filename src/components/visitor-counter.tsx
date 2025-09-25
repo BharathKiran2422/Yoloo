@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -12,7 +11,6 @@ export function VisitorCounter() {
     // This is a simulation and does not represent real visitor data.
     // In a real application, this would be connected to a backend service.
     if (typeof window !== 'undefined') {
-        const hasVisited = localStorage.getItem('yoloo-visitor');
         let initialCount = 0;
         
         try {
@@ -24,14 +22,10 @@ export function VisitorCounter() {
             console.error("Could not parse visitor count from localStorage", error);
         }
         
-        if (!hasVisited) {
-          const newCount = initialCount + 1;
-          setCount(newCount);
-          localStorage.setItem('yoloo-visitor', 'true');
-          localStorage.setItem('yoloo-visitor-count', newCount.toString());
-        } else {
-          setCount(initialCount);
-        }
+        // Increment on every visit (page refresh/load)
+        const newCount = initialCount + 1;
+        setCount(newCount);
+        localStorage.setItem('yoloo-visitor-count', newCount.toString());
     }
   }, []);
 
@@ -71,5 +65,3 @@ export function VisitorCounter() {
     </div>
   );
 }
-
-    
