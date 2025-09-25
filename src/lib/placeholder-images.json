@@ -3,19 +3,19 @@
     {
       "id": "hero",
       "description": "A stylish person in a midnight blue jacket in a chic urban setting.",
-      "imageUrl": "https://images.unsplash.com/photo-1608748010899-18f300247112?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyMHx8ZmFzaGlvbnxlbnwwfHx8fDE3NTgwNTgzMTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/hero1.jpeg",
       "imageHint": "fashion editorial"
     },
     {
       "id": "hero-slide-2",
       "description": "A person wearing a licensed Spiderman jacket in a cool, urban environment.",
-      "imageUrl": "https://images.unsplash.com/photo-1635805737890-7253b24b9a6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "imageUrl": "/hero2.png",
       "imageHint": "Spiderman jacket"
     },
     {
       "id": "hero-slide-3",
       "description": "A fashion delivery person quickly moving through a city, representing fast delivery.",
-      "imageUrl": "https://images.unsplash.com/photo-1615474994288-63d1cb7f566c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmYXNoaW9uJTIwZGVsaXZlcnl8ZW58MHx8fHwxNzU4MTM3NjIwfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/hero3.png",
       "imageHint": "fashion delivery"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": "gallery-women",
       "description": "Woman in an elegant saree.",
-      "imageUrl": "https://images.unsplash.com/photo-1610189018413-a55b38f85de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBmYXNoaW9uJTIwd29tYW58ZW58MHx8fHwxNzU4MTMxNTYwfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/gallery-women.png",
       "imageHint": "indian fashion"
     },
     {
@@ -45,37 +45,37 @@
     {
       "id": "story-grid-1",
       "description": "A man wearing a stylish blue jacket in an urban setting.",
-      "imageUrl": "https://images.unsplash.com/photo-1622519407650-3df9883f76a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtZW4lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODY1NTUyMHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/story1.png",
       "imageHint": "men fashion"
     },
     {
       "id": "story-grid-2",
       "description": "A woman in a vibrant ethnic dress, smiling.",
-      "imageUrl": "https://images.unsplash.com/flagged/photo-1556955129-ceb8442ca79b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxldGhuaWMlMjB3ZWFyfGVufDB8fHx8MTc1ODY1NTUyMHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/story2.png",
       "imageHint": "ethnic wear"
     },
     {
       "id": "story-grid-3",
       "description": "Close up of trendy, colorful sneakers.",
-      "imageUrl": "https://images.unsplash.com/photo-1542272606-405060e9517f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzbmVha2VycyUyMGRldGFpbHxlbnwwfHx8fDE3NTg2NTU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/story3.png",
       "imageHint": "sneakers detail"
     },
     {
       "id": "story-grid-4",
       "description": "A woman wearing a chic modern outfit against a city backdrop.",
-      "imageUrl": "https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8d29tZW4lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODY1NTUyMXww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/story4.png",
       "imageHint": "women fashion"
     },
     {
       "id": "contact-image",
       "description": "A friendly customer service representative in a modern office, wearing a headset.",
-      "imageUrl": "https://images.unsplash.com/photo-1613963931023-5dc59437c8a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjdXN0b21lciUyMHNlcnZpY2V8ZW58MHx8fHwxNzU4NjAyOTA2fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/contact-image.png",
       "imageHint": "customer service"
     },
     {
       "id": "about-image",
       "description": "The interior of a bright, modern Yoloo! fashion studio.",
-      "imageUrl": "https://images.unsplash.com/photo-1758613655670-7b3cdd1e27ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmYXNoaW9uJTIwc3R1ZGlvfGVufDB8fHx8MTc1ODYyMTgxOXww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/about-image.png",
       "imageHint": "fashion studio"
     },
     {
