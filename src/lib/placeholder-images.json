@@ -327,7 +327,7 @@
     {
       "id": "brand2",
       "description": "Batman Hoodie",
-      "imageUrl": "//brand2.png",
+      "imageUrl": "/brand2.png",
       "imageHint": "Batman hoodie"
     },
     {
