@@ -33,13 +33,13 @@
     {
       "id": "gallery-sneakers",
       "description": "A collection of trendy sneakers on display.",
-      "imageUrl": "https://images.unsplash.com/photo-1516478177764-9fe567e96b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsaW1pdGVkJTIwZWRpdGlvbiUyMHNuZWFrZXJzfGVufDB8fHx8MTc1ODEzMjE5NHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/gallery-sneakers.png",
       "imageHint": "sneaker collection"
     },
     {
       "id": "gallery-accessories",
       "description": "A stylish leather handbag.",
-      "imageUrl": "https://images.unsplash.com/photo-1590737142072-3f36d65b1d4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZXNpZ25lciUyMGhhbmRiYWd8ZW58MHx8fHwxNzU4MTMyMzkxfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/gallery-accessories.png",
       "imageHint": "leather handbag"
     },
     {
@@ -81,193 +81,193 @@
     {
       "id": "product1",
       "description": "A stylish blue denim jacket.",
-      "imageUrl": "https://images.unsplash.com/photo-1527016021513-b09758b777bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxBenVyZSUyMERlbmltJTIwSmFja2V0fGVufDB8fHx8MTc1ODA1NjE0OHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/product1.png",
       "imageHint": "denim jacket"
     },
     {
       "id": "product2",
       "description": "A minimalist white t-shirt with a subtle graphic.",
-      "imageUrl": "https://images.unsplash.com/photo-1745179294283-f9d069f4d38d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxNaW5pbWFsaXN0JTIwR3JhcGhpYyUyMFQlMjBTaGlydHxlbnwwfHx8fDE3NTgwNTYyNDR8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/product2.png",
       "imageHint": "graphic tee"
     },
     {
       "id": "product3",
       "description": "Comfortable and stylish black joggers.",
-      "imageUrl": "https://images.unsplash.com/photo-1580906853305-5702e648164e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxKb2dnZXJzfGVufDB8fHx8MTc1ODA1NjMyMHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/product3.png",
       "imageHint": "black joggers"
     },
     {
       "id": "product4",
       "description": "A classic beige trench coat.",
-      "imageUrl": "https://images.unsplash.com/photo-1544246108-14b45872b02d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8dHJlbmNofGVufDB8fHx8MTc1ODA1Njc5MXww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/product4.png",
       "imageHint": "trench coat"
     },
     {
       "id": "product5",
       "description": "Stylish leather boots.",
-      "imageUrl": "https://images.unsplash.com/photo-1608256247969-a339a4897f84?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",
+      "imageUrl": "/product5.png",
       "imageHint": "leather boots"
     },
     {
       "id": "product6",
       "description": "A cozy wool sweater.",
-      "imageUrl": "https://images.unsplash.com/photo-1620799140408-edc6d5f94208?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",
+      "imageUrl": "/product6.png",
       "imageHint": "wool sweater"
     },
     {
       "id": "product7",
       "description": "A sleek silver watch.",
-      "imageUrl": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",
+      "imageUrl": "/product7.png",
       "imageHint": "silver watch"
     },
     {
       "id": "product8",
       "description": "A floral summer dress.",
-      "imageUrl": "https://images.unsplash.com/photo-1594744806549-83a81794c043?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",
+      "imageUrl": "/product8.png",
       "imageHint": "summer dress"
     },
     {
       "id": "men-1",
       "description": "Stylish man in a modern ethnic kurta.",
-      "imageUrl": "https://images.unsplash.com/photo-1621288825828-877bab1131a9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBtYWxlJTIwbW9kZWx8ZW58MHx8fHwxNzU4MTMwNzM4fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/men-1.png",
       "imageHint": "ethnic kurta"
     },
     {
       "id": "men-2",
       "description": "Man in a cool streetwear hoodie.",
-      "imageUrl": "https://images.unsplash.com/photo-1559645514-50f991e457f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxOHx8bWFsZSUyMHN0cmVldHdlYXJ8ZW58MHx8fHwxNzU4MTMwNzk1fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/men-2.png",
       "imageHint": "streetwear hoodie"
     },
     {
       "id": "men-3",
       "description": "Sharp men's formal suit.",
-      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtZW4lMjBzdWl0fGVufDB8fHx8MTc1ODEzMDgzM3ww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/men-3.png",
       "imageHint": "formal suit"
     },
     {
       "id": "men-4",
       "description": "Man wearing a Spiderman themed jacket.",
-      "imageUrl": "https://images.unsplash.com/photo-1635805737890-7253b24b9a6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+      "imageUrl": "/men-4.png",
       "imageHint": "Spiderman jacket"
     },
     {
       "id": "men-5",
       "description": "Man in a relaxed casual shirt.",
-      "imageUrl": "https://images.unsplash.com/photo-1594938384914-234388965727?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8bWVuJTIwY2FzdWFsJTIwc2hpcnR8ZW58MHx8fHwxNzU4MTMwODg3fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/men-5.png",
       "imageHint": "casual shirt"
     },
     {
       "id": "men-6",
       "description": "Urban men's fashion.",
-      "imageUrl": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtZW4lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODEzMDk4OHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/men-6.png",
       "imageHint": "urban fashion"
     },
     {
       "id": "women-1",
-      "description": "Woman in an elegant Indian designer saree.",
-      "imageUrl": "https://images.unsplash.com/photo-1610189018413-a55b38f85de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxpbmRpYW4lMjBmYXNoaW9uJTIwd29tYW58ZW58MHx8fHwxNzU4MTMxNTYwfDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "designer saree"
+      "description": "Woman wearing a stylish Harry Potter themed sweater.",
+      "imageUrl": "/women-1.png",
+      "imageHint": "Harry Potter fashion"
     },
     {
       "id": "women-2",
-      "description": "Woman wearing a stylish Harry Potter themed sweater.",
-      "imageUrl": "https://images.unsplash.com/photo-1578350123423-99ec37a1e04a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXJyeSUyMHBvdHRlciUyMGZhc2hpb258ZW58MHx8fHwxNzU4MTMxNjM3fDA&ixlib.rb-4.1.0&q=80&w=1080",
-      "imageHint": "Harry Potter fashion"
+      "description": "Woman in an elegant Indian designer saree.",
+      "imageUrl": "/women-2.png",
+      "imageHint": "Designer Saree"
     },
     {
       "id": "women-3",
       "description": "Women's western wear.",
-      "imageUrl": "https://images.unsplash.com/photo-1495385794356-15371f348c31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3b21lbiUyMHdlc3Rlcm4lMjB3ZWFyfGVufDB8fHx8MTc1ODEzMTY4Nnww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/women-3.png",
       "imageHint": "western wear"
     },
     {
       "id": "women-4",
       "description": "Woman in premium casual wear.",
-      "imageUrl": "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21lbiUyMGZhc2hpb258ZW58MHx8fHwxNzU4MTMxNzMwfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/women-4.png",
       "imageHint": "casual wear"
     },
     {
       "id": "women-5",
       "description": "Women's business casual outfit.",
-      "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21lbiUyMHByZW1pdW0lMjBmYXNoaW9ufGVufDB8fHx8MTc1ODEzMTc4NHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/women-5.png",
       "imageHint": "business casual"
     },
     {
       "id": "women-6",
       "description": "A woman in a stylish dress.",
-      "imageUrl": "https://images.unsplash.com/photo-1581044777550-4cfa6ce24692?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx3b21lbiUyMGV0aG5pYyUyMHdlYXJ8ZW58MHx8fHwxNzU4MTMxODI2fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/women-6.png",
       "imageHint": "stylish dress"
     },
     {
       "id": "sneakers-1",
       "description": "A pair of classic white sneakers.",
-      "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbmVha2Vyc3xlbnwwfHx8fDE3NTgxMzE5MjJ8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/sneakers-1.png",
       "imageHint": "white sneakers"
     },
     {
       "id": "sneakers-2",
       "description": "Colorful, trendy basketball sneakers.",
-      "imageUrl": "https://images.unsplash.com/photo-1511886921339-952a2a79a458?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxiYXNrZXRiYWxsJTIwc25lYWtlcnN8ZW58MHx8fHwxNzU4MTMyMDAzfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/sneakers-2.png",
       "imageHint": "basketball sneakers"
     },
     {
       "id": "sneakers-3",
       "description": "Running shoes with advanced cushioning.",
-      "imageUrl": "https://images.unsplash.com/photo-1543508282-6319a3e2621f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxydW5uaW5nJTIwc2hvZXN8ZW58MHx8fHwxNzU4MTMyMDQyfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/sneakers-3.png",
       "imageHint": "running shoes"
     },
     {
       "id": "sneakers-4",
       "description": "High-top canvas sneakers.",
-      "imageUrl": "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjYW52YXMlMjBzbmVha2Vyc3xlbnwwfHx8fDE3NTgxMzIwODN8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/sneakers-4.png",
       "imageHint": "canvas sneakers"
     },
     {
       "id": "sneakers-5",
       "description": "Skate shoes with a unique design.",
-      "imageUrl": "https://images.unsplash.com/photo-1528256794285-a9b4a2613945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxza2F0ZSUyMHNob2VzfGVufDB8fHx8MTc1ODEzMjEyMHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/sneakers-5.png",
       "imageHint": "skate shoes"
     },
     {
       "id": "sneakers-6",
       "description": "Premium limited edition sneakers.",
-      "imageUrl": "https://images.unsplash.com/photo-1516478177764-9fe567e96b5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsaW1pdGVkJTIwZWRpdGlvbiUyMHNuZWFrZXJzfGVufDB8fHx8MTc1ODEzMjE5NHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/sneakers-6.png",
       "imageHint": "limited edition"
     },
     {
       "id": "accessories-1",
       "description": "Stylish sunglasses.",
-      "imageUrl": "https://images.unsplash.com/photo-1511499767150-a48a237f0083?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdW5nbGFzc2VzfGVufDB8fHx8fDE3NTgxMzIyNjR8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/accessories-1.png",
       "imageHint": "sunglasses"
     },
     {
       "id": "accessories-2",
       "description": "A classic leather watch.",
-      "imageUrl": "https://images.unsplash.com/photo-1620625515032-6ed0c147223b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsZWF0aGVyJTIwd2F0Y2h8ZW58MHx8fHwxNzU4MTMyMzA3fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/accessories-2.png",
       "imageHint": "leather watch"
     },
     {
       "id": "accessories-3",
       "description": "A minimalist silver bracelet.",
-      "imageUrl": "https://images.unsplash.com/photo-1611652022417-a04098491953?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzaWx2ZXIlMjBicmFjZWxldHxlbnwwfHx8fDE3NTgxMzIzNDd8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/accessories-3.png",
       "imageHint": "silver bracelet"
     },
     {
       "id": "accessories-4",
       "description": "A designer handbag.",
-      "imageUrl": "https://images.unsplash.com/photo-1590737142072-3f36d65b1d4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZXNpZ25lciUyMGhhbmRiYWd8ZW58MHx8fHwxNzU4MTMyMzkxfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/accessories-4.png",
       "imageHint": "designer handbag"
     },
     {
       "id": "accessories-5",
       "description": "A collection of stylish belts.",
-      "imageUrl": "https://images.unsplash.com/photo-1628795243884-a356a42a454d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiZWx0c3xlbnwwfHx8fDE3NTgxMzI0MzR8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/accessories-5.png",
       "imageHint": "stylish belts"
     },
     {
       "id": "accessories-6",
       "description": "A stylish backpack.",
-      "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb68c6a62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHlsaXNoJTIwYmFja3BhY2t8ZW58MHx8fHwxNzU4MTMyNDc2fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/accessories-6.png",
       "imageHint": "stylish backpack"
     },
     {

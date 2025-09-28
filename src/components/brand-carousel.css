@@ -12,4 +12,6 @@
     animation-play-state: paused;
 }
 
-    
+.group:hover .paused {
+    animation-play-state: paused;
+}

@@ -15,14 +15,12 @@ export function BrandCarousel() {
   const extendedBrands = [...brandImages, ...brandImages, ...brandImages, ...brandImages];
 
   return (
-    <div className="py-8 md:py-12 bg-background overflow-hidden relative">
+    <div className="py-8 md:py-12 bg-background overflow-hidden relative group">
        <div className="absolute inset-y-0 left-0 w-16 md:w-24 bg-gradient-to-r from-background to-transparent z-10"></div>
-      <div
-        className="group flex"
-        x-data="{}"
-        x-init="$el.classList.add('animate-marquee')"
-      >
-        <div className="flex items-center space-x-12 md:space-x-16 animate-marquee group">
+      <div className="flex">
+        <div
+          className="flex items-center space-x-12 md:space-x-16 animate-marquee group-hover:paused"
+        >
           {extendedBrands.map((brand, index) => (
             <div key={`${brand.id}-${index}`} className="flex-shrink-0 w-20 h-10 md:w-24 md:h-12 relative grayscale hover:grayscale-0 transition-all duration-300">
               <Image
