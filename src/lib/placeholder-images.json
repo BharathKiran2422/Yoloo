@@ -273,109 +273,109 @@
     {
       "id": "category-men",
       "description": "Men's Fashion",
-      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTgxMzI1ODl8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/category-men.png",
       "imageHint": "male model"
     },
     {
       "id": "category-women",
       "description": "Women's Fashion",
-      "imageUrl": "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHBvcnRyYWl0fGVufDB8fHx8fDE3NTgxMzI2MzR8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/category-women.png",
       "imageHint": "female model"
     },
     {
       "id": "category-footwear",
       "description": "Footwear",
-      "imageUrl": "https://images.unsplash.com/photo-1595950654145-fe2e1b9b4d36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0cmVuZHklMjBzbmVha2Vyc3xlbnwwfHx8fDE3NTgxMzI2NzZ8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/category-footwear.png",
       "imageHint": "trendy sneakers"
     },
     {
       "id": "category-accessories",
       "description": "Accessories",
-      "imageUrl": "https://images.unsplash.com/photo-1584486188544-6ae1e6121478?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwYWNjZXNzb3JpZXN8ZW58MHx8fHwxNzU4MTMyNzE4fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/category-accessories.png",
       "imageHint": "fashion accessories"
     },
     {
       "id": "trending1",
       "description": "Stylish ethnic wear",
-      "imageUrl": "https://images.unsplash.com/photo-1617634667233-20723a353381?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBldGhuaWMlMjB3ZWFyfGVufDB8fHx8MTc1ODEzMjc5NHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/trending1.png",
       "imageHint": "Indian ethnic"
     },
     {
       "id": "trending2",
       "description": "Modern casual shirt",
-      "imageUrl": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXN1YWwlMjBzaGlydHxlbnwwfHx8fDE3NTgxMzI4MzV8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/trending2.png",
       "imageHint": "casual shirt"
     },
     {
       "id": "trending3",
-      "description": "Premium winter jacket",
-      "imageUrl": "https://images.unsplash.com/photo-1572195514937-25359a68aade?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aW50ZXIlMjBqYWNrZXR8ZW58MHx8fHwxNzU4MTMyODcyfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "description": "",
+      "imageUrl": "/trending3.png",
       "imageHint": "winter jacket"
     },
     {
       "id": "trending4",
       "description": "Elegant party dress",
-      "imageUrl": "https://images.unsplash.com/photo-1583722599488-55ded685593e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwYXJ0eSUyMGRyZXNzfGVufDB8fHx8MTc1ODEzMjkxN3ww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/trending4.png",
       "imageHint": "party dress"
     },
     {
       "id": "brand1",
       "description": "Spiderman Graphic Tee",
-      "imageUrl": "https://images.unsplash.com/photo-1618641757393-9b6a1551479d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxTcGlkZXJtYW4lMjB0LXNoaXJ0fGVufDB8fHx8MTc1ODEzMjk1N3ww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/brand1.png",
       "imageHint": "Spiderman t-shirt"
     },
     {
       "id": "brand2",
       "description": "Batman Hoodie",
-      "imageUrl": "https://images.unsplash.com/photo-1578335941835-cb7828c866b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxiYXRtYW4lMjBob29kaWV8ZW58MHx8fHwxNzU4MTMyOTk1fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "//brand2.png",
       "imageHint": "Batman hoodie"
     },
     {
       "id": "brand3",
       "description": "Harry Potter Scarf",
-      "imageUrl": "https://images.unsplash.com/photo-1543353265-5d34f039d91f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxoYXJyeSUyMHBvdHRlciUyMHNjYXJmfGVufDB8fHx8MTc1ODEzMzA0MHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/brand3.png",
       "imageHint": "Harry Potter scarf"
     },
     {
       "id": "brand4",
       "description": "Classic White Sneakers",
-      "imageUrl": "https://images.unsplash.com/photo-1607522370275-f14206abe5d3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMHNuZWFrZXJzfGVufDB8fHx8MTc1ODEzMzA5OHww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/brand4.png",
       "imageHint": "white sneakers"
     },
     {
       "id": "instagram1",
       "description": "Lifestyle shot of a person in a stylish outfit.",
-      "imageUrl": "https://images.unsplash.com/photo-1692229219211-138112240a54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxmYXNoaW9uJTIwbGlmZXN0eWxlfGVufDB8fHx8MTc1ODYxNTU0N3ww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/insta1.png",
       "imageHint": "fashion lifestyle"
     },
     {
       "id": "instagram2",
       "description": "Flat lay of a curated outfit.",
-      "imageUrl": "https://images.unsplash.com/photo-1594750823491-e493d067ce3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxvdXRmaXQlMjBmbGF0bGF5fGVufDB8fHx8MTc1ODYwODIyNnww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/insta2.png",
       "imageHint": "outfit flatlay"
     },
     {
       "id": "instagram3",
       "description": "Close-up on a unique fashion accessory.",
-      "imageUrl": "https://images.unsplash.com/photo-1571582665859-4a5f472ee21b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmYXNoaW9uJTIwYWNjZXNzb3J5fGVufDB8fHx8MTc1ODYwOTIxMnww&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/insta3.png",
       "imageHint": "fashion accessory"
     },
     {
       "id": "instagram4",
       "description": "Behind the scenes at a fashion shoot.",
-      "imageUrl": "https://images.unsplash.com/photo-1553544260-f87e671974ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwc2hvb3R8ZW58MHx8fHwxNzU4NjU1NTIwfDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/insta4.png",
       "imageHint": "fashion shoot"
     },
     {
       "id": "instagram5",
       "description": "Aesthetic shot of a new sneaker release.",
-      "imageUrl": "https://images.unsplash.com/photo-1566363384123-360c5f6bc369?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxzbmVha2VyJTIwcmVsZWFzZXxlbnwwfHx8fDE3NTg2NTU1MjB8MA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/insta5.png",
       "imageHint": "sneaker release"
     },
     {
       "id": "instagram6",
       "description": "Urban fashion shot in a city setting.",
-      "imageUrl": "https://images.unsplash.com/photo-1638260753148-d0316920e0af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx1cmJhbiUyMGZhc2hpb258ZW58MHx8fHwxNzU4NjAxNTA2fDA&ixlib.rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/insta6.png",
       "imageHint": "urban fashion"
     },
     {
