@@ -17,7 +17,6 @@ import { HighlightBanner } from '@/components/sections/highlight-banner';
 import { ContactSection } from '@/components/sections/contact-section';
 import { ThemeBanner } from '@/components/sections/theme-banner';
 import { VisitorCounter } from '@/components/visitor-counter';
-import { TestAPIComponent } from '@/components/test-api-component';
 
 export default function Home() {
   return (

@@ -4,21 +4,17 @@ import { doc, getDoc, setDoc, updateDoc, increment } from "firebase/firestore";
 
 export async function POST() {
   try {
-    console.log("API route called - attempting to increment visitor count");
-    
     const ref = doc(db, "counters", "visitors");
     
-    // First check if document exists
+    // Check if document exists
     const docSnap = await getDoc(ref);
     
     if (docSnap.exists()) {
       // Document exists, increment it
       await updateDoc(ref, { count: increment(1) });
-      console.log("Document updated successfully");
     } else {
       // Document doesn't exist, create it with count: 1
       await setDoc(ref, { count: 1 });
-      console.log("Document created with initial count: 1");
     }
     
     return NextResponse.json({ success: true });

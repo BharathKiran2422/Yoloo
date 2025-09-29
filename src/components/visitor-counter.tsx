@@ -13,17 +13,11 @@ export function VisitorCounter() {
 
     const incrementVisitor = async () => {
       try {
-        console.log("Attempting to increment visitor count...");
-        
         const now = Date.now();
         const lastVisit = localStorage.getItem('yoloo-last-visit');
         const cooldown = 30 * 1000; // 30 seconds
-        
-        console.log("Last visit:", lastVisit, "Current time:", now);
 
         if (!lastVisit || now - parseInt(lastVisit, 10) > cooldown) {
-          console.log("Cooldown passed, making API call...");
-          
           const response = await fetch("/api/visitor", { 
             method: "POST",
             headers: {
@@ -32,38 +26,25 @@ export function VisitorCounter() {
           });
           
           const result = await response.json();
-          console.log("API response:", result);
           
           if (result.success) {
             localStorage.setItem('yoloo-last-visit', now.toString());
-            console.log("Visitor count incremented successfully");
-          } else {
-            console.error("API returned error:", result.error);
           }
-        } else {
-          console.log("Cooldown active, skipping increment");
         }
       } catch (error) {
         console.error("Error incrementing visitor count:", error);
       }
     };
 
-    // Set up real-time listener first
+    // Set up real-time listener
     const ref = doc(db, "counters", "visitors");
     const unsubscribe = onSnapshot(ref, (snapshot) => {
       if (snapshot.exists()) {
-        const newCount = snapshot.data().count || 0;
-        console.log("Real-time update received, new count:", newCount);
-        setCount(newCount);
-      } else {
-        console.log("Document doesn't exist yet");
-        setCount(0);
+        setCount(snapshot.data().count || 0);
       }
-    }, (error) => {
-      console.error("Error in real-time listener:", error);
     });
 
-    // Then increment the visitor count
+    // Increment the visitor count
     incrementVisitor();
 
     return () => unsubscribe();
