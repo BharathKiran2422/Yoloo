@@ -14,6 +14,8 @@ import { Trash2, CheckCircle, Mail, RefreshCw, ArrowLeft, Inbox, Pen, MessageSqu
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/layout/logo';
+import { VisitorCounter } from '@/components/visitor-counter';
+import { TestAPIComponent } from '@/components/test-api-component';
 
 function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
   const [password, setPassword] = useState('');
