@@ -21,7 +21,7 @@ export async function POST() {
   } catch (error) {
     console.error("Error in visitor API route:", error);
     return NextResponse.json(
-      { success: false, error: error.message }, 
+      { success: false, error: error instanceof Error ? error.message : "Unknown error" }, 
       { status: 500 }
     );
   }
