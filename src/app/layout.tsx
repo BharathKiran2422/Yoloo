@@ -13,12 +13,11 @@ export const metadata: Metadata = {
   description: 'Yoloo! - Your destination for modern and premium fashion.',
   icons: {
     icon: [
-      { url: '/icon.png' },
-      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/icon.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-1.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-2.png', sizes: '32x32', type: 'image/png' },
     ],
-    apple: '/icon.png',
-    shortcut: '/icon.png',
+    apple: '/icon-3.png',
+    shortcut: '/icon-2.png',
   },
 };
 
@@ -33,8 +32,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
-        <link rel="icon" href="/icon.png" type="image/png" />
-        <link rel="shortcut icon" href="/icon.png" />
+        <link rel="icon" href="/icon-1.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/icon-2.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/icon-3.png" />
+        <link rel="shortcut icon" href="/icon-2.png" />
       </head>
       <body className="font-body antialiased" suppressHydrationWarning>
         <ThemeProvider
