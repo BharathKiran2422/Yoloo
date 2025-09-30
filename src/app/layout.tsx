@@ -12,6 +12,9 @@ import { LoadingAnimation } from '@/components/loading-animation';
 export const metadata: Metadata = {
   title: 'Yoloo! : Fashion Made Easy',
   description: 'Yoloo! - Your destination for modern and premium fashion.',
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
