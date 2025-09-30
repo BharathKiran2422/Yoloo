@@ -27,6 +27,14 @@ const heroSlides = [
         title: 'Exclusive Collections, Unmatched Style.',
         subtitle: 'Shop limited edition apparel from your favorite superhero and pop-culture brands. Dont miss out!',
         buttonText: 'Explore Collections',
+    },
+    {
+        id: 'hero-3',
+        imageId: 'hero-slide-3',
+        pretitle: '30-120 MINUTE DELIVERY',
+        title: 'Instant Gratification for Your Wardrobe.',
+        subtitle: 'Why wait? Get the latest trends and your favorite styles delivered to your door in 30-120 minutes.',
+        buttonText: 'Shop Now',
     }
 ];
 

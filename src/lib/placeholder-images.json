@@ -13,6 +13,12 @@
       "imageHint": "fashion delivery"
     },
     {
+      "id": "hero-slide-3",
+      "description": "A person with fashion collection.",
+      "imageUrl": "/hero3.png",
+      "imageHint": "fashion collection"
+    },
+    {
       "id": "about-image",
       "description": "The interior of a bright, modern Yoloo! fashion studio.",
       "imageUrl": "/about-image.png",
