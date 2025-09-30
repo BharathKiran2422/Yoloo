@@ -116,7 +116,7 @@
     },
     {
       "id": "trending3",
-      "description": "",
+      "description": "Men's winter jacket",
       "imageUrl": "/trending3.png",
       "imageHint": "winter jacket"
     },
@@ -525,7 +525,7 @@
     {
       "id": "sneakers-7",
       "description": "Minimalist black sneakers.",
-      "imageUrl": "",
+      "imageUrl": "/sneakers-7.png",
       "imageHint": "black sneakers"
     },
     {
@@ -537,13 +537,13 @@
     {
       "id": "sneakers-9",
       "description": "Luxury fashion sneakers.",
-      "imageUrl": "",
+      "imageUrl": "/sneakers-9.png",
       "imageHint": "luxury sneakers"
     },
     {
       "id": "sneakers-10",
       "description": "Brightly colored sneakers.",
-      "imageUrl": "",
+      "imageUrl": "/sneakers-10.png",
       "imageHint": "colored sneakers"
     },
     {
@@ -561,7 +561,7 @@
     {
       "id": "sneakers-13",
       "description": "Lightweight running shoes.",
-      "imageUrl": "",
+      "imageUrl": "/sneakers-13.png",
       "imageHint": "running shoes"
     },
     {
@@ -573,13 +573,13 @@
     {
       "id": "sneakers-15",
       "description": "Casual walking shoes.",
-      "imageUrl": "",
+      "imageUrl": "/sneakers-15.png",
       "imageHint": "walking shoes"
     },
     {
       "id": "sneakers-16",
       "description": "Kids sneakers.",
-      "imageUrl": "",
+      "imageUrl": "/sneakers-16.png",
       "imageHint": "kids sneakers"
     },
     {
@@ -597,7 +597,7 @@
     {
       "id": "sneakers-19",
       "description": "All-terrain trail sneakers.",
-      "imageUrl": "",
+      "imageUrl": "/sneakers-19.png",
       "imageHint": "trail sneakers"
     },
     {
@@ -651,7 +651,7 @@
     {
       "id": "accessories-8",
       "description": "A wool beanie.",
-      "imageUrl": "",
+      "imageUrl": "/accessories-8.png",
       "imageHint": "wool beanie"
     },
     {
@@ -675,31 +675,31 @@
     {
       "id": "accessories-12",
       "description": "A phone case.",
-      "imageUrl": "",
+      "imageUrl": "/accessories-12.png",
       "imageHint": "phone case"
     },
     {
       "id": "accessories-13",
       "description": "A travel bag.",
-      "imageUrl": "",
+      "imageUrl": "/accessories-13.png",
       "imageHint": "travel bag"
     },
     {
       "id": "accessories-14",
       "description": "A set of rings.",
-      "imageUrl": "",
+      "imageUrl": "/accessories-14.png",
       "imageHint": "rings set"
     },
     {
       "id": "accessories-15",
       "description": "A stylish hat.",
-      "imageUrl": "",
+      "imageUrl": "/accessories-15.png",
       "imageHint": "stylish hat"
     },
     {
       "id": "accessories-16",
       "description": "A keychain.",
-      "imageUrl": "",
+      "imageUrl": "/accessories-16.png",
       "imageHint": "keychain"
     },
     {
@@ -711,13 +711,13 @@
     {
       "id": "accessories-18",
       "description": "A tie.",
-      "imageUrl": "",
+      "imageUrl": "/accessories-18.png",
       "imageHint": "tie"
     },
     {
       "id": "accessories-19",
       "description": "A pair of socks.",
-      "imageUrl": "",
+      "imageUrl": "/accessories-19.png",
       "imageHint": "socks"
     },
     {
