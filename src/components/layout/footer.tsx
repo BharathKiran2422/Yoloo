@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Instagram, Linkedin } from 'lucide-react';
@@ -23,9 +22,9 @@ export function Footer() {
   return (
     <footer className="bg-card w-full border-t">
       <div className="container py-8 mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Logo & Social */}
-          <div className="col-span-2 md:col-span-2 flex flex-col space-y-3">
+          <div className="col-span-2 md:col-span-1 flex flex-col space-y-3">
             <Logo className="h-20 w-32 -ml-4 -mt-4" />
             <div className="flex items-center space-x-3">
               <Link
@@ -67,11 +66,45 @@ export function Footer() {
               <Link href="/terms" className="hover:text-primary transition-colors">
                 Terms & Conditions
               </Link>
+              <Link href="/terms" className="hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
               <Link href="/shipping" className="hover:text-primary transition-colors">
                 Shipping Policy
               </Link>
-              <Link href="/returns" className="hover:text-primary transition-colors">
-                Return Policy
+              <Link href="/return-and-exchange-policy" className="hover:text-primary transition-colors">
+                Return & Exchange Policy
+              </Link>
+              <Link href="/cancellation-policy" className="hover:text-primary transition-colors">
+                Cancellation Policy
+              </Link>
+               <Link href="/disclaimer" className="hover:text-primary transition-colors">
+                Disclaimer
+              </Link>
+            </div>
+          </div>
+
+          {/* Customer Care Links */}
+          <div className="flex flex-col gap-2">
+            <h3 className="font-semibold text-sm">Customer Care</h3>
+            <div className="flex flex-col gap-1 text-xs text-muted-foreground">
+              <Link href="/size-guide" className="hover:text-primary transition-colors">
+                Size Guide
+              </Link>
+              <Link href="/care-instructions" className="hover:text-primary transition-colors">
+                Care Instructions
+              </Link>
+               <Link href="/loyalty-and-rewards" className="hover:text-primary transition-colors">
+                Loyalty & Rewards
+              </Link>
+              <Link href="/gift-card-policy" className="hover:text-primary transition-colors">
+                Gift Card Policy
+              </Link>
+              <Link href="/account-deletion" className="hover:text-primary transition-colors">
+                Account Deletion
+              </Link>
+              <Link href="/payment-policy" className="hover:text-primary transition-colors">
+                Payment Policy
               </Link>
             </div>
           </div>
@@ -79,7 +112,7 @@ export function Footer() {
           {/* App Download */}
           <div className="col-span-2 md:col-span-1 flex flex-col gap-2">
             <h3 className="font-semibold text-sm">Get our app</h3>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center md:flex-col md:items-start gap-2">
               <Link
                 href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share"
                 target="_blank"
@@ -112,23 +145,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-6 border-t pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground">
+        <div className="mt-8 border-t pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground">
           <p>&copy; {currentYear} Yoloo Fashion Network Private Limited. All rights reserved.</p>
-          <div className="flex flex-col-reverse md:flex-row items-center gap-3 mt-3 md:mt-0">
-            <div className="flex gap-3">
-              <Link href="/terms" className="hover:text-primary transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-primary transition-colors">
-                Account Deletion
-              </Link>
-            </div>
-            <VisitorCounter />
-          </div>
+          <VisitorCounter />
         </div>
       </div>
     </footer>
   );
 }
-
-    

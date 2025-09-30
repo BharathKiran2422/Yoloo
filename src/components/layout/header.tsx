@@ -178,11 +178,11 @@ export function Header() {
                 Privacy Policy
               </Link>
                <Link
-                href="/returns"
+                href="/return-and-exchange-policy"
                 onClick={handleLinkClick}
                 className={cn(
                   "px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
-                  pathname === '/returns'
+                  pathname === '/return-and-exchange-policy'
                     ? "bg-primary text-primary-foreground"
                     : "text-foreground/80 hover:bg-accent hover:text-foreground"
                 )}
