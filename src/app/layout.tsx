@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/components/layout/header';
@@ -13,7 +12,13 @@ export const metadata: Metadata = {
   title: 'Yoloo! : Fashion Made Easy',
   description: 'Yoloo! - Your destination for modern and premium fashion.',
   icons: {
-    icon: '/icon.png',
+    icon: [
+      { url: '/icon.png' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/icon.png',
+    shortcut: '/icon.png',
   },
 };
 
@@ -28,6 +33,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="shortcut icon" href="/icon.png" />
       </head>
       <body className="font-body antialiased" suppressHydrationWarning>
         <ThemeProvider
