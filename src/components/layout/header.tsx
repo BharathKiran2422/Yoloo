@@ -187,7 +187,7 @@ export function Header() {
                     : "text-foreground/80 hover:bg-accent hover:text-foreground"
                 )}
               >
-                Return Policy
+                Return &amp; Exchange Policy
               </Link>
               
               <Link
