@@ -163,14 +163,14 @@ export function Header() {
                     : "text-foreground/80 hover:bg-accent hover:text-foreground"
                 )}
               >
-                Terms & Conditions
+                Terms &amp; Conditions
               </Link>
               <Link
-                href="/terms"
+                href="/privacy-policy"
                 onClick={handleLinkClick}
                 className={cn(
                   "px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
-                  pathname === '/terms'
+                  pathname === '/privacy-policy'
                     ? "bg-primary text-primary-foreground"
                     : "text-foreground/80 hover:bg-accent hover:text-foreground"
                 )}

@@ -64,16 +64,16 @@ export function Footer() {
             <h3 className="font-semibold text-sm">Legal</h3>
             <div className="flex flex-col gap-1 text-xs text-muted-foreground">
               <Link href="/terms" className="hover:text-primary transition-colors">
-                Terms & Conditions
+                Terms &amp; Conditions
               </Link>
-              <Link href="/terms" className="hover:text-primary transition-colors">
+              <Link href="/privacy-policy" className="hover:text-primary transition-colors">
                 Privacy Policy
               </Link>
               <Link href="/shipping" className="hover:text-primary transition-colors">
                 Shipping Policy
               </Link>
               <Link href="/return-and-exchange-policy" className="hover:text-primary transition-colors">
-                Return & Exchange Policy
+                Return &amp; Exchange Policy
               </Link>
               <Link href="/cancellation-policy" className="hover:text-primary transition-colors">
                 Cancellation Policy
@@ -95,7 +95,7 @@ export function Footer() {
                 Care Instructions
               </Link>
                <Link href="/loyalty-and-rewards" className="hover:text-primary transition-colors">
-                Loyalty & Rewards
+                Loyalty &amp; Rewards
               </Link>
               <Link href="/gift-card-policy" className="hover:text-primary transition-colors">
                 Gift Card Policy
