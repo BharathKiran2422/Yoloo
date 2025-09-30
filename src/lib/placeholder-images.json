@@ -3,20 +3,20 @@
     {
       "id": "hero-slide-1",
       "description": "A stylish person in a midnight blue jacket in a chic urban setting.",
-      "imageUrl": "/hero1.jpeg",
+      "imageUrl": "/hero1.png",
       "imageHint": "fashion editorial"
     },
     {
       "id": "hero-slide-2",
-      "description": "A person wearing a licensed Spiderman jacket in a cool, urban environment.",
+      "description": "A fashion delivery person quickly moving through a city, representing fast delivery.",
       "imageUrl": "/hero2.png",
-      "imageHint": "Spiderman jacket"
+      "imageHint": "fashion delivery"
     },
     {
       "id": "hero-slide-3",
-      "description": "A fashion delivery person quickly moving through a city, representing fast delivery.",
+      "description": "A person with fashion collection.",
       "imageUrl": "/hero3.png",
-      "imageHint": "fashion delivery"
+      "imageHint": "fashion collection"
     },
     {
       "id": "about-image",
