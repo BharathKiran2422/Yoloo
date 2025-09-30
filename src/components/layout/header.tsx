@@ -153,6 +153,42 @@ export function Header() {
               >
                 About
               </Link>
+              <Link
+                href="/terms"
+                onClick={handleLinkClick}
+                className={cn(
+                  "px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
+                  pathname === '/terms'
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground/80 hover:bg-accent hover:text-foreground"
+                )}
+              >
+                Terms & Conditions
+              </Link>
+              <Link
+                href="/terms"
+                onClick={handleLinkClick}
+                className={cn(
+                  "px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
+                  pathname === '/terms'
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground/80 hover:bg-accent hover:text-foreground"
+                )}
+              >
+                Privacy Policy
+              </Link>
+               <Link
+                href="/returns"
+                onClick={handleLinkClick}
+                className={cn(
+                  "px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
+                  pathname === '/returns'
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground/80 hover:bg-accent hover:text-foreground"
+                )}
+              >
+                Return Policy
+              </Link>
               
               <Link
                 href="/#contact-us"
