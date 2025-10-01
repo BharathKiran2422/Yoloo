@@ -1,3 +1,4 @@
+
 'use client';
 
 import { ContactForm } from "@/components/contact-form";
@@ -34,7 +35,7 @@ export function ContactSection() {
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Connect With Us</h2>
                             <div className="w-24 h-1 bg-primary rounded-full mb-4" />
                              <p className="text-muted-foreground mb-8 text-sm md:text-base">
-                                Have a style query, collaboration idea, or just want to share your thoughts? We’re here to listen and respond with care.
+                                Got a style query or collaboration idea? We’d love to hear from you.
                             </p>
                             <div className="space-y-6">
                                 {contactDetails.map((detail, index) => (

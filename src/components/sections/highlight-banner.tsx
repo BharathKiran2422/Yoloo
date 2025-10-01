@@ -14,7 +14,7 @@ export function HighlightBanner() {
         >
             <div className="container mx-auto px-4 p-8 text-center border-y">
                 <p className="text-xl sm:text-2xl md:text-3xl font-headline font-bold text-foreground tracking-tight">
-                    Fresh Fashion in <span className="font-extrabold text-primary">30–120 Mins</span> – Your Style, Your Time, Delivered Fast ⚡
+                    Fashion, Fast and Fresh — Redefining How India Shops ⚡
                 </p>
             </div>
         </motion.div>

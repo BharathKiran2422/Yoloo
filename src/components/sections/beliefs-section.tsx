@@ -6,16 +6,16 @@ import {motion} from 'framer-motion';
 
 const beliefs = [
     {
-        title: "Why we exist",
-        description: "When \"fast fashion\" lost its flavour, we chose a different path. Honesty in style, care in craft. What we'd choose for our own wardrobes is what reaches you.",
+        title: "Fashion should be convenient",
+        description: "style shouldn’t take days to arrive.",
     },
     {
-        title: "What drives us",
-        description: "Every decision starts with you, our members. Quality is never compromised. Only what we'd choose for our own families reaches you. We stay bold, frugal, and curious to keep raising the standards you deserve.",
+        title: "No more traffic, parking stress, or crowded offline stores",
+        description: "fashion should come to you.",
     },
     {
-        title: "How we show up",
-        description: "Each piece is traced back to its origin. Every fabric is tested and looked before it reaches you. Small batches, big standards - because the best never lingers.",
+        title: "Time is the new luxury",
+        description: "saving customers time means delivering real value.",
     }
 ];
 
