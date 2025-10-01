@@ -145,8 +145,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 border-t pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground">
-          <p>&copy; {currentYear} Yoloo Fashion Network Private Limited. All rights reserved.</p>
+        <div className="mt-8 border-t pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground gap-4">
+          <div className="flex flex-col gap-2 text-center md:text-left">
+            <p className='italic'>Images are for reference purposes only. Official brand visuals will be available soon.</p>
+            <p>&copy; {currentYear} Yoloo Fashion Network Private Limited. All rights reserved.</p>
+          </div>
           <VisitorCounter />
         </div>
       </div>
