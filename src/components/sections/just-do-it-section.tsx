@@ -7,12 +7,12 @@ export function JustDoItSection() {
     return (
         <section className="py-12 md:py-16 bg-background">
             <div className="container mx-auto px-4 text-center">
-                <p className="text-base md:text-lg font-semibold text-primary uppercase tracking-wider">Don't Just Follow Trends. Define Them.</p>
+                <p className="text-base md:text-lg font-semibold text-primary uppercase tracking-wider">Hyderabad sets the trend.</p>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-headline font-extrabold my-4 text-foreground tracking-tight max-w-4xl mx-auto leading-tight">
                 Modern Lifestyle Needs,<span className="block">Modern Shopping.</span>
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg mb-8">
-                   With Yoloo in Hyderabad, shopping is quick, effortless, and designed to match the way you live.
+                   With Yoloo, shopping in Hyderabad is quick, effortless, and designed to match the way you live.
                 </p>
                 <div className="flex items-center justify-center gap-4">
                   <Link href="#purchase-on-app">
