@@ -24,16 +24,16 @@ const heroSlides = [
         id: 'hero-2',
         imageId: 'hero-slide-2',
         pretitle: 'Shop Like 2030',
-        title: '2 Hours vs 2 Days',
+        title: '2 Hours vs 2 Days — Now in Hyderabad',
         subtitle: 'Why wait for days when you can get it in just 2 hours?',
         buttonText: 'Explore Collections',
     },
     {
         id: 'hero-3',
         imageId: 'hero-slide-3',
-        pretitle: 'Yoloo! - Fashion Made Easy',
+        pretitle: 'Yoloo! – Fashion Made Easy in Hyderabad',
         title: 'Just Minutes Away from Your Favorite Style',
-        subtitle: 'Adding fresh brands and collections every week.',
+        subtitle: 'Adding fresh brands and collections every week for Hyderabad’s fashion-forward crowd.',
         buttonText: 'Shop Now',
     }
 ];
@@ -159,7 +159,7 @@ export function HeroSection() {
             })}
           </CarouselContent>
           <CarouselPrevious className="hidden md:flex left-[-1rem] xl:left-[-1.5rem]" />
-          <CarouselNext className="hidden md:flex right-[-1rem] xl:right-[-1.5rem]" />
+          <CarouselNext className="hidden md:flex right-[-1rem] xl:right-[-1.sem]" />
         </Carousel>
       </div>
     </section>

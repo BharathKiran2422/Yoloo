@@ -12,7 +12,7 @@ export function JustDoItSection() {
                 Modern Lifestyle Needs,<span className="block">Modern Shopping.</span>
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg mb-8">
-                   With Yoloo, shopping is quick, effortless, and designed to match the way you live.
+                   With Yoloo in Hyderabad, shopping is quick, effortless, and designed to match the way you live.
                 </p>
                 <div className="flex items-center justify-center gap-4">
                   <Link href="#purchase-on-app">
