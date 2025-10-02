@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ShoppingBag } from 'lucide-react';
 import Link from 'next/link';
@@ -7,7 +6,10 @@ export function JustDoItSection() {
     return (
         <section className="py-12 md:py-16 bg-background">
             <div className="container mx-auto px-4 text-center">
-                <p className="text-base md:text-lg font-semibold text-primary uppercase tracking-wider">Hyderabad sets the trend.</p>
+                <div>
+                    <p className="text-base md:text-lg font-semibold text-primary uppercase tracking-wider">Hyderabad sets the trend.</p>
+                    <div className="w-24 h-1 bg-primary mx-auto mt-2 rounded-full" />
+                </div>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-headline font-extrabold my-4 text-foreground tracking-tight max-w-4xl mx-auto leading-tight">
                 Modern Lifestyle Needs,<span className="block">Modern Shopping.</span>
                 </h2>
