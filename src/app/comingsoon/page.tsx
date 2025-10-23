@@ -105,20 +105,9 @@ export default function ComingSoonPage() {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.8, duration: 0.5 }}
                     >
-                        <motion.div
-                            animate={{
-                                scale: [1, 1.05, 1],
-                            }}
-                            transition={{
-                                duration: 2,
-                                repeat: Infinity,
-                                ease: "easeInOut"
-                            }}
-                        >
-                            <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg" />}
-                            </Link>
-                        </motion.div>
+                        <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                            {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg" />}
+                        </Link>
                         <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
                             {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg" />}
                         </Link>
