@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import GooglePlayButton from '@/components/icons/google-play-button';
 import AppStoreButton from '@/components/icons/app-store-button';
-import { Cloud, Package, Clock, Shirt, Gem } from 'lucide-react';
+import { Cloud, Package, Clock, Shirt, Gem, ShoppingBag, Watch } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import Image from 'next/image';
@@ -67,6 +67,12 @@ export default function ComingSoonPage() {
                     </Scenery>
                     <Scenery duration={50}>
                         <Gem className="absolute top-[12vh] left-[95vw] w-12 h-12 text-foreground/10" />
+                    </Scenery>
+                    <Scenery duration={85}>
+                        <ShoppingBag className="absolute top-[40vh] left-[5vw] w-12 h-12 text-foreground/10" />
+                    </Scenery>
+                    <Scenery duration={90}>
+                        <Watch className="absolute top-[28vh] left-[110vw] w-12 h-12 text-foreground/10" />
                     </Scenery>
                 </div>
 
