@@ -134,7 +134,7 @@ export default function ComingSoonPage() {
                 </div>
 
                 {/* Back to site link */}
-                <Link href="/" className="absolute bottom-4 right-4 z-20">
+                <Link href="/home" className="absolute bottom-4 right-4 z-20">
                     <Button variant="ghost">Skip to website</Button>
                 </Link>
             </div>

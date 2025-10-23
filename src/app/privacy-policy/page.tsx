@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
         <PageTransitionWrapper>
             <div className="bg-background text-foreground min-h-screen p-4 sm:p-6 flex flex-col items-center">
                 <div className="w-full max-w-4xl">
-                    <Link href="/" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8">
+                    <Link href="/home" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-8">
                         <ArrowLeft size={16} />
                         <span>Back to Home</span>
                     </Link>
@@ -53,7 +53,7 @@ export default function PrivacyPolicyPage() {
                     </div>
 
                     <div className="pt-4">
-                        <Link href="/">
+                        <Link href="/home">
                             <Button variant="secondary">Go to Home</Button>
                         </Link>
                     </div>

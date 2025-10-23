@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Header } from '@/components/layout/header';
-import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 import { WhatsAppFab } from '@/components/whatsapp-fab';
-import { AnnouncementBar } from '@/components/layout/announcement-bar';
 import { LoadingAnimation } from '@/components/loading-animation';
+import { AppContent } from '@/components/layout/app-layout';
 
 export const metadata: Metadata = {
   title: 'Yoloo! : Fashion Made Easy',
@@ -45,14 +43,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LoadingAnimation>
-            <div className="flex min-h-screen flex-col pattern-background">
-              <AnnouncementBar />
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </div>
-            <Toaster />
-            <WhatsAppFab phoneNumber="8297297197" />
+            <AppContent>
+              {children}
+            </AppContent>
           </LoadingAnimation>
         </ThemeProvider>
       </body>

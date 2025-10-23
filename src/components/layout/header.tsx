@@ -42,7 +42,7 @@ export function Header() {
   ];
 
   const mainLinks = [
-    { href: '/', label: 'Home' },
+    { href: '/home', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/#contact-us', label: 'Contact' }
   ];
@@ -56,14 +56,14 @@ export function Header() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center">
           <div className="mr-4 flex items-center">
-            <Link href="/">
+            <Link href="/home">
               <Logo className="h-32 w-32" />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center justify-center space-x-1 text-sm font-medium flex-1">
-            <Link href="/" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
+            <Link href="/home" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
                 <Home className="mr-2" /> Home
             </Link>
             <NavigationMenu>
@@ -149,14 +149,14 @@ export function Header() {
 
             {/* Logo */}
             <div className="flex justify-center pt-8 pb-6 border-b">
-              <Link href="/" onClick={handleLinkClick}>
+              <Link href="/home" onClick={handleLinkClick}>
                 <Logo className="h-20 w-20" />
               </Link>
             </div>
 
             {/* Navigation Links */}
             <nav className="flex flex-col p-6 space-y-1">
-              <Link href="/" onClick={handleLinkClick} className={cn("flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200", pathname === '/' ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent hover:text-foreground")}>
+              <Link href="/home" onClick={handleLinkClick} className={cn("flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200", pathname === '/home' ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent hover:text-foreground")}>
                   <Home className="mr-3" /> Home
               </Link>
 
