@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -12,6 +11,7 @@ import { Cloud, Package, Clock, Shirt, Gem, ShoppingBag, Watch } from 'lucide-re
 import { cn } from '@/lib/utils';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import Image from 'next/image';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 
 const Scenery = ({ children, duration }: { children: React.ReactNode, duration: number }) => (
@@ -133,10 +133,12 @@ export default function ComingSoonPage() {
                     <div className="absolute bottom-0 left-0 w-full h-[2px] bg-repeat-x" style={{backgroundImage: `linear-gradient(to right, hsl(var(--foreground)) 50%, transparent 50%)`, backgroundSize: '10px 2px'}} />
                 </div>
 
-                {/* Back to site link */}
-                <Link href="/home" className="absolute bottom-4 right-4 z-20">
-                    <Button variant="ghost">Skip to website</Button>
-                </Link>
+                <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
+                    <ThemeToggle />
+                    <Link href="/home">
+                        <Button variant="ghost">Skip to website</Button>
+                    </Link>
+                </div>
             </div>
         </PageTransitionWrapper>
     );
