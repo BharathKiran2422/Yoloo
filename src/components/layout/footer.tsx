@@ -150,7 +150,19 @@ export function Footer() {
             <p className='italic'>Images are for reference purposes only. Official brand visuals will be available soon.</p>
             <p>&copy; {currentYear} Yoloo Fashion Network Private Limited. All rights reserved.</p>
           </div>
-          <VisitorCounter />
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4">
+                <span>Made with ❤️ in India</span>
+                <div className="flex items-center gap-2">
+                    <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    <span className="text-green-500">Service Active</span>
+                </div>
+            </div>
+            <VisitorCounter />
+          </div>
         </div>
       </div>
     </footer>
