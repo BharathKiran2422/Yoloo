@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from './logo';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Home, LayoutGrid, Info, MessageSquare } from 'lucide-react';
 import { ThemeToggle } from '../theme-toggle';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
@@ -64,12 +64,12 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center justify-center space-x-1 text-sm font-medium flex-1">
             <Link href="/" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
-                Home
+                <Home className="mr-2" /> Home
             </Link>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
+                  <NavigationMenuTrigger><LayoutGrid className="mr-2" />Categories</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                       {categoryLinks.map((component) => (
@@ -87,10 +87,10 @@ export function Header() {
               </NavigationMenuList>
             </NavigationMenu>
             <Link href="/about" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
-                About
+                <Info className="mr-2" /> About
             </Link>
             <Link href="/#contact-us" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
-                Contact
+                <MessageSquare className="mr-2" /> Contact
             </Link>
           </nav>
           
@@ -156,13 +156,13 @@ export function Header() {
 
             {/* Navigation Links */}
             <nav className="flex flex-col p-6 space-y-1">
-              <Link href="/" onClick={handleLinkClick} className={cn("px-4 py-3 rounded-lg text-base font-medium transition-all duration-200", pathname === '/' ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent hover:text-foreground")}>
-                  Home
+              <Link href="/" onClick={handleLinkClick} className={cn("flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200", pathname === '/' ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent hover:text-foreground")}>
+                  <Home className="mr-3" /> Home
               </Link>
 
               <Collapsible>
                 <CollapsibleTrigger className="flex justify-between items-center w-full px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:bg-accent hover:text-foreground transition-all duration-200 group">
-                    Categories
+                    <span className="flex items-center"><LayoutGrid className="mr-3" />Categories</span>
                     <ChevronDown className="h-4 w-4 transform transition-transform duration-200 group-data-[state=open]:rotate-180" />
                 </CollapsibleTrigger>
                 <CollapsibleContent>
@@ -176,11 +176,11 @@ export function Header() {
                 </CollapsibleContent>
               </Collapsible>
               
-              <Link href="/about" onClick={handleLinkClick} className={cn("px-4 py-3 rounded-lg text-base font-medium transition-all duration-200", pathname === '/about' ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent hover:text-foreground")}>
-                  About
+              <Link href="/about" onClick={handleLinkClick} className={cn("flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200", pathname === '/about' ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent hover:text-foreground")}>
+                  <Info className="mr-3" /> About
               </Link>
-              <Link href="/#contact-us" onClick={handleLinkClick} className="px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:bg-accent hover:text-foreground transition-all duration-200">
-                  Contact
+              <Link href="/#contact-us" onClick={handleLinkClick} className="flex items-center px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:bg-accent hover:text-foreground transition-all duration-200">
+                  <MessageSquare className="mr-3" /> Contact
               </Link>
             </nav>
           </div>
