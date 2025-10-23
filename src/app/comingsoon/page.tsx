@@ -47,7 +47,7 @@ export default function ComingSoonPage() {
 
     return (
         <PageTransitionWrapper>
-            <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-background via-card to-background overflow-hidden relative">
+            <div className="flex flex-col items-center justify-start pt-20 sm:pt-24 h-screen bg-gradient-to-b from-background via-card to-background overflow-hidden relative">
                 
                 {/* Scenery */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -58,7 +58,7 @@ export default function ComingSoonPage() {
                         <Cloud className="absolute top-[25vh] left-[80vw] w-12 h-12 text-foreground/10" />
                     </Scenery>
                     <Scenery duration={70}>
-                        <Cloud className="absolute top-[15vh] left-[120vw] w-20 h-20 text-foreground/10" />
+                        <Cloud className="absolute top-[5vh] left-[120vw] w-20 h-20 text-foreground/10" />
                     </Scenery>
                 </div>
 
@@ -148,4 +148,3 @@ export default function ComingSoonPage() {
         </PageTransitionWrapper>
     );
 }
-
