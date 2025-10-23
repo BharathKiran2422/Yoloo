@@ -2,33 +2,17 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import GooglePlayButton from '@/components/icons/google-play-button';
 import AppStoreButton from '@/components/icons/app-store-button';
-import { ShoppingBag, Cloud, Building2, TrafficCone } from 'lucide-react';
+import { Cloud, Building2, TrafficCone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
+import Image from 'next/image';
 
-
-// Simplified pixel-art style drone
-const DroneIcon = ({ className }: { className?: string }) => (
-    <div className={cn("relative w-12 h-8", className)}>
-        {/* Body */}
-        <div className="absolute top-2 left-1 w-10 h-4 bg-foreground rounded" />
-        {/* Rotors */}
-        <div className="absolute top-0 left-0 w-3 h-1 bg-muted-foreground rounded-full animate-pulse" />
-        <div className="absolute top-0 right-0 w-3 h-1 bg-muted-foreground rounded-full animate-pulse" />
-        <div className="absolute bottom-0 left-0 w-3 h-1 bg-muted-foreground rounded-full animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-3 h-1 bg-muted-foreground rounded-full animate-pulse" />
-        {/* Bag */}
-        <div className="absolute top-6 left-4 w-4 h-5 bg-primary rounded-sm">
-            <ShoppingBag className="w-3 h-3 text-primary-foreground absolute top-1 left-0.5" />
-        </div>
-    </div>
-);
 
 const Obstacle = ({ type }: { type: 'cone' | 'building' }) => {
     if (type === 'cone') {
@@ -56,6 +40,11 @@ export default function ComingSoonPage() {
         setMounted(true);
     }, []);
 
+    const getLogoSrc = () => {
+        if (!mounted) return "/logo_gif2.gif"; // Default to light theme for SSR
+        return resolvedTheme === 'dark' ? '/logo_gif1.gif' : '/logo_gif2.gif';
+    };
+
     return (
         <PageTransitionWrapper>
             <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-b from-background via-card to-background overflow-hidden relative">
@@ -80,8 +69,16 @@ export default function ComingSoonPage() {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
+                        className="relative w-32 h-32 md:w-40 md:h-40"
                     >
-                        <DroneIcon />
+                         <Image
+                            src={getLogoSrc()}
+                            alt="Yoloo! Logo Animation"
+                            fill
+                            className="object-contain"
+                            unoptimized
+                            priority
+                        />
                     </motion.div>
                     
                     <motion.h1 
@@ -151,3 +148,4 @@ export default function ComingSoonPage() {
         </PageTransitionWrapper>
     );
 }
+
