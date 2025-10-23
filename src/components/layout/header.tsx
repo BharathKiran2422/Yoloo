@@ -1,13 +1,17 @@
+
 "use client";
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from './logo';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { ThemeToggle } from '../theme-toggle';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, forwardRef } from 'react';
+import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuTrigger, NavigationMenuContent, NavigationMenuLink, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+
 
 export function Header() {
   const pathname = usePathname();
@@ -30,11 +34,17 @@ export function Header() {
     };
   }, [isMenuOpen]);
   
-  const navLinks = [
-    { href: '/men', label: 'Men' },
-    { href: '/women', label: 'Women' },
-    { href: '/sneakers', label: 'Sneakers' },
-    { href: '/accessories', label: 'Accessories' },
+  const categoryLinks = [
+    { href: '/men', title: 'Men', description: 'Explore our latest collection for men.' },
+    { href: '/women', title: 'Women', description: 'Discover stylish and elegant women\'s fashion.' },
+    { href: '/sneakers', title: 'Sneakers', description: 'Find your perfect pair of sneakers.' },
+    { href: '/accessories', title: 'Accessories', description: 'Complete your look with our accessories.' },
+  ];
+
+  const mainLinks = [
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
+    { href: '/#contact-us', label: 'Contact' }
   ];
 
   const handleLinkClick = () => {
@@ -52,13 +62,36 @@ export function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center justify-center space-x-6 text-sm font-medium flex-1">
-            {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={cn("text-foreground/80 hover:text-foreground transition-colors relative", pathname === link.href && "text-foreground")}>
-                {link.label}
-                {pathname === link.href && <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-primary"></span>}
-              </Link>
-            ))}
+          <nav className="hidden md:flex items-center justify-center space-x-1 text-sm font-medium flex-1">
+            <Link href="/" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
+                Home
+            </Link>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                      {categoryLinks.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+            <Link href="/about" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
+                About
+            </Link>
+            <Link href="/#contact-us" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
+                Contact
+            </Link>
           </nav>
           
           {/* Spacer for Mobile */}
@@ -123,79 +156,31 @@ export function Header() {
 
             {/* Navigation Links */}
             <nav className="flex flex-col p-6 space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={handleLinkClick}
-                  className={cn(
-                    "px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
-                    pathname === link.href
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground/80 hover:bg-accent hover:text-foreground"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              <Link href="/" onClick={handleLinkClick} className={cn("px-4 py-3 rounded-lg text-base font-medium transition-all duration-200", pathname === '/' ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent hover:text-foreground")}>
+                  Home
+              </Link>
+
+              <Collapsible>
+                <CollapsibleTrigger className="flex justify-between items-center w-full px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:bg-accent hover:text-foreground transition-all duration-200 group">
+                    Categories
+                    <ChevronDown className="h-4 w-4 transform transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                    <div className="flex flex-col pl-8 space-y-1 pt-1">
+                        {categoryLinks.map((link) => (
+                           <Link key={link.href} href={link.href} onClick={handleLinkClick} className={cn("px-4 py-3 rounded-lg text-base font-medium transition-all duration-200", pathname === link.href ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent hover:text-foreground")}>
+                               {link.title}
+                           </Link>
+                        ))}
+                    </div>
+                </CollapsibleContent>
+              </Collapsible>
               
-              <div className="border-t my-2" />
-              
-              <Link
-                href="/about"
-                onClick={handleLinkClick}
-                className={cn(
-                  "px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
-                  pathname === '/about'
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground/80 hover:bg-accent hover:text-foreground"
-                )}
-              >
-                About
+              <Link href="/about" onClick={handleLinkClick} className={cn("px-4 py-3 rounded-lg text-base font-medium transition-all duration-200", pathname === '/about' ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent hover:text-foreground")}>
+                  About
               </Link>
-              <Link
-                href="/terms"
-                onClick={handleLinkClick}
-                className={cn(
-                  "px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
-                  pathname === '/terms'
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground/80 hover:bg-accent hover:text-foreground"
-                )}
-              >
-                Terms &amp; Conditions
-              </Link>
-              <Link
-                href="/privacy-policy"
-                onClick={handleLinkClick}
-                className={cn(
-                  "px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
-                  pathname === '/privacy-policy'
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground/80 hover:bg-accent hover:text-foreground"
-                )}
-              >
-                Privacy Policy
-              </Link>
-               <Link
-                href="/return-and-exchange-policy"
-                onClick={handleLinkClick}
-                className={cn(
-                  "px-4 py-3 rounded-lg text-base font-medium transition-all duration-200",
-                  pathname === '/return-and-exchange-policy'
-                    ? "bg-primary text-primary-foreground"
-                    : "text-foreground/80 hover:bg-accent hover:text-foreground"
-                )}
-              >
-                Return &amp; Exchange Policy
-              </Link>
-              
-              <Link
-                href="/#contact-us"
-                onClick={handleLinkClick}
-                className="px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:bg-accent hover:text-foreground transition-all duration-200"
-              >
-                Contact
+              <Link href="/#contact-us" onClick={handleLinkClick} className="px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:bg-accent hover:text-foreground transition-all duration-200">
+                  Contact
               </Link>
             </nav>
           </div>
@@ -215,3 +200,29 @@ export function Header() {
     </>
   );
 }
+
+const ListItem = forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"
