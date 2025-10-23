@@ -41,7 +41,7 @@ export default function TermsPage() {
                     <div className="space-y-4">
                         <h2 className="text-2xl font-bold text-foreground">Contact</h2>
                         <p className="text-muted-foreground">
-                            For questions, please email <a href="mailto:hello@brandsyoloo.co.in" className="underline hover:text-primary">hello@brandsyoloo.co.in</a>.
+                            For questions, please email <a href="mailto:support@yoloo.co.in" className="underline hover:text-primary">support@yoloo.co.in</a>.
                         </p>
                     </div>
                     

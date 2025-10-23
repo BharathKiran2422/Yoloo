@@ -47,7 +47,7 @@ export default function AccountDeletionPage() {
 
                     <div className="pt-4">
                         <Button asChild>
-                            <a href="mailto:hello@brandsyoloo.co.in?subject=Account Deletion Request">
+                            <a href="mailto:support@yoloo.co.in?subject=Account Deletion Request">
                                 Email Support
                             </a>
                         </Button>

@@ -9,8 +9,8 @@ export function ContactSection() {
         {
             icon: Mail,
             label: "Email",
-            value: "hello@brandsyoloo.co.in",
-            href: "mailto:hello@brandsyoloo.co.in",
+            value: "support@yoloo.co.in",
+            href: "mailto:support@yoloo.co.in",
         },
         {
             icon: Phone,
