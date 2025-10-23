@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useActionState, useEffect, useRef } from 'react';
@@ -9,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Send } from 'lucide-react';
 
 function SubmitButton() {
@@ -54,6 +54,22 @@ export function ContactForm() {
           <Input id="email" name="email" type="email" placeholder="Your Email" required />
           {state.errors?.email && <p className="text-destructive text-sm">{state.errors.email[0]}</p>}
         </div>
+         <div className="space-y-2">
+          <Input id="mobileNumber" name="mobileNumber" placeholder="Mobile Number (Optional)" />
+          {state.errors?.mobileNumber && <p className="text-destructive text-sm">{state.errors.mobileNumber[0]}</p>}
+        </div>
+        <div className="space-y-2">
+           <Select name="userType">
+            <SelectTrigger>
+                <SelectValue placeholder="You are a..." />
+            </SelectTrigger>
+            <SelectContent>
+                <SelectItem value="customer">Customer</SelectItem>
+                <SelectItem value="brand">Brand</SelectItem>
+            </SelectContent>
+            </Select>
+          {state.errors?.userType && <p className="text-destructive text-sm">{state.errors.userType[0]}</p>}
+        </div>
       </div>
       <div className="space-y-2">
         <Textarea id="message" name="message" placeholder="Your Message" rows={5} required />
@@ -63,5 +79,3 @@ export function ContactForm() {
     </form>
   );
 }
-
-    

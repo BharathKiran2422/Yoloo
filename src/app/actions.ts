@@ -8,6 +8,8 @@ import { z } from 'zod';
 const ContactFormSchema = z.object({
   name: z.string().min(1, 'Name is required'),
   email: z.string().email('Invalid email address'),
+  mobileNumber: z.string().optional(),
+  userType: z.string().optional(),
   message: z.string().min(1, 'Message is required'),
 });
 
@@ -15,6 +17,8 @@ export async function handleContactFormSubmission(prevState: any, formData: Form
   const validatedFields = ContactFormSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
+    mobileNumber: formData.get('mobileNumber'),
+    userType: formData.get('userType'),
     message: formData.get('message'),
   });
 
@@ -62,5 +66,3 @@ export async function toggleAdminMessageStatus(id: string) {
   revalidatePath('/admin');
   return success;
 }
-
-    

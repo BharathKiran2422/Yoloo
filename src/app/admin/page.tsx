@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
@@ -10,11 +9,12 @@ import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { formatDistanceToNow } from 'date-fns';
-import { Trash2, CheckCircle, Mail, RefreshCw, ArrowLeft, Inbox, Pen, MessageSquare } from 'lucide-react';
+import { Trash2, CheckCircle, Mail, RefreshCw, ArrowLeft, Inbox, Pen, MessageSquare, User, Building } from 'lucide-react';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/layout/logo';
 import { VisitorCounter } from '@/components/visitor-counter';
+import { Badge } from '@/components/ui/badge';
 
 function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
   const [password, setPassword] = useState('');
@@ -212,7 +212,15 @@ export default function AdminPage() {
               )}
               <div className="flex justify-between items-start">
                 <div className="flex-1 truncate">
-                  <p className={cn("font-semibold", !msg.isRead && "text-foreground")}>{msg.name}</p>
+                  <div className="flex items-center gap-2">
+                     <p className={cn("font-semibold", !msg.isRead && "text-foreground")}>{msg.name}</p>
+                     {msg.userType && (
+                        <Badge variant={msg.userType === 'brand' ? 'secondary' : 'outline'} className="capitalize">
+                           {msg.userType === 'brand' ? <Building className="h-3 w-3 mr-1"/> : <User className="h-3 w-3 mr-1"/>}
+                           {msg.userType}
+                        </Badge>
+                     )}
+                  </div>
                   <p className="text-sm text-muted-foreground truncate">{msg.email}</p>
                    <p className="text-sm text-muted-foreground truncate mt-1">{msg.message}</p>
                 </div>
@@ -281,8 +289,17 @@ export default function AdminPage() {
                         <ArrowLeft className="h-5 w-5" />
                     </Button>
                     <div className="flex-1">
-                        <h2 className="text-xl font-bold">{selectedMessage.name}</h2>
+                        <div className="flex items-center gap-2">
+                            <h2 className="text-xl font-bold">{selectedMessage.name}</h2>
+                             {selectedMessage.userType && (
+                                <Badge variant={selectedMessage.userType === 'brand' ? 'secondary' : 'outline'} className="capitalize">
+                                   {selectedMessage.userType === 'brand' ? <Building className="h-3 w-3 mr-1"/> : <User className="h-3 w-3 mr-1"/>}
+                                   {selectedMessage.userType}
+                                </Badge>
+                             )}
+                        </div>
                         <p className="text-sm text-muted-foreground">{selectedMessage.email}</p>
+                        {selectedMessage.mobileNumber && <p className="text-sm text-muted-foreground">{selectedMessage.mobileNumber}</p>}
                     </div>
                      <span className="text-xs text-muted-foreground">
                         {formatDistanceToNow(toDate(selectedMessage.createdAt), { addSuffix: true })}
@@ -321,7 +338,3 @@ export default function AdminPage() {
 
 // Add motion and AnimatePresence to dependencies if not already there
 import { motion, AnimatePresence } from 'framer-motion';
-
-    
-
-    

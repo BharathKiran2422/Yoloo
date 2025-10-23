@@ -1,4 +1,3 @@
-
 import { db } from './firebase';
 import {
   collection,
@@ -18,6 +17,8 @@ export interface Message {
   id: string;
   name: string;
   email: string;
+  mobileNumber?: string;
+  userType?: string;
   message: string;
   createdAt: Timestamp | string;
   isRead: boolean;
@@ -26,6 +27,8 @@ export interface Message {
 export interface NewMessage {
   name: string;
   email: string;
+  mobileNumber?: string;
+  userType?: string;
   message: string;
 }
 
@@ -89,5 +92,3 @@ export async function toggleMessageStatus(id: string): Promise<boolean> {
     return false;
   }
 }
-
-    
