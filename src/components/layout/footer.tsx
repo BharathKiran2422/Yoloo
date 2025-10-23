@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Instagram, Linkedin } from 'lucide-react';
@@ -24,25 +25,28 @@ export function Footer() {
       <div className="container py-8 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Logo & Social */}
-          <div className="col-span-2 md:col-span-1 flex flex-col space-y-3">
+          <div className="col-span-2 md:col-span-1 flex flex-col space-y-4">
             <Logo className="h-20 w-32 -ml-4 -mt-4" />
-            <div className="flex items-center space-x-3">
-              <Link
-                href="https://www.linkedin.com/company/yoloo-lifestyle"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link
-                href="https://www.instagram.com/yoloo_lifestyle"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-              </Link>
+            <div>
+              <h3 className="font-semibold text-sm mb-2">Follow Us</h3>
+              <div className="flex items-center space-x-2">
+                <Link
+                  href="https://www.linkedin.com/company/yoloo-lifestyle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-accent p-2 rounded-lg text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/yoloo_lifestyle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-accent p-2 rounded-lg text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  <Instagram className="h-5 w-5" />
+                </Link>
+              </div>
             </div>
           </div>
 
