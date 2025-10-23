@@ -14,13 +14,6 @@ import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import Image from 'next/image';
 
 
-const Obstacle = ({ type }: { type: 'cone' | 'building' }) => {
-    if (type === 'cone') {
-        return <TrafficCone className="w-8 h-8 text-foreground" />;
-    }
-    return <Building2 className="w-10 h-10 text-foreground/80" />;
-}
-
 const Scenery = ({ children, duration }: { children: React.ReactNode, duration: number }) => (
     <motion.div
         initial={{ x: '100vw' }}
@@ -123,19 +116,9 @@ export default function ComingSoonPage() {
                     </motion.div>
                 </div>
                 
-                 {/* Ground and obstacles */}
+                 {/* Ground */}
                 <div className="absolute bottom-0 left-0 w-full h-1/4 z-0">
                     <div className="absolute bottom-0 left-0 w-full h-[2px] bg-repeat-x" style={{backgroundImage: `linear-gradient(to right, hsl(var(--foreground)) 50%, transparent 50%)`, backgroundSize: '10px 2px'}} />
-                    
-                    <Scenery duration={20}>
-                        <div className="absolute bottom-2 left-[30vw]"><Obstacle type="cone" /></div>
-                    </Scenery>
-                    <Scenery duration={35}>
-                        <div className="absolute bottom-2 left-[90vw]"><Obstacle type="building" /></div>
-                    </Scenery>
-                     <Scenery duration={28}>
-                        <div className="absolute bottom-2 left-[150vw]"><Obstacle type="cone" /></div>
-                    </Scenery>
                 </div>
 
                 {/* Back to site link */}
