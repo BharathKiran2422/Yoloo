@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
@@ -9,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { formatDistanceToNow } from 'date-fns';
-import { Trash2, CheckCircle, Mail, RefreshCw, ArrowLeft, Inbox, Pen, MessageSquare, User, Building } from 'lucide-react';
+import { Trash2, CheckCircle, Mail, RefreshCw, ArrowLeft, Inbox, Pen, MessageSquare, User, Building, Eye, EyeOff } from 'lucide-react';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { cn } from '@/lib/utils';
 import { Logo } from '@/components/layout/logo';
@@ -18,6 +19,7 @@ import { Badge } from '@/components/ui/badge';
 
 function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -53,15 +55,24 @@ function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
+              <div className="space-y-2 relative">
                 <Input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter admin password"
-                  className="text-center text-lg"
+                  className="text-center text-lg pr-10"
                   required
                 />
+                <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8"
+                    onClick={() => setShowPassword(!showPassword)}
+                >
+                    {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                </Button>
               </div>
               {error && <p className="text-destructive text-center text-sm">{error}</p>}
               <Button type="submit" className="w-full text-lg h-12 sheen-effect" disabled={loading}>
