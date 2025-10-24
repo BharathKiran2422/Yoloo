@@ -44,7 +44,7 @@ export function Header() {
   const mainLinks = [
     { href: '/home', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: '/#contact-us', label: 'Contact' }
+    { href: '/home#contact-us', label: 'Contact' }
   ];
 
   const handleLinkClick = () => {
@@ -89,7 +89,7 @@ export function Header() {
             <Link href="/about" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
                 <Info className="mr-2" /> About
             </Link>
-            <Link href="/#contact-us" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
+            <Link href="/home#contact-us" className={cn("text-foreground/80 hover:text-foreground transition-colors", navigationMenuTriggerStyle())}>
                 <MessageSquare className="mr-2" /> Contact
             </Link>
           </nav>
@@ -179,7 +179,7 @@ export function Header() {
               <Link href="/about" onClick={handleLinkClick} className={cn("flex items-center px-4 py-3 rounded-lg text-base font-medium transition-all duration-200", pathname === '/about' ? "bg-primary text-primary-foreground" : "text-foreground/80 hover:bg-accent hover:text-foreground")}>
                   <Info className="mr-3" /> About
               </Link>
-              <Link href="/#contact-us" onClick={handleLinkClick} className="flex items-center px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:bg-accent hover:text-foreground transition-all duration-200">
+              <Link href="/home#contact-us" onClick={handleLinkClick} className="flex items-center px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:bg-accent hover:text-foreground transition-all duration-200">
                   <MessageSquare className="mr-3" /> Contact
               </Link>
             </nav>

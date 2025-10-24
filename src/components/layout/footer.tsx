@@ -57,7 +57,7 @@ export function Footer() {
               <Link href="/about" className="hover:text-primary transition-colors">
                 About Us
               </Link>
-              <Link href="/#contact-us" className="hover:text-primary transition-colors">
+              <Link href="/home#contact-us" className="hover:text-primary transition-colors">
                 Contact Us
               </Link>
             </div>
