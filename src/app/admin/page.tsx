@@ -55,20 +55,20 @@ function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2 relative">
+              <div className="relative flex items-center">
                 <Input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter admin password"
-                  className="text-center text-lg pr-10"
+                  className="text-center text-lg pr-10 h-12"
                   required
                 />
                 <Button
                     type="button"
                     variant="ghost"
                     size="icon"
-                    className="absolute right-2 top-1/2 -translate-y-1/2 h-8 w-8"
+                    className="absolute right-2 h-8 w-8 hover:bg-transparent"
                     onClick={() => setShowPassword(!showPassword)}
                 >
                     {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
@@ -349,3 +349,5 @@ export default function AdminPage() {
 
 // Add motion and AnimatePresence to dependencies if not already there
 import { motion, AnimatePresence } from 'framer-motion';
+
+    
