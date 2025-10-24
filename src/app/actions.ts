@@ -4,6 +4,9 @@
 import { addMessage, getMessages, deleteMessage, toggleMessageStatus } from '@/lib/message-store';
 import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
+import { config } from 'dotenv';
+
+config();
 
 const ContactFormSchema = z.object({
   name: z.string().min(1, 'Name is required'),
