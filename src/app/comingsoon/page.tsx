@@ -102,7 +102,7 @@ export default function ComingSoonPage() {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.5 }}
                     >
-                       When style needs you. <br className="md:hidden" /> When you need style. <br /> Yoloo!
+                       When style needs you. When you need style. <br /> Yoloo!
                     </motion.h1>
 
                     <motion.p 
