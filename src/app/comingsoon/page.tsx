@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -8,7 +7,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import GooglePlayButton from '@/components/icons/google-play-button';
 import AppStoreButton from '@/components/icons/app-store-button';
-import { Cloud, Package, Clock, Shirt, Gem, ShoppingBag, Watch } from 'lucide-react';
+import { Cloud, Package, Clock, Shirt, Gem, ShoppingBag, Watch, Glasses, Crown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import Image from 'next/image';
@@ -46,13 +45,13 @@ export default function ComingSoonPage() {
                 {/* Scenery */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
                     <Scenery duration={60}>
-                        <Cloud className="absolute top-[10vh] left-[20vw] w-12 h-12 text-foreground/10" />
+                        <Shirt className="absolute top-[10vh] left-[20vw] w-12 h-12 text-foreground/10" />
                     </Scenery>
                      <Scenery duration={45}>
-                        <Cloud className="absolute top-[25vh] left-[80vw] w-12 h-12 text-foreground/10" />
+                        <ShoppingBag className="absolute top-[25vh] left-[80vw] w-12 h-12 text-foreground/10" />
                     </Scenery>
                     <Scenery duration={70}>
-                        <Cloud className="absolute top-[5vh] left-[120vw] w-12 h-12 text-foreground/10" />
+                        <Watch className="absolute top-[5vh] left-[120vw] w-12 h-12 text-foreground/10" />
                     </Scenery>
                     <Scenery duration={55}>
                         <Clock className="absolute top-[15vh] left-[50vw] w-12 h-12 text-foreground/10" />
@@ -61,13 +60,13 @@ export default function ComingSoonPage() {
                         <Package className="absolute top-[30vh] left-[10vw] w-12 h-12 text-foreground/10" />
                     </Scenery>
                      <Scenery duration={65}>
-                        <Package className="absolute top-[20vh] left-[140vw] w-12 h-12 text-foreground/10" />
+                        <Gem className="absolute top-[20vh] left-[140vw] w-12 h-12 text-foreground/10" />
                     </Scenery>
                     <Scenery duration={75}>
-                        <Shirt className="absolute top-[35vh] left-[60vw] w-12 h-12 text-foreground/10" />
+                        <Glasses className="absolute top-[35vh] left-[60vw] w-12 h-12 text-foreground/10" />
                     </Scenery>
                     <Scenery duration={50}>
-                        <Gem className="absolute top-[12vh] left-[95vw] w-12 h-12 text-foreground/10" />
+                        <Crown className="absolute top-[12vh] left-[95vw] w-12 h-12 text-foreground/10" />
                     </Scenery>
                     <Scenery duration={85}>
                         <ShoppingBag className="absolute top-[40vh] left-[5vw] w-12 h-12 text-foreground/10" />
