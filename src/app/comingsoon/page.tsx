@@ -101,11 +101,11 @@ export default function ComingSoonPage() {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.5 }}
                     >
-                       From browsing to must-have — stop scrolling, <br /> start Yoloo-ing & find your style.
+                       When style needs you. When you need style. <br />  Yoloo! 
                     </motion.h1>
 
                     <motion.p 
-                        className="mt-6 text-primary font-semibold text-lg"
+                        className="mt-6 text-primary font-semibold text-xl"
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.6, duration: 0.5 }}
