@@ -124,7 +124,7 @@ export default function ComingSoonPage() {
                         </motion.h1>
 
                         <motion.p 
-                            className="mt-6 text-primary font-semibold text-xl"
+                            className="mt-6 text-primary font-semibold text-2xl"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.8, duration: 0.5 }}
@@ -139,10 +139,10 @@ export default function ComingSoonPage() {
                             transition={{ delay: 1, duration: 0.5 }}
                         >
                             <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg" />}
+                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-16 w-auto border rounded-lg" />}
                             </Link>
                             <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                                {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-14 w-auto border rounded-lg" />}
+                                {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-16 w-auto border rounded-lg" />}
                             </Link>
                         </motion.div>
                     </div>
