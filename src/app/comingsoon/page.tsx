@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -7,7 +8,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import GooglePlayButton from '@/components/icons/google-play-button';
 import AppStoreButton from '@/components/icons/app-store-button';
-import { Cloud, Package, Clock, Shirt, Gem, ShoppingBag, Watch, Glasses, Crown } from 'lucide-react';
+import { Package, Clock, Shirt, Gem, ShoppingBag, Watch, Glasses, Crown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import Image from 'next/image';
@@ -16,8 +17,8 @@ import { ThemeToggle } from '@/components/theme-toggle';
 
 const Scenery = ({ children, duration }: { children: React.ReactNode, duration: number }) => (
     <motion.div
-        initial={{ x: '100vw' }}
-        animate={{ x: '-100vw' }}
+        initial={{ x: '-100vw' }}
+        animate={{ x: '100vw' }}
         transition={{ duration, repeat: Infinity, ease: 'linear' }}
         className="absolute"
     >
