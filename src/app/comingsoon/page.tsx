@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import GooglePlayButton from '@/components/icons/google-play-button';
 import AppStoreButton from '@/components/icons/app-store-button';
-import { Package, Clock, Shirt, Gem, ShoppingBag, Watch, Glasses, Crown } from 'lucide-react';
+import { Package, Clock, Shirt, Gem, ShoppingBag, Watch, Glasses, Crown, Instagram } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import Image from 'next/image';
@@ -40,8 +40,8 @@ export default function ComingSoonPage() {
     };
 
     return (
-        <PageTransitionWrapper>
-            <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-background via-card to-background overflow-hidden relative p-4">
+        <PageTransitionWrapper className="flex-1">
+            <div className="flex flex-col items-center justify-center flex-1 bg-gradient-to-b from-background via-card to-background overflow-hidden relative p-4">
                 
                 {/* Scenery */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
@@ -79,7 +79,7 @@ export default function ComingSoonPage() {
 
 
                 {/* Main Content */}
-                 <div className="z-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-8 md:gap-16 max-w-6xl w-full">
+                 <div className="z-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-8 md:gap-16 max-w-6xl w-full -mt-16 md:-mt-8">
                     {/* Image */}
                      <motion.div
                         initial={{ x: -50, opacity: 0 }}
@@ -120,7 +120,9 @@ export default function ComingSoonPage() {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.6, duration: 0.5 }}
                         >
-                           When style needs you. When you need style. <br /> <span className="italic">Yoloo!</span>
+                           When style needs you. When you need style.
+                           <br />
+                           <span className="italic">Yoloo!</span>
                         </motion.h1>
 
                         <motion.p 
@@ -145,19 +147,28 @@ export default function ComingSoonPage() {
                                 {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-16 w-auto border rounded-lg" />}
                             </Link>
                         </motion.div>
+
+                         <motion.div
+                            className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mt-8"
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 1.2, duration: 0.5 }}
+                         >
+                            <div className="text-sm text-muted-foreground text-center sm:text-left">
+                                Follow for more <br />
+                                offers & updates
+                            </div>
+                            <Link href="https://www.instagram.com/yoloo_lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                                <Instagram className="w-7 h-7" />
+                            </Link>
+                         </motion.div>
+
                     </div>
                  </div>
                 
                  {/* Ground */}
                 <div className="absolute bottom-0 left-0 w-full h-1/4 z-0">
                     <div className="absolute bottom-0 left-0 w-full h-[2px] bg-repeat-x" style={{backgroundImage: `linear-gradient(to right, hsl(var(--foreground)) 50%, transparent 50%)`, backgroundSize: '10px 2px'}} />
-                </div>
-
-                <div className="absolute top-4 right-4 z-20 flex items-center gap-2">
-                    <ThemeToggle />
-                    <Link href="/home">
-                        <Button variant="ghost">Skip to website</Button>
-                    </Link>
                 </div>
             </div>
         </PageTransitionWrapper>
