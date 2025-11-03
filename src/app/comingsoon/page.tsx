@@ -116,7 +116,7 @@ export default function ComingSoonPage() {
                         </motion.div>
                         
                         <motion.h1 
-                            className="font-headline text-3xl md:text-4xl font-bold mt-8 max-w-2xl text-foreground"
+                            className="font-headline text-3xl md:text-5xl font-bold mt-8 max-w-2xl text-foreground"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.6, duration: 0.5 }}
@@ -170,9 +170,7 @@ export default function ComingSoonPage() {
                  </div>
                 
                  {/* Ground */}
-                <div className="absolute bottom-0 left-0 w-full h-1/4 z-0">
-                    <div className="absolute bottom-0 left-0 w-full h-[2px] bg-repeat-x" style={{backgroundImage: `linear-gradient(to right, hsl(var(--foreground)) 50%, transparent 50%)`, backgroundSize: '10px 2px'}} />
-                </div>
+                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-repeat-x z-0" style={{backgroundImage: `linear-gradient(to right, hsl(var(--foreground)) 50%, transparent 50%)`, backgroundSize: '10px 2px'}} />
             </div>
         </PageTransitionWrapper>
     );
