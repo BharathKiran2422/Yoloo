@@ -195,8 +195,6 @@ export default function ComingSoonPage() {
     </motion.div>
 </div>
                  </div>
-                
-                 {/* Ground */}
             </div>
         </PageTransitionWrapper>
     );
