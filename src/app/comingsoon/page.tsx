@@ -103,8 +103,8 @@ export default function ComingSoonPage() {
             <Image
               src="/app_download.png"
               alt="Yoloo! App Preview"
-              width={250}
-              height={250}
+              width={500}
+              height={500}
               className="w-full max-w-xs sm:max-w-sm relative"
             />
           </motion.div>
