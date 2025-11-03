@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -197,9 +198,11 @@ export default function ComingSoonPage() {
               >
                 <Instagram className="w-10 h-10" />
               </Link>
-              <div className="text-base font-semibold text-muted-foreground text-center">
-                @yoloo_lifestyle <br />
-              </div>
+              <Link href="https://www.instagram.com/yoloo_lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <div className="text-base font-semibold text-center">
+                    @yoloo_lifestyle <br />
+                </div>
+              </Link>
             </motion.div>
 
             {/* Tagline */}
