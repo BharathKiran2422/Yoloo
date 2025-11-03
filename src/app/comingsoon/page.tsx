@@ -144,10 +144,10 @@ export default function ComingSoonPage() {
                             transition={{ delay: 1, duration: 0.5 }}
                         >
                             <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-16 w-auto border rounded-lg" />}
+                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-20 w-auto border rounded-lg" />}
                             </Link>
                             <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                                {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-16 w-auto border rounded-lg" />}
+                                {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-20 w-auto border rounded-lg" />}
                             </Link>
                         </motion.div>
 
