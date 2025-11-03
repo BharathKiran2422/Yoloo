@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -114,7 +113,7 @@ export default function ComingSoonPage() {
                         </motion.div>
                         
                         <motion.h1 
-                            className="font-headline text-2xl md:text-4xl font-bold mt-8 max-w-2xl text-foreground"
+                            className="font-headline text-3xl md:text-5xl font-bold mt-8 max-w-2xl text-foreground"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.6, duration: 0.5 }}
@@ -150,7 +149,7 @@ export default function ComingSoonPage() {
                         </motion.div>
 
                          <motion.div
-                            className="flex items-center justify-center gap-4 mt-8 text-center"
+                            className="flex items-center justify-center gap-4 mt-8"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 1.2, duration: 0.5 }}
