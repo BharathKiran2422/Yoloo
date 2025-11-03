@@ -144,25 +144,25 @@ export default function ComingSoonPage() {
                             transition={{ delay: 1, duration: 0.5 }}
                         >
                             <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-20 w-auto border rounded-lg" />}
+                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-24 w-auto border rounded-lg" />}
                             </Link>
                             <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                                {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-20 w-auto border rounded-lg" />}
+                                {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-24 w-auto border rounded-lg" />}
                             </Link>
                         </motion.div>
 
                          <motion.div
-                            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+                            className="flex items-center justify-center gap-4 mt-8 text-center"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 1.2, duration: 0.5 }}
                          >
-                            <div className="text-sm font-semibold text-muted-foreground text-center">
+                            <div className="text-base font-semibold text-muted-foreground text-center">
                                 Follow for more <br />
                                 offers & updates
                             </div>
                             <Link href="https://www.instagram.com/yoloo_lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                                <Instagram className="w-7 h-7" />
+                                <Instagram className="w-8 h-8" />
                             </Link>
                          </motion.div>
 
