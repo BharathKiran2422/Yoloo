@@ -1,3 +1,4 @@
+
 'use client';
 
 import { usePathname } from 'next/navigation';
@@ -19,7 +20,6 @@ export function AppContent({ children }: { children: React.ReactNode }) {
         <Header />
         <main className="flex-1 flex flex-col">{children}</main>
         <Toaster />
-        <WhatsAppFab phoneNumber="8297297197" />
       </div>
     );
   }

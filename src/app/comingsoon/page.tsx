@@ -112,6 +112,7 @@ export default function ComingSoonPage() {
           {/* Right: Text Content */}
           <div className="text-center flex flex-col items-center">
             {/* Logo */}
+            {/*
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -126,17 +127,17 @@ export default function ComingSoonPage() {
                 unoptimized
                 priority
               />
-            </motion.div>
+            </motion.div> */}
 
             {/* Download Text */}
-            <motion.h2
-              className="mt-6 text-primary font-semibold text-2xl"
+            <motion.p
+              className="mt-6 text-primary font-semibold text-3xl"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
             >
               Download the app
-            </motion.h2>
+            </motion.p>
 
             {/* Enlarged Buttons */}
             <motion.div
@@ -194,8 +195,11 @@ export default function ComingSoonPage() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Instagram className="w-8 h-8" />
+                <Instagram className="w-10 h-10" />
               </Link>
+              <div className="text-base font-semibold text-muted-foreground text-center">
+                @yoloo_lifestyle <br />
+              </div>
             </motion.div>
 
             {/* Tagline */}
