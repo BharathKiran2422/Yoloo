@@ -116,7 +116,7 @@ export default function ComingSoonPage() {
                         </motion.div>
                         
                         <motion.h1 
-                            className="font-headline text-3xl md:text-5xl font-bold mt-8 max-w-2xl text-foreground"
+                            className="font-headline text-2xl md:text-4xl font-bold mt-8 max-w-2xl text-foreground"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.6, duration: 0.5 }}
