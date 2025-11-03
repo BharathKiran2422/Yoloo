@@ -59,7 +59,7 @@
     --gradient-color-2: hsl(240 65% 9% / 0.3);
     --interactive-bg-gradient-1: hsl(262 84% 12% / 0.8);
     --interactive-bg-gradient-2: hsl(240 65% 15% / 0.8);
-    --image-accent-bg: hsl(0 0% 100% / 0.8);
+    --image-accent-bg: hsl(0 0% 100% / 0.1);
   }
 }
 
