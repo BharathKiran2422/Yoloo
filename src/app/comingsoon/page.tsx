@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -94,80 +95,108 @@ export default function ComingSoonPage() {
                         />
                     </motion.div>
 
-                    {/* Text Content */}
-                    <div className="text-center flex flex-col items-center">
-                         <motion.div
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.4, duration: 0.5 }}
-                            className="relative w-32 h-32 md:w-40 md:h-40"
-                        >
-                             <Image
-                                src={getLogoSrc()}
-                                alt="Yoloo! Logo Animation"
-                                fill
-                                className="object-contain"
-                                unoptimized
-                                priority
-                            />
-                        </motion.div>
-                        
-                        <motion.h1 
-                            className="font-headline text-3xl md:text-5xl font-bold mt-8 max-w-2xl text-foreground"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.6, duration: 0.5 }}
-                        >
-                            When style needs you.
-                            <br />
-                            When you need style.
-                            <br />
-                           <span className="italic">Yoloo!</span>
-                        </motion.h1>
+{/* Text Content */}
+<div className="text-center flex flex-col items-center">
+    <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+        className="relative w-32 h-32 md:w-40 md:h-40"
+    >
+        <Image
+            src={getLogoSrc()}
+            alt="Yoloo! Logo Animation"
+            fill
+            className="object-contain"
+            unoptimized
+            priority
+        />
+    </motion.div>
 
-                        <motion.p 
-                            className="mt-6 text-primary font-semibold text-2xl"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.8, duration: 0.5 }}
-                        >
-                            Download the app
-                        </motion.p>
-                        
-                        <motion.div 
-                            className="flex flex-row items-center gap-4 justify-center mt-6"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 1, duration: 0.5 }}
-                        >
-                            <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-auto">
-                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-28 w-auto border rounded-lg" />}
-                            </Link>
-                            <Link href="/" target="_blank" rel="noopener noreferrer" className="w-auto" title="Coming soon">
-                                {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-28 w-auto border rounded-lg" />}
-                            </Link>
-                        </motion.div>
+    <motion.h2
+        className="font-headline text-2xl md:text-4xl font-bold mt-8 max-w-2xl text-foreground leading-snug"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+    >
+        When style needs you.
+        <br />
+        When you need style.
+        <br />
+        <span className="italic">Yoloo!</span>
+    </motion.h2>
 
-                         <motion.div
-                            className="flex items-center justify-center gap-4 mt-8"
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 1.2, duration: 0.5 }}
-                         >
-                            <div className="text-base font-semibold text-muted-foreground text-center">
-                                Follow for more <br />
-                                offers & updates
-                            </div>
-                            <Link href="https://www.instagram.com/yoloo_lifestyle" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                                <Instagram className="w-8 h-8" />
-                            </Link>
-                         </motion.div>
+    <motion.p
+        className="mt-6 text-primary font-semibold text-2xl"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
+    >
+        Download the app
+    </motion.p>
 
-                    </div>
+    {/* Enlarged Buttons */}
+    <motion.div
+        className="flex flex-row items-center gap-8 justify-center mt-6 scale-[1.4] md:scale-[1.6]"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1, duration: 0.5 }}
+    >
+        <Link
+            href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            {mounted && (
+                <div className="transform hover:scale-105 transition-transform duration-300">
+                    <GooglePlayButton
+                        darkMode={resolvedTheme === 'dark'}
+                        className="border rounded-xl shadow-lg"
+                    />
+                </div>
+            )}
+        </Link>
+
+        <Link
+            href="/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Coming soon"
+        >
+            {mounted && (
+                <div className="transform hover:scale-105 transition-transform duration-300">
+                    <AppStoreButton
+                        darkMode={resolvedTheme === 'dark'}
+                        className="border rounded-xl shadow-lg"
+                    />
+                </div>
+            )}
+        </Link>
+    </motion.div>
+
+    <motion.div
+        className="flex items-center justify-center gap-4 mt-8"
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.5 }}
+    >
+        <div className="text-base font-semibold text-muted-foreground text-center">
+            Follow for more <br />
+            offers & updates
+        </div>
+        <Link
+            href="https://www.instagram.com/yoloo_lifestyle"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+        >
+            <Instagram className="w-8 h-8" />
+        </Link>
+    </motion.div>
+</div>
                  </div>
                 
                  {/* Ground */}
-                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-repeat-x z-0" style={{backgroundImage: `linear-gradient(to right, hsl(var(--foreground)) 50%, transparent 50%)`, backgroundSize: '10px 2px'}} />
             </div>
         </PageTransitionWrapper>
     );
