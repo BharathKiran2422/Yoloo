@@ -98,7 +98,7 @@ export default function ComingSoonPage() {
                     </motion.div>
 
                     {/* Text Content */}
-                    <div className="text-center md:text-left flex flex-col items-center md:items-start">
+                    <div className="text-center flex flex-col items-center">
                          <motion.div
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
@@ -138,7 +138,7 @@ export default function ComingSoonPage() {
                         </motion.p>
                         
                         <motion.div 
-                            className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start mt-6"
+                            className="flex flex-col sm:flex-row items-center gap-4 justify-center mt-6"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 1, duration: 0.5 }}
@@ -152,12 +152,12 @@ export default function ComingSoonPage() {
                         </motion.div>
 
                          <motion.div
-                            className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mt-8"
+                            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 1.2, duration: 0.5 }}
                          >
-                            <div className="text-sm text-muted-foreground text-center sm:text-left">
+                            <div className="text-sm font-semibold text-muted-foreground text-center">
                                 Follow for more <br />
                                 offers & updates
                             </div>
