@@ -138,16 +138,16 @@ export default function ComingSoonPage() {
                         </motion.p>
                         
                         <motion.div 
-                            className="flex flex-col sm:flex-row items-center gap-4 justify-center mt-6"
+                            className="flex flex-row items-center gap-4 justify-center mt-6"
                             initial={{ y: 20, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 1, duration: 0.5 }}
                         >
-                            <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-24 w-auto border rounded-lg" />}
+                            <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-auto">
+                                {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-28 w-auto border rounded-lg" />}
                             </Link>
-                            <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
-                                {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-24 w-auto border rounded-lg" />}
+                            <Link href="/" target="_blank" rel="noopener noreferrer" className="w-auto" title="Coming soon">
+                                {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-28 w-auto border rounded-lg" />}
                             </Link>
                         </motion.div>
 
