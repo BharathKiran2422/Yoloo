@@ -3,13 +3,11 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import GooglePlayButton from '@/components/icons/google-play-button';
 import AppStoreButton from '@/components/icons/app-store-button';
 import { Package, Clock, Shirt, Gem, ShoppingBag, Watch, Glasses, Crown, Instagram } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import Image from 'next/image';
 
@@ -39,7 +37,7 @@ export default function ComingSoonPage() {
 
     return (
         <PageTransitionWrapper className="flex-1">
-            <div className="flex flex-col items-center justify-center flex-1 bg-gradient-to-b from-background via-card to-background overflow-hidden relative p-4">
+            <div className="flex flex-col items-center justify-center min-h-full flex-1 bg-gradient-to-b from-background via-card to-background overflow-hidden relative p-4">
                 
                 {/* Scenery */}
                  <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
