@@ -12,8 +12,6 @@ import { Package, Clock, Shirt, Gem, ShoppingBag, Watch, Glasses, Crown, Instagr
 import { cn } from '@/lib/utils';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import Image from 'next/image';
-import { ThemeToggle } from '@/components/theme-toggle';
-
 
 const Scenery = ({ children, duration }: { children: React.ReactNode, duration: number }) => (
     <motion.div
@@ -35,7 +33,7 @@ export default function ComingSoonPage() {
     }, []);
 
     const getLogoSrc = () => {
-        if (!mounted) return "/logo_gif2.gif"; // Default to light theme for SSR
+        if (!mounted) return "/logo_gif2.gif";
         return resolvedTheme === 'dark' ? '/logo_gif1.gif' : '/logo_gif2.gif';
     };
 
@@ -44,7 +42,7 @@ export default function ComingSoonPage() {
             <div className="flex flex-col items-center justify-center flex-1 bg-gradient-to-b from-background via-card to-background overflow-hidden relative p-4">
                 
                 {/* Scenery */}
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
                     <Scenery duration={60}>
                         <Shirt className="absolute top-[10vh] left-[20vw] w-12 h-12 text-foreground/10" />
                     </Scenery>
@@ -79,20 +77,23 @@ export default function ComingSoonPage() {
 
 
                 {/* Main Content */}
-                 <div className="z-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-8 md:gap-16 max-w-6xl w-full -mt-16 md:-mt-8">
+                 <div className="z-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-8 md:gap-16 max-w-6xl w-full">
                     {/* Image */}
                      <motion.div
                         initial={{ x: -50, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.7 }}
-                        className="flex justify-center"
+                        className="flex justify-center relative"
                     >
+                         <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="image-accent"></div>
+                         </div>
                         <Image
                             src="/app_download.png"
                             alt="Yoloo! App Preview"
                             width={500}
                             height={500}
-                            className="w-full max-w-xs sm:max-w-sm"
+                            className="w-full max-w-xs sm:max-w-sm relative"
                         />
                     </motion.div>
 
@@ -120,8 +121,10 @@ export default function ComingSoonPage() {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ delay: 0.6, duration: 0.5 }}
                         >
-                           When style needs you. When you need style.
-                           <br />
+                            When style needs you.
+                            <br />
+                            When you need style.
+                            <br />
                            <span className="italic">Yoloo!</span>
                         </motion.h1>
 
