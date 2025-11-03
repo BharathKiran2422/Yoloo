@@ -58,34 +58,34 @@ export default function ComingSoonPage() {
         {/* Animated Background Icons */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0 flex items-center justify-center">
           <Scenery duration={60}>
-            <Shirt className="absolute top-[10vh] left-[20vw] w-12 h-12 text-foreground/10" />
+            <Shirt className="absolute top-[-20vh] left-[20vw] w-12 h-12 text-foreground/10" />
           </Scenery>
           <Scenery duration={45}>
-            <ShoppingBag className="absolute top-[25vh] left-[80vw] w-12 h-12 text-foreground/10" />
+            <ShoppingBag className="absolute top-[5vh] left-[80vw] w-12 h-12 text-foreground/10" />
           </Scenery>
           <Scenery duration={70}>
-            <Watch className="absolute top-[5vh] left-[120vw] w-12 h-12 text-foreground/10" />
+            <Watch className="absolute top-[-25vh] left-[120vw] w-12 h-12 text-foreground/10" />
           </Scenery>
           <Scenery duration={55}>
-            <Clock className="absolute top-[15vh] left-[50vw] w-12 h-12 text-foreground/10" />
+            <Clock className="absolute top-[-10vh] left-[50vw] w-12 h-12 text-foreground/10" />
           </Scenery>
           <Scenery duration={80}>
-            <Package className="absolute top-[30vh] left-[10vw] w-12 h-12 text-foreground/10" />
+            <Package className="absolute top-[10vh] left-[10vw] w-12 h-12 text-foreground/10" />
           </Scenery>
           <Scenery duration={65}>
-            <Gem className="absolute top-[20vh] left-[140vw] w-12 h-12 text-foreground/10" />
+            <Gem className="absolute top-[-5vh] left-[140vw] w-12 h-12 text-foreground/10" />
           </Scenery>
           <Scenery duration={75}>
-            <Glasses className="absolute top-[35vh] left-[60vw] w-12 h-12 text-foreground/10" />
+            <Glasses className="absolute top-[15vh] left-[60vw] w-12 h-12 text-foreground/10" />
           </Scenery>
           <Scenery duration={50}>
-            <Crown className="absolute top-[12vh] left-[95vw] w-12 h-12 text-foreground/10" />
+            <Crown className="absolute top-[-15vh] left-[95vw] w-12 h-12 text-foreground/10" />
           </Scenery>
           <Scenery duration={85}>
-            <ShoppingBag className="absolute top-[40vh] left-[5vw] w-12 h-12 text-foreground/10" />
+            <ShoppingBag className="absolute top-[20vh] left-[5vw] w-12 h-12 text-foreground/10" />
           </Scenery>
           <Scenery duration={90}>
-            <Watch className="absolute top-[28vh] left-[110vw] w-12 h-12 text-foreground/10" />
+            <Watch className="absolute top-[8vh] left-[110vw] w-12 h-12 text-foreground/10" />
           </Scenery>
         </div>
 
@@ -124,7 +124,7 @@ export default function ComingSoonPage() {
 
             {/* Enlarged Buttons */}
             <motion.div
-              className="flex flex-row items-center gap-8 justify-center mt-6 scale-[1.5] md:scale-[1.8]"
+              className="flex flex-row items-center gap-4 justify-center mt-6"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1, duration: 0.5 }}
@@ -138,7 +138,7 @@ export default function ComingSoonPage() {
                   <div className="transform hover:scale-105 transition-transform duration-300">
                     <GooglePlayButton
                       darkMode={resolvedTheme === 'dark'}
-                      className="border rounded-xl shadow-lg"
+                      className="border rounded-xl shadow-lg h-14 w-auto"
                     />
                   </div>
                 )}
@@ -154,7 +154,7 @@ export default function ComingSoonPage() {
                   <div className="transform hover:scale-105 transition-transform duration-300">
                     <AppStoreButton
                       darkMode={resolvedTheme === 'dark'}
-                      className="border rounded-xl shadow-lg"
+                      className="border rounded-xl shadow-lg h-14 w-auto"
                     />
                   </div>
                 )}
