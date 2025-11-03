@@ -56,7 +56,7 @@ export default function ComingSoonPage() {
     <PageTransitionWrapper className="flex-1">
       <div className="flex flex-col items-center justify-center min-h-full flex-1 bg-gradient-to-b from-background via-card to-background overflow-hidden relative p-4">
         {/* Animated Background Icons */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0 flex items-center justify-center">
           <Scenery duration={60}>
             <Shirt className="absolute top-[10vh] left-[20vw] w-12 h-12 text-foreground/10" />
           </Scenery>
@@ -90,11 +90,11 @@ export default function ComingSoonPage() {
         </div>
 
         {/* Main Content */}
-        <div className="z-10 grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-8 md:gap-16 max-w-6xl w-full">
-          {/* Left: App Image */}
+        <div className="z-10 flex flex-col items-center justify-center gap-8 max-w-6xl w-full">
+          {/* App Image */}
           <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.7 }}
             className="flex justify-center relative"
           >
@@ -110,29 +110,11 @@ export default function ComingSoonPage() {
             />
           </motion.div>
 
-          {/* Right: Text Content */}
+          {/* Text Content */}
           <div className="text-center flex flex-col items-center">
-            {/* Logo */}
-            {/*
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="relative w-32 h-32 md:w-40 md:h-40"
-            >
-              <Image
-                src={getLogoSrc()}
-                alt="Yoloo! Logo Animation"
-                fill
-                className="object-contain"
-                unoptimized
-                priority
-              />
-            </motion.div> */}
-
             {/* Download Text */}
             <motion.p
-              className="mt-6 text-primary font-semibold text-3xl"
+              className="text-primary font-semibold text-3xl"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
