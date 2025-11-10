@@ -90,6 +90,7 @@ export const brandSpotlightProducts: Product[] = [
 ];
 
 export const brands: Brand[] = [
+  { id: "brand-logo-the-bear-house", name: "The Bear House", imageId: "brand-logo-the-bear-house" },
   { id: "brand-logo-1", name: "Brand Logo 1", imageId: "brand-logo-new-1" },
   { id: "brand-logo-2", name: "Brand Logo 2", imageId: "brand-logo-new-2" },
   { id: "brand-logo-3", name: "Brand Logo 1", imageId: "brand-logo-new-1" },
@@ -107,4 +108,6 @@ export const brands: Brand[] = [
     
 
     
+
+
 

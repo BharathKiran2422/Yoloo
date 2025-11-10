@@ -163,6 +163,12 @@
       "imageHint": "brand logo"
     },
     {
+      "id": "brand-logo-the-bear-house",
+      "description": "The Bear House Logo",
+      "imageUrl": "/the-bear-house.png",
+      "imageHint": "brand logo"
+    },
+    {
       "id": "gallery-men",
       "description": "Stylish man in a modern outfit.",
       "imageUrl": "/gallery-men.png",
