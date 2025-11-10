@@ -1,6 +1,11 @@
+# *
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /api/
 
+# Block admin and api routes
+User-agent: *
+Disallow: /admin
+Disallow: /api
+
+# Sitemap
 Sitemap: https://www.yoloo.co.in/sitemap.xml
