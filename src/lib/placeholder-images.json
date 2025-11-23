@@ -169,6 +169,30 @@
       "imageHint": "brand logo"
     },
     {
+      "id": "brand-logo-terractive",
+      "description": "Terractive Logo",
+      "imageUrl": "/terractive.png",
+      "imageHint": "brand logo"
+    },
+    {
+      "id": "brand-logo-the-shorts-project",
+      "description": "The Shorts Project Logo",
+      "imageUrl": "/the-shorts-project.png",
+      "imageHint": "brand logo"
+    },
+    {
+      "id": "brand-logo-ministry-of-minimal",
+      "description": "Ministry of Minimal Logo",
+      "imageUrl": "/ministry-of-minimal.png",
+      "imageHint": "brand logo"
+    },
+    {
+      "id": "brand-logo-b-for-bottoms",
+      "description": "B for Bottoms Logo",
+      "imageUrl": "/b-for-bottoms.png",
+      "imageHint": "brand logo"
+    },
+    {
       "id": "gallery-men",
       "description": "Stylish man in a modern outfit.",
       "imageUrl": "/gallery-men.png",

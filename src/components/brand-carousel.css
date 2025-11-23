@@ -1,4 +1,3 @@
-
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
@@ -14,4 +13,13 @@
 
 .group:hover .paused {
     animation-play-state: paused;
+}
+
+/* Hover zoom effect for logos */
+.brand-logo-container img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.brand-logo-container:hover img {
+  transform: scale(1.15);
 }

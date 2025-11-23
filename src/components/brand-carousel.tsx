@@ -22,12 +22,12 @@ export function BrandCarousel() {
           className="flex items-center space-x-12 md:space-x-16 animate-marquee group-hover:paused"
         >
           {extendedBrands.map((brand, index) => (
-            <div key={`${brand.id}-${index}`} className="flex-shrink-0 w-20 h-10 md:w-24 md:h-12 relative grayscale hover:grayscale-0 transition-all duration-300">
+            <div key={`${brand.id}-${index}`} className="brand-logo-container flex-shrink-0 w-20 h-10 md:w-24 md:h-12 relative transition-all duration-300">
               <Image
                 src={brand.imageUrl as string}
                 alt={brand.name}
                 fill
-                className="object-contain"
+                className="object-contain brand-logo-img"
                 data-ai-hint={brand.imageHint}
               />
             </div>
