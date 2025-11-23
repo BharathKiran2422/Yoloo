@@ -193,6 +193,12 @@
       "imageHint": "brand logo"
     },
     {
+      "id": "brand-logo-burger-bae",
+      "description": "Burger Bae Logo",
+      "imageUrl": "/burger-bae.png",
+      "imageHint": "brand logo"
+    },
+    {
       "id": "gallery-men",
       "description": "Stylish man in a modern outfit.",
       "imageUrl": "/gallery-men.png",
