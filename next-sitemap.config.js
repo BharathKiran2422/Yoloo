@@ -29,19 +29,13 @@ const fetchDynamicRoutes = async () => {
 
 module.exports = {
   siteUrl: 'https://www.yoloo.co.in',
-  generateRobotsTxt: true, // Automatically generate robots.txt file
+  generateRobotsTxt: true,
+  exclude: ['/admin', '/api/*'],   // <--- IMPORTANT
   robotsTxtOptions: {
     policies: [
-      {
-        userAgent: '*',
-        allow: '/',
-      },
-      {
-        userAgent: '*',
-        disallow: ['/admin', '/api'],
-      },
+      { userAgent: '*', allow: '/' },
+      { userAgent: '*', disallow: ['/admin', '/api'] },
     ],
-    // The sitemap index will be automatically added by next-sitemap
   },
   // The transform function is commented out as it requires a live data source.
   // When you have your product/category API ready, you can uncomment this
