@@ -41,9 +41,7 @@ module.exports = {
         disallow: ['/admin', '/api'],
       },
     ],
-    additionalSitemaps: [
-      'https://www.yoloo.co.in/sitemap.xml',
-    ],
+    // The sitemap index will be automatically added by next-sitemap
   },
   // The transform function is commented out as it requires a live data source.
   // When you have your product/category API ready, you can uncomment this
