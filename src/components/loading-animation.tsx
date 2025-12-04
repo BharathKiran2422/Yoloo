@@ -15,7 +15,7 @@ export function LoadingAnimation({ children }: { children: React.ReactNode }) {
     setIsClient(true);
     const initialLoadTimer = setTimeout(() => {
       setLoading(false);
-    }, 5000); // 5 seconds for initial load
+    }, 2200); // 5 seconds for initial load
 
     return () => clearTimeout(initialLoadTimer);
   }, []);
@@ -25,7 +25,7 @@ export function LoadingAnimation({ children }: { children: React.ReactNode }) {
       setThemeSwitching(true);
       const themeSwitchTimer = setTimeout(() => {
         setThemeSwitching(false);
-      }, 5000); // Show loading for 5 seconds on theme change
+      }, 2200); // Show loading for 5 seconds on theme change
 
       return () => clearTimeout(themeSwitchTimer);
     }

@@ -12,7 +12,7 @@ export default function WomenPage() {
     const womenImages = [
         { id: "women-1" },
         { id: "women-2", className: "sm:row-span-2" },
-        { id: "women-3", className: "sm:col-span-2" },
+        { id: "women-3", className: "sm:col-span-2 sm:row-span-2" },
         { id: "women-4" },
         { id: "women-5" },
         { id: "women-6" },

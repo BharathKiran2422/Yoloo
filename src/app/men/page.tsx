@@ -16,11 +16,11 @@ export default function MenPage() {
         { id: "men-4" },
         { id: "men-5", className: "sm:row-span-2" },
         { id: "men-6", className: "sm:col-span-2" },
-        { id: "men-7", },
+        { id: "men-7" },
         { id: "men-8" },
         { id: "men-9" },
         { id: "men-10" },
-        { id: "men-11", className: "sm:col-span-2 sm:row-span-2" },
+        { id: "men-11" },
         { id: "men-12" },
         { id: "men-13", className: "sm:row-span-2" },
         { id: "men-14" },
@@ -28,8 +28,9 @@ export default function MenPage() {
         { id: "men-16", className: "sm:col-span-2" },
         { id: "men-17" },
         { id: "men-18" },
-        { id: "men-19" },
-        { id: "men-20" }
+        { id: "men-19", className: "sm:col-span-2 sm:row-span-2" },
+        { id: "men-20" },
+        { id: "men-21", className: "sm:col-span-2" }
     ];
 
     const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
