@@ -96,6 +96,7 @@ export const brands: Brand[] = [
   { id: "brand-burger-bae", name: "Burger Bae", imageId: "brand-logo-burger-bae" },
   { id: "brand-logo-ministry-of-minimal", name: "Ministry of Minimal", imageId: "brand-logo-ministry-of-minimal" },
   { id: "brand-logo-b-for-bottoms", name: "B for Bottoms", imageId: "brand-logo-b-for-bottoms" },
+  { id: "brand-logo-keshubaba", name: "Keshubaba", imageId: "brand-logo-keshubaba" },
   { id: "brand-logo-the-bear-house", name: "The Bear House", imageId: "brand-logo-the-bear-house" },
   { id: "brand-logo-2", name: "Brand Logo 2", imageId: "brand-logo-new-2" },
   { id: "brand-logo-terractive", name: "Terractive", imageId: "brand-logo-terractive" },
@@ -103,6 +104,7 @@ export const brands: Brand[] = [
   { id: "brand-burger-bae", name: "Burger Bae", imageId: "brand-logo-burger-bae" },
   { id: "brand-logo-ministry-of-minimal", name: "Ministry of Minimal", imageId: "brand-logo-ministry-of-minimal" },
   { id: "brand-logo-b-for-bottoms", name: "B for Bottoms", imageId: "brand-logo-b-for-bottoms" },
+  { id: "brand-logo-keshubaba", name: "Keshubaba", imageId: "brand-logo-keshubaba" },
 ];
 
     

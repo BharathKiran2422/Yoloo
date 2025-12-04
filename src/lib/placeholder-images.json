@@ -199,6 +199,12 @@
       "imageHint": "brand logo"
     },
     {
+      "id": "brand-logo-keshubaba",
+      "description": "Keshubaba Logo",
+      "imageUrl": "/Keshubaba.png",
+      "imageHint": "brand logo"
+    },
+    {
       "id": "gallery-men",
       "description": "Stylish man in a modern outfit.",
       "imageUrl": "/gallery-men.png",
