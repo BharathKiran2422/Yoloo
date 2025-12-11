@@ -10,19 +10,19 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "hero-slide-1",
       "description": "A stylish person in a midnight blue jacket in a chic urban setting.",
-      "imageUrl": "/hero1.png",
+      "imageUrl": "/hero/hero1.png",
       "imageHint": "fashion editorial"
     },
     {
       "id": "hero-slide-2",
       "description": "A fashion delivery person quickly moving through a city, representing fast delivery.",
-      "imageUrl": "/hero2.png",
+      "imageUrl": "/hero/hero2.png",
       "imageHint": "fashion delivery"
     },
     {
       "id": "hero-slide-3",
       "description": "A person with fashion collection.",
-      "imageUrl": "/hero3.png",
+      "imageUrl": "/hero/hero3.png",
       "imageHint": "fashion collection"
     },
     {
@@ -40,259 +40,259 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "category-men",
       "description": "Men's Fashion",
-      "imageUrl": "/category-men.png",
+      "imageUrl": "/men/TheBearHouse1.png",
       "imageHint": "male model"
     },
     {
       "id": "category-women",
       "description": "Women's Fashion",
-      "imageUrl": "/category-women.png",
+      "imageUrl": "/women/Keshubaba-Women1.png",
       "imageHint": "female model"
     },
     {
       "id": "category-footwear",
       "description": "Footwear",
-      "imageUrl": "/category-footwear.png",
+      "imageUrl": "/categories/category-footwear.png",
       "imageHint": "trendy sneakers"
     },
     {
       "id": "category-accessories",
       "description": "Accessories",
-      "imageUrl": "/category-accessories.png",
+      "imageUrl": "/categories/category-accessories.png",
       "imageHint": "fashion accessories"
     },
     {
       "id": "product1",
       "description": "A stylish blue denim jacket.",
-      "imageUrl": "/product1.png",
+      "imageUrl": "/men/TheBearHouse14.png",
       "imageHint": "denim jacket"
     },
     {
       "id": "product2",
       "description": "A minimalist white t-shirt with a subtle graphic.",
-      "imageUrl": "/product2.png",
+      "imageUrl": "/men/BurgerBae-Men1.png",
       "imageHint": "graphic tee"
     },
     {
       "id": "product3",
       "description": "Comfortable and stylish black joggers.",
-      "imageUrl": "/product3.png",
+      "imageUrl": "/men/BurgerBae-Men3.png",
       "imageHint": "black joggers"
     },
     {
       "id": "product4",
       "description": "A classic beige trench coat.",
-      "imageUrl": "/product4.png",
+      "imageUrl": "/women/Keshubaba-Women4.png",
       "imageHint": "trench coat"
     },
     {
       "id": "product5",
       "description": "Stylish leather boots.",
-      "imageUrl": "/product5.png",
+      "imageUrl": "/products/product5.png",
       "imageHint": "leather boots"
     },
     {
       "id": "product6",
       "description": "A cozy wool sweater.",
-      "imageUrl": "/product6.png",
+      "imageUrl": "/women/BurgerBae-Women2.png",
       "imageHint": "wool sweater"
     },
     {
       "id": "product7",
       "description": "A sleek silver watch.",
-      "imageUrl": "/product7.png",
+      "imageUrl": "/products/product7.png",
       "imageHint": "silver watch"
     },
     {
       "id": "product8",
       "description": "A floral summer dress.",
-      "imageUrl": "/product8.png",
+      "imageUrl": "/women/Keshubaba-Women5.png",
       "imageHint": "summer dress"
     },
     {
       "id": "trending1",
       "description": "Stylish ethnic wear",
-      "imageUrl": "/trending1.png",
+      "imageUrl": "/trending/trending1.png",
       "imageHint": "Indian ethnic"
     },
     {
       "id": "trending2",
       "description": "Modern casual shirt",
-      "imageUrl": "/trending2.png",
+      "imageUrl": "/trending/trending2.png",
       "imageHint": "casual shirt"
     },
     {
       "id": "trending3",
       "description": "Men's winter jacket",
-      "imageUrl": "/trending3.png",
+      "imageUrl": "/trending/trending3.png",
       "imageHint": "winter jacket"
     },
     {
       "id": "trending4",
       "description": "Elegant party dress",
-      "imageUrl": "/trending4.png",
+      "imageUrl": "/trending/trending4.png",
       "imageHint": "party dress"
     },
     {
       "id": "brand1",
       "description": "Spiderman Graphic Tee",
-      "imageUrl": "/brand1.png",
+      "imageUrl": "/brands/brand1.png",
       "imageHint": "Spiderman t-shirt"
     },
     {
       "id": "brand2",
       "description": "Batman Hoodie",
-      "imageUrl": "/brand2.png",
+      "imageUrl": "/brands/brand2.png",
       "imageHint": "Batman hoodie"
     },
     {
       "id": "brand3",
       "description": "Harry Potter Scarf",
-      "imageUrl": "/brand3.png",
+      "imageUrl": "/brands/brand3.png",
       "imageHint": "Harry Potter scarf"
     },
     {
       "id": "brand4",
       "description": "Classic White Sneakers",
-      "imageUrl": "/brand4.png",
+      "imageUrl": "/brands/brand4.png",
       "imageHint": "white sneakers"
     },
     {
       "id": "brand-logo-new-1",
       "description": "Brand Logo 1",
-      "imageUrl": "/Brandlogo1.png",
+      "imageUrl": "/brand-carousel/Brandlogo1.png",
       "imageHint": "brand logo"
     },
     {
       "id": "brand-logo-new-2",
       "description": "Brand Logo 2",
-      "imageUrl": "/Brandlogo2.png",
+      "imageUrl": "/brand-carousel/Brandlogo2.png",
       "imageHint": "brand logo"
     },
     {
       "id": "brand-logo-the-bear-house",
       "description": "The Bear House Logo",
-      "imageUrl": "/the-bear-house.png",
+      "imageUrl": "/brand-carousel/the-bear-house.png",
       "imageHint": "brand logo"
     },
     {
       "id": "brand-logo-terractive",
       "description": "Terractive Logo",
-      "imageUrl": "/terractive.png",
+      "imageUrl": "/brand-carousel/terractive.png",
       "imageHint": "brand logo"
     },
     {
       "id": "brand-logo-the-shorts-project",
       "description": "The Shorts Project Logo",
-      "imageUrl": "/the-shorts-project.png",
+      "imageUrl": "/brand-carousel/the-shorts-project.png",
       "imageHint": "brand logo"
     },
     {
       "id": "brand-logo-ministry-of-minimal",
       "description": "Ministry of Minimal Logo",
-      "imageUrl": "/ministry-of-minimal.png",
+      "imageUrl": "/brand-carousel/ministry-of-minimal.png",
       "imageHint": "brand logo"
     },
     {
       "id": "brand-logo-b-for-bottoms",
       "description": "B for Bottoms Logo",
-      "imageUrl": "/b-for-bottoms.png",
+      "imageUrl": "/brand-carousel/b-for-bottoms.png",
       "imageHint": "brand logo"
     },
     {
       "id": "brand-logo-burger-bae",
       "description": "Burger Bae Logo",
-      "imageUrl": "/burger-bae.png",
+      "imageUrl": "/brand-carousel/burger-bae.png",
       "imageHint": "brand logo"
     },
     {
       "id": "brand-logo-keshubaba",
       "description": "Keshubaba Logo",
-      "imageUrl": "/Keshubaba.png",
+      "imageUrl": "/brand-carousel/Keshubaba.png",
       "imageHint": "brand logo"
     },
     {
       "id": "gallery-men",
       "description": "Stylish man in a modern outfit.",
-      "imageUrl": "/gallery-men.png",
+      "imageUrl": "/gallery/gallery-men.png",
       "imageHint": "men fashion"
     },
     {
       "id": "gallery-women",
       "description": "Woman in an elegant saree.",
-      "imageUrl": "/gallery-women.png",
+      "imageUrl": "/gallery/gallery-women.png",
       "imageHint": "indian fashion"
     },
     {
       "id": "gallery-sneakers",
       "description": "A collection of trendy sneakers on display.",
-      "imageUrl": "/gallery-sneakers.png",
+      "imageUrl": "/gallery/gallery-sneakers.png",
       "imageHint": "sneaker collection"
     },
     {
       "id": "gallery-accessories",
       "description": "A stylish leather handbag.",
-      "imageUrl": "/gallery-accessories.png",
+      "imageUrl": "/gallery/gallery-accessories.png",
       "imageHint": "leather handbag"
     },
     {
       "id": "instagram1",
       "description": "Lifestyle shot of a person in a stylish outfit.",
-      "imageUrl": "/insta1.png",
+      "imageUrl": "/instagram/insta1.png",
       "imageHint": "fashion lifestyle"
     },
     {
       "id": "instagram2",
       "description": "Flat lay of a curated outfit.",
-      "imageUrl": "/insta2.png",
+      "imageUrl": "/instagram/insta2.png",
       "imageHint": "outfit flatlay"
     },
     {
       "id": "instagram3",
       "description": "Close-up on a unique fashion accessory.",
-      "imageUrl": "/insta3.png",
+      "imageUrl": "/instagram/insta3.png",
       "imageHint": "fashion accessory"
     },
     {
       "id": "instagram4",
       "description": "Behind the scenes at a fashion shoot.",
-      "imageUrl": "/insta4.png",
+      "imageUrl": "/instagram/insta4.png",
       "imageHint": "fashion shoot"
     },
     {
       "id": "instagram5",
       "description": "Aesthetic shot of a new sneaker release.",
-      "imageUrl": "/insta5.png",
+      "imageUrl": "/instagram/insta5.png",
       "imageHint": "sneaker release"
     },
     {
       "id": "instagram6",
       "description": "Urban fashion shot in a city setting.",
-      "imageUrl": "/insta6.png",
+      "imageUrl": "/instagram/insta6.png",
       "imageHint": "urban fashion"
     },
     {
       "id": "story-grid-1",
       "description": "A man wearing a stylish blue jacket in an urban setting.",
-      "imageUrl": "/story1.png",
+      "imageUrl": "/men/TheBearHouse2.png",
       "imageHint": "men fashion"
     },
     {
       "id": "story-grid-2",
       "description": "A woman in a vibrant ethnic dress, smiling.",
-      "imageUrl": "/story2.png",
+      "imageUrl": "/story/story2.png",
       "imageHint": "ethnic wear"
     },
     {
       "id": "story-grid-3",
       "description": "Close up of trendy, colorful sneakers.",
-      "imageUrl": "/story3.png",
+      "imageUrl": "/story/story3.png",
       "imageHint": "sneakers detail"
     },
     {
       "id": "story-grid-4",
       "description": "A woman wearing a chic modern outfit against a city backdrop.",
-      "imageUrl": "/story4.png",
+      "imageUrl": "/story/story4.png",
       "imageHint": "women fashion"
     },
     {
@@ -544,241 +544,241 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "sneakers-1",
       "description": "A pair of classic white sneakers.",
-      "imageUrl": "/sneakers-1.png",
+      "imageUrl": "/sneakers/sneakers-1.png",
       "imageHint": "white sneakers"
     },
     {
       "id": "sneakers-2",
       "description": "Colorful, trendy basketball sneakers.",
-      "imageUrl": "/sneakers-2.png",
+      "imageUrl": "/sneakers/sneakers-2.png",
       "imageHint": "basketball sneakers"
     },
     {
       "id": "sneakers-3",
       "description": "Running shoes with advanced cushioning.",
-      "imageUrl": "/sneakers-3.png",
+      "imageUrl": "/sneakers/sneakers-3.png",
       "imageHint": "running shoes"
     },
     {
       "id": "sneakers-4",
       "description": "High-top canvas sneakers.",
-      "imageUrl": "/sneakers-4.png",
+      "imageUrl": "/sneakers/sneakers-4.png",
       "imageHint": "canvas sneakers"
     },
     {
       "id": "sneakers-5",
       "description": "Skate shoes with a unique design.",
-      "imageUrl": "/sneakers-5.png",
+      "imageUrl": "/sneakers/sneakers-5.png",
       "imageHint": "skate shoes"
     },
     {
       "id": "sneakers-6",
       "description": "Premium limited edition sneakers.",
-      "imageUrl": "/sneakers-6.png",
+      "imageUrl": "/sneakers/sneakers-6.png",
       "imageHint": "limited edition"
     },
     {
       "id": "sneakers-7",
       "description": "Minimalist black sneakers.",
-      "imageUrl": "/sneakers-7.png",
+      "imageUrl": "/sneakers/sneakers-7.png",
       "imageHint": "black sneakers"
     },
     {
       "id": "sneakers-8",
       "description": "Retro style sneakers.",
-      "imageUrl": "/sneakers-8.png",
+      "imageUrl": "/sneakers/sneakers-8.png",
       "imageHint": "retro sneakers"
     },
     {
       "id": "sneakers-9",
       "description": "Luxury fashion sneakers.",
-      "imageUrl": "/sneakers-9.png",
+      "imageUrl": "/sneakers/sneakers-9.png",
       "imageHint": "luxury sneakers"
     },
     {
       "id": "sneakers-10",
       "description": "Brightly colored sneakers.",
-      "imageUrl": "/sneakers-10.png",
+      "imageUrl": "/sneakers/sneakers-10.png",
       "imageHint": "colored sneakers"
     },
     {
       "id": "sneakers-11",
       "description": "Slip-on sneakers.",
-      "imageUrl": "/sneakers-11.png",
+      "imageUrl": "/sneakers/sneakers-11.png",
       "imageHint": "slip-on sneakers"
     },
     {
       "id": "sneakers-12",
       "description": "Platform sneakers.",
-      "imageUrl": "/sneakers-12.png",
+      "imageUrl": "/sneakers/sneakers-12.png",
       "imageHint": "platform sneakers"
     },
     {
       "id": "sneakers-13",
       "description": "Lightweight running shoes.",
-      "imageUrl": "/sneakers-13.png",
+      "imageUrl": "/sneakers/sneakers-13.png",
       "imageHint": "running shoes"
     },
     {
       "id": "sneakers-14",
       "description": "Designer sneakers.",
-      "imageUrl": "/sneakers-14.png",
+      "imageUrl": "/sneakers/sneakers-14.png",
       "imageHint": "designer sneakers"
     },
     {
       "id": "sneakers-15",
       "description": "Casual walking shoes.",
-      "imageUrl": "/sneakers-15.png",
+      "imageUrl": "/sneakers/sneakers-15.png",
       "imageHint": "walking shoes"
     },
     {
       "id": "sneakers-16",
       "description": "Kids sneakers.",
-      "imageUrl": "/sneakers-16.png",
+      "imageUrl": "/sneakers/sneakers-16.png",
       "imageHint": "kids sneakers"
     },
     {
       "id": "sneakers-17",
       "description": "Vegan leather sneakers.",
-      "imageUrl": "/sneakers-17.png",
+      "imageUrl": "/sneakers/sneakers-17.png",
       "imageHint": "vegan sneakers"
     },
     {
       "id": "sneakers-18",
       "description": "Limited edition collectibles.",
-      "imageUrl": "/sneakers-18.png",
+      "imageUrl": "/sneakers/sneakers-18.png",
       "imageHint": "collectible sneakers"
     },
     {
       "id": "sneakers-19",
       "description": "All-terrain trail sneakers.",
-      "imageUrl": "/sneakers-19.png",
+      "imageUrl": "/sneakers/sneakers-19.png",
       "imageHint": "trail sneakers"
     },
     {
       "id": "sneakers-20",
       "description": "Customizable sneakers.",
-      "imageUrl": "/sneakers-20.png",
+      "imageUrl": "/sneakers/sneakers-20.png",
       "imageHint": "custom sneakers"
     },
     {
       "id": "accessories-1",
       "description": "Stylish sunglasses.",
-      "imageUrl": "/accessories-1.png",
+      "imageUrl": "/accessories/accessories-1.png",
       "imageHint": "sunglasses"
     },
     {
       "id": "accessories-2",
       "description": "A classic leather watch.",
-      "imageUrl": "/accessories-2.png",
+      "imageUrl": "/accessories/accessories-2.png",
       "imageHint": "leather watch"
     },
     {
       "id": "accessories-3",
       "description": "A minimalist silver bracelet.",
-      "imageUrl": "/accessories-3.png",
+      "imageUrl": "/accessories/accessories-3.png",
       "imageHint": "silver bracelet"
     },
     {
       "id": "accessories-4",
       "description": "A designer handbag.",
-      "imageUrl": "/accessories-4.png",
+      "imageUrl": "/accessories/accessories-4.png",
       "imageHint": "designer handbag"
     },
     {
       "id": "accessories-5",
       "description": "A collection of stylish belts.",
-      "imageUrl": "/accessories-5.png",
+      "imageUrl": "/accessories/accessories-5.png",
       "imageHint": "stylish belts"
     },
     {
       "id": "accessories-6",
       "description": "A stylish backpack.",
-      "imageUrl": "/accessories-6.png",
+      "imageUrl": "/accessories/accessories-6.png",
       "imageHint": "stylish backpack"
     },
     {
       "id": "accessories-7",
       "description": "A silk scarf.",
-      "imageUrl": "/accessories-7.png",
+      "imageUrl": "/accessories/accessories-7.png",
       "imageHint": "silk scarf"
     },
     {
       "id": "accessories-8",
       "description": "A wool beanie.",
-      "imageUrl": "/accessories-8.png",
+      "imageUrl": "/accessories/accessories-8.png",
       "imageHint": "wool beanie"
     },
     {
       "id": "accessories-9",
       "description": "A leather wallet.",
-      "imageUrl": "/accessories-9.png",
+      "imageUrl": "/accessories/accessories-9.png",
       "imageHint": "leather wallet"
     },
     {
       "id": "accessories-10",
       "description": "A pair of gold earrings.",
-      "imageUrl": "/accessories-10.png",
+      "imageUrl": "/accessories/accessories-10.png",
       "imageHint": "gold earrings"
     },
     {
       "id": "accessories-11",
       "description": "A designer belt.",
-      "imageUrl": "/accessories-11.png",
+      "imageUrl": "/accessories/accessories-11.png",
       "imageHint": "designer belt"
     },
     {
       "id": "accessories-12",
       "description": "A phone case.",
-      "imageUrl": "/accessories-12.png",
+      "imageUrl": "/accessories/accessories-12.png",
       "imageHint": "phone case"
     },
     {
       "id": "accessories-13",
       "description": "A travel bag.",
-      "imageUrl": "/accessories-13.png",
+      "imageUrl": "/accessories/accessories-13.png",
       "imageHint": "travel bag"
     },
     {
       "id": "accessories-14",
       "description": "A set of rings.",
-      "imageUrl": "/accessories-14.png",
+      "imageUrl": "/accessories/accessories-14.png",
       "imageHint": "rings set"
     },
     {
       "id": "accessories-15",
       "description": "A stylish hat.",
-      "imageUrl": "/accessories-15.png",
+      "imageUrl": "/accessories/accessories-15.png",
       "imageHint": "stylish hat"
     },
     {
       "id": "accessories-16",
       "description": "A keychain.",
-      "imageUrl": "/accessories-16.png",
+      "imageUrl": "/accessories/accessories-16.png",
       "imageHint": "keychain"
     },
     {
       "id": "accessories-17",
       "description": "A pair of gloves.",
-      "imageUrl": "/accessories-17.png",
+      "imageUrl": "/accessories/accessories-17.png",
       "imageHint": "gloves"
     },
     {
       "id": "accessories-18",
       "description": "A tie.",
-      "imageUrl": "/accessories-18.png",
+      "imageUrl": "/accessories/accessories-18.png",
       "imageHint": "tie"
     },
     {
       "id": "accessories-19",
       "description": "A pair of socks.",
-      "imageUrl": "/accessories-19.png",
+      "imageUrl": "/accessories/accessories-19.png",
       "imageHint": "socks"
     },
     {
       "id": "accessories-20",
       "description": "A sports watch.",
-      "imageUrl": "/accessories-20.png",
+      "imageUrl": "/accessories/accessories-20.png",
       "imageHint": "sports watch"
     }
   ];

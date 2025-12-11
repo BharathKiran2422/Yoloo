@@ -28,10 +28,10 @@ export function ProductCard({ product }: ProductCardProps) {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <div className="absolute bottom-0 left-0 p-4 w-full translate-y-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                 <h3 className="text-white font-bold text-lg drop-shadow-md">{product.name}</h3>
-                <p className="text-white/90 text-sm drop-shadow-sm flex items-center">
+                {/*<p className="text-white/90 text-sm drop-shadow-sm flex items-center">
                   <IndianRupee className="h-3.5 w-3.5 mr-0.5" />
                   {product.price}
-                </p>
+                </p>*/}
             </div>
           </div>
         )}

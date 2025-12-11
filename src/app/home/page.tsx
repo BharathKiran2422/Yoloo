@@ -27,16 +27,16 @@ export default function Home() {
       <div className="container mx-auto px-4">
         <ThemeBanner />
         <ShopByCategory />
+        <HighlightBanner />
         <FeaturedProductsInteractive />
       </div>
-      <HighlightBanner />
       <div className="container mx-auto px-4">
         {/*
         <ProductMarquee title="Trending Now" products={trendingProducts} direction="left" />
         <ProductMarquee title="Brand Spotlight" products={brandSpotlightProducts} direction="right" />
         */}<BeliefsSection />
       </div>
-      <GallerySection />
+      {/*<GallerySection />*/}
       <div className="container mx-auto px-4">
         <InstagramSection />
       </div>

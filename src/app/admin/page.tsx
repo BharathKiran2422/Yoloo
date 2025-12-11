@@ -16,6 +16,7 @@ import { cn } from '@/lib/utils';
 import { Logo } from '@/components/layout/logo';
 import { VisitorCounter } from '@/components/visitor-counter';
 import { Badge } from '@/components/ui/badge';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function AdminLogin({ onLogin }: { onLogin: (success: boolean) => void }) {
   const [password, setPassword] = useState('');
@@ -346,8 +347,3 @@ export default function AdminPage() {
     </PageTransitionWrapper>
   );
 }
-
-// Add motion and AnimatePresence to dependencies if not already there
-import { motion, AnimatePresence } from 'framer-motion';
-
-    

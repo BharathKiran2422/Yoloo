@@ -1,8 +1,9 @@
+
 export type Product = {
   id: string;
   name: string;
-  price: string;
   imageId: string;
+  price?: string;
 };
 
 export type Brand = {
@@ -15,49 +16,41 @@ export const featuredProducts: Product[] = [
   {
     id: "1",
     name: "Azure Denim Jacket",
-    price: "4,499",
     imageId: "product1",
   },
   {
     id: "2",
     name: "Minimalist Graphic Tee",
-    price: "1,299",
     imageId: "product2",
   },
   {
     id: "3",
     name: "Midnight Black Joggers",
-    price: "2,799",
     imageId: "product3",
   },
   {
     id: "4",
     name: "Classic Beige Trench",
-    price: "7,999",
     imageId: "product4",
   },
   {
     id: "5",
     name: "Stylish Leather Boots",
-    price: "5,999",
     imageId: "product5",
   },
   {
     id: "6",
     name: "Cozy Wool Sweater",
-    price: "3,499",
     imageId: "product6",
   },
   {
     id: "7",
     name: "Sleek Silver Watch",
-    price: "12,999",
     imageId: "product7",
   },
   {
     id: "8",
     name: "Floral Summer Dress",
-    price: "4,299",
     imageId: "product8",
   },
 ];
@@ -106,10 +99,3 @@ export const brands: Brand[] = [
   { id: "brand-logo-b-for-bottoms", name: "B for Bottoms", imageId: "brand-logo-b-for-bottoms" },
   { id: "brand-logo-keshubaba", name: "Keshubaba", imageId: "brand-logo-keshubaba" },
 ];
-
-    
-
-    
-
-
-
