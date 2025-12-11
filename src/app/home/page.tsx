@@ -31,9 +31,10 @@ export default function Home() {
       </div>
       <HighlightBanner />
       <div className="container mx-auto px-4">
+        {/*
         <ProductMarquee title="Trending Now" products={trendingProducts} direction="left" />
         <ProductMarquee title="Brand Spotlight" products={brandSpotlightProducts} direction="right" />
-        <BeliefsSection />
+        */}<BeliefsSection />
       </div>
       <GallerySection />
       <div className="container mx-auto px-4">
