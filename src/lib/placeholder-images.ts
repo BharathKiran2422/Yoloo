@@ -394,7 +394,7 @@ export const PlaceHolderImages: ImagePlaceholder[] = [
     {
       "id": "men-17",
       "description": "TheBearHouse",
-      "imageUrl": "/men/earHouse10.png",
+      "imageUrl": "/men/TheBearHouse10.png",
       "imageHint": "TheBearHouse10"
     },
     {
