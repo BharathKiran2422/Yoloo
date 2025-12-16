@@ -38,7 +38,7 @@ export function AppCtaSection() {
                             <Link href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                                     {mounted && <GooglePlayButton darkMode={resolvedTheme === 'dark'} className="h-12 md:h-14 w-auto border rounded-lg transform hover:-translate-y-1 transition-transform duration-300" />}
                                 </Link>
-                            <Link href="/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto" title="Coming soon">
+                            <Link href="https://apps.apple.com/in/app/yoloo/id6751438492" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                                     {mounted && <AppStoreButton darkMode={resolvedTheme === 'dark'} className="h-12 md:h-14 w-auto border rounded-lg transform hover:-translate-y-1 transition-transform duration-300" />}
                                 </Link>
                             </div>

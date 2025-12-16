@@ -145,10 +145,9 @@ export default function ComingSoonPage() {
               </Link>
 
               <Link
-                href="/"
+                href="https://apps.apple.com/in/app/yoloo/id6751438492"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Coming soon"
               >
                 {mounted && (
                   <div className="transform hover:scale-105 transition-transform duration-300">

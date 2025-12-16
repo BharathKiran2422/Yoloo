@@ -131,11 +131,10 @@ export function Footer() {
                 )}
               </Link>
               <Link
-                href="/"
+                href="https://apps.apple.com/in/app/yoloo/id6751438492"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
-                title="Coming soon"
               >
                 {mounted && (
                   <AppStoreButton
