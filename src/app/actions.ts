@@ -5,6 +5,8 @@ import { addMessage, getMessages, deleteMessage, toggleMessageStatus } from '@/l
 import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 import { config } from 'dotenv';
+import { db } from '@/lib/firebase';
+import { doc, setDoc, increment } from 'firebase/firestore';
 
 config();
 
@@ -68,4 +70,22 @@ export async function toggleAdminMessageStatus(id: string) {
   const success = await toggleMessageStatus(id);
   revalidatePath('/admin');
   return success;
+}
+
+export async function trackAppRedirect(store: 'apple' | 'google') {
+    if (!['apple', 'google'].includes(store)) {
+        console.error('Invalid store specified for tracking');
+        return;
+    }
+    
+    const trackingRef = doc(db, 'tracking', 'appStoreRedirects');
+
+    try {
+        await setDoc(trackingRef, {
+            [store]: increment(1)
+        }, { merge: true });
+    } catch (error) {
+        console.error(`Error tracking redirect for ${store}:`, error);
+        // We don't want to block the user redirect, so we'll just log the error
+    }
 }

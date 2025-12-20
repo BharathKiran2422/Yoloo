@@ -118,7 +118,7 @@ export function Footer() {
             <h3 className="font-semibold text-sm">Get our app</h3>
             <div className="flex flex-col sm:flex-row items-start sm:items-center md:flex-col md:items-start gap-2">
               <Link
-                href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share"
+                href="/download"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"
@@ -131,7 +131,7 @@ export function Footer() {
                 )}
               </Link>
               <Link
-                href="https://apps.apple.com/in/app/yoloo/id6751438492"
+                href="/download"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto"

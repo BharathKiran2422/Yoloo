@@ -17,7 +17,7 @@ export function JustDoItSection() {
                    With Yoloo, shopping in Hyderabad is quick, effortless, and designed to match the way you live.
                 </p>
                 <div className="flex items-center justify-center gap-4">
-                  <Link href="#purchase-on-app">
+                  <Link href="/download">
                       <Button size="lg" className="rounded-full px-8 md:px-10 text-base md:text-lg h-12 shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1">
                           <ShoppingBag className="mr-2 md:mr-3" />
                           Start Shopping

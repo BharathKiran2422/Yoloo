@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -49,7 +50,7 @@ export default function PaymentPolicyPage() {
                     </div>
 
                     <div className="pt-4">
-                        <Link href="/#purchase-on-app">
+                        <Link href="/download">
                             <Button>Download the App</Button>
                         </Link>
                     </div>

@@ -64,7 +64,7 @@ export function HeroSection() {
                     {heroSlides[0].subtitle}
                   </p>
                   <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-                    <Link href="#purchase-on-app">
+                    <Link href="/download">
                       <Button size="lg" className="w-full sm:w-auto">{heroSlides[0].buttonText}</Button>
                     </Link>
                      <div className="flex items-center space-x-3">
@@ -127,7 +127,7 @@ export function HeroSection() {
                           {slide.subtitle}
                         </p>
                         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-                          <Link href="#purchase-on-app">
+                          <Link href="/download">
                             <Button size="lg" className="w-full sm:w-auto">{slide.buttonText}</Button>
                           </Link>
                           <div className="flex items-center space-x-3">

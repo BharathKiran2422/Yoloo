@@ -1,10 +1,10 @@
 
 import Image from 'next/image';
 import type { Product } from '@/lib/products';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card } from '@/components/ui/card';
 import Link from 'next/link';
 import { IndianRupee } from 'lucide-react';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 type ProductCardProps = {
   product: Product;
@@ -14,7 +14,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const image = PlaceHolderImages.find((img) => img.id === product.imageId);
 
   return (
-    <Link href="#purchase-on-app">
+    <Link href="/download">
       <Card className="group overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 w-full h-full">
         {image && (
           <div className="relative aspect-[3/4] w-full overflow-hidden">

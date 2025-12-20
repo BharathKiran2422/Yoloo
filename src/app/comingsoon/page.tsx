@@ -130,7 +130,7 @@ export default function ComingSoonPage() {
               transition={{ delay: 1, duration: 0.5 }}
             >
               <Link
-                href="https://play.google.com/store/apps/details?id=com.yoloo&pcampaignid=web_share"
+                href="/download"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -145,7 +145,7 @@ export default function ComingSoonPage() {
               </Link>
 
               <Link
-                href="https://apps.apple.com/in/app/yoloo/id6751438492"
+                href="/download"
                 target="_blank"
                 rel="noopener noreferrer"
               >

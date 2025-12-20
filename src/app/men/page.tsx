@@ -2,11 +2,11 @@
 'use client';
 
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 import { Eye, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function MenPage() {
     const menImages = [
@@ -72,7 +72,7 @@ export default function MenPage() {
                             if (!image) return null;
                             return (
                                 <motion.div key={id} variants={itemVariants} className={className || ''}>
-                                    <Link href="/#purchase-on-app" className="relative rounded-2xl overflow-hidden group h-full w-full block shadow-md hover:shadow-2xl transition-all duration-300">
+                                    <Link href="/download" className="relative rounded-2xl overflow-hidden group h-full w-full block shadow-md hover:shadow-2xl transition-all duration-300">
                                         <Image
                                             src={image.imageUrl}
                                             alt={image.description}
@@ -97,7 +97,7 @@ export default function MenPage() {
 
                     <div className="text-center mt-16 py-8 px-4 bg-gradient-to-r from-background to-card rounded-lg border">
                         <p className="text-xl font-semibold text-foreground">From Streetwear to Classics – Find It All in Yoloo!</p>
-                        <Link href="/#purchase-on-app">
+                        <Link href="/download">
                              <button className="mt-4 inline-flex items-center gap-2 text-primary font-bold">
                                 Download the App <ArrowRight size={16} />
                              </button>
@@ -108,5 +108,3 @@ export default function MenPage() {
         </PageTransitionWrapper>
     );
 }
-
-    
