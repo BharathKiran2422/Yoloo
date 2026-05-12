@@ -1,4 +1,4 @@
-# Yoloo! Project Documentation: A to Z Breakdown
+# Yoloo! Project Documentation: A-to-Z Breakdown
 
 ## 1. Project Vision & Design
 **Yoloo!** is a quick-commerce fashion platform centered in Hyderabad, India. The primary goal of the web presence is to serve as a high-conversion showcase and a gateway to the mobile application.
