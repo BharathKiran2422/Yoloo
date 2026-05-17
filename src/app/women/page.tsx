@@ -3,107 +3,113 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Eye, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { EditorialMarquee } from '@/components/editorial-marquee';
 
 export default function WomenPage() {
-    const womenImages = [
-        { id: "women-1" },
-        { id: "women-2", className: "sm:row-span-2" },
-        { id: "women-3", className: "sm:col-span-2 sm:row-span-2" },
-        { id: "women-4" },
-        { id: "women-5" },
-        { id: "women-6" },
-        { id: "women-7" },
-        { id: "women-8", className: "sm:col-span-2 sm:row-span-2" },
-        { id: "women-9" },
-        { id: "women-10" },
-        { id: "women-11", className: "sm:row-span-2" },
-        { id: "women-12" },
-        { id: "women-13" },
-        { id: "women-14", className: "sm:col-span-2" },
-        { id: "women-15" },
-        { id: "women-16" },
-        { id: "women-17" },
-        { id: "women-18" },
-        { id: "women-19" },
-        { id: "women-20", className: "sm:col-span-2" }
-    ];
+  const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
-    const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
-    
-    const containerVariants = {
-        hidden: { opacity: 1 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    };
+  const heroImage = getImage('women-11');
+  const featureImage1 = getImage('women-3');
+  const featureImage2 = getImage('women-1');
+  const campaignImages = ['women-2', 'women-4', 'women-5', 'women-6', 'women-7', 'women-8'];
 
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
-    };
+  return (
+    <PageTransitionWrapper>
+      <div className="bg-background text-foreground selection:bg-pink-200">
+        {/* Editorial Hero */}
+        <section className="relative min-h-[90vh] flex flex-col justify-center px-4 md:px-12 py-20">
+          <motion.h1 
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-[12vw] leading-[0.9] font-bold tracking-tighter uppercase z-10 text-right md:text-left text-black dark:text-white"
+          >
+            LA FEMME <br />
+            <span className="md:ml-[20vw] italic font-serif">AURA</span>
+          </motion.h1>
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2 }}
+            className="absolute left-0 top-0 w-full md:w-1/2 h-full z-0 opacity-80"
+          >
+            {heroImage && (
+              <Image
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                fill
+                className="object-cover grayscale"
+                priority
+              />
+            )}
+          </motion.div>
+        </section>
 
-    return (
-        <PageTransitionWrapper>
-            <div className="bg-background">
-                <div className="container mx-auto px-4 py-8">
-                     <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-5xl font-bold text-foreground bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-400">
-                           Elegant & Everyday Styles for Women
-                        </h1>
-                        <p className="text-muted-foreground mt-2">Explore elegant dresses, casual wear, and special collections.</p>
-                    </div>
+        {/* Cinematic Scroll 1 */}
+        <section className="py-24 bg-card/20">
+          <div className="px-4 md:px-12 mb-8 text-center">
+            <h2 className="text-sm uppercase tracking-[1em] text-muted-foreground">Editorial / Edition 01</h2>
+          </div>
+          <EditorialMarquee imageIds={campaignImages} speed={60} direction="right" />
+        </section>
 
-                    <motion.div 
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[300px]"
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                        {womenImages.map(({ id, className }) => {
-                            const image = getImageData(id);
-                            if (!image) return null;
-                            return (
-                                <motion.div key={id} variants={itemVariants} className={className || ''}>
-                                    <Link href="/download" className="relative rounded-2xl overflow-hidden group h-full w-full block shadow-md hover:shadow-2xl transition-all duration-300">
-                                        <Image
-                                            src={image.imageUrl}
-                                            alt={image.description}
-                                            fill
-                                            className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                                            data-ai-hint={image.imageHint}
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-colors duration-300" />
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <div className="text-center text-white bg-black/50 backdrop-blur-sm py-2 px-4 rounded-lg">
-                                                <p className="font-bold text-lg">View in App ⚡</p>
-                                            </div>
-                                        </div>
-                                         <div className="absolute bottom-4 left-4 right-4 group-hover:opacity-0 transition-opacity duration-300">
-                                            <p className="text-white font-semibold text-lg">{image.description}</p>
-                                        </div>
-                                    </Link>
-                                </motion.div>
-                            );
-                        })}
-                    </motion.div>
-
-                    <div className="text-center mt-16 py-8 px-4 bg-gradient-to-r from-background to-card rounded-lg border">
-                        <p className="text-xl font-semibold text-foreground">Chic, Ethnic & Everyday Styles in One Place</p>
-                         <Link href="/download">
-                             <button className="mt-4 inline-flex items-center gap-2 text-primary font-bold">
-                                Download the App <ArrowRight size={16} />
-                             </button>
-                        </Link>
-                    </div>
-                </div>
+        {/* Asymmetrical Feature Section */}
+        <section className="container mx-auto px-4 py-32">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div className="md:col-span-7 order-2 md:order-1">
+               <div className="relative aspect-[4/5] w-full max-w-xl mr-auto group overflow-hidden">
+                {featureImage1 && (
+                  <Image
+                    src={featureImage1.imageUrl}
+                    alt={featureImage1.description}
+                    fill
+                    className="object-cover grayscale transition-transform duration-1000 group-hover:scale-105"
+                  />
+                )}
+              </div>
             </div>
-        </PageTransitionWrapper>
-    );
+
+            <motion.div 
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 50 }}
+              viewport={{ once: true }}
+              className="md:col-span-5 space-y-8 order-1 md:order-2"
+            >
+              <h3 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase">Poetry <br />in Motion.</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Ethereal silhouettes meet sharp tailoring. Our women's collection celebrates the duality of modern femininity with pieces designed for every facet of life.
+              </p>
+              <Link href="/download" className="inline-block border-b border-foreground pb-2 font-medium tracking-[0.2em] hover:opacity-50 transition-all">
+                VIEW LOOKBOOK
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Horizontal Band: Monochrome */}
+        <section className="py-20 border-y border-border/50">
+          <EditorialMarquee imageIds={['women-12', 'women-13', 'women-14', 'women-15']} speed={40} direction="left" />
+        </section>
+
+        {/* CTA Footer Section */}
+        <section className="py-40 text-center">
+            <div className="container mx-auto px-4">
+               <h2 className="text-[15vw] font-bold tracking-tighter leading-none mb-12 opacity-5">YOLOO!</h2>
+               <div className="-mt-[10vw]">
+                  <p className="text-xl md:text-2xl font-medium mb-12 tracking-wide">EXPERIENCE THE FULL COLLECTION</p>
+                  <Link href="/download">
+                     <button className="bg-foreground text-background px-16 py-6 rounded-none text-xs font-bold tracking-[0.4em] uppercase hover:invert transition-all duration-700">
+                        DOWNLOAD APP
+                     </button>
+                  </Link>
+               </div>
+            </div>
+        </section>
+      </div>
+    </PageTransitionWrapper>
+  );
 }

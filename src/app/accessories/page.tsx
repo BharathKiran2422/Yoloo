@@ -3,107 +3,117 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Eye, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { EditorialMarquee } from '@/components/editorial-marquee';
 
 export default function AccessoriesPage() {
-    const accessoriesImages = [
-        { id: "accessories-1" },
-        { id: "accessories-2", className: "sm:col-span-2 sm:row-span-2" },
-        { id: "accessories-3" },
-        { id: "accessories-4" },
-        { id: "accessories-5" },
-        { id: "accessories-6" },
-        { id: "accessories-7", className: "sm:row-span-2" },
-        { id: "accessories-8"},
-        { id: "accessories-9", className: "sm:col-span-2" },
-        { id: "accessories-10"},
-        { id: "accessories-11" },
-        { id: "accessories-12", className: "sm:row-span-2" },
-        { id: "accessories-13"},
-        { id: "accessories-14" },
-        { id: "accessories-15" },
-        { id: "accessories-16" },
-        { id: "accessories-17", className: "sm:col-span-2 sm:row-span-2" },
-        { id: "accessories-18" },
-        { id: "accessories-19" },
-        { id: "accessories-20" }
-    ];
-    
-    const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
+  const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
-    const containerVariants = {
-        hidden: { opacity: 1 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    };
+  const heroImage = getImage('accessories-4');
+  const campaignImages = ['accessories-1', 'accessories-2', 'accessories-3', 'accessories-5', 'accessories-6', 'accessories-7'];
 
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
-    };
+  return (
+    <PageTransitionWrapper>
+      <div className="bg-[#0a0a0a] text-[#f0f0f0] selection:bg-white selection:text-black">
+        {/* Luxury Still Life Hero */}
+        <section className="relative min-h-screen flex items-center px-4 md:px-20 py-32">
+           <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-20 items-center">
+              <div className="space-y-8 z-10">
+                 <motion.h1 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-6xl md:text-9xl font-bold tracking-tighter"
+                 >
+                    THE <br /> FINISH.
+                 </motion.h1>
+                 <motion.p 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                    className="text-xl md:text-2xl font-light text-white/40 max-w-sm tracking-wide"
+                 >
+                    Essential accents for the discerning individual.
+                 </motion.p>
+              </div>
+              
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.5 }}
+                className="relative aspect-square w-full max-w-2xl grayscale"
+              >
+                 {heroImage && (
+                    <Image
+                       src={heroImage.imageUrl}
+                       alt={heroImage.description}
+                       fill
+                       className="object-cover"
+                    />
+                 )}
+              </motion.div>
+           </div>
+        </section>
 
-    return (
-        <PageTransitionWrapper>
-            <div className="bg-background">
-                <div className="container mx-auto px-4 py-8">
-                     <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-5xl font-bold text-foreground bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-amber-500">
-                           Complete Your Look with Premium Accessories
-                        </h1>
-                        <p className="text-muted-foreground mt-2">Complete your look with our curated collection of accessories.</p>
-                    </div>
+        {/* Editorial Scroll */}
+        <section className="py-24 border-y border-white/5">
+           <EditorialMarquee imageIds={campaignImages} speed={45} direction="left" />
+        </section>
 
-                    <motion.div 
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[300px]"
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                         {accessoriesImages.map(({ id, className }) => {
-                            const image = getImageData(id);
-                            if (!image) return null;
-                            return (
-                                <motion.div key={id} variants={itemVariants} className={className || ''}>
-                                    <Link href="/download" className="relative rounded-2xl overflow-hidden group h-full w-full block shadow-md hover:shadow-2xl transition-all duration-300">
-                                        <Image
-                                            src={image.imageUrl}
-                                            alt={image.description}
-                                            fill
-                                            className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                                            data-ai-hint={image.imageHint}
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-colors duration-300" />
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <div className="text-center text-white bg-black/50 backdrop-blur-sm py-2 px-4 rounded-lg">
-                                                <p className="font-bold text-lg">View in App ⚡</p>
-                                            </div>
-                                        </div>
-                                         <div className="absolute bottom-4 left-4 right-4 group-hover:opacity-0 transition-opacity duration-300">
-                                            <p className="text-white font-semibold text-lg">{image.description}</p>
-                                        </div>
-                                    </Link>
-                                </motion.div>
-                            );
-                        })}
-                    </motion.div>
+        {/* Staggered Grid */}
+        <section className="container mx-auto px-4 py-32">
+           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-12">
+              <motion.div 
+                whileInView={{ y: 0, opacity: 1 }}
+                initial={{ y: 100, opacity: 0 }}
+                className="relative aspect-[3/4] mt-20"
+              >
+                 {getImage('accessories-9') && (
+                    <Image src={getImage('accessories-9')!.imageUrl} alt="Wallet" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                 )}
+              </motion.div>
+              
+              <motion.div 
+                whileInView={{ y: 0, opacity: 1 }}
+                initial={{ y: 50, opacity: 0 }}
+                className="relative aspect-[3/4]"
+              >
+                 {getImage('accessories-10') && (
+                    <Image src={getImage('accessories-10')!.imageUrl} alt="Jewelry" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                 )}
+                 <div className="absolute top-0 right-0 p-8">
+                    <h3 className="text-xl font-bold tracking-widest uppercase">DETAIL 01</h3>
+                 </div>
+              </motion.div>
 
-                    <div className="text-center mt-16 py-8 px-4 bg-gradient-to-r from-background to-card rounded-lg border">
-                        <p className="text-xl font-semibold text-foreground">Elevate Every Outfit with Our Handpicked Accessories</p>
-                         <Link href="/download">
-                             <button className="mt-4 inline-flex items-center gap-2 text-primary font-bold">
-                                Download the App <ArrowRight size={16} />
-                             </button>
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </PageTransitionWrapper>
-    );
+              <motion.div 
+                whileInView={{ y: 0, opacity: 1 }}
+                initial={{ y: 150, opacity: 0 }}
+                className="relative aspect-[3/4] hidden md:block"
+              >
+                 {getImage('accessories-13') && (
+                    <Image src={getImage('accessories-13')!.imageUrl} alt="Travel Bag" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                 )}
+              </motion.div>
+           </div>
+        </section>
+
+        {/* Wide Band */}
+        <section className="bg-white">
+           <EditorialMarquee imageIds={['accessories-14', 'accessories-15', 'accessories-16', 'accessories-17', 'accessories-18']} speed={35} direction="right" />
+        </section>
+
+        {/* Final Statement */}
+        <section className="py-60 text-center container mx-auto px-4">
+           <h2 className="text-3xl md:text-5xl font-light tracking-[0.3em] uppercase mb-16">ELEVATION THROUGH ACCESSORY.</h2>
+           <Link href="/download">
+              <button className="border border-white/20 px-16 py-6 text-sm font-bold tracking-[0.5em] hover:bg-white hover:text-black transition-all">
+                 ACCESS THE COLLECTION
+              </button>
+           </Link>
+        </section>
+      </div>
+    </PageTransitionWrapper>
+  );
 }

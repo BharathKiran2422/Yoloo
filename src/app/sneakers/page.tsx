@@ -3,107 +3,114 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Eye, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { PageTransitionWrapper } from '@/components/page-transition-wrapper';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { EditorialMarquee } from '@/components/editorial-marquee';
 
 export default function SneakersPage() {
-    const sneakerImages = [
-        { id: "sneakers-1", className: "sm:row-span-2" },
-        { id: "sneakers-2" },
-        { id: "sneakers-3" },
-        { id: "sneakers-4" },
-        { id: "sneakers-5", className: "sm:col-span-2" },
-        { id: "sneakers-6" },
-        { id: "sneakers-7", className: "sm:col-span-2" },
-        { id: "sneakers-8" },
-        { id: "sneakers-9" },
-        { id: "sneakers-10", className: "sm:row-span-2" },
-        { id: "sneakers-11" },
-        { id: "sneakers-12" },
-        { id: "sneakers-13", className: "sm:col-span-2 sm:row-span-2" },
-        { id: "sneakers-14" },
-        { id: "sneakers-15" },
-        { id: "sneakers-16" },
-        { id: "sneakers-17" },
-        { id: "sneakers-18" },
-        { id: "sneakers-19", className: "sm:col-span-2" },
-        { id: "sneakers-20" }
-    ];
-    
-    const getImageData = (id: string) => PlaceHolderImages.find(img => img.id === id);
+  const getImage = (id: string) => PlaceHolderImages.find(img => img.id === id);
 
-    const containerVariants = {
-        hidden: { opacity: 1 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    };
+  const heroImage = getImage('sneakers-1');
+  const campaignImages = ['sneakers-2', 'sneakers-3', 'sneakers-4', 'sneakers-5', 'sneakers-6', 'sneakers-7'];
 
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
-    };
+  return (
+    <PageTransitionWrapper>
+      <div className="bg-black text-white selection:bg-white selection:text-black min-h-screen">
+        {/* Tech-Editorial Hero */}
+        <section className="relative h-screen flex flex-col items-center justify-center text-center px-4">
+          <motion.div 
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="absolute inset-0 z-0 grayscale"
+          >
+             {heroImage && (
+              <Image
+                src={heroImage.imageUrl}
+                alt={heroImage.description}
+                fill
+                className="object-cover opacity-40"
+                priority
+              />
+            )}
+          </motion.div>
+          
+          <div className="z-10 space-y-4">
+            <motion.h1 
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="text-[15vw] md:text-[10vw] font-black tracking-tighter leading-none"
+            >
+              KINETIC
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1 }}
+              className="text-lg md:text-xl tracking-[0.5em] uppercase font-light"
+            >
+              Footwear for the future
+            </motion.p>
+          </div>
+        </section>
 
-    return (
-        <PageTransitionWrapper>
-            <div className="bg-background">
-                <div className="container mx-auto px-4 py-8">
-                    <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-5xl font-bold text-foreground bg-clip-text text-transparent bg-gradient-to-r from-lime-400 to-green-500">
-                           Step into Style – Sneakers Collection
-                        </h1>
-                        <p className="text-muted-foreground mt-2">Step up your game with our collection of trendy and classic footwear.</p>
-                    </div>
+        {/* Infinite Scroll Band */}
+        <section className="py-12 bg-white/5 border-y border-white/10">
+          <EditorialMarquee imageIds={campaignImages} speed={30} direction="left" />
+        </section>
 
-                    <motion.div 
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[300px]"
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                         {sneakerImages.map(({ id, className }) => {
-                            const image = getImageData(id);
-                            if (!image) return null;
-                            return (
-                                <motion.div key={id} variants={itemVariants} className={className || ''}>
-                                    <Link href="/download" className="relative rounded-2xl overflow-hidden group h-full w-full block shadow-md hover:shadow-2xl transition-all duration-300">
-                                        <Image
-                                            src={image.imageUrl}
-                                            alt={image.description}
-                                            fill
-                                            className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                                            data-ai-hint={image.imageHint}
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent transition-colors duration-300" />
-                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <div className="text-center text-white bg-black/50 backdrop-blur-sm py-2 px-4 rounded-lg">
-                                                <p className="font-bold text-lg">View in App ⚡</p>
-                                            </div>
-                                        </div>
-                                         <div className="absolute bottom-4 left-4 right-4 group-hover:opacity-0 transition-opacity duration-300">
-                                            <p className="text-white font-semibold text-lg">{image.description}</p>
-                                        </div>
-                                    </Link>
-                                </motion.div>
-                            );
-                        })}
-                    </motion.div>
-
-                    <div className="text-center mt-16 py-8 px-4 bg-gradient-to-r from-background to-card rounded-lg border">
-                        <p className="text-xl font-semibold text-foreground">Sporty, Casual & Premium Sneakers Delivered Fast</p>
-                         <Link href="/download">
-                             <button className="mt-4 inline-flex items-center gap-2 text-primary font-bold">
-                                Download the App <ArrowRight size={16} />
-                             </button>
-                        </Link>
-                    </div>
+        {/* Grid Break Section */}
+        <section className="container mx-auto px-4 py-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-end">
+             <div className="space-y-12">
+                <div className="relative aspect-square w-full grayscale hover:grayscale-0 transition-all duration-1000">
+                   {getImage('sneakers-10') && (
+                     <Image
+                        src={getImage('sneakers-10')!.imageUrl}
+                        alt="Sneaker Close-up"
+                        fill
+                        className="object-cover"
+                     />
+                   )}
                 </div>
-            </div>
-        </PageTransitionWrapper>
-    );
+                <div className="max-w-md">
+                   <h2 className="text-4xl font-bold mb-6">UNCOMPROMISING <br /> PERFORMANCE.</h2>
+                   <p className="text-white/60 leading-relaxed text-lg">
+                      Engineered for the urban athlete. Our curation features limited editions and technical silhouettes that bridge the gap between performance and high-street luxury.
+                   </p>
+                </div>
+             </div>
+             
+             <div className="relative aspect-[3/4] w-full hidden md:block">
+                 {getImage('sneakers-13') && (
+                     <Image
+                        src={getImage('sneakers-13')!.imageUrl}
+                        alt="Sneaker Visual"
+                        fill
+                        className="object-cover"
+                     />
+                   )}
+             </div>
+          </div>
+        </section>
+
+        {/* Velocity Band */}
+        <section className="py-20 bg-white">
+          <EditorialMarquee imageIds={['sneakers-14', 'sneakers-15', 'sneakers-16', 'sneakers-17', 'sneakers-18']} speed={20} direction="right" />
+        </section>
+
+        {/* CTA */}
+        <section className="py-40 text-center">
+           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-12">STEP INTO THE VOID.</h2>
+           <Link href="/download">
+              <button className="bg-white text-black px-12 py-5 font-bold hover:bg-white/90 transition-all uppercase tracking-widest">
+                 SECURE YOUR PAIR
+              </button>
+           </Link>
+        </section>
+      </div>
+    </PageTransitionWrapper>
+  );
 }
